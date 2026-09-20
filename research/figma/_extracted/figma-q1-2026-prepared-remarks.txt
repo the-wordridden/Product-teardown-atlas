@@ -1,0 +1,441 @@
+    Prepared Remarks: Figma Q1 2026 Earnings
+
+                                 May 14, 2026
+
+Brendan Mulligan, Figma General Counsel and Secretary
+
+During the course of today's call we will make forward-looking statements,
+including but not limited to statements regarding our guidance and future financial
+performance, market demand for our products, including adoption of Figma Make
+and other AI features, our product development plans, business strategies and
+plans, and our ability to attract and retain customers and compete effectively.
+
+These forward-looking statements are based on management's current views
+and assumptions and should not be relied upon as of any subsequent date. And
+we disclaim any obligation to update any forward-looking statements.
+
+Actual results may vary materially from today's statements. Information
+concerning our risks, uncertainties and other factors that could cause results to
+differ from these forward-looking statements are included in our filings with the
+SEC, including our Quarterly Report on Form 10-Q for the three months ended
+March 31, 2026. Our discussion today will include certain non-GAAP financial
+measures.
+
+These non-GAAP financial measures should be considered in addition to, not as
+a substitute for or in isolation from, GAAP measures. Our non-GAAP financial
+measures exclude the effect of our GAAP results of stock-based compensation
+and certain other items. Reconciliations of non-GAAP financial measures to
+comparable GAAP measures can be found in our press release accompanying
+this call, which is posted to our website. I would now like to turn the conference
+call over to Dylan.
+
+Dylan Field, Figma CEO and Co-Founder
+
+Hi everyone, and thanks for joining. I'm looking forward to sharing the results of
+another incredible quarter at Figma.
+
+First, let me tell you how I'm thinking about the opportunity ahead. Anyone
+building software today knows that we are living through an extraordinary time.
+With AI, what used to take months can now ship in sometimes an afternoon.
+Code is easier to write, and the distance between an idea and its implementation
+is collapsing.
+
+You've heard me say it many times in the past: when execution is cheap, design
+and creativity are the edge. And now it's not only me saying it--the world sees it,
+
+                                                                                                           1
+too. The bottleneck has shifted, away from "can we build it?" and toward "can we
+imagine something that's worth building?"
+
+More design tools are launching, more people are creating, more software is
+being built than ever before.
+
+In a world where bits are abundant, what's scarce is human creativity: actual
+point of view, care and craft and judgment. This is what makes a product, a
+company, a campaign cut through the noise.
+
+Designers, builders and creatives need tools that let them explore without limits
+and express their vision exactly as they imagined it. And that is what Figma has
+always been built for.
+
+Our Q1 numbers reflect this momentum. Here are a few highlights:
+
+     In Q1 2026, revenue grew 46% year over year to $333 million,
+         accelerating from 40% last quarter and 38% in Q3. Growth came from
+         across the business: seat expansion, retention, enterprise adoption, new
+         users and AI... through Figma Weave, our broader AI capabilities, and
+         early traction from AI credit monetization, which started on March 18th.
+
+     Net dollar retention rate also increased to 139%, our highest rate in over 2
+         years. This is up three percentage points from last quarter.
+
+     We also continued to generate strong cash flow. Non-GAAP operating
+         margin was 16% in the quarter, free cash flow was 27%, and we ended
+         Q1 with $1.6 billion in cash, cash equivalents and marketable securities.
+
+Thank you to the Figma team for their focus and execution. I'm especially proud
+of how our team is adapting to new ways of working with AI during a time of
+exponential change.
+
+The momentum we've built gives us the confidence to raise our revenue and
+non-GAAP operating profit guidance for the year. Praveer will share more details
+on that in a moment.
+
+But the story of our quarter goes far beyond the numbers. We're seeing our
+customers go bigger and deeper with Figma. Let me share a few examples.
+
+Google is a long-time Figma customer. Many of their most iconic products have
+been designed and built on our platform. As they build the next generation of
+AI-native products, they're doubling down on Figma. The team designing agentic
+Gemini experiences for millions of enterprise customers uses Figma end to end,
+as their single source of truth, from the earliest concept work all the way through
+to shipping. In their words, they can only "get to a level of detail that we want in
+Figma that's not possible with vibe coding."
+
+                                                                                                           2
+Lufthansa is another example of a customer going deeper with Figma to drive
+real innovation. Their Lido navigation product design team used Figma Make to
+prototype Lido mPilot: an integrated iOS charting app that streamlines flight
+navigation for commercial pilots with a level of fidelity that goes well beyond
+traditional prototypes. By connecting Figma Make to their in-house API, the team
+could prototype dynamic, interactive map features so pilots could test real
+gestures before any production code was written. As they put it: "Pilots could
+really imagine what we were trying to show them. We validated our concepts
+before touching implementation. That's the goal of every product team, and we
+actually did it."
+
+Teams aren't just going deeper with Figma. We're seeing broader adoption
+across the organization as well.
+
+Rocket Mortgage serves 1 in 6 American homeowners, unifying multiple brands
+and technology stacks into a single homeownership platform. To help scale that
+vision, the team built their design system directly into Figma Make as a shared
+template infrastructure for the entire org, accelerating adoption well beyond the
+design team. As design engineering lead Will Hobick describes it: "We're seeing
+adoption across the organization. Teams across Rocket are using Figma Make to
+rapidly build dashboards, craft presentations, and explore new customer
+experiences, all built on top of our shared design system and brand foundations."
+Design director Emily Strobl had this to say on why it's resonating: "We've all
+experienced AI tools that don't quite hit the mark or reflect our brand standards.
+Embedding our design system into Figma Make has fundamentally changed
+that."
+
+In some cases, expansion is going even further, beyond product development
+altogether.
+
+At NBBJ, one of the world's leading architecture firms, Figma Weave, formerly
+Weavy, is changing how they win business. NBBJ's architects are subject matter
+experts in the industries they design for, and their work is about understanding
+how a space needs to function, not just how it looks. Pitching a client used to
+mean commissioning photorealistic renders from an external studio, a process
+that took days and returned only one or two versions with little room to refine.
+Now architects at NBBJ do it themselves. Figma Weave lets them translate their
+3D models into precise, photorealistic renderings. They're able to generate and
+refine in real time, pushing until the result meets the exact bar their work
+demands--dialing in time-of-day lighting, grounding a design in its actual urban
+context, and getting the materiality just right. Figures placed at human scale
+make a ceiling height or entry sequence immediately legible to a client. The result
+is a faster pitch, a stronger presentation, and full creative control from start to
+finish. Adoption of Weave at NBBJ is expected to triple in the next three months.
+
+                                                                                                           3
+Across these customers and countless others, Figma remains the place where
+teams with the highest bar come to do their best work; teams that know creativity
+and craft are what set them apart, and need tools that can match that ambition.
+Tools that let them explore freely and express their vision without limits. That's
+who Figma is built for.
+
+Our platform is where creativity lives and compounds: where teams can move
+quickly on their first idea, and push further... Questioning, refining, iterating with
+the best of AI, code, and direct manipulation until the work is unmistakably theirs.
+We see this in how our customers actually work: as of Q1, around 60% of our
+largest customers used Figma Make on a weekly basis, and over 80% of Make
+users on Full Seats continued using Figma Design for visual editing and broader
+exploration alongside Make.
+
+We love seeing how the ambition of our users and our community is always
+growing, and we're moving faster than ever to meet it. In the last few months:
+
+     We shipped major updates to Figma Make that let users bring their own
+         context into every prompt, and give them more control over every
+         decision as they build.
+
+     We introduced new MCP capabilities that let agents read and write
+         directly to Figma files, so that teams can stay in control. In Q1, MCP
+         weekly active users in Figma Design grew 5x quarter over quarter.
+
+     And we shipped updates to Figma Weave, including a timeline editor for
+         refining AI-generated video.
+
+Figma Make has driven the most AI usage so far, but MCP, Figma Weave, and
+our AI assistant, which is currently in Alpha, are meaningfully expanding the
+surface for AI consumption in Figma.
+
+All of this builds on what has made Figma the choice for the world's best teams
+building the world's best software:
+
+     First, a performant, enterprise-grade multiplayer canvas and platform
+         where humans and agents can work side by side, with no siloes, no
+         handoffs, just the best ideas rising to the top.
+
+     Second, deep product context that makes AI actually useful: the
+         institutional taste, the historical decisions, the accumulated understanding
+         of how your product should work and feel.
+
+     Third, full creative control: the ability to prompt, code, and manipulate
+         visually, all in one place... unlocking the full power of AI without giving up
+         intent or the full range of what you can imagine.
+
+In a world of abundant software, all of this together is what it takes to build
+products that stand out.
+
+                                                                                                           4
+The companies that figure out how to harness human creativity alongside AI...
+those companies will define what the next era of software and creativity looks
+like. Having spent over a decade building for the most creative community on the
+internet, this is our moment.
+I cannot wait for you all to see what we're shipping over the next weeks and
+months, including at Config, our annual user conference in June. With that, I'll
+pass it to Praveer.
+
+                                                   ###
+
+                                                                                                           5
+Praveer Melwani, Figma CFO
+
+Thanks, Dylan. Dylan shared some of the headlines and why we believe Figma is
+outperforming. I'll share a bit more detail on what we're seeing and our outlook
+for the rest of the year.
+
+AI continues to be an incredible tailwind for our business. Total revenue in the
+first quarter was $333 million, representing 46% year-over-year growth and
+exceeding the high end of our guidance. This marks our second consecutive
+quarter of acceleration in our year-over-year revenue growth.
+
+Our outperformance resulted from stronger than expected seat expansion across
+entire organizations, driven by design's growing importance and adoption of our
+AI products including Figma Make, MCP, and Figma Weave. Our international
+business also contributed to our results, with revenue growing 48%
+year-over-year. We also saw increased demand for our governance plus add-on
+and advisory services.
+
+Key Metrics
+Our Q1 results are a testament to the team's relentless work--building, shipping,
+iterating, and listening to feedback from our customers.
+
+Retention and expansion metrics continued to strengthen in Q1. Our net dollar
+retention rate for paid customers spending more than $10,000 in ARR reached
+139%, up three percentage points from the prior quarter, and our highest level in
+over two years. Our outperformance in NDR was driven by strength in seat
+expansion and growth in our non-seat based offerings, including AI add-ons.
+
+We also saw acceleration in our customer cohorts. Paid customers spending
+more than $10,000 in ARR grew 37% year-over-year in Q1, a five percentage
+point acceleration relative to Q4 of last year. Paid customers spending more than
+$100,000 in ARR grew 48% year-over-year in Q1, a two percentage point
+acceleration relative to Q4 of last year. And our overall customer base grew to
+approximately 690,000 Paid Customers from approximately 450,000 in Q1 of last
+year growing 54% year-over-year.
+
+As AI gets better, Figma is accelerating and customer usage and workflows on
+our platform are deepening. Our platform and AI products drove faster growth for
+both new customer acquisition and expansion within existing accounts. Across all
+tiers, we're seeing customers grow seats and expand into new functions and
+teams. Within our larger enterprise customers, approximately 60% of customers
+with more than $100,000 in ARR were using Make weekly in Q1, up from over
+50% just last quarter. In the long tail, we are also seeing continued acceleration
+in adoption of our AI features, with new Pro team conversions, which we view as
+a leading indicator for future growth, up over 150% compared to Q1 of last year,
+
+                                                                                                           6
+demonstrating our ability to both expand TAM and convert existing users to paid
+plans.
+
+A few of our notable customer wins from last quarter include:
+
+     One of the world's largest hyperscalers, running thousands of product and
+         engineering teams across dozens of business units, unified its
+         fragmented Figma usage across the enterprise into a single agreement,
+         with over 35,000 paid seats. One of the largest deals in Figma's history.
+
+     A top global media and entertainment company that started with organic
+         Make usage ended up with a full company-wide rollout. As teams adopted
+         Make, every developer upgraded to a full seat. That growth happened
+         organically, driven by how the product is actually being used--not by a
+         topdown mandate.
+
+     We also saw some incredible wins in Q1 internationally.
+               In India, one of the country's largest IT services firms signed our
+                   largest ever deal in the region, consolidating design and
+                   engineering teams onto Figma.
+               And in Europe, one of the world's largest industrial automation
+                   companies--with over half of its R&D workforce focused on digital
+                   development--more than doubled their dev seats on platform.
+                   Engineers at the company now outnumber designers on Figma.
+                   The team is now leaning into Figma's MCP to connect design
+                   directly into their development environment.
+
+The themes across our customers are clear: they are deepening their usage of
+our products, expanding their seats with Figma, and finding even more value in
+their user experiences with our AI products. In fact, in Q1 over 60% of paid
+customers with more than $10,000 in ARR added Full seats compared to their
+prior renewal, consistent with what we observed last year and at equivalent
+expansion rates.
+
+AI Monetization
+I want to take a minute to highlight the strong early signal we are seeing on AI
+credit monetization. We are at an exciting inflection point.
+
+On March 18th, we began implementing AI credit limits for all of our seats and
+have been very encouraged by the usage trends we've seen since then. As of
+the end of April, over 75% of users on our Org and Enterprise plans who were
+previously over their credit limit continued to use credits and over 95% of those
+same users remain active on the platform.
+
+Early enterprise customers who have committed are doing so at scale. For
+example:
+
+                                                                                                           7
+     One of the world's largest enterprise technology companies, in the middle
+         of a company-wide push to become an AI-native organization--after
+         standardizing on Make, they are now purchasing additional credits to
+         expand AI capabilities across product, engineering, and PM teams
+         spanning seven business units.
+
+     One of the world's largest professional services firms expanded their
+         Figma investment after a company-wide Figma AI training drove a
+         step-change in adoption and embedded AI capabilities at the center of
+         how they design, prototype, and deliver client work across every major
+         industry.
+
+Additionally, as of the end of Q1, Pro teams that purchase AI credit add-ons had
+more seats per team and an average annualized spend of over 3x than that of
+teams that haven't purchased add-ons.
+
+Importantly, the surface area for credit consumption continues to expand. While
+today's credit usage is driven by products like Figma Make and our advanced
+image editing features, new capabilities currently in our early access program,
+like our AI assistant, which enables new AI-native creative workflows directly in
+the Figma Design canvas, are expected to begin drawing on credits in the near
+future as well.
+
+Our MCP enables developers and AI agents to build and interact with Figma
+directly within their workflows. We are seeing more teams convert to paid plans
+and upgrade seat types to access higher rate limits for our MCP. Among
+customers with more than $100,000 in ARR, those that were using our MCP
+grew full seats approximately 70% faster over the quarter than customers who
+were not using our MCP server. We expect this to evolve into a usage-based
+offering, but it is currently available for free during the beta period.
+
+Q2 will be our first full quarter of credit monetization. We have been investing in
+more features to improve the customer experience, including expanded admin
+controls, pay-as-you-go for Pro customers, and more flexible contracting
+structures for enterprises. Our goal remains the same: for our monetization
+model to support adoption rather than constrain it. Lots more to come here in the
+quarters ahead.
+
+Gross Profit
+Now turning to some key income statement results. Unless otherwise noted, all
+metrics are non-GAAP. We have provided a reconciliation of GAAP to non-GAAP
+financials in our earnings release, which is posted to our website.
+
+Gross profit in Q1 was $275 million, representing a gross margin of 82%. During
+the quarter, we saw broader and deeper adoption of our AI features, with our
+users benefiting from access to higher-capability models, which in turn increased
+engagement and improved retention. With full seat AI credit limits now live,
+
+                                                                                                           8
+growing AI usage and adoption now translates into revenue--a key monetization
+milestone.
+
+We expect to continue to capture efficiency gains where available and have a
+clear set of levers to manage inference costs as adoption scales. This includes
+routing queries across models based on task complexity and leveraging our
+model-agnostic architecture to optimize across providers. We are also investing
+in first-party models trained on Figma's design corpus to improve performance on
+design-specific tasks while reducing cost.
+
+Operating Income
+As we've re-accelerated our business, we've also delivered $52 million in
+operating income, representing an operating margin of 16%.
+
+Across the business, we've taken a first-principles approach to rebuilding how we
+work across engineering, go-to-market and operations with AI tooling at the
+center. It's been energizing to see the creativity of our team and the tangible wins
+in productivity across the board.
+
+We continue to evaluate our hiring needs to make sure we are operating
+efficiently. We believe the future calls for flatter organizational structures and
+more, smaller, high-agency teams that can move even faster, which gives us
+more capacity to invest and retool how we work.
+
+Free Cash Flow
+Our Q1 free cash flow was $89 million, representing a free cash flow margin of
+27%. We ended the quarter with $1.6 billion in cash, cash equivalents, and
+marketable securities.
+
+As we previewed, we introduced an annual corporate bonus program in 2025
+which was accrued for during 2025, and paid out for the first time in Q1 this year.
+This was a $56M cash outflow and had a 17 percentage point impact on our Q1
+free cash flow margin. Going forward, we expect to continue to accrue for the
+annual bonus each quarter and payout in Q1 of each year.
+
+We remain confident in the long-term cash-generating profile of the business.
+
+We also remain committed to managing dilution responsibly. As our pre-IPO
+equity grants amortize, we expect that strong revenue growth, disciplined hiring,
+and expanding operating leverage from AI will continue to drive improvement in
+stock-based compensation as a percentage of revenue.
+
+Outlook
+Now turning to our outlook. A reminder on our guidance philosophy. We're
+providing a snapshot of our current view of the business based on recent trends.
+We include what we have a high degree of confidence in, and where our visibility
+
+                                                                                                           9
+is more limited, we look to observe sustained trends in the data before we fully
+incorporate the benefit in our guidance.
+
+For the second quarter of 2026, we expect revenue in the range of $348 million
+to $350 million, implying 40% year-over-year growth at the midpoint.
+For the full year, we expect revenue in the range of $1.422 billion to $1.428
+billion, implying 35% growth at the midpoint and a raise of $55 million relative to
+our prior outlook.
+
+Our raise for the full year is driven by three things:
+
+     First, increased paid conversion across our customer base, fueled by the
+         depth and breadth of AI across our platform
+
+     Second, sustained, broad-based seat expansion across every tier with
+         teams and organization opting for more dev and full seats to access our
+         AI products and credits; and
+
+     Third, outperformance vs our expectations across credit utilization,
+         retention, and add-on purchases since implementing credit limits
+
+On operating income, for the full year we expect non-GAAP operating income in
+the range of $125 million to $135 million, representing a non-GAAP operating
+margin of 9% at the midpoint. This represents a raise of $25 million relative to our
+prior outlook. Our increase in operating income is driven by our revenue increase
+for the full year, operational efficiencies, and continued optimizations we have
+made in our AI implementations.
+
+Additionally, while we are not issuing quarterly operating income guidance, we
+would note that Q2 operating income and free cash flow are historically impacted
+by Config, our annual user conference. We anticipate a similar effect in 2026.
+
+In closing, Q1 was an exceptional quarter across multiple dimensions.
+
+Year-over-year revenue growth has now accelerated for two consecutive
+quarters, Net Dollar Retention rate reached its highest level in over two years,
+and the early signs from AI credit monetization give us tremendous confidence in
+the road ahead. As Dylan shared, design has never mattered more, and Figma is
+built for this moment.
+
+With that, I'll hand it over to the operator for Q&A.
+
+(END)
+
+                                                                                                         10
+

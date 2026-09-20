@@ -1,0 +1,55 @@
+{
+  "bets": [
+    {
+      "id": "ai-investment-and-credit-monetisation",
+      "title": "Fund AI heavily and meter it through credits",
+      "bet": "Figma invested materially in AI across the platform, acquired Weavy, and introduced AI credits across all seats in 2025 with enforcement and paid top-ups beginning in March 2026.",
+      "expectedAdvantage": "The company states publicly that AI is already a tailwind for the business and is expansive to its addressable market, and that model swappability is a deliberate design goal. This is the company's stated expectation, not an established outcome.",
+      "tradeoff": "The 10-K states directly that inference and model costs will affect cost of revenue, research and development, and sales and marketing, and that Figma expects this to negatively impact gross and operating margins. The trade-off was disclosed rather than discovered.",
+      "result": "Cost of revenue rose 112% against 41% revenue growth in fiscal 2025, with $49.1 million attributed to AI infrastructure and hosting. Gross margin moved from 88.3% to 82.4% across the same period. Causal attribution to this bet is not established.",
+      "currentTension": "The company discloses that its ability to maintain or raise prices may be constrained by competitive dynamics, while naming AI-driven design-to-code tools and customer-built internal solutions as competitors. The technology it is funding is also the technology that could compress it.",
+      "status": "unresolved",
+      "affectsSections": ["business-model", "moats", "verdict"],
+      "patterns": [],
+      "evidenceIds": [
+        "ai-margin-warning.fy2025",
+        "cost-of-revenue.fy2025",
+        "gross-margin.fy2025",
+        "gross-margin.fy2024"
+      ]
+    }
+  ],
+  "moats": [],
+  "inflections": [
+    {
+      "id": "preview-release",
+      "year": 2015,
+      "label": "Preview release, multiplayer deferred",
+      "what": "Figma shipped its browser-based Preview Release in December 2015, announcing simultaneous multiplayer editing as a capability arriving during 2016.",
+      "whyItMattered": "It establishes that browser-native rendering and multiplayer collaboration were separable decisions taken in sequence rather than a single founding bet, which changes how the early product strategy can be read.",
+      "shiftType": "wedge",
+      "affectsSections": ["problem", "product", "bets"],
+      "evidenceIds": ["multiplayer.announced.2016"]
+    },
+    {
+      "year": 2023,
+      "id": "adobe-transaction-terminated",
+      "label": "Adobe transaction abandoned",
+      "what": "The UK competition authority referred Adobe's proposed acquisition to an in-depth investigation and issued provisional findings; the parties terminated the transaction and the reference was cancelled in December 2023 with no final report.",
+      "whyItMattered": "The regulatory examination produced an independent assessment of Figma's market position that the company could not have produced about itself, under a market definition its own later risk factors no longer appear to accept.",
+      "shiftType": "ownership",
+      "affectsSections": ["vitals", "moats", "bets"],
+      "evidenceIds": ["cma.market-position.2023"]
+    },
+    {
+      "id": "public-listing",
+      "year": 2025,
+      "label": "Public listing with concentrated control",
+      "what": "Figma listed on the New York Stock Exchange in 2025 under a multi-class structure in which Class B carries fifteen votes per share and Class C carries none.",
+      "whyItMattered": "It subjected the company to disclosure obligations that made this teardown's financial evidence possible, while leaving control concentrated: the co-founder held approximately 72.3% of voting power at fiscal year end 2025.",
+      "shiftType": "ownership",
+      "affectsSections": ["vitals", "business-model"],
+      "evidenceIds": ["voting-power.field", "revenue.fy2025"]
+    }
+  ]
+}

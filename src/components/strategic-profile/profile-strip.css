@@ -1,0 +1,14 @@
+.profile-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: var(--sp-3); margin: 0; }
+.ps-axis { display: grid; gap: var(--sp-1); padding: var(--sp-4); border-radius: var(--radius); background: var(--bg-elev); border: 1px solid var(--rule); border-top: 2px solid var(--ev-evidenced); }
+.ps-axis[data-unestablished='true'] { border-top: 2px dashed var(--ev-insufficient); }
+.ps-name { font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-faint); font-weight: 600; }
+.ps-value { margin: 0; display: flex; align-items: baseline; gap: var(--sp-2); flex-wrap: wrap; }
+.ps-marker { color: var(--ev-evidenced); }
+.ps-axis[data-unestablished='true'] .ps-marker { color: var(--ev-insufficient); }
+.ps-stop { font-weight: 700; font-size: var(--fs-lg); letter-spacing: -0.01em; }
+.ps-axis[data-unestablished='true'] .ps-stop { font-weight: 500; font-style: italic; border-bottom: 1px dotted var(--ink-faint); }
+.ps-badge { font-size: var(--fs-xs); padding: 0 var(--sp-2); border: 1px dashed var(--gap-border); border-radius: 999px; color: var(--ink-soft); }
+.ps-why { flex-basis: 100%; }
+.ps-why summary { font-size: var(--fs-xs); color: var(--accent); cursor: pointer; list-style: none; }
+.ps-why summary::-webkit-details-marker { display: none; }
+.ps-why p { font-size: var(--fs-sm); color: var(--ink-soft); margin: var(--sp-2) 0 0; }

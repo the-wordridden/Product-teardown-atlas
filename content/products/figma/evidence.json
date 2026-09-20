@@ -1,0 +1,395 @@
+{
+  "evidence": [
+    {
+      "id": "revenue.fy2025",
+      "claim": "Revenue for the fiscal year ended 31 December 2025",
+      "value": "$1,055,788 thousand",
+      "asOf": "2025-12-31",
+      "confidence": "verified",
+      "source": {
+        "type": "company-filing",
+        "title": "Figma, Inc. Form 10-K for the fiscal year ended December 31, 2025",
+        "publisher": "Figma, Inc.",
+        "url": "https://s206.q4cdn.com/973901332/files/doc_financials/2025/q4/fig-20251231.pdf",
+        "retrievedOn": "2026-08-30"
+      }
+    },
+    {
+      "id": "revenue.growth.fy2025",
+      "claim": "Year-over-year revenue growth for fiscal year 2025",
+      "value": "41%",
+      "asOf": "2025-12-31",
+      "confidence": "verified",
+      "source": {
+        "type": "company-filing",
+        "title": "Figma, Inc. Form 10-K for the fiscal year ended December 31, 2025",
+        "publisher": "Figma, Inc.",
+        "url": "https://s206.q4cdn.com/973901332/files/doc_financials/2025/q4/fig-20251231.pdf",
+        "retrievedOn": "2026-08-30"
+      }
+    },
+    {
+      "id": "cost-of-revenue.fy2025",
+      "claim": "Cost of revenue for fiscal year 2025, against $87,514 thousand in fiscal year 2024",
+      "value": "$185,527 thousand, up 112%",
+      "asOf": "2025-12-31",
+      "confidence": "verified",
+      "source": {
+        "type": "company-filing",
+        "title": "Figma, Inc. Form 10-K for the fiscal year ended December 31, 2025",
+        "publisher": "Figma, Inc.",
+        "url": "https://s206.q4cdn.com/973901332/files/doc_financials/2025/q4/fig-20251231.pdf",
+        "retrievedOn": "2026-08-30"
+      },
+      "note": "The 10-K attributes $49.1 million of the increase to technical infrastructure and hosting costs relating to AI and increased paid-user platform usage."
+    },
+    {
+      "id": "rnd.fy2025",
+      "claim": "Research and development expense for fiscal year 2025, against $751,120 thousand in fiscal year 2024",
+      "value": "$1,029,700 thousand, up 37%",
+      "asOf": "2025-12-31",
+      "confidence": "verified",
+      "source": {
+        "type": "company-filing",
+        "title": "Figma, Inc. Form 10-K for the fiscal year ended December 31, 2025",
+        "publisher": "Figma, Inc.",
+        "url": "https://s206.q4cdn.com/973901332/files/doc_financials/2025/q4/fig-20251231.pdf",
+        "retrievedOn": "2026-08-30"
+      },
+      "note": "The 10-K attributes $207.1 million of the increase to stock-based compensation and related employer payroll taxes, so this figure is not a clean measure of cash research investment."
+    },
+    {
+      "id": "gross-margin.fy2025",
+      "claim": "GAAP gross margin for fiscal year 2025, derived from reported revenue and gross profit",
+      "value": "82.4%",
+      "asOf": "2025-12-31",
+      "confidence": "estimated",
+      "source": {
+        "type": "personal-analysis",
+        "title": "Derived from Form 10-K FY2025: gross profit $870,261 thousand over revenue $1,055,788 thousand"
+      },
+      "note": "Computed by the author from two figures stated in the audited income statement. Marked estimated because it is a derivation rather than a disclosed figure; the underlying inputs are verified."
+    },
+    {
+      "id": "gross-margin.fy2024",
+      "claim": "GAAP gross margin for fiscal year 2024, derived from reported revenue and gross profit",
+      "value": "88.3%",
+      "asOf": "2024-12-31",
+      "confidence": "estimated",
+      "source": {
+        "type": "personal-analysis",
+        "title": "Derived from Form 10-K FY2025 comparatives: gross profit $661,497 thousand over revenue $749,011 thousand"
+      },
+      "note": "Computed by the author. A widely circulated 92% figure for FY2024 does not reconcile to the audited income statement and should not be used."
+    },
+    {
+      "id": "voting-power.field",
+      "claim": "Share of total voting power held by Dylan Field, including 24.4% subject to the Wallace Proxy",
+      "value": "approximately 72.3%",
+      "asOf": "2025-12-31",
+      "confidence": "verified",
+      "source": {
+        "type": "company-filing",
+        "title": "Figma, Inc. Form 10-K FY2025, risk factors: multi-class stock structure",
+        "publisher": "Figma, Inc.",
+        "url": "https://s206.q4cdn.com/973901332/files/doc_financials/2025/q4/fig-20251231.pdf",
+        "retrievedOn": "2026-08-30"
+      },
+      "note": "Point-in-time figure at fiscal year end. The filing states it may increase on exercise or settlement of equity awards, so it must always be cited with this as-of date."
+    },
+    {
+      "id": "ai-margin-warning.fy2025",
+      "claim": "Company statement that AI-related costs are expected to compress gross and operating margins",
+      "value": "expects to negatively impact gross margins and operating margins",
+      "asOf": "2025-12-31",
+      "confidence": "verified",
+      "source": {
+        "type": "company-filing",
+        "title": "Figma, Inc. Form 10-K FY2025, management discussion of cost of revenue",
+        "publisher": "Figma, Inc.",
+        "url": "https://s206.q4cdn.com/973901332/files/doc_financials/2025/q4/fig-20251231.pdf",
+        "retrievedOn": "2026-08-30"
+      },
+      "note": "Against-interest disclosure: the company forecasts margin deterioration from its own principal investment area."
+    },
+    {
+      "id": "paid-customers.total.q1-2026",
+      "claim": "Total Paid Customers, defined as customer accounts billed separately with an active paid subscription",
+      "value": "approximately 690,000, up 54% year over year",
+      "asOf": "2026-03-31",
+      "confidence": "reported",
+      "source": {
+        "type": "company-communication",
+        "title": "Figma Announces First Quarter 2026 Financial Results",
+        "publisher": "Figma, Inc.",
+        "url": "https://investor.figma.com/news-events/news/news-details/2026/Figma-Announces-First-Quarter-2026-Financial-Results/default.aspx",
+        "retrievedOn": "2026-08-30"
+      },
+      "note": "The 10-K definition counts separately billed divisions and subsidiaries of one organisation as multiple Paid Customers, so this is not comparable to other vendors' customer counts without checking their basis."
+    },
+    {
+      "id": "paid-customers.10k.q2-2026",
+      "claim": "Paid Customers with more than $10,000 in ARR",
+      "value": "15,964, up 34% year over year",
+      "asOf": "2026-06-30",
+      "confidence": "reported",
+      "source": {
+        "type": "company-communication",
+        "title": "Figma Announces Second Quarter 2026 Financial Results",
+        "publisher": "Figma, Inc.",
+        "url": "https://investor.figma.com/news-events/news/news-details/2026/Figma-Announces-Second-Quarter-2026-Financial-Results/default.aspx",
+        "retrievedOn": "2026-08-30"
+      }
+    },
+    {
+      "id": "paid-customers.100k.q2-2026",
+      "claim": "Paid Customers with more than $100,000 in ARR",
+      "value": "1,635, up 46% year over year",
+      "asOf": "2026-06-30",
+      "confidence": "reported",
+      "source": {
+        "type": "company-communication",
+        "title": "Figma Announces Second Quarter 2026 Financial Results",
+        "publisher": "Figma, Inc.",
+        "url": "https://investor.figma.com/news-events/news/news-details/2026/Figma-Announces-Second-Quarter-2026-Financial-Results/default.aspx",
+        "retrievedOn": "2026-08-30"
+      }
+    },
+    {
+      "id": "ndr.q2-2026",
+      "claim": "Net Dollar Retention Rate, calculated on Paid Customers with more than $10,000 in ARR",
+      "value": "136%",
+      "asOf": "2026-06-30",
+      "confidence": "reported",
+      "source": {
+        "type": "company-communication",
+        "title": "Figma Announces Second Quarter 2026 Financial Results",
+        "publisher": "Figma, Inc.",
+        "url": "https://investor.figma.com/news-events/news/news-details/2026/Figma-Announces-Second-Quarter-2026-Financial-Results/default.aspx",
+        "retrievedOn": "2026-08-30"
+      },
+      "note": "Measures expansion, contraction and churn within roughly 2.2% of Paid Customers. It evidences expansion but does not discriminate between switching costs, collaboration utility, network effects or product satisfaction as its cause."
+    },
+    {
+      "id": "seat.view.free",
+      "claim": "The View seat is the only free seat type and grants view and comment access to Figma Design, Slides and FigJam",
+      "value": "free; view and comment only, no Dev Mode",
+      "asOf": "2026-08-30",
+      "confidence": "verified",
+      "source": {
+        "type": "company-communication",
+        "title": "Manage seats in Figma",
+        "publisher": "Figma Learn Help Center",
+        "url": "https://help.figma.com/hc/en-us/articles/360039960434-Manage-seats-in-Figma",
+        "retrievedOn": "2026-08-30"
+      }
+    },
+    {
+      "id": "seat.approval-settings",
+      "claim": "Seat requests are governed by configurable approval settings, and an unavailable seat type is added to the subscription",
+      "value": "manually approve; manually approve unless available; auto-approve",
+      "asOf": "2026-08-30",
+      "confidence": "verified",
+      "source": {
+        "type": "company-communication",
+        "title": "Manage seats in Figma",
+        "publisher": "Figma Learn Help Center",
+        "url": "https://help.figma.com/hc/en-us/articles/360039960434-Manage-seats-in-Figma",
+        "retrievedOn": "2026-08-30"
+      },
+      "note": "Documentation states that where the requested seat type is unavailable Figma will add it to the subscription, and that additional approved seats appear on the next invoice for monthly plans. It does not state that granting edit access bills immediately; that is a practitioner claim recorded separately."
+    },
+    {
+      "id": "seat.upgrade-billing.practitioner",
+      "claim": "Practitioner reports that granting edit access assigns a paid seat and bills the account, often without the payer noticing",
+      "value": "reported across two independent threads, 2021-2025",
+      "asOf": "2025-04-30",
+      "confidence": "reported",
+      "source": {
+        "type": "practitioner-report",
+        "title": "Figma Forum: charging for additional editors; approving editing access results in charges",
+        "publisher": "Figma Forum (user-generated)",
+        "url": "https://forum.figma.com/suggest-a-feature-11/we-need-to-let-people-know-that-if-they-approve-editing-access-someone-will-get-charged-40039",
+        "retrievedOn": "2026-08-30"
+      },
+      "note": "Tier 5 practitioner evidence, admitted under methodology 2.4: only available evidence of the lived mechanism, contemporaneous, specific and falsifiable. Two independent threads four years apart corroborate. Describes expansion inside an existing paying account, not acquisition of a new customer."
+    },
+    {
+      "id": "architecture.multiplayer.2019",
+      "claim": "Real-time multi-user editing over WebSocket with the server as central authority, explicitly not operational transforms and not true CRDTs",
+      "value": "custom centralised synchronisation",
+      "asOf": "2019-10-16",
+      "confidence": "verified",
+      "source": {
+        "type": "company-communication",
+        "title": "How Figma's multiplayer technology works",
+        "publisher": "Figma",
+        "url": "https://www.figma.com/blog/how-figmas-multiplayer-technology-works/",
+        "retrievedOn": "2026-08-30"
+      },
+      "note": "Seven years old and the only authoritative architectural source located. Documents its own limits: no simultaneous editing of the same text value, last-writer-wins on conflicting properties, transient object disappearance on concurrent reparenting."
+    },
+    {
+      "id": "multiplayer.announced.2016",
+      "claim": "At the December 2015 Preview Release, simultaneous multiplayer editing was announced as forthcoming in 2016",
+      "value": "announced as a 2016 capability",
+      "asOf": "2015-12-03",
+      "confidence": "verified",
+      "source": {
+        "type": "company-communication",
+        "title": "Design: Meet the Internet",
+        "publisher": "Figma",
+        "url": "https://www.figma.com/blog/design-meet-the-internet/",
+        "retrievedOn": "2026-08-30"
+      },
+      "note": "Establishes that browser-native rendering and multiplayer editing were separable decisions taken in sequence, not a single decision."
+    },
+    {
+      "id": "cma.market-position.2023",
+      "claim": "UK Competition and Markets Authority Phase 1 finding on Figma's position in all-in-one screen design software",
+      "value": "clear market leader, several times larger than any other supplier",
+      "asOf": "2023-06-30",
+      "confidence": "verified",
+      "source": {
+        "type": "company-filing",
+        "title": "Anticipated acquisition by Adobe Inc. of Figma, Inc. - Summary of the CMA's decision, ME/7021/22",
+        "publisher": "Competition and Markets Authority",
+        "url": "https://assets.publishing.service.gov.uk/media/649e9f0f06179b00113f75bd/Adobe.Figma_-_Summary_of_Phase_1_Decision_C.pdf",
+        "retrievedOn": "2026-08-30"
+      },
+      "note": "Market definition excluded point tools, template-based and prosumer software as out-of-market constraints. A Phase 1 finding under a definition that Figma's own 2026 risk factors no longer appear to accept. No final report was ever published; the reference was cancelled on 19 December 2023."
+    },
+    {
+      "id": "gtm.two-motions",
+      "claim": "Two disclosed go-to-market motions: an automated self-service option and a direct sales process",
+      "value": "self-serve via Figma.com plus direct sales",
+      "asOf": "2025-12-31",
+      "confidence": "verified",
+      "source": {
+        "type": "company-filing",
+        "title": "Figma, Inc. Form 10-K FY2025, business section",
+        "publisher": "Figma, Inc.",
+        "url": "https://s206.q4cdn.com/973901332/files/doc_financials/2025/q4/fig-20251231.pdf",
+        "retrievedOn": "2026-08-30"
+      },
+      "note": "The same section claims product virality inherent to the collaborative browser-based platform. That is a company claim: no attribution, conversion path or mechanism is disclosed anywhere in the filing."
+    },
+    {
+      "id": "pricing.list.2026",
+      "claim": "List pricing by plan and seat type as shown on the public pricing page",
+      "value": "Professional $16/$12/$3; Organization $55/$25/$5; Enterprise $90/$35/$5 per seat per month",
+      "asOf": "2026-08-30",
+      "confidence": "verified",
+      "source": {
+        "type": "company-communication",
+        "title": "Figma pricing page",
+        "publisher": "Figma",
+        "url": "https://www.figma.com/pricing/",
+        "retrievedOn": "2026-08-30"
+      },
+      "note": "List price only, as of retrieval date. Full/Dev/Collab seat order. Says nothing about effective or negotiated pricing at enterprise scale, and must not be projected backwards onto earlier pricing eras."
+    },
+    {
+      "id": "hq.10k",
+      "claim": "Location of principal executive offices",
+      "value": "760 Market Street, Floor 10, San Francisco, California",
+      "asOf": "2025-12-31",
+      "confidence": "verified",
+      "source": {
+        "type": "company-filing",
+        "title": "Figma, Inc. Form 10-K for the fiscal year ended December 31, 2025",
+        "publisher": "Figma, Inc.",
+        "url": "https://s206.q4cdn.com/973901332/files/doc_financials/2025/q4/fig-20251231.pdf",
+        "retrievedOn": "2026-08-30"
+      }
+    },
+    {
+      "id": "product-surface.10k",
+      "claim": "Products listed in the 10-K business section and their seat-gated availability",
+      "value": "Figma Design, Draw, Make, Dev Mode, Buzz, Sites, FigJam, Slides",
+      "asOf": "2025-12-31",
+      "confidence": "verified",
+      "source": {
+        "type": "company-filing",
+        "title": "Figma, Inc. Form 10-K FY2025, business section: plans and seats",
+        "publisher": "Figma, Inc.",
+        "url": "https://s206.q4cdn.com/973901332/files/doc_financials/2025/q4/fig-20251231.pdf",
+        "retrievedOn": "2026-08-30"
+      },
+      "note": "Buzz and Sites disclosed as in beta; the Content seat announced May 2025 and not yet available at filing. Product names and seat gating are documentary; purposes beyond the filing's own descriptions are not established."
+    },
+    {
+      "id": "docs.frames",
+      "claim": "Frames are the core container object; auto layout, constraints and prototyping all operate on frames",
+      "value": "frames organise shapes, images and text; nest; required for auto layout, constraints, prototyping",
+      "asOf": "2026-09-17",
+      "confidence": "verified",
+      "source": {
+        "type": "company-communication",
+        "title": "Frames in Figma Design",
+        "publisher": "Figma Learn Help Center",
+        "url": "https://help.figma.com/hc/en-us/articles/360041539473-Frames-in-Figma-Design",
+        "retrievedOn": "2026-09-17"
+      }
+    },
+    {
+      "id": "docs.components",
+      "claim": "Main components define properties; instances are linked copies that receive updates; team library shares components across files",
+      "value": "main component, linked instances, team library publishing",
+      "asOf": "2026-09-17",
+      "confidence": "verified",
+      "source": {
+        "type": "company-communication",
+        "title": "Guide to components in Figma",
+        "publisher": "Figma Learn Help Center",
+        "url": "https://help.figma.com/hc/en-us/articles/360038662654-Guide-to-components-in-Figma",
+        "retrievedOn": "2026-09-17"
+      }
+    },
+    {
+      "id": "migration.intercom.2019",
+      "claim": "A 19 person design team across Dublin, London and San Francisco moved from Sketch to Figma, citing a messy tool ecosystem and versioned files, and reported one to two months of adjustment pain and lost plugins",
+      "value": "one team, 2019; reasons and friction stated first hand",
+      "asOf": "2019-11-06",
+      "confidence": "reported",
+      "source": {
+        "type": "practitioner-report",
+        "title": "Tool tips: How our design team switched to Figma",
+        "publisher": "Intercom Blog, Andrey Sundiev",
+        "url": "https://www.intercom.com/blog/design-team-switching-to-figma/",
+        "retrievedOn": "2026-09-17"
+      },
+      "note": "First hand account by a design lead at the company that migrated. One team, one year. Strong on why they switched and what it cost; says nothing about how typical they are."
+    },
+    {
+      "id": "migration.helpscout.2019",
+      "claim": "A remote design team rebuilt its Sketch design system in Figma over about one week; nested components did not transfer and were retraced; the stated reason was per instance override flexibility",
+      "value": "one team, 2019; rebuild required, roughly one week",
+      "asOf": "2019-09-02",
+      "confidence": "reported",
+      "source": {
+        "type": "practitioner-report",
+        "title": "Moving From Sketch To Figma: A Case Study Of Migrating Design Systems",
+        "publisher": "Smashing Magazine, Buzz Usborne (Help Scout)",
+        "url": "https://www.smashingmagazine.com/2019/09/migrating-design-systems-sketch-figma/",
+        "retrievedOn": "2026-09-17"
+      },
+      "note": "First hand, from the principal designer who ran the migration. Evidence of migration effort and of a specific product reason. One team."
+    },
+    {
+      "id": "community.public-surface",
+      "claim": "Figma Community artifact pages are readable without authentication and carry a Remix call to action and public comments",
+      "value": "publicly accessible, no login required",
+      "asOf": "2026-08-30",
+      "confidence": "verified",
+      "source": {
+        "type": "product-observation",
+        "title": "Direct observation of an unauthenticated Figma Community file page",
+        "publisher": "Figma Community",
+        "url": "https://www.figma.com/community/file/1529932739396860076/fortune-cookie",
+        "retrievedOn": "2026-08-30"
+      },
+      "note": "Observation OBS-001. Establishes that a public unauthenticated surface with a conversion CTA exists. Establishes nothing about traffic, clicks, or conversion to accounts or paid seats."
+    }
+  ]
+}

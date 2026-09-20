@@ -1,0 +1,32 @@
+{
+  "distributionMotion": {
+    "classification": "product-led-hybrid",
+    "rationale": "The 10-K discloses two motions operating together: an automated self-service option through Figma.com supported by organic and paid channels, and a direct sales process for larger customers. Neither is disclosed as dominant, so hybrid is the classification the evidence supports.",
+    "evidenceIds": ["gtm.two-motions"]
+  },
+  "valueMetric": {
+    "classification": "seats",
+    "rationale": "Access is sold per seat on an annual or monthly subscription, with four paid seat types and one free View seat. AI credits add a consumption element from March 2026, but the billable unit remains the seat.",
+    "evidenceIds": ["seat.view.free", "seat.approval-settings"]
+  },
+  "moatSource": {
+    "classification": "unestablished",
+    "rationale": "No defensibility mechanism is established by the available evidence. A competition authority found market leadership in 2023, but position is not a mechanism, and every candidate source fails its test: the network-effect test fails at step two, and switching costs show no economic or behavioural consequence.",
+    "evidenceIds": ["cma.market-position.2023"]
+  },
+  "timeToValue": {
+    "classification": "unestablished",
+    "rationale": "No source defines an activation event or measures time from first contact to realised value. Browser-based access is architecturally documented, but the behaviour that would establish time-to-value could not be observed because the product requires authentication.",
+    "evidenceIds": ["architecture.multiplayer.2019"]
+  },
+  "buyerUserAlignment": {
+    "classification": "fully-split",
+    "rationale": "Seat upgrades are governed by administrator approval settings rather than by the user requesting access, and practitioners repeatedly report administrators being billed for upgrades they did not knowingly authorise. The person consuming a seat and the person paying for it are structurally distinct.",
+    "evidenceIds": ["seat.approval-settings", "seat.upgrade-billing.practitioner"]
+  },
+  "expansionMechanism": {
+    "classification": "seats",
+    "rationale": "The one established growth transition converts free viewers inside an existing account into billed seats, with unavailable seat types added to the subscription on request. Net dollar retention above 130% across three consecutive quarters is consistent with seat-led expansion.",
+    "evidenceIds": ["seat.approval-settings", "seat.upgrade-billing.practitioner", "ndr.q2-2026"]
+  }
+}

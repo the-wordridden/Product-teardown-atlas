@@ -1,0 +1,334 @@
+{
+  "slug": "figma",
+  "name": "Figma",
+  "legalName": "Figma, Inc.",
+  "thesis": "A design platform whose one evidenced growth engine is seat expansion inside existing accounts, not the product virality its own filings claim.",
+  "accent": "#A259FF",
+  "status": "draft",
+  "publishedOn": "2026-08-30",
+  "lastUpdated": "2026-08-30",
+  "frameworkVersion": "1.0",
+  "vitals": {
+    "founded": 2012,
+    "category": "design-collaboration",
+    "stage": "public",
+    "ownership": "public",
+    "headquarters": "San Francisco, California",
+    "headcountBand": "unestablished",
+    "platforms": [
+      "web",
+      "api"
+    ],
+    "keyMetricIds": [
+      "revenue.fy2025",
+      "paid-customers.10k.q2-2026",
+      "ndr.q2-2026"
+    ],
+    "evidenceIds": [
+      "hq.10k",
+      "voting-power.field"
+    ]
+  },
+  "sections": [
+    {
+      "id": "vitals",
+      "title": "Vitals"
+    },
+    {
+      "id": "problem",
+      "title": "The Problem"
+    },
+    {
+      "id": "users",
+      "title": "Users & Segments",
+      "summary": "Who shows up, from packaging and two migration accounts."
+    },
+    {
+      "id": "jtbd",
+      "title": "Jobs To Be Done",
+      "summary": "Two jobs, both from teams that switched and wrote about it."
+    },
+    {
+      "id": "product",
+      "title": "The Product",
+      "summary": "The objects, the actions, and a 2019 look under the hood."
+    },
+    {
+      "id": "business-model",
+      "title": "Business Model"
+    },
+    {
+      "id": "growth-loops",
+      "title": "Growth Loops",
+      "summary": "Evidence-bounded: one of five transitions is established."
+    },
+    {
+      "id": "moats",
+      "title": "Moats",
+      "summary": "No defensibility mechanism established from available evidence."
+    },
+    {
+      "id": "bets",
+      "title": "Bets & Tensions"
+    },
+    {
+      "id": "verdict",
+      "title": "Verdict",
+      "summary": "Pending human judgment."
+    }
+  ],
+  "problem": {
+    "beforeState": "By Figma's own 2015 account, designers worked in single-player desktop tools while engineers had collaborative workflows, and design work moved between separate tools for creating, commenting, sharing and storage. No independent pre-2015 source corroborates this characterisation.",
+    "afterState": "Figma's stated proposition was design software that is online, real-time and collaborative, reached through a browser link with nothing to install. This describes the company's stated intent at launch, not a measured change in how teams worked.",
+    "wedge": "A browser-based design tool reachable by URL, with simultaneous multiplayer editing announced as arriving in 2016 rather than present at the December 2015 preview release.",
+    "whyNow": {
+      "trigger": "technology",
+      "change": "WebGL made GPU-accelerated rendering viable inside the browser, demonstrated to the founders in April 2011.",
+      "argument": "Browser-based creative tooling was blocked on rendering performance rather than on demand. WebGL removed that constraint, which is why the founding demonstration was a graphics demo rather than a collaboration prototype."
+    },
+    "evidenceIds": [
+      "multiplayer.announced.2016",
+      "architecture.multiplayer.2019"
+    ],
+    "patterns": []
+  },
+  "users": {
+    "segments": [
+      {
+        "id": "product-design-teams",
+        "name": "Product design teams",
+        "description": "Designers working in shared files, often distributed across offices and time zones, maintaining a common component library. The seat structure and two first hand migration accounts both point here.",
+        "shareBand": "major",
+        "isPrimary": true,
+        "evidenceIds": [
+          "migration.intercom.2019",
+          "migration.helpscout.2019",
+          "seat.view.free"
+        ]
+      },
+      {
+        "id": "developers",
+        "name": "Developers building from designs",
+        "description": "Engineers who inspect and hand off from design files. Figma sells them their own Dev seat, which is the clearest signal that they are a distinct paying group.",
+        "shareBand": "significant",
+        "isPrimary": false,
+        "evidenceIds": [
+          "seat.view.free",
+          "product-surface.10k"
+        ]
+      },
+      {
+        "id": "reviewers",
+        "name": "Reviewers and stakeholders",
+        "description": "Product managers, marketers and clients who look and comment on free View seats without editing. Their existence is documented; their number is not.",
+        "shareBand": "significant",
+        "isPrimary": false,
+        "evidenceIds": [
+          "seat.view.free"
+        ]
+      }
+    ],
+    "powerUser": {
+      "profile": "A distributed design team that keeps a shared design system as published libraries and works in one live file across locations. Both migration accounts describe exactly this shape of team.",
+      "behaviours": [
+        "Publishes and maintains a team component library",
+        "Works in the same file across cities and time zones",
+        "Hands off to developers through inspect rather than exports",
+        "Replaces separate storage and handoff tools with one file"
+      ],
+      "evidenceIds": [
+        "migration.intercom.2019",
+        "migration.helpscout.2019",
+        "docs.components"
+      ]
+    },
+    "notFor": [
+      {
+        "who": "Solo designers working offline",
+        "why": "The product is built around a live shared file in a browser. Offline is a reconnect mode, not the main mode, and the collaboration features are the reason teams say they switched. This is an inference from how it is built, not something anyone stated."
+      }
+    ],
+    "patterns": []
+  },
+  "jtbd": {
+    "jobs": [
+      {
+        "id": "one-live-file",
+        "statement": "When my design team is spread across offices, help us all work in one live file so we stop juggling versions and handoff tools.",
+        "dimension": "functional",
+        "segmentIds": [
+          "product-design-teams"
+        ],
+        "competingAlternatives": [
+          {
+            "name": "Sketch plus storage and handoff tools",
+            "why": "The previous setup Intercom describes: a desktop tool wrapped in separate apps for versioning, storage and developer handoff, which they call a messy and limiting ecosystem."
+          }
+        ],
+        "forces": {
+          "push": "Versioned files hidden in folders and a tool ecosystem that had become, in Intercom's words, prohibitively messy and limiting.",
+          "pull": "A flat document system with no files to save, reachable from a browser by anyone on the team, wherever they sit.",
+          "anxiety": "Losing Sketch plugins, an unpolished interface, and one to two months of adjustment pain that Intercom reports feeling.",
+          "habit": "Years of Sketch workflows and libraries, plus the tooling built around them."
+        },
+        "evidenceIds": [
+          "migration.intercom.2019"
+        ],
+        "patterns": []
+      },
+      {
+        "id": "flexible-system",
+        "statement": "When I maintain a design system, let components be adjusted per instance so I stop building workarounds for rigid overrides.",
+        "dimension": "functional",
+        "segmentIds": [
+          "product-design-teams"
+        ],
+        "competingAlternatives": [
+          {
+            "name": "Sketch libraries",
+            "why": "Help Scout's system lived in nested Sketch libraries managed through GitHub, with components built to work around Sketch only allowing pre set overrides."
+          }
+        ],
+        "forces": {
+          "push": "Sketch only allowed pre determined overrides, which forced complex nested components as workarounds.",
+          "pull": "Colour, type and effects can be customised on each instance, so the system gets simpler and stays linked.",
+          "anxiety": "Rebuilding the whole library by hand. Help Scout retraced components from screenshots and it took about a week.",
+          "habit": "An established, documented system already in use across live projects."
+        },
+        "evidenceIds": [
+          "migration.helpscout.2019",
+          "docs.components"
+        ],
+        "patterns": []
+      }
+    ]
+  },
+  "product": {
+    "coreObjects": [
+      "File",
+      "Frame",
+      "Component",
+      "Instance",
+      "Team library"
+    ],
+    "coreActions": [
+      "Edit a shared file with others",
+      "Comment on a frame",
+      "Publish a component library",
+      "Inspect a design in Dev Mode",
+      "Share a link"
+    ],
+    "atomicUnitOfValue": "A live design file, reachable by link, that several people can look at and edit at once.",
+    "ahaMoment": {
+      "description": "Opening a colleague's file by link and realising there is no file to download, version or send. Intercom calls this the absence of files.",
+      "trigger": "First shared link opened in the browser",
+      "evidenceIds": [
+        "migration.intercom.2019"
+      ]
+    },
+    "timeToValue": "unestablished",
+    "keySurfaces": [
+      {
+        "name": "Figma Design",
+        "purpose": "The core design editor, gated to Full seats."
+      },
+      {
+        "name": "Dev Mode",
+        "purpose": "Developer inspection and handoff surface, gated to Dev and Full seats."
+      },
+      {
+        "name": "FigJam",
+        "purpose": "Whiteboarding surface, included from the Collab seat upward."
+      },
+      {
+        "name": "Figma Slides",
+        "purpose": "Presentation surface, included from the Collab seat upward."
+      },
+      {
+        "name": "Figma Make",
+        "purpose": "AI generation surface, gated to Full seats per the 10-K seat descriptions."
+      },
+      {
+        "name": "Figma Community",
+        "purpose": "Public unauthenticated catalogue of files, plugins and templates with a Remix call to action."
+      }
+    ],
+    "patterns": []
+  },
+  "businessModel": {
+    "models": [
+      "subscription-seat"
+    ],
+    "valueMetric": "The paid seat, in four types with role-gated product access; AI credits add a metered consumption element from March 2026.",
+    "revenueLines": [
+      {
+        "id": "seat-subscriptions",
+        "type": "subscription",
+        "name": "Seat subscriptions",
+        "description": "Annual or monthly per-seat subscriptions across Professional, Organization and Enterprise plans. The 10-K discloses no revenue split by plan or seat type, so this single line carries all disclosed revenue.",
+        "shareBand": "dominant",
+        "evidenceIds": [
+          "revenue.fy2025"
+        ]
+      }
+    ],
+    "pricing": {
+      "axis": "per-seat",
+      "tiers": [
+        {
+          "name": "Starter",
+          "gates": [
+            "Free entry tier with unlimited drafts and capped AI credits"
+          ],
+          "priceNote": "Free",
+          "evidenceIds": [
+            "pricing.list.2026"
+          ]
+        },
+        {
+          "name": "Professional",
+          "gates": [
+            "Full product access per seat type",
+            "Unlimited files and team libraries"
+          ],
+          "priceNote": "Full $16 / Dev $12 / Collab $3 per seat per month, as of 2026-08-30",
+          "evidenceIds": [
+            "pricing.list.2026"
+          ]
+        },
+        {
+          "name": "Organization",
+          "gates": [
+            "Org-wide libraries and centralised admin",
+            "Annual billing only"
+          ],
+          "priceNote": "Full $55 / Dev $25 / Collab $5 per seat per month, as of 2026-08-30",
+          "evidenceIds": [
+            "pricing.list.2026"
+          ]
+        },
+        {
+          "name": "Enterprise",
+          "gates": [
+            "Enterprise controls, compliance and dedicated workspaces",
+            "Annual billing only"
+          ],
+          "priceNote": "Full $90 / Dev $35 / Collab $5 per seat per month, as of 2026-08-30",
+          "evidenceIds": [
+            "pricing.list.2026"
+          ]
+        }
+      ]
+    },
+    "monetizationMoment": "The move from free viewing and commenting to a paid seat: granting edit access assigns a billed seat, and where the seat type is unavailable it is added to the subscription under configurable, optionally automatic approval.",
+    "unitEconomicsShape": "Gross margin in the low eighties and falling year over year, with cost of revenue growing far faster than revenue and the company itself forecasting further AI-driven margin compression. Expansion revenue within existing accounts, not new-logo acquisition, is the evidenced growth engine.",
+    "evidenceIds": [
+      "gross-margin.fy2025",
+      "gross-margin.fy2024",
+      "ai-margin-warning.fy2025",
+      "cost-of-revenue.fy2025",
+      "seat.upgrade-billing.practitioner"
+    ],
+    "patterns": []
+  }
+}

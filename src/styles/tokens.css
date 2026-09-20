@@ -1,0 +1,94 @@
+/**
+ * Product Teardown Atlas — design tokens. Dark-first, precision-instrument.
+ * Evidence states are triple-encoded (colour + glyph + stroke) — see components.
+ */
+
+:root {
+  color-scheme: dark;
+
+  --bg: #0b0b0e;
+  --bg-raised: #131317;
+  --bg-elev: #1a1a20;
+  --bg-sunken: #070709;
+  --ink: #f2f2f4;
+  --ink-soft: #b9b9c3;
+  --ink-faint: #75757f;
+  --rule: #24242b;
+  --rule-strong: #34343d;
+
+  --accent: #9b83f5;
+  --accent-soft: rgba(155, 131, 245, 0.14);
+  --accent-ink: #0b0b0e;
+
+  --ev-evidenced: #3ddc84;
+  --ev-evidenced-bg: rgba(61, 220, 132, 0.12);
+  --ev-partial: #f2b544;
+  --ev-partial-bg: rgba(242, 181, 68, 0.12);
+  --ev-insufficient: #8a8a96;
+  --ev-insufficient-bg: rgba(138, 138, 150, 0.12);
+  --ev-contested: #ff6b7a;
+  --ev-contested-bg: rgba(255, 107, 122, 0.12);
+
+  --claim-inference-rule: #8a8a96;
+  --claim-judgment-rule: var(--accent);
+  --gap-border: #3c3c46;
+
+  --conf-verified: var(--ev-evidenced);
+  --conf-reported: var(--ev-partial);
+  --conf-estimated: var(--ev-insufficient);
+
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: ui-monospace, 'JetBrains Mono', 'SF Mono', monospace;
+  --fs-xs: 0.72rem;
+  --fs-sm: 0.86rem;
+  --fs-base: 1rem;
+  --fs-lg: 1.2rem;
+  --fs-xl: 1.6rem;
+  --fs-2xl: 2.2rem;
+  --fs-3xl: 3.4rem;
+  --lh-tight: 1.08;
+  --lh-body: 1.6;
+
+  --sp-1: 0.25rem; --sp-2: 0.5rem; --sp-3: 0.75rem; --sp-4: 1rem;
+  --sp-5: 1.25rem; --sp-6: 1.5rem; --sp-8: 2rem; --sp-10: 2.5rem;
+  --sp-12: 3rem; --sp-16: 4rem; --sp-20: 5rem;
+  --radius-sm: 6px; --radius: 12px; --radius-lg: 18px; --radius-xl: 24px;
+  --dur-fast: 140ms; --dur: 240ms; --dur-slow: 480ms;
+  --ease: cubic-bezier(0.2, 0, 0, 1);
+  --shadow: 0 1px 0 rgba(255,255,255,0.04) inset, 0 12px 40px rgba(0,0,0,0.45);
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+  --bg: #fafaf8; --bg-raised: #ffffff; --bg-elev: #f3f3ef; --bg-sunken: #eeeeea;
+  --ink: #17171c; --ink-soft: #4b4b55; --ink-faint: #8a8a94;
+  --rule: #e2e2dc; --rule-strong: #cfcfc8;
+  --accent: #6e56cf; --accent-soft: rgba(110, 86, 207, 0.12);
+  --ev-evidenced: #1a7f4b; --ev-evidenced-bg: #e8f5ee;
+  --ev-partial: #b07d10; --ev-partial-bg: #faf3e0;
+  --ev-insufficient: #6b6b76; --ev-insufficient-bg: #f1f1f3;
+  --ev-contested: #b03a48; --ev-contested-bg: #f9ecee;
+  --gap-border: #b8b8c0;
+  --shadow: 0 8px 28px rgba(0,0,0,0.10);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --dur-fast: 0ms; --dur: 0ms; --dur-slow: 0ms; }
+}
+
+/* System preference is the default until the visitor picks; the inline script sets data-theme before paint. */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme='dark']) {
+  color-scheme: light;
+  --bg: #fafaf8; --bg-raised: #ffffff; --bg-elev: #f3f3ef; --bg-sunken: #eeeeea;
+  --ink: #17171c; --ink-soft: #4b4b55; --ink-faint: #8a8a94;
+  --rule: #e2e2dc; --rule-strong: #cfcfc8;
+  --accent: #6e56cf; --accent-soft: rgba(110, 86, 207, 0.12);
+  --ev-evidenced: #1a7f4b; --ev-evidenced-bg: #e8f5ee;
+  --ev-partial: #b07d10; --ev-partial-bg: #faf3e0;
+  --ev-insufficient: #6b6b76; --ev-insufficient-bg: #f1f1f3;
+  --ev-contested: #b03a48; --ev-contested-bg: #f9ecee;
+  --gap-border: #b8b8c0;
+  --shadow: 0 8px 28px rgba(0,0,0,0.10);
+}
+}
