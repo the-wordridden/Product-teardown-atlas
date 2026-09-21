@@ -1,36 +1,55 @@
 import { CanvasArt } from '../components/art/CanvasArt'
 import { RevealObserver } from '../components/chrome/Reveal'
 import { CountUp, RotatingWord, SplitWords, Spotlight, Tilt } from '../components/home/Kinetic'
-import { buildLoopRenderModel } from '../derive/loop-geometry'
+import { MetricTile } from '../components/teardown/SectionSummary'
 import { brandFor, brandVars } from '../lib/brand'
 import { listProductSlugs, loadProduct } from '../lib/content'
-import { deriveSectionStatuses } from '../lib/section-status'
 import { SECTION_IDS } from '../schema'
+import type { EvidenceEntryT } from '../schema/evidence'
 import '../components/home/home.css'
 
 const STEP_BLURB: Record<string, string> = {
   vitals: 'Who they are, how big, who holds the votes.',
-  problem: 'The world before, in their words and ours.',
+  problem: 'The world before, and what changed.',
   users: 'Who shows up, and what the packaging tells you.',
   jtbd: 'What teams hire it for, in their own words.',
   product: 'How the machine actually works.',
   'business-model': 'Where the money enters and what it costs to keep.',
-  'growth-loops': 'Five transitions. We draw the ring only as far as evidence goes.',
-  moats: 'What would stop a rival. We only list what holds up.',
+  'growth-loops': 'How one user turns into the next, and where that chain is proven.',
+  moats: 'What would stop a rival.',
   bets: 'The choices, what they cost, and the tension left behind.',
-  verdict: 'Our call, labelled as a call.',
+  verdict: 'Our call, in one sentence you can argue with.',
+}
+
+function human(v: string) {
+  return v.replace(/-/g, ' ')
 }
 
 export default function HomePage() {
   const products = listProductSlugs().map((slug) => {
     const data = loadProduct(slug)
     const loop = data.loops.loops.find((l) => l.id === data.loops.primaryLoopId)!
-    const model = buildLoopRenderModel(loop)
-    const statuses = deriveSectionStatuses(data.product, data.profile, data.strategy, model.summary.status, data.evidence)
-    return { slug, product: data.product, brand: brandFor(slug), statuses, loopStatus: model.summary.status, evidenced: model.summary.counts.evidenced, evidenceCount: data.evidence.size }
+    const proven = loop.edges.find((e) => e.evidenceStatus === 'evidenced')
+    const numbers = data.product.vitals.keyMetricIds.map((id) => data.evidence.get(id)).filter(Boolean) as EvidenceEntryT[]
+    const motion = data.profile.distributionMotion.classification
+    const metric = data.profile.valueMetric.classification
+    return {
+      slug,
+      product: data.product,
+      brand: brandFor(slug),
+      proven,
+      numbers,
+      bet: data.strategy.bets[0],
+      inflections: data.strategy.inflections,
+      tags: [motion !== 'unestablished' ? human(motion) : null, metric !== 'unestablished' ? `priced by ${human(metric)}` : null].filter(Boolean) as string[],
+      evidenceCount: data.evidence.size,
+    }
   })
   const totalEvidence = products.reduce((n, p) => n + p.evidenceCount, 0)
+  const totalInflections = products.reduce((n, p) => n + p.inflections.length, 0)
   const sectionTitles = products[0]?.product.sections ?? []
+  const bandA = sectionTitles.filter((s) => s.id !== 'vitals').map((s) => s.title)
+  const closeBand = Array.from({ length: 4 }, () => products.flatMap((p) => [`${p.product.name} teardown`, '→'])).flat()
 
   return (
     <div className="home">
@@ -48,14 +67,14 @@ export default function HomePage() {
           <span className="thin">actually</span> <RotatingWord words={['think.', 'grow.', 'charge.', 'defend.', 'get stuck.']} />
         </h1>
         <p className="home-lede">
-          Deep teardowns where every claim is labelled fact, inference or judgment, and every number links to a source someone actually opened. Built to be argued with.
+          Deep teardowns of products you already use: the problem they picked, who really pays, how one user turns into the next, and what would stop a rival. Opinionated, sourced, built to be argued with.
         </p>
         <div className="home-ctas">
           <a className="btn btn-primary" href="#teardowns">
             Read a teardown <span className="arrow">→</span>
           </a>
           <a className="btn btn-ghost" href="#method">
-            How we read a product
+            The ten questions
           </a>
         </div>
       </Spotlight>
@@ -63,10 +82,14 @@ export default function HomePage() {
       {/* ------------------------------------------------ BAND */}
       <div className="band" aria-hidden="true">
         <div className="band-row a">
-          <span>Fact</span><span className="hi">Inference</span><span>Judgment</span><span className="hi">Evidence gap</span><span>Fact</span><span className="hi">Inference</span><span>Judgment</span><span className="hi">Evidence gap</span>
+          {[...bandA, ...bandA].map((t, i) => (
+            <span key={i} className={i % 2 ? 'hi' : undefined}>{t}</span>
+          ))}
         </div>
         <div className="band-row b">
-          <span>What can actually be shown</span><span>·</span><span>Not established is not disproved</span><span>·</span><span>What can actually be shown</span><span>·</span><span>Not established is not disproved</span><span>·</span>
+          {['How they think', '·', 'How they grow', '·', 'How they charge', '·', 'How they defend', '·', 'Where they get stuck', '·', 'How they think', '·', 'How they grow', '·', 'How they charge', '·', 'How they defend', '·', 'Where they get stuck', '·'].map((t, i) => (
+            <span key={i}>{t}</span>
+          ))}
         </div>
       </div>
 
@@ -75,18 +98,20 @@ export default function HomePage() {
         <div className="home-sec-head">
           <span className="home-sec-num">01</span>
           <h2 className="home-h2">Teardowns</h2>
-          <p className="home-sec-sub">One product at a time, done properly. Each page opens on its evidence coverage so you can see what's solid before you read a word.</p>
+          <p className="home-sec-sub">One product at a time, done properly. Each opens on our take, then goes as deep as you want.</p>
         </div>
         <div className="cards">
-          {products.map(({ slug, product, brand, statuses, loopStatus, evidenced }) => (
+          {products.map(({ slug, product, brand, tags }) => (
             <Tilt key={slug}>
               <a href={`/products/${slug}`} className="tcard" style={brandVars(brand) as React.CSSProperties}>
                 <div>
                   <div className="tcard-band" aria-hidden="true" />
                   <div className="hero-top" style={{ marginTop: 'var(--sp-4)' }}>
-                    <span className="kicker">{product.vitals.category.replace(/-/g, ' ')}</span>
-                    <span className="pill pill-status" data-status={loopStatus === 'fully-evidenced' ? 'rich' : 'bounded'}>
-                      loop {evidenced}/5 evidenced
+                    <span className="kicker">{human(product.vitals.category)}</span>
+                    <span className="chips">
+                      {tags.map((t) => (
+                        <span key={t} className="pill">{t}</span>
+                      ))}
                     </span>
                   </div>
                   <h3 className="tcard-name">{product.name}</h3>
@@ -96,14 +121,9 @@ export default function HomePage() {
                 </div>
                 <div>
                   <p className="tcard-thesis">
-                    <span className="hero-thesis-label">Analyst judgment</span>
+                    <span className="hero-thesis-label">Our take</span>
                     {product.thesis}
                   </p>
-                  <div className="coverage-bar" aria-hidden="true" style={{ maxWidth: 'none', marginBottom: 'var(--sp-4)' }}>
-                    {SECTION_IDS.map((id) => (
-                      <span key={id} className="coverage-seg" data-status={statuses[id]} />
-                    ))}
-                  </div>
                   <div className="tcard-foot">
                     <span className="hero-updated" style={{ margin: 0 }}>Updated {product.lastUpdated}</span>
                     <span className="tcard-cta">
@@ -123,7 +143,7 @@ export default function HomePage() {
                 </div>
                 <h3 className="tcard-name">Stripe</h3>
               </div>
-              <p className="tcard-thesis">Developer infrastructure, a very different loop. Research hasn't started, so there's nothing to claim yet. That's the point.</p>
+              <p className="tcard-thesis">Developer infrastructure, a very different engine. In research now.</p>
               <div className="tcard-foot">
                 <span className="hero-updated" style={{ margin: 0 }}>In research</span>
               </div>
@@ -132,12 +152,54 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ------------------------------------------------ HIGHLIGHTS */}
+      {products.map(({ slug, product, numbers, proven, bet, inflections }) => (
+        <section key={slug} className="home-sec" data-reveal>
+          <div className="home-sec-head">
+            <span className="home-sec-num">02</span>
+            <h2 className="home-h2">{product.name}, in brief</h2>
+            <p className="home-sec-sub">Straight out of the teardown. Every number links to where it came from.</p>
+          </div>
+          <div className="brief">
+            <div className="tiles brief-numbers">
+              {numbers.map((e) => (
+                <MetricTile key={e.id} entry={e} />
+              ))}
+            </div>
+            <div className="brief-grid">
+              <a href={`/products/${slug}#growth-loops`} className="brief-item">
+                <span className="kicker">The growth engine</span>
+                <p>{proven ? proven.label : 'Not established yet'}</p>
+                <span className="brief-more">See the loop →</span>
+              </a>
+              {bet ? (
+                <a href={`/products/${slug}#bets`} className="brief-item">
+                  <span className="kicker">The bet in play</span>
+                  <p>{bet.title}</p>
+                  <span className="brief-more">What it costs →</span>
+                </a>
+              ) : null}
+              <a href={`/products/${slug}#bets`} className="brief-item">
+                <span className="kicker">Turning points</span>
+                <ul className="brief-years">
+                  {inflections.map((f) => (
+                    <li key={f.id}>
+                      <span className="brief-year">{f.year}</span> {f.label}
+                    </li>
+                  ))}
+                </ul>
+              </a>
+            </div>
+          </div>
+        </section>
+      ))}
+
       {/* ------------------------------------------------ METHOD STRIP */}
       <section id="method" className="home-sec" data-reveal>
         <div className="home-sec-head">
-          <span className="home-sec-num">02</span>
+          <span className="home-sec-num">03</span>
           <h2 className="home-h2">Ten questions, every time</h2>
-          <p className="home-sec-sub">Every teardown walks the same ten sections in the same order. Hover one to see what it answers.</p>
+          <p className="home-sec-sub">Every teardown walks the same ten sections in the same order, so two products can be laid side by side.</p>
         </div>
         <div className="steps">
           {SECTION_IDS.map((id, i) => {
@@ -153,49 +215,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ------------------------------------------------ CLAIM CLASSES */}
-      <section className="home-sec" data-reveal>
-        <div className="home-sec-head">
-          <span className="home-sec-num">03</span>
-          <h2 className="home-h2">Four kinds of sentence</h2>
-          <p className="home-sec-sub">Most product writing blurs them. We keep them apart on the page, and you can always see which one you're reading.</p>
-        </div>
-        <div className="claims">
-          <div className="claim-tile" data-kind="fact">
-            <span className="glyph" aria-hidden="true">●</span>
-            <div>
-              <h3>Fact</h3>
-              <p>Something a source you can open actually says. Every number carries its date and confidence.</p>
-              <div className="ex">Revenue for fiscal 2025: $1,055.8 million. From the 10-K, verified.</div>
-            </div>
-          </div>
-          <div className="claim-tile" data-kind="inference">
-            <span className="glyph" aria-hidden="true">◐</span>
-            <div>
-              <h3>Inference</h3>
-              <p>What the evidence reasonably suggests. Labelled so it never gets mistaken for a fact.</p>
-              <div className="ex">The numbers fit expansion led growth better than acquisition led growth.</div>
-            </div>
-          </div>
-          <div className="claim-tile" data-kind="judgment">
-            <span className="glyph" aria-hidden="true">◆</span>
-            <div>
-              <h3>Judgment</h3>
-              <p>Our call. Prominent on the page, and always marked as ours rather than the world's.</p>
-              <div className="ex">The virality claim currently rests on the company's word alone.</div>
-            </div>
-          </div>
-          <div className="claim-tile" data-kind="gap">
-            <span className="glyph" aria-hidden="true">○</span>
-            <div>
-              <h3>Evidence gap</h3>
-              <p>What we couldn't establish, why, and what would settle it. Not established isn't disproved.</p>
-              <div className="ex">No job to be done is evidenced for Figma. The section says so instead of inventing one.</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ------------------------------------------------ STATS */}
       <section className="home-sec" data-reveal>
         <div className="stats">
@@ -205,23 +224,28 @@ export default function HomePage() {
           </div>
           <div className="stat">
             <div className="v"><CountUp to={totalEvidence} /></div>
-            <div className="k">Evidence records, each one opened by hand.</div>
+            <div className="k">Sources opened by hand. Filings, docs, first-hand accounts.</div>
           </div>
           <div className="stat">
             <div className="v"><CountUp to={10} /></div>
-            <div className="k">Sections per teardown. Always the same ten.</div>
+            <div className="k">Questions per teardown. Always the same ten.</div>
           </div>
           <div className="stat">
-            <div className="v"><CountUp to={4} /></div>
-            <div className="k">Kinds of claim, never blurred together.</div>
+            <div className="v"><CountUp to={totalInflections} /></div>
+            <div className="k">Turning points traced back to what actually happened.</div>
           </div>
         </div>
+        <p className="home-howto">
+          How to read one: plain text is what a source says, <em>inference</em> is what it suggests, and our calls are marked as ours. Hover any ● to open the source.
+        </p>
       </section>
 
       {/* ------------------------------------------------ CLOSE */}
       <div className="band" aria-hidden="true">
         <div className="band-row a">
-          <span>Read the teardown</span><span className="hi">→</span><span>Read the teardown</span><span className="hi">→</span><span>Read the teardown</span><span className="hi">→</span><span>Read the teardown</span><span className="hi">→</span>
+          {closeBand.map((t, i) => (
+            <span key={i} className={t === '→' ? 'hi' : undefined}>{t}</span>
+          ))}
         </div>
       </div>
       <section className="home-close" data-reveal>

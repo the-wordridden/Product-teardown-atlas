@@ -9,9 +9,9 @@
 
 ## 1. Product concept
 
-The component answers **"Can this growth loop actually be evidenced?"**
+The component answers two questions, in this order: **"How does this product grow?"** and **"How much of that is actually evidenced?"**
 
-It does **not** answer *"Here is this product's growth loop."*
+> **Amendment v1.1 (2026-09-21).** The first implementation led with the second question: an abstract pentagon with role names, drawn open. Readers learned nothing about the product from it. The layout is now a linear chain (`GrowthChain`): five steps carrying the product's own labels, forward links drawn as arrows, the reinvestment→acquisition link drawn as a return path underneath. The best-evidenced link opens by default so the finding is met before the caveat. Every obligation in §3–§6 still holds: link status is triple-encoded (line pattern, glyph, word), an insufficient link is drawn broken before any interaction, insufficient mechanisms are introduced as proposed, no circulating animation unless fully evidenced, and the renderer performs no geometry and no status derivation. Ring geometry in `derive/loop-geometry.ts` is retained for the data model and tests; its x/y coordinates are unused by the chain layout.
 
 This is an intentional analytical feature, not a degraded fallback. Every competing product teardown draws a closed loop, because a closed loop looks authoritative. An interactive that shows a loop failing to close under evidentiary scrutiny — while the company's own filings assert virality — demonstrates more analytical judgment than any complete diagram, and it is the only representation the evidence honestly supports.
 

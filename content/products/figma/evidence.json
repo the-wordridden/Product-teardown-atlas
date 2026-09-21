@@ -4,6 +4,7 @@
       "id": "revenue.fy2025",
       "claim": "Revenue for the fiscal year ended 31 December 2025",
       "value": "$1,055,788 thousand",
+      "display": "$1.06B",
       "asOf": "2025-12-31",
       "confidence": "verified",
       "source": {
@@ -32,6 +33,7 @@
       "id": "cost-of-revenue.fy2025",
       "claim": "Cost of revenue for fiscal year 2025, against $87,514 thousand in fiscal year 2024",
       "value": "$185,527 thousand, up 112%",
+      "display": "$185.5M · +112%",
       "asOf": "2025-12-31",
       "confidence": "verified",
       "source": {
@@ -116,6 +118,7 @@
       "id": "paid-customers.total.q1-2026",
       "claim": "Total Paid Customers, defined as customer accounts billed separately with an active paid subscription",
       "value": "approximately 690,000, up 54% year over year",
+      "display": "~690,000 · +54% YoY",
       "asOf": "2026-03-31",
       "confidence": "reported",
       "source": {
@@ -131,6 +134,7 @@
       "id": "paid-customers.10k.q2-2026",
       "claim": "Paid Customers with more than $10,000 in ARR",
       "value": "15,964, up 34% year over year",
+      "display": "15,964 · +34% YoY",
       "asOf": "2026-06-30",
       "confidence": "reported",
       "source": {
@@ -159,6 +163,7 @@
       "id": "ndr.q2-2026",
       "claim": "Net Dollar Retention Rate, calculated on Paid Customers with more than $10,000 in ARR",
       "value": "136%",
+      "display": "136%",
       "asOf": "2026-06-30",
       "confidence": "reported",
       "source": {

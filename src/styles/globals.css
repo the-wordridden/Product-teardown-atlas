@@ -342,3 +342,13 @@ p { margin: 0 0 var(--sp-3); }
 .gap-card-title { font-size: var(--fs-base); }
 .evidence-gap-hint { display: none; }
 .evidence-gap { background: transparent; }
+
+/* ---- v5: hero leads with the numbers; evidence status kept quiet ---- */
+.hero-meta-numbers { grid-template-columns: minmax(0, 1fr) auto; align-items: stretch; }
+.tiles-hero { grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr)); }
+.tiles-hero .tile-claim { font-size: var(--fs-xs); }
+.hero-loop-pill .hero-loop-status { text-transform: none; }
+.pill-quiet { opacity: 0.7; font-weight: 600; }
+.sec:hover .pill-quiet { opacity: 1; }
+.tcard .chips { display: inline-flex; gap: var(--sp-1); flex-wrap: wrap; justify-content: flex-end; }
+@media (max-width: 760px) { .hero-meta-numbers { grid-template-columns: 1fr; } }

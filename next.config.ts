@@ -11,14 +11,17 @@ import type { NextConfig } from 'next'
  */
 const isDev = process.env.NODE_ENV === 'development'
 
-const scriptSrc = ["'self'", "'unsafe-inline'", ...(isDev ? ["'unsafe-eval'"] : [])].join(' ')
+/* Microsoft Clarity: tag script from www.clarity.ms, session data to *.clarity.ms and c.bing.com. */
+const CLARITY_HOSTS = ['https://www.clarity.ms', 'https://*.clarity.ms', 'https://c.bing.com']
+
+const scriptSrc = ["'self'", "'unsafe-inline'", 'https://www.clarity.ms', 'https://*.clarity.ms', ...(isDev ? ["'unsafe-eval'"] : [])].join(' ')
 
 const csp = [
   "default-src 'self'",
-  'img-src \'self\' data:',
+  `img-src 'self' data: ${CLARITY_HOSTS.join(' ')}`,
   "style-src 'self' 'unsafe-inline'",
   `script-src ${scriptSrc}`,
-  "connect-src 'self'" + (isDev ? ' ws: wss:' : ''),
+  `connect-src 'self' ${CLARITY_HOSTS.join(' ')}` + (isDev ? ' ws: wss:' : ''),
   "frame-ancestors 'none'",
   "object-src 'none'",
   "base-uri 'self'",

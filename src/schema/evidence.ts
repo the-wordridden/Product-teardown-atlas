@@ -66,6 +66,13 @@ export const EvidenceEntry = z
      */
     value: z.string().trim().min(1).max(120),
 
+    /**
+     * Optional headline form of `value` for tiles ("$1.06B" for "$1,055,788 thousand").
+     * Presentation only: it may round, never restate. `value` stays the figure the source
+     * gives and is what the chip popover shows. Amendment 2026-09-21.
+     */
+    display: z.string().trim().min(1).max(32).optional(),
+
     asOf: IsoDate,
     confidence: Confidence,
     source: EvidenceSource,

@@ -2,17 +2,18 @@ import { MDXRemote } from 'next-mdx-remote/rsc'
 import { CanvasArt } from '../../../components/art/CanvasArt'
 import { Marquee } from '../../../components/chrome/Marquee'
 import { RevealObserver } from '../../../components/chrome/Reveal'
-import { GrowthLoopEngine } from '../../../components/growth-loop/GrowthLoopEngine'
+import { GrowthChain, type LoopSource } from '../../../components/growth-loop/GrowthChain'
 import { mdxComponentsFor } from '../../../components/mdx'
 import { MoatStack } from '../../../components/moats/MoatStack'
 import { ProfileStrip } from '../../../components/strategic-profile/ProfileStrip'
-import { SectionSummary } from '../../../components/teardown/SectionSummary'
+import { MetricTile, SectionSummary } from '../../../components/teardown/SectionSummary'
 import { buildLoopRenderModel } from '../../../derive/loop-geometry'
 import { brandFor, brandVars } from '../../../lib/brand'
 import { listProductSlugs, loadProduct } from '../../../lib/content'
 import { screensFor } from '../../../lib/screens'
 import { deriveSectionStatuses, SECTION_EVIDENCE_LABEL } from '../../../lib/section-status'
 import { SECTION_IDS } from '../../../schema'
+import type { EvidenceEntryT } from '../../../schema/evidence'
 
 export function generateStaticParams() {
   return listProductSlugs().map((slug) => ({ slug }))
@@ -22,6 +23,21 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params
   const { product } = loadProduct(slug)
   return { title: product.name, description: product.thesis }
+}
+
+/** The subset of an evidence entry the loop needs to name its sources. Serialisable. */
+function loopSources(ids: Iterable<string>, evidence: Map<string, EvidenceEntryT>): Record<string, LoopSource> {
+  const out: Record<string, LoopSource> = {}
+  for (const id of ids) {
+    const e = evidence.get(id)
+    if (!e) continue
+    out[id] = { title: e.source.title, publisher: e.source.publisher, url: e.source.url, confidence: e.confidence, asOf: e.asOf }
+  }
+  return out
+}
+
+function human(v: string) {
+  return v.replace(/-/g, ' ')
 }
 
 export default async function TeardownPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -36,8 +52,24 @@ export default async function TeardownPage({ params }: { params: Promise<{ slug:
   const statuses = deriveSectionStatuses(product, profile, strategy, loopModel.summary.status, evidence)
   const title = new Map(product.sections.map((s) => [s.id, s.title]))
   const standfirst = new Map(product.sections.map((s) => [s.id, s.summary]))
-  const counts = { rich: 0, bounded: 0, gap: 0, judgment: 0 }
-  for (const s of Object.values(statuses)) counts[s] += 1
+
+  const keyNumbers = product.vitals.keyMetricIds.map((id) => evidence.get(id)).filter(Boolean) as EvidenceEntryT[]
+  const provenLink = loopModel.edges.find((e) => e.evidenceStatus === 'evidenced')
+  const sources = loopSources(
+    [...loopModel.edges.flatMap((e) => e.evidenceIds), ...loopModel.nodes.flatMap((n) => n.metricIds)],
+    evidence,
+  )
+
+  // Marquee: the product's own facts, never the method.
+  const ribbon = [
+    brand.refrain,
+    human(product.vitals.category),
+    `est. ${product.vitals.founded}`,
+    product.vitals.headquarters,
+    product.vitals.stage,
+    profile.distributionMotion.classification !== 'unestablished' ? human(profile.distributionMotion.classification) : null,
+    profile.valueMetric.classification !== 'unestablished' ? `priced by ${human(profile.valueMetric.classification)}` : null,
+  ].filter(Boolean) as string[]
 
   return (
     <article className="td" style={brandVars(brand) as React.CSSProperties}>
@@ -47,54 +79,44 @@ export default async function TeardownPage({ params }: { params: Promise<{ slug:
       <header className="hero hero-split">
         <div className="hero-copy">
           <div className="hero-top">
-            <span className="kicker">{product.vitals.category.replace(/-/g, ' ')}</span>
+            <span className="kicker">{human(product.vitals.category)}</span>
           </div>
           <h1 className="hero-name">{product.name}</h1>
           <p className="hero-thesis">
-            <span className="hero-thesis-label">Analyst judgment</span>
+            <span className="hero-thesis-label">Our take</span>
             {product.thesis}
           </p>
           <div className="hero-facts">
             <span>{product.vitals.stage}</span>
             <span>{product.vitals.headquarters}</span>
             <span>est. {product.vitals.founded}</span>
-            <span>
-              headcount{' '}
-              {product.vitals.headcountBand === 'unestablished' ? <em className="unest">unestablished</em> : product.vitals.headcountBand}
-            </span>
+            {product.vitals.headcountBand !== 'unestablished' ? <span>headcount {product.vitals.headcountBand}</span> : null}
           </div>
         </div>
         <div className="hero-art" data-reveal>
           <CanvasArt motif={brand.motif} palette={brand.palette} />
         </div>
 
-        <div className="hero-meta">
-          <div className="coverage" aria-label="Evidence coverage across ten sections">
-            <span className="kicker">Evidence coverage</span>
-            <div className="coverage-bar" role="img" aria-label={`${counts.rich} evidence rich, ${counts.bounded} evidence bounded, ${counts.gap} evidence gaps, ${counts.judgment} judgment`}>
-              {SECTION_IDS.map((id) => (
-                <a key={id} href={`#${id}`} className="coverage-seg" data-status={statuses[id]} title={`${title.get(id)}: ${SECTION_EVIDENCE_LABEL[statuses[id]]}`} />
-              ))}
-            </div>
-            <div className="coverage-legend">
-              <span data-status="rich">{counts.rich} rich</span>
-              <span data-status="bounded">{counts.bounded} bounded</span>
-              <span data-status="gap">{counts.gap} gaps</span>
-              <span data-status="judgment">{counts.judgment} judgment</span>
-            </div>
+        <div className="hero-meta hero-meta-numbers">
+          <div className="tiles tiles-hero">
+            {keyNumbers.map((e) => (
+              <MetricTile key={e.id} entry={e} />
+            ))}
           </div>
           <a href="#growth-loops" className="hero-loop-pill" data-status={loopModel.summary.status}>
-            <span className="kicker">Growth loop</span>
-            <span className="hero-loop-status">{loopModel.summary.status.replace(/-/g, ' ')}</span>
-            <span className="hero-loop-count">{loopModel.summary.counts.evidenced} of 5 transitions evidenced</span>
+            <span className="kicker">Growth engine</span>
+            <span className="hero-loop-status">{provenLink ? provenLink.label : loopModel.name}</span>
+            <span className="hero-loop-count">
+              {loopModel.summary.counts.evidenced} of {loopModel.edges.length} links proven · see the loop →
+            </span>
           </a>
         </div>
         <p className="hero-updated">
-          Updated {product.lastUpdated} · framework v{product.frameworkVersion} · {product.status}
+          Updated {product.lastUpdated} · {evidence.size} sources · {product.status}
         </p>
       </header>
 
-      <Marquee items={[brand.refrain, 'fact', 'inference', 'judgment', 'evidence gap', 'what can actually be shown']} />
+      <Marquee items={ribbon} />
 
       {screens.length > 0 ? (
         <section className="screens" aria-label="Product in view" data-reveal>
@@ -114,7 +136,7 @@ export default async function TeardownPage({ params }: { params: Promise<{ slug:
           <ol>
             {SECTION_IDS.map((id, i) => (
               <li key={id}>
-                <a href={`#${id}`} data-status={statuses[id]}>
+                <a href={`#${id}`} data-status={statuses[id]} title={SECTION_EVIDENCE_LABEL[statuses[id]]}>
                   <span className="rail-dot" aria-hidden="true" />
                   <span className="rail-num">{String(i + 1).padStart(2, '0')}</span>
                   <span className="rail-title">{title.get(id)}</span>
@@ -123,10 +145,10 @@ export default async function TeardownPage({ params }: { params: Promise<{ slug:
             ))}
           </ol>
           <div className="rail-legend" aria-hidden="true">
-            <span data-status="rich">rich</span>
-            <span data-status="bounded">bounded</span>
-            <span data-status="gap">gap</span>
-            <span data-status="judgment">judgment</span>
+            <span data-status="rich">well sourced</span>
+            <span data-status="bounded">partly</span>
+            <span data-status="gap">open</span>
+            <span data-status="judgment">our call</span>
           </div>
         </nav>
 
@@ -136,7 +158,7 @@ export default async function TeardownPage({ params }: { params: Promise<{ slug:
               <header className="sec-head">
                 <span className="sec-num">{String(i + 1).padStart(2, '0')}</span>
                 <h2 className="sec-title">{title.get(id)}</h2>
-                <span className="pill pill-status" data-status={statuses[id]}>
+                <span className="pill pill-status pill-quiet" data-status={statuses[id]}>
                   {SECTION_EVIDENCE_LABEL[statuses[id]]}
                 </span>
               </header>
@@ -144,15 +166,15 @@ export default async function TeardownPage({ params }: { params: Promise<{ slug:
 
               <div className="sec-card">
                 {id === 'vitals' ? <ProfileStrip profile={profile} /> : null}
-                {id === 'growth-loops' ? <GrowthLoopEngine model={loopModel} /> : null}
+                {id === 'growth-loops' ? <GrowthChain model={loopModel} sources={sources} /> : null}
                 {id === 'moats' ? <MoatStack moats={strategy.moats} /> : null}
                 <SectionSummary id={id} data={data} statuses={statuses} />
               </div>
 
-              <details className="prose-fold">
+              <details className="prose-fold" open={id === 'verdict'}>
                 <summary>
-                  <span>Read the full analysis</span>
-                  <span className="prose-fold-hint">facts, inferences and judgments marked as you go</span>
+                  <span>{id === 'verdict' ? 'The verdict in full' : 'Read the full analysis'}</span>
+                  <span className="prose-fold-hint">sources inline, hover any ● to open one</span>
                 </summary>
                 <div className="prose">
                   <MDXRemote source={sections[id]} components={components} />

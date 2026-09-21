@@ -15,10 +15,10 @@ import { BetsChain } from './BetsChain'
 
 const GLYPH: Record<EvidenceEntryT['confidence'], string> = { verified: '●', reported: '◐', estimated: '○' }
 
-function MetricTile({ entry }: { entry: EvidenceEntryT }) {
+export function MetricTile({ entry }: { entry: EvidenceEntryT }) {
   return (
     <div className="tile" data-confidence={entry.confidence}>
-      <div className="tile-value">{entry.value}</div>
+      <div className="tile-value">{entry.display ?? entry.value}</div>
       <div className="tile-claim">{entry.claim}</div>
       <div className="tile-meta">
         <span aria-hidden="true">{GLYPH[entry.confidence]}</span> {entry.confidence} · as of {entry.asOf}
@@ -198,25 +198,33 @@ export function SectionSummary({
       return <BetsChain bets={strategy.bets} evidence={evidence} />
 
     case 'verdict': {
-      const rich = Object.entries(statuses).filter(([, s]) => s === 'rich').map(([k]) => titleCase(k))
-      const gaps = Object.entries(statuses).filter(([, s]) => s === 'gap').map(([k]) => titleCase(k))
-      const bounded = Object.entries(statuses).filter(([, s]) => s === 'bounded').map(([k]) => titleCase(k))
+      const loop = data.loops.loops.find((l) => l.id === data.loops.primaryLoopId)
+      const proven = loop?.edges.find((e) => e.evidenceStatus === 'evidenced')
+      const bet = strategy.bets[0]
+      const axes = [data.profile.distributionMotion, data.profile.valueMetric, data.profile.buyerUserAlignment]
+        .map((a) => a.classification)
+        .filter((c) => c !== 'unestablished')
+        .map(titleCase)
       return (
         <div className="verdict-card">
-          <span className="kicker kicker-accent">Analyst judgment · not a fact</span>
+          <span className="kicker kicker-accent">Our call</span>
           <p className="verdict-thesis">{product.thesis}</p>
           <div className="verdict-grid">
             <div>
-              <span className="kicker">Evidence-rich sections</span>
-              <p>{rich.join(' · ') || 'none'}</p>
+              <span className="kicker">Growth engine that's proven</span>
+              <p>{proven ? proven.label : 'None established from the evidence yet'}</p>
             </div>
             <div>
-              <span className="kicker">Evidence-bounded</span>
-              <p>{bounded.join(' · ') || 'none'}</p>
+              <span className="kicker">The bet in play</span>
+              <p>{bet ? bet.title : 'No strategic bet documented'}</p>
             </div>
             <div>
-              <span className="kicker">Evidence gaps</span>
-              <p>{gaps.join(' · ') || 'none'}</p>
+              <span className="kicker">What would stop a rival</span>
+              <p>{strategy.moats.length > 0 ? strategy.moats.map((m) => titleCase(m.type)).join(' · ') : 'Nothing the evidence supports yet'}</p>
+            </div>
+            <div>
+              <span className="kicker">How it sells</span>
+              <p>{axes.length > 0 ? axes.join(' · ') : 'Not established'}</p>
             </div>
           </div>
         </div>
