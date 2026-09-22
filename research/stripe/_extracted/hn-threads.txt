@@ -374,3 +374,153 @@ Stripe's T&Cs state that you may not use them for financial services without the
 
 --- ChrisArchitect | 2023-08-02
 Tell HN:
+
+
+==================== HN 40529033 | 2024-05-30 | 81 pts | Stripe closed our account and refuses to migrate our data to another processor
+URL: https://news.ycombinator.com/item?id=40529033
+OP TEXT:
+I'm reaching out to the official Stripe support forum here because our account has been closed and Stripe is refusing to export our card data. We are set to lose half our revenue in recurring Stripe subscriptions with no way to migrate them and no recourse. Our crime? Not predicting Stripe's future policies.
+We run a dating app. We've been using Stripe for the past 2 years and this wasn't a problem when we signed up, but apparently "all online dating services" was added to the Restricted Businesses list last year (without notice) and now our account has been flagged. Fair enough, there are some sketchy dating apps out there, but we are much closer to Tinder/Bumble/etc. (albeit smaller) than to the mail order bride / escort service end of the spectrum. We take moderation very seriously, have never had any safety incidents, no sexual content, we maintain a low 0.05% dispute rate. Apple and Google happily process our mobile payments, we've had major press, we're as legit as a dating app gets.
+Our appeals have been denied, but we were told we could submit a migration request and switch to another payment processor. We requested an extension so we could complete this migration before our account was closed without interrupting our subscriptions, and after some pleading it was granted. I noticed that our dashboard still said our payments would be disabled on the original date, so I asked Stripe to confirm and was told after a couple escalations, "Though it might not appear immediately on your end, don't worry—the time extension has already been recorded and approved". So I didn't worry.
+We were approved by a major processor which has completed a significantly more thorough risk assessment than Stripe, at low-risk rates. But when we asked Stripe about migrating our card data, we were told, "Unfortunately, we will not be able to complete your requested data migration. Our team has reviewed your Stripe account and has determined that we are not comfortable with the level of risk presented by completing this data migration". We have appealed and asked for more information, to no avail. We still have not been given any reason for this "level of risk" except that we are a dating app.
+Stripe claims (https://docs.stripe.com/get-started/data-migrations/pan-export): "We believe that our customers own the sensitive data they entrust to Stripe, and we work hard to make sure that you have access to this data—even if you’re moving elsewhere. If you decide to leave Stripe for another payment processor, we’ll work with your new processor’s team to securely transfer your credit card data". We trusted Stripe with our payments because of commitments to fairness and portability like this. If our industry was listed on the Restricted Businesses list when we started using Stripe, that would be one thing, but surely we would at least be able to export our data if that changed later, right? Today it is dating apps, tomorrow it may be your business.
+Now, our account's original closure date has come, and sure enough, our payments have been disabled. The extension was not honored. I'm sure this was an honest mistake, but I wonder if Stripe has reviewed our risk as carefully as they confirmed our extension (not very). Stripe claims to have 24/7 chat and phone support, but I wasn't able to convince the support AI this was urgent enough to grant me access.
+
+--- nordic_island | 2024-05-30
+> but I wasn't able to convince the support AI this was urgent enough
+TIL you need to hire a prompt engineer to get actual customer support at Stripe.
+
+--- bitbyete | 2024-05-30
+> "Though it might not appear immediately on your end, don't worry—the time extension has already been recorded and approved".
+Did they have no response for not keeping their word?
+
+--- ec109685 | 2024-05-30
+This type of behavior from stripe is super upsetting, most glaringly the lack of being able to talk to a human and discuss alternatives.
+That said, if the service is adding value, they shouldn’t lose half their revenue if they need users to renter their credit card.
+
+--- underlogic | 2024-05-30
+Just get on a plane and visit their corporate office in San Francisco and ask to speak to someone.
+
+--- toomuchtodo | 2024-05-30
+Y’all need to stop using Stripe.
+
+--- fnbr | 2024-05-30
+What's the dating app?
+
+--- tryedge-dg | 2024-05-31
+Hey thxstripe - we just launched Edge (www.tryedge.io) with a select few beta merchants to support businesses unfairly mislabeled high-risk. We'd love to learn more (contact@tryedge.io).
+
+
+==================== HN 34281730 | 2023-01-06 | 122 pts | Show HN: List of Stripe Alternatives
+URL: https://news.ycombinator.com/item?id=34281730
+OP TEXT:
+Seems like every time there's a negative Stripe story on here, the inevitable question, "any alternatives?" gets asked. Hell, I was tempted to ask myself. Instead, I decided to search hn.algolia.com to see for myself what others have recommended in the past.
+Might as well share the list with y'all, make it meta.
+--
+2Checkout | https://www.2checkout.com
+Adyen | https://www.adyen.com
+Amazon Pay | https://pay.amazon.com
+Authorize.net | https://www.authorize.net
+Balance | https://www.getbalance.com
+Braintree | https://www.braintreepayments.com
+ChargeBee | https://www.chargebee.com
+Chargify | https://www.chargify.com
+Checkout.com | https://www.checkout.com
+DigitalRiver | https://www.digitalriver.com
+Dwolla | https://www.dwolla.com
+FastSpring | https://fastspring.com
+GoCardless | https://gocardless.com
+MangoPay | https://www.mangopay.com
+Mollie | https://www.mollie.com
+Opayo (previously SagePay) | https://www.opayo.co.uk
+Paddle | https://www.paddle.com
+Payoneer | https://www.payoneer.com
+PayPal | https://www.paypal.com
+Qonto | https://qonto.com/en
+Spreedly | https://www.spreedly.com
+Square | https://squareup.com
+Verifone | https://www.verifone.com/en/us
+White | https://whitepayments.com
+--
+Observations from my data collection:
+Sassy appears to have been acquired by FastSpring. Balanced Payments apparently went under but I found another payment service called "Balance" instead. Paymill is defunct but their Github org has a bunch of code. No idea what happened to Spryng Payments but Spryng still exists.
+It's also worth mentioning that a true "Stripe alternative" simply does not exist. No one does everything they do and I'm pretty sure most services are lacking in the developer documentation department. Still, having options is always great.
+
+--- NetOpWibby | 2023-01-06
+Oh, forgot to mention that 2Checkout and Verifone are the same product but still have different sites for some reason. Or at the very least, Verifone owns 2Checkout.
+
+--- zzz345345 | 2023-01-06
+Any of those support crypto and credit card? I added Coinbase commerce to my site as an option but unfortunately it doesnt support Monero.
+
+--- pyronite | 2023-01-06
+We're excited to see how the open-source Lago (https://www.getlago.com/) develops. Does anyone here have experience working with it?
+
+--- efortis | 2023-01-06
+- Visa | https://developer.visa.com
+- Masterpass by Mastercard | https://masterpass.com
+
+--- paxys | 2023-01-06
+While this is a good list of companies that operate roughly in the same space as Stripe, a more useful one for the intended audience would be finding replacements for the specific Stripe services/APIs they are using. It's not as simple as saying "just switch from Stripe to PayPal/Square". Most of these companies specialize in a specific problem with very little overlap with the rest. Stripe doesn't have a real 1:1 competitor.
+
+--- huhtenberg | 2023-01-06
+2Checkout, DigitalRiver, FastSpring, Paddle and Payoneer used to be reasonably popular in "old-school" shareware circles.
+These aren't payment processors. They all come from pre-Stripe times and they are so-called "registration services".
+These are effectively resellers, providing "full service" that includes order processing, customer callbacks (fraud detection), distribution of activation codes, first line of support for licensing inquiries, etc. -- all the things that used to be complicated in the era when people ordered by phone, fax and email, paid with cheques and the software was licensed fully offline using either procedurally-generated codes or codes hardcoded into executables.
+They all are still stuck there - rigid, clunky, buggy and, above all, unnecessary expensive.
+These aren't Stripe alternatives. These are dinosaurs desperately clinging to life.
+
+--- hot_gril | 2023-01-06
+Some of these are viable payment processors, but if you're trying to run anything vaguely like a market, it's hard to replace Stripe. I've tried.
+In detail, something that handles both credit card payments from users and ACH payouts to users, possibly with some substitutions like debit instead of credit or wire instead of ACH. Ideally allowing user-to-user payments without having to float the money yourself. Stripe is handling some big regulatory hurdles for you, like KYC.
+
+--- NetOpWibby | 2023-01-06
+Personally, I'm looking into Checkout and Mollie (hope they're not UK-only) and will use OpenNode as my crypto payment provider.
+
+--- AlexITC | 2023-01-06
+I investigated a bit about this and found Square promising because it allows creating a link to allow customers engage in a subscription, which is super helpful to not code such a flow when validating a product.
+I don't know whether Paddle supports this but a customer is super happy with them, it was also super simple to integrate from the developer side.
+Thanks for the list.
+
+--- Geee | 2023-01-06
+Not really a Stripe alternative - but if you run out of alternatives, there's always Bitcoin. That is, if you want to accept payments without using any third-party service.
+I wish more people implemented Bitcoin (Lightning) payments on their websites. I always pay with Bitcoin when there's an option; simply because it's easier and faster, compared to typing in my CC info and 2FAing it with my bank app. Bitcoin requires just scanning a QR code with a mobile wallet.
+BTCPay Server[0] is the most popular (I think) self-hosted software for accepting Bitcoin payments. It's also available as a hosted version.
+[0] https://btcpayserver.org
+
+--- AussieWog93 | 2023-01-06
+I use these guys (based in Australia): https://pinpayments.com/
+Excellent support, and no bullshit.  It really as simple as creating an account, installing the plugin on my website then collecting payments.
+
+--- folli | 2023-01-06
+I'm specifically looking for a payment provider handling SaaS subscriptions (monthly/annually).
+Any recommendations?
+
+--- alberth | 2023-01-06
+Stripe is the only processor I’m aware of that is self-service and you can be accepting payments within minutes.
+But that comes with a major downside, you don’t actually get a merchant account.
+If having a merchant account is important to you, Adyen is pretty great.
+
+--- 1xdevloper | 2023-01-06
+Lemon Squeezy [1] is another great option. I use it on my site RemoteFriendly. They are take 5% and handle all the tax, fraud stuff for you as a merchant of record.
+[1] https://www.lemonsqueezy.com/
+
+--- screamingninja | 2023-01-06
+Is there an inclusion criteria for this list? You listed PayPal as an alternative. I cannot imagine recommending Paypal to someone complaining about Stripe- arguably there are more complaints on HN about Paypal than Stripe!
+
+--- ju | 2023-01-07
+SumUp | https://sumup.com/
+
+--- j45 | 2023-01-07
+Great list, thank you.
+One option is to always have more than one payment processor  activated.
+Splitting payments across providers  early on doesn’t have to be a bad thing.
+There are libraries focused in billing and payment management and leaving the payment processing only to stripe,  etc.  These libraries that can handle multiple payment providers and help reduce dependency on the a single payment provider for payment management functionality.
+It’s always felt like a risk.
+One stand alone library that I’m looking at is https://killbill.io/
+If there are alternatives to this that folks have experience with - it would be great if you could share
+
+--- isuleman | 2023-01-07
+Snipcart
+
+--- rajnathani | 2023-01-08
+TIL about Amazon Pay.
