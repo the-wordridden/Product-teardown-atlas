@@ -19,7 +19,7 @@ Created during Stage 1 pass 1 (2026-09-22). Feeds the Verdict section's `openQue
 
 | # | Question | Bears on |
 |---|---|---|
-| 5 | When was the 1,000-block limit for multi-member Free workspaces introduced, and what was the limit before? TechCrunch reported Notion *dropping* a usage limit on the personal free tier in May 2020, which suggests the policy has moved at least twice | Business Model, Inflections |
+| 5 | ~~When was the 1,000-block limit introduced, and what preceded it?~~ **ANSWERED** [S019]: the same deletion-proof 1,000-block cap applied to *individuals* until May 2020, when Notion removed it and folded the old $4/month Personal plan into the free tier, per a contemporaneous quotation of its own FAQ. It now applies to multi-member free workspaces [S002]. Exact date of that reintroduction still unknown | Business Model, Inflections |
 | 15 | Was there ever a standalone Notion AI add-on, at what price, and when did it stop being sold separately? Aggregators state $8–10 per member and a date of 2025-05-13, with grandfathering; **no primary source found.** Today's FAQ simply gates AI to Business and Enterprise [S012] | Business Model, Inflections |
 | 16 | Does the 51M duplications / 11M people figure [S007] have a more recent equivalent? It covers the year to June 2023, when the gallery held 5,000 templates; it now holds 30,000+ (OBS-001) | Growth Loops, Vitals |
 | 6 | Is "more than 50% of ARR from AI-enabled customers" [S005] the same claim as "half of ARR comes from AI products" [S006]? A customer who uses AI is not the same as revenue earned from AI | Business Model. Logged in `04-conflicts.md` |

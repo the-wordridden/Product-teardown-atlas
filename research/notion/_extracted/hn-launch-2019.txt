@@ -1,0 +1,163 @@
+HN 18904648 | 2019-01-14 | 970 pts | Notion – All-in-one workspace for notes, tasks, wikis, and databases
+LINK: https://www.notion.so
+AUTHOR: torvald
+
+--- o_____________o | 2019-01-14
+What sets this apart from incumbents like Basecamp?
+
+--- andyfleming | 2019-01-14
+This seems like a mash-up of Air Table and Quip. I'm curious to see how the functionality compares for day-to-day tasks.
+
+--- elcomet | 2019-01-14
+Is a Linux desktop app planned? It's only available on windows / Mac OS.
+
+--- sonaltr | 2019-01-14
+I wish they had an API to integrate with.
+
+--- dawnerd | 2019-01-14
+We use it to keep track of all
+Of our tasks and projects. Switched to it after getting annoyed with Asana and not wanting to use something like Jira. We love how freeform it is and allowed us to create a workflow that fit us.
+There are some gripes I have with it, notifications are still hit or miss despite talking to support about it multiple times - they’ll be delayed or missed altogether if you’ve recently opened the iOS app or have the desktop app open on another computer. Search still needs some love. It should probably weigh recently opened pages higher. And I’d love it if the Mac app was native instead of electron based.
+Their team is pretty responsive when messaging them so that’s a huge plus.
+
+--- techntoke | 2019-01-14
+This isn't self-hosted? I'm interested in a self-hosted solution that uses local markdown files and directories to manage content.
+
+--- benjlang | 2019-01-14
+I'm a big Notion fan. Use it for everything in my life, both work and personal. Here's a screenshot of my Notion homepage: 
+https://twitter.com/benln/status/1034475232445181952
+I also made this site for people to share their Notion pages: http://notionpages.com You can use that to get a better sense of use cases for Notion.
+
+--- motdiem | 2019-01-14
+I’ve started using notion as a kind of personal wiki a few months ago, and I really like it for that. Breaking the distinction between files and folders is one of the ways it’s way easier for me to navigate/structure than it is in google docs.
+My only issue with Notion is that I feel it’s hard to get stuff out of it, especially on mobile. I sometimes type draft documents with it that I really don’t want to share as notion links, and I haven’t figured out how to export them on a phone - I usually have to go to my computer and export the markdown/process it then share...
+
+--- MarkyC4 | 2019-01-14
+We use them in lieu of JIRA. Overall I like the product!
+I wish they had ticket numbers (I like to put ticket numbers in TODOs in the code for more context; I think it leads to more TODOs being done). I had to hack them in using timestamps and hashes.
+The ability to see tickets assigned to you (and not in closed status) would be useful too
+
+--- agsilvio | 2019-01-14
+I've been working on a similar project more suited to my own tastes. It's free and online and in-progress. 
+jumproot.com.
+Sure, it's self-promotion, but highly pertinent.
+
+--- iddan | 2019-01-14
+Best app in the game. Since we started using Notion we’ve documented any important procedure just because it’s fun
+
+--- nerdponx | 2019-01-14
+Terms and Privacy
+TLDR: Notion does not own your data, nor do we sell it to others or use it for advertising. It's your data, period
+
+--- celestialcheese | 2019-01-14
+Nothing to say but it's a fantastic product - if the team behind notion is reading this.. keep up the great work!
+
+--- satanic_pope | 2019-01-14
+Looks clean.
+Would love to try some time but can't imagine porting all my notes (and knowledge base) from Evernote that I've accumulated over the years. Too exhaustive.
+
+--- _____s | 2019-01-14
+I've been using Notion for quite some time now. It's pretty neat although I wish it was (a) faster and (b) had a better writing experience. I find Dropbox Paper to offer the best writing experience but Notion is unbelievably flexible, so I use it instead.
+
+--- josephpmay | 2019-01-14
+I use Notion for my personal productivity, and I highly recommend it. It's one of the few personal tools I'm happy to pay for. It many ways it's a personal wiki, and it is incredibly easy to use.
+Notion has made it much easier to keep track of and refer back to my old notes. For example, I used to draft emails in an unorganized OneNote notebook. If I needed to find an old draft, I'd have to use search and hope that I remembered the right keywords. With Notion, I make all of my email drafts a subpage of an email page, which makes them much easier to find.
+
+--- etchalon | 2019-01-14
+I'm happy to see more people are realizing Filemaker is a great product.
+
+--- lgregg | 2019-01-14
+I love notion, been using it to collaborate with my friend on a project.
+
+--- mxwsn | 2019-01-14
+For me, Notion replaced Evernote and I haven't looked back. Three features that have been particularly useful for personal productivity are
+1) explicit support for Kanban board-ing tasks and similar to-do management
+2) collapsible blocks
+3) substantially smoother linking to, or embedding, notes within notes
+Notion is just as sleek as Evernote for small independent notes, but these two features allow Notion to scale much better for projects that require an inter-related network of notes with substantial breadth and depth.
+
+--- honkycat | 2019-01-14
+I would love to use a product like Notion, but I cannot leave my vim/Emacs keybindings behind!
+Would be cool if they had the ability to import / export structured text.
+
+--- robohoe | 2019-01-14
+So how does Notion make money? By mining your tasks/knowledge base articles? Analytics? Serving ads?
+
+--- plexiglass | 2019-01-14
+Hello HN, first time long time here.
+I use Notion.so personally and professionally and must say its totally changed my game. Notion.so feels like a personal digi Marie Kondo.
+
+--- louis-paul | 2019-01-14
+There is something about Notion that makes it feel very well-made and coherent. It’s one of the few apps I use with this inherent feeling of quality (off the top of my head Sublime Text/Merge, Beyond Compare, Things fall into this category of intangible greatness). Every interaction is delightful, and the app scales really well from basic note-taking to decently complex databases with grouping, filters, relations, templates and permissions. It comes with really good real-time collaboration.
+On the flip side the software a bit slow to start and uses a lot of resources—it’s based on Electron, but I encourage everyone to try it (the demo on their website is cool!).
+This is as close to “painting the back of the fence” as it gets.
+
+--- mjulian | 2019-01-14
+I love the product, but the login workflow is awful. Why innovate on logins? We've solved that problem.
+Specifically, the login is a randomly-generated one-time code sent to your email address. Notion says this is more secure than them storing a username+password, but that's a dubious argument. They've also said this is two-factor auth (lolno). A side effect of this is that Notion is unusable on my mobile device since I have no email on it.
+I really hope they implement a more traditional login system. Until then, I'm sticking with Evernote. :(
+
+--- juddlyon | 2019-01-14
+Pro tip: copied text from Notion is pasted as Markdown in your text editor.
+
+--- hanley | 2019-01-14
+Does anyone use this with their spouse / significant other? Seems like a great tool to have shared docs, lists, todos, etc. I'm thinking things like house and car maintenance, financial planning, shopping lists, and all the other things that I normally keep in a combination of Google Docs and Apple Notes.
+
+--- nirv | 2019-01-14
+I'm concerned about the privacy of this service. Do company employees have (or are able to get) access to users' private data? Is there any data mining in use?
+
+--- manigandham | 2019-01-14
+Glad to see this here, it's a very well-built product that finds the perfect balance between strict JIRA/PM tools and completely unstructured wikis/text files.
+Everything is a "block" and blocks can be nested and attached together to create pages/subpages, tables, kanban boards, calendars, etc. It's a very nice way of working and everything loads fast. The sharing links are nice too.
+Only feedback would be fixing some UI issues that can be a little too sensitive, with an errant keypress or misclick changing everything.
+
+--- ben7799 | 2019-01-14
+Not sure how this product (if it's new) isn't running afoul on Presonus' trademarks for "Notion".
+https://www.presonus.com/products/Notion
+Presonus' product is for music but it is a software product, it is trademarked, and it is older than this one AFAICT.
+
+--- brightball | 2019-01-14
+Alright...this looks great.
+One question though, if it's electron based why in the world isn't there a Linux Desktop client?
+
+--- ausjke | 2019-01-14
+I am uncomfortable to put all personal thoughts, diaries, etc into a non-self-hosting place.
+Can they dockerize this and sell that so I can self-host the docker image instead?
+for people that is not tech-savvy, what about they buy a docker-container-hosted-by-the-vendor-company but can encrypt the contents in a way that nobody else can peek into the content ever?
+
+--- geekamongus | 2019-01-14
+This is really, really awesome and has the crucial features I require out of a notes app, including pasting images from the system clipboard and a deep hierarchy of pages/folders.
+Sadly, I just poured hours of time into putting all my stuff from OneNote into a self-hosted instance of BookStack. However, I like the looks of Notion so much, I am probably going to have to move again!
+
+--- grumblestumble | 2019-01-14
+This seems like a great tool. What's the security model for this? I get that it's offline first with sync capabilities, but is notion hosting any of this content to facilitate syncing and if so is it encryped etc? Is there an easy way to export all of my content?
+
+--- leowoo91 | 2019-01-14
+Looks nice. Are we getting away from the term "ERP" by the way?
+
+--- incognita6 | 2019-01-14
+Like Notion a lot and we looked at a number of the modern wiki tools (cloud based).
+vs Confluence it is much faster. We did end up with Confluence, but that wasn't my first choice.
+vs Samepage it just felt a lot more modern. That might be harsh, but we only had a limited time to eval all the options.
+vs Quip, well, it's Salesforce. The sales was spammy and you just know how hard the sale will be if you've ever used the core SF products.
+Best OS with a combo of Bookstackapp and a ticket system that I forget the name of now. No integration between the two, and no support.
+The reason it lost in the end was it was the only one that didn't have draw.io integrated and we do a lot of diagramming. But, as I say, really nice and I would have preferred it to Confluence.
+
+--- sebastian | 2019-01-14
+There is an small bug that I found when trying to signup. The signup form doesn't allow signing up with .co domains [1].
+[1] https://i.imgur.com/NDcd6X1.png
+
+--- asdf333 | 2019-01-14
+Only 1000 blocks for free
+1000 blocks == 1/3 of Moby Dick?
+that sounds like a terrible deal compared to evernote and all the other apps this promises to replace
+
+--- komali2 | 2019-01-14
+Gorgeous UI - whiffs of web brutalism, though not so "purposefully ugly" as sometimes that can get. Appears very functional without any cruft.
+
+--- JunaidBhai | 2019-01-14
+This is one of those products that I feel I should've come across earlier.
+
+--- ranie93 | 2019-01-14
+Tangent:
+How fine is it to build a business with a Somalian/International TLD? Could a rug be pulled underneath you?

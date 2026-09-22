@@ -1,0 +1,197 @@
+HN 23236786 | 2020-05-19 | 1044 pts | Notion for everyone
+LINK: https://www.notion.so/personal
+
+--- threatofrain | 2020-05-19
+I know it's a niche need but any note-taking app I use needs to support Latex and code highlighting. Unfortunately, once I throw this criteria in just about every app gets excluded, but at least VSC + sync is still very nice.
+
+--- user0x1d | 2020-05-19
+Google Docs on steroids. I approve of it.
+
+--- jackson1442 | 2020-05-19
+This changes a lot for me. I like Notion's interface, as well as the functionality included. It feels like a desktop app, which Google Docs simply can't compete with (they're also Google products, do with that what you will). The "blocks" limit always felt arbitrary on Free, so I never really got into it, but now that I can use this like I would normally use a note-taking app, I can see it being very valuable.
+edit: apparently there's also a free upgrade to Personal Pro for EDU users, I wonder if that's been around for a while.
+
+--- avolcano | 2020-05-19
+This is kinda weird, because I was happily giving them $4/month after running out of space in their trial plan, and now I absolutely have no reason to keep giving them money.
+Which, sure, I guess I'll take it. My $4/month isn't going to make or break their business and they probably barely give a shit about getting money for personal usage. Does remind me that my usage of their app doesn't align with their business model, which makes it feel rather... tenuous? Like at any time they might say "actually we're going to only support paid enterprise usage now" or "oh we're shutting down because companies just used Confluence and Airtable instead" (I have yet to sell any employer on using Notion because it's too unstructured for them to grok the benefits of :\).
+
+--- bovermyer | 2020-05-19
+I paid for Notion for a little over a year. Ultimately, though, I migrated to using Zim backed by Dropbox. I just didn't need the powerful features of Notion. I only needed a wiki with a desktop interface and cloud storage.
+
+--- txcwpalpha | 2020-05-19
+Anyone mind giving me a TL;DR on the value proposition/use case of Notion? I have a friend that works at a small company who is absolutely nuts about it (every single one of his tweets is about it), but I also have seen other people say it's a convoluted mess once you get above a certain size and they regret ever going down that path.
+Also curious if anyone has comments on how it compares to similar apps like Dropbox Paper (which Notion seems like a direct clone of) or Quip.
+
+--- doctorbuttes | 2020-05-19
+Using Notion is awesome, but does require you to bring your own structure. Templates help, but much like any other process in your organization, it requires occasional review to keep the team on the same page to keep it tidy and useful. It helps to have a champion/steward for it.
+
+--- TheGoodBarn | 2020-05-19
+I literally just bought 1 year of Personal Pro last week after running a little week long trial 2 weeks ago.
+
+--- franky47 | 2020-05-19
+The one thing that bothers me about Notion (and Slack and other "everything in one place" tools), is the lack of encryption. I might have FAANGophobia, but whenever there is a free tier without a form of end-to-end encryption in place, it feels like a data puddle waiting to become a lake.
+That being said, having clear-text data would allow features like an API on publicly shared pages/blocks, to use Notion as a CMS. I have seen some attempts [1] at reverse-engineering their internal API, but an official one on a paid plan could be a nice addition.
+[1] https://github.com/splitbee/notion-api-worker
+
+--- nojito | 2020-05-19
+Notion is the embodiment of busy work --> false sense of being productive.
+
+--- lm2s | 2020-05-19
+Notion consuming 10-15% CPU while on idle is a deal breaker to me. I wish they'd devote a bit more resources to fix this.
+(On macOS, don't know if this is the case on other OSes)
+
+--- nisuni | 2020-05-19
+If they only had a native Mac application.
+I love Notion, but the Mac client feels so sluggish, I didn’t investigative but looks like a web view or Electron or something similar.
+
+--- pcx | 2020-05-19
+I love using Notion, but I think the general discussion about it does not talk enough about how it's flexibility is also a problem many times.
+1. Flexibility of blocks is a cognitive overhead for most folks in my team. They would rather prefer more constrained and opinionated approaches like Trello
+2. Notion is currently a jack of all trades and master of none. We have tried to use it as a wiki, project tracker, issue tracker, CRM & spreadsheet. Though it's good to have one tool that can do many things, we quickly reach limits of what is possible automatically and have to spend a lot of time to manually maintain it
+3. Convention over configuration creates problems for other team members to follow because conventions are not documented properly.
+But I see a lot of potential of it becoming a platform. If they can incentivize 3rd parties to build over their platform and build trust, I think it's gonna be the next big thing. "One platform for all my data" with specialized tools to deal with different kinds of data. I can imagine tools like Tello, Jira, Hubspot, Google spreadsheets & draw
+
+--- factsaresacred | 2020-05-19
+Still clinging onto OneNote 2016, the last version that allows you to store your data locally.
+There are some things - like personal notes - that really don't need to live in the cloud.
+
+--- JSavageOne | 2020-05-19
+Why does Notion not have a GitHub integration? Kind of a dealbreaker for using it on any tech team unless you just want a wiki.
+
+--- thatoneguytoo | 2020-05-19
+There are major disadvantages to using something like Notion for personal work - including non discoverability of work or thoughts. Most people are better of with pen and paper.
+I've gone into further depth here: https://usedone.today/blog/posts/davinci/
+
+--- obeattie | 2020-05-19
+I think Notion might actually work best in personal/small environments, and this seems like a smart move to encourage more of that kind of use. My exposure to it is at a large company, where it really does not work well.
+
+--- nickthemagicman | 2020-05-19
+When are we going to get dependency graphs?
+I want a ticket to be able to 'depend' on another ticket in a visually satisfying way like a dependency graph view.
+Dependencies are such a huge part of ticketing systems but they don't seem to be treated with first class attention.
+
+--- TacoToni | 2020-05-19
+As a user of Apple Notes for personal and OneNote for work. What are the benefits of Notion - i have the app installed, but i always default to basic apple notes.
+
+--- dashoffset | 2020-05-19
+Good news.
+But I've been using Roam [1] for a couple months and I don't know if I can live without "biderectional links" and "unliked references" anymore.
+[1] https://roamresearch.com/
+
+--- ggregoire | 2020-05-19
+TL;DR for the people already paying $4/month:
+You can downgrade to the free plan for which the number of blocks is not limited anymore, or keep paying paying $4/month for a bunch of extra features.
+From the FAQ:
+    What if I'm already paying for the old Personal Plan?
+
+    You've been automatically upgraded to our new Personal Pro Plan at no extra cost!
+
+    In addition to all the features of the free Personal Plan, Personal Pro includes:
+
+    - No limit on file uploads (5MB is the limit for free)
+
+    - Unlimited guest collaborators (5 guests is the limit for free)
+
+    - Version history up to 30 days
+
+    - Priority customer support
+
+    - API access (coming soon)
+
+    You can switch back to the free Personal Plan at any time.
+
+--- awill | 2020-05-19
+After Evernote started going downhill, I moved to plain markdown inside a Google Drive folder.
+I use the best, native app for each platform and have zero risk of being affected by a single company cancelling, closing,, increasing the price etc..
+Notion does seem pretty interesting, but if they ever shut, stop innovating, or are outshined by a competitor, I don't fancy the idea of moving everything
+
+--- andreilys | 2020-05-19
+I had a really bad experience with Notion, used it for some time, hit some arbitrary 1000 block limit that no matter what I deleted I couldn't get rid of.
+Now I rely on vimwiki and fzf. More robust and future-proof. Who knows how long Notion will be around?
+
+--- Fiveplus | 2020-05-19
+As an non-user and since a quick glance at the website helps little - what exactly is notions USP and what makes it different than a standard note taking app synchronous across platforms?
+
+--- 7ewis | 2020-05-19
+Currently use the Student plan, love Notion!
+Do sometimes get lost and wonder if I'm doing things in the most optimal way though, it's so powerful.
+
+--- rammy1234 | 2020-05-19
+I use basecamp for my personal organization. calendar, to-dos and share with my spouse. Its perfect. It's intuitive and easy to use. why not basecamp ?
+
+--- Yabood | 2020-05-19
+I mentioned this before. Notion is great, but the fact that they use fullstory (session recording) for a note taking app is a huge problem for me. We’re talking about potentially sensitive data being available to notion and perhaps fullstory employees for the sake of improving UX. I especially dislike the fact that they don’t disclose session recording upfront. I found out by inspecting their app webpage.
+Sure there’s a way to opt out of fullstory in general, but that’s not very reliable.
+I should mention that we use fullstory for our saas product and quite happy with it. However, our implementation makes it possible to opt out upfront during registration and or change your session recording settings from within our app. We don’t rely on fullstory or bs workarounds, we simply don’t load fullstory when you opt out.
+
+--- bauerd | 2020-05-19
+I wish there was a way to disable all the CSS transitions. Makes the UI feel unnecessarily laggy
+
+--- ibdf | 2020-05-19
+Does Notion work offline?I tried Notion way back when they launched, but at the time I was not willing to pay for it. I then switched to Coda, which was free, but had awful offline capabilities. I then gave up for a while and just went back to google documents which loaded offline without any issues.
+
+--- AnonC | 2020-05-19
+If I’ve understood it right, looking at the homepage and the FAQ, Notion is tied to its own cloud service for storing information, and there’s no way to use it as a standalone app storing data locally and sync information through an unrelated service on my own (using, say, Dropbox for example)? If yes, then this is not for me.
+
+--- dvfjsdhgfv | 2020-05-19
+This is a perfect example of an app that you would want to self-host rather than give random people your personal data on a plate. The ability to self-host should be taught at schools so that everybody should be independent and actually own their own data.
+
+--- singhrac | 2020-05-19
+Can we talk about how slow it is? Literally the main reason I don't use this app (which seems so good for my use cases) is that it takes forever to start up on my phone. I can use it on my desktop but only because it's a fast machine - I could see a Macbook Air struggling to load it.
+
+--- FalconSensei | 2020-05-19
+I tried it a few months ago on Android. Almost impossible to use (for me) as the phone's back button makes the app close instead of, you know, going back to the previous screen
+
+--- rbreve | 2020-05-19
+Notion is absolutely amazing, I love the /code snippet, the seamless sharing a page with a url and the UX. I hope Apple doesn't buy them.
+
+--- ESTheComposer | 2020-05-19
+I’m not sure what it is, but I feel like HN seems to pick apart everything that’s posted in a negative light. Honestly I discovered Notion a few years back and used it for a while, but stopped using it when I couldn’t sync it with my teams project management software. Fast forward a few years and my SO and I were at a restaurant sitting next to a guy who’s one of the early engineers in the company, and that sparked my interest again. Since then, I’ve been using Notion to replace Google Docs and Trello, and it’s been fantastic
+
+--- lilyball | 2020-05-19
+Notion is great. My one complaint is the fact that there's no "family plan". I currently have a free workspace that I share with my spouse, but we're about to hit the 1000 block limit. Notion CS's recommendation was for me to use a personal plan and invite them to each page we want to share, or to create a top-level page that all of the shared pages are nested under and invite them to the top-level page alone, but this is very annoying. But I don't want to pay $16/mo just for 2 members who don't need advanced team features.
+
+--- haolez | 2020-05-19
+I'm looking for something similar to Notion for my company's internal documentation (including operations), but it needs to be internationalized (and Notion isn't).
+I've found out about Joplin[1] and thought it was the answer, but it seems that I cannot easily share the notes with my team in a collaborative manner. A pity! The quest continues.
+[1]https://joplinapp.org/
+
+--- Eugeleo | 2020-05-19
+Anybody using Notion for personal knowledge management (lecture notes, literature notes, etc). Why do you find it oreferable to Roam, Obsidian or some of the other new Zettelkasten approaches?
+
+--- simzor | 2020-05-19
+Such a great tool - so glad I gave it a shot, which made me fall in love with it.
+
+--- zwaps | 2020-05-19
+Question to web-devs: I am using firefox with ublock. Notion, like a few other pages, load only as blank for me.
+The only thing I have disabled are cookies and connections to trackers or ads. But cookies are not necessary to load a page. And adblocking is standard.
+Does anyone know the reason?
+
+--- robertlagrant | 2020-05-19
+> Anabella is a software engineer with a love for visual design. Her resume is a public page in Notion, making it viewable to the many hiring managers out there browsing the web (and others who might share).
+This is a weird testimonial. Any frontender should be making their own cool resume website, and not using a website generator!
+
+--- tzfld | 2020-05-19
+Is it only for me or the linked site is very slow? (Firefox)
+
+--- ericax | 2020-05-19
+Notion is great, I used to want to build my knowledge base in it, but figured it's not future-proof enough for my needs.
+And that's part of the reason we went on to build Obsidian 
+ (https://obsidian.md/), the local-first knowledge base app. Everything is in plain text Markdown.
+Screenshot: https://i.imgur.com/zof4zCj.png
+Just released 0.6.0 and here's a video for anyone interested: https://www.youtube.com/watch?v=KAkJMHg-dGw
+The private beta community has built cool stuff already: https://github.com/kmaasrud/awesome-obsidian
+In private beta right now, looking to launch soon.
+
+--- rajekas | 2020-05-19
+I'm sad that so many of the top comments here are Notion skeptical. I have loved Notion from the very beginning and used it as a personal repository for a long time.
+More recently, we used Notion - where 'we' = a group of professional volunteers; professional in that everyone had skills to contribute and volunteer in that no one is being paid for those contributions - to create a Citizen-to-Citizen long term support platform for those impacted adversely by the COVID19 epidemic. In India in case you're wondering.
+The challenges are many:
+1. Make it clear that we see ourselves not as a charity but as a citizen to citizen support network - today it could be that person, but tomorrow it could be you. We have to design around the dignity of the recipient and the donor.
+2. We need to identify potential beneficiaries whose needs are verifiable. Which means involving organizations that work with migrant laborers at scale (to take a key demographic) and can verify and on-board those potential beneficiaries.
+3. We need to pull together the back-end and front-end technology to make donations wi
+
+--- jklinger410 | 2020-05-19
+I tried and failed at using Notion due to a lack of recurring tasks. Also a lot of what was said on here about being too unstructured of an environment.
+I found myself wasting time setting things up and then not using them. I found the community full of people bragging about the beautiful minimalism of their dashboards. I'm not sure if anyone is "getting things done," however.
+I'd be willing to pay Notion for the ability to use recurring tasks, but they seem interested in solving every other problem with their platform before tackling recurring tasks.
