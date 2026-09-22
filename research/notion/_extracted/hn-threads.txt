@@ -1,0 +1,292 @@
+
+
+==================== HN 27612894 | 2021-06-24 | 479 pts | Ask HN: Notion is withholding my company data, what can I do?
+URL: https://news.ycombinator.com/item?id=27612894
+LINK: None
+OP TEXT:
+I've been a paying customer from https://www.notion.so/ since 2017 with my company. In the early days, I even exchanged emails with the founders giving detailed feedback.
+Around 3 months ago, I started having issues with their "Export" feature. Basically, you request to export all your data on Notion, and you're supposed to receive a link to download it. But the link never arrives.
+I contacted them about this, and that's what they said at the time:
+> Our engineering team is currently working through a large backlog, and there is no immediate fix for this issue...
+I explained this wasn't a "nice to have" feature. It was a critical function that locks us with them and goes against their selling message of "you own your data".
+I was ignored, with the same robotic tone.
+So today, 3 months later, I contacted them again to say I'm having the same issue. They replied with the same message:
+>  Please accept my sincere apologies for the ongoing difficulties with this. Our engineering team is currently working through a large backlog, and there is no immediate fix for this issue. I’ve already alerted them to the issue and told them of your particular situation, and we’ll certainly follow up if there are any developments!  Really appreciate your patience with us as we continue to improve. Please let me know if there’s anything else I can help with in the meantime.
+I'm again explaining the same thing - If the feature isn't working, this is a critical function that they should at least try to generate manually as per my request.
+They are basically locking me in. They, again, replied with scripted messages:
+> Unfortunately, our engineering team is working through quite a backlog at the moment, and there isn't an immediate fix for this issue....
+Any suggestions on what I can do? Thanks!
+
+--- neolog | 2021-06-24
+Are you in the EU or California?
+
+--- haswell | 2021-06-24
+As a product manager, I understand this spiel, but that kind of answer should always be reserved for features that don’t exist yet.
+This tells me their marketing dept is writing checks their product team can’t make good on. Not good.
+
+--- fileyfood500 | 2021-06-24
+It sounds like a potential GDPR violation, maybe you can open a case with the EU?
+
+--- koolba | 2021-06-24
+> Around 3 months ago, I started having issues with their "Export" feature. Basically, you request to export all your data on Notion, and you're supposed to receive a link to download it. But the link never arrives.
+Was it ever working? “Having issues” seems to imply the functionality disappeared.
+
+--- hn_throwaway_99 | 2021-06-24
+I'm not a Notion customer, but frankly with a response like this I would never, ever be one.
+It's one thing to make a new feature request and have the response be "sorry, we'll get to it when we get to it." It's quite another to have a bug in an advertised, previously working feature, with no workaround, and say "sorry, our engineers have a big backlog."
+Imagine if a bank said "sorry, we know the withdrawal feature to get your money is broken, but our engineers have a big backlog." Unbelievable!
+
+--- rglover | 2021-06-24
+Depending on what you need, they have an API and a pseudo exporter could likely be built: https://developers.notion.com/reference/intro.
+Not great, but better than being stuck.
+
+--- arrel | 2021-06-24
+You could ask for them to make the service free for you until it’s resolved. You’re still locked in, but at least you’re not paying for it.
+
+--- ano88888 | 2021-06-24
+wow, this sounds scary if you don't own your data
+
+--- dreyfan | 2021-06-24
+Up next: Someone will read this post, write an exporter, immediately find that Notion's system is handling authentication but not authorization, and dump tens of thousand private notion datasets.
+
+--- holistio | 2021-06-24
+You should not only point out that withholding your data is not a nice to have feature, but also that it is illegal.
+A lot of gates open up once companies smell the power of the law, and anyone from their support likely _has to_ escalate any issue where a lawyer is plausibly mentioned.
+
+--- sebast_bake | 2021-06-24
+Something tells me that the fix is about to skyrocket to the top of their priority list.
+
+--- xwdv | 2021-06-24
+You know what we should do? Sign up for Notion, add some data, and then ask to export it.
+If so many people on Hackernews do that, it would be like hitting them with a GDPR denial of service attack and they’ll be forced to push out this feature ASAP.
+
+--- villasv | 2021-06-24
+> Please let me know if there’s anything else I can help with in the meantime.
+This is the part where you ask for them to generate the export on their end and send you a link manually.
+It’s “normal” for a feature to stop working, but their support must be able to provide a workaround even if it takes them hours of manually zipping things. If they don’t, you should at the very least receive a refund.
+
+--- elliekelly | 2021-06-24
+While it’s definitely not ideal it looks like they have a beta API... can you use it to extract your data? Or at least extract the most important data? If you still have the founders’ contact info in your email somewhere another option is to contact them directly and ask for help. Any good founder would quickly task someone with making a miffed but loyal paying customer happy again.
+
+--- snicker7 | 2021-06-24
+No data export feature is pretty damning. Many organizations, especially government, have strict record-keeping requirements (e.g. for US federal agencies/departments, it's required by law). Data export isn't nice-to-have, it's critical functionality.
+
+--- barbazoo | 2021-06-24
+Joplin is a great note taking app with complete authority over your data and has a good subset of the features that Notion provides.
+
+--- alexeldeib | 2021-06-24
+Can you ask for a manual export of some sort? I realize that's annoying, but it seems like it would at least help you out.
+
+--- josephg | 2021-06-24
+This is truly awful, and honestly shouldn't surprise anyone given the modern cloud approach to software.
+I've been thinking a lot lately about ownership. If I have a book, I can interact with it the way the publisher expects (I can read it). But being a physical object, I can also do lots of other things with my book. I can burn it. I can give it to a friend. I can sell it. I can draw in it. I can rip it up and use it as wallpaper. I can get the author to sign the front cover and donate it.
+Software used to work this way too. If I have a Word document, I can interact with it the way Word expects - open it, edit it, save it and so on. And I can also do things microsoft doesn't expect. I can put it on my website. I can email it. I can back it up. I can delete it. I can reverse engineer the file format and edit it using other programs. I can archive it for 30 years, and know it will still w
+
+--- aliyfarah | 2021-06-24
+I don’t see where you asked them to manually generate you a link.
+
+--- ebencooke | 2021-06-24
+Well this makes the "should I start using Notion" question easy. 3 months of captive data and stonewalling from support -- wouldn't touch it with ___ foot pole.
+
+--- heavyset_go | 2021-06-24
+Report them to your state's Attorney General. Have a lawyer send them a letter reminding them that you paid for a service that wasn't provided and that it's costing your business money.
+
+--- chirau | 2021-06-24
+A threat of legal action will probably go a long way. I might be wrong, but I think it is actually illegal to withhold people's data upon request, especially if you claim to offer the feature. Also false advertising.
+I can see how they would try to skirt around it though, they'd probably say that it is a temporary glitch but the functionality is available. That way it wouldn't be them withholding your data or false advertising per se, but rather a temporary incapacitation.
+Another option would be to find other Notion customers who have the same issue or who can reproduce the same issue. That is, find other customers who you can ask to try to download their own data as well. If the issue is not isolated to you, then you can take class action against them and they would either have to take the feature down or issue a customer wide notice of of service/feature downtime. Either of these can 
+
+--- temp8964 | 2021-06-24
+From a technical perspective, why can't they manually create an export? How many man hours are needed to do this?
+Or, does this mean their backend development breaks their export code, so heavy rewrite the export code is required to make export work again?
+
+--- gauravphoenix | 2021-06-24
+Much like you posted your story on HN, make a twitter/linkedIn post and let it go viral. More viral it goes, more chances that the features will be requested by others and more chances of it getting due love by the engineering team. I am not a fan of social shaming, but sometimes that is the last resort and that's what you are doing.
+
+--- wolfgang42 | 2021-06-24
+You’re not the only one, here’s someone who commented last month about having exactly the same problem: https://news.ycombinator.com/item?id=27149433
+
+
+==================== HN 28776786 | 2021-10-06 | 471 pts | Lessons learned from sharding Postgres at Notion
+URL: https://news.ycombinator.com/item?id=28776786
+LINK: https://www.notion.so/blog/sharding-postgres-at-notion
+
+--- alberth | 2021-10-06
+>> “Why 480 shards? … 480 is divisible by a lot of numbers”.
+This is an important point, doing things divisible by 12 gives you a lot of flexibility. It’s not a coincidence both time (clocks) and degrees (360) are multiples of 12.
+
+--- capableweb | 2021-10-06
+Many companies I worked with stopped working with Notion in the past because of performance problems, the application was simply too slow. Has this changed with the new sharded architecture, as I haven't used it since probably last year?
+
+--- craigkerstiens | 2021-10-06
+This is a great read and primer for anyone looking to shard and know they need scale. Having helped a ton of people shard their data, my advice still remains don't do it until you know you have to. The old Citus data blog is a great resource for some guidance around best practices and how to's even if not using Citus.
+That said some of the things you can do from day 1 make things way easier when the time comes later. Workspace ID/Tenant ID/Customer ID, having your data grouped that way makes it very shardable and saves you a lot of work later on in the case you didn't have that in your data model.
+I'm not sure I buy that Citus/Vitess are magic, both are reasonably clear how they work and you can dig into it. At the same time I'd weigh the downsides of Citus (can't speak to Vitess) in that the online rebalancer isn't open source so at that point it's a proprietary product.
+
+--- bamazizi | 2021-10-06
+Curious about thought on using something totally different like column oriented db, like ClickHouse, would've suited a block data oriented app like Notion better?
+Does anyone with experience have any thoughts in favour or against such implementation?
+
+--- endisneigh | 2021-10-06
+On a related note, how far can a single Postgres instance get you?
+If you had some behemoth with 32TB ram and 1PB storage could all of motion fit?
+I’m obviously ignoring the obvious single point of failure here, but sometimes the simplicity could be worth it if you’re willing to handle that.
+I’d be curious to hear about a site that’s in the Alexa 1000 architected how I describe.
+
+--- garrettf | 2021-10-06
+Howdy all, author here! Sharding our Postgres monolith was a huge undertaking for a small team. We got a huge boost from folks that joined within weeks before the switch-over date. If you’re interested in thinking about problems like this, I’d love to chat. Plus we’re also hiring across all roles—check my profile for details.
+I’m happy to answer questions about the project here, feel free to reply below.
+
+--- louwrentius | 2021-10-06
+I still wonder so hard what a single bare metal server would have done in terms of performance. [0]
+May have saved months of planning that may never have been required.
+[0]: https://yourdatafitsinram.net/
+
+--- flowerlad | 2021-10-06
+Anyone starting a tech startup will face this decision: Should I start with a database that has built-in support for sharding? Or should I just start with MySQL or PostgreSQL and defer the sharding question for later?
+Notion chose to do manual sharding (aka application-level sharding). That's what you end up doing if you didn't choose a database that has built-in sharding from the get go, because it is extremely hard to switch to a different database technology. (Larry Ellison compares it to a catholic marriage -- there is no divorce!)
+I skimmed through the article to find the critical piece of info I was looking for: rationale for doing manual sharding. The rationale supplied in this article is "we wanted control over the distribution of our data." That's a weak explanation. It's the kind of thing you say to justify the bad choice made earlier on: failure to choose a database that suppo
+
+--- mbell | 2021-10-06
+Notion seems like an interesting data storage problem. The vast majority of the data is in the `block` entity, which are organized into a sort of nested set, written/updated individually (user edits one at a time) but read in ranged chunks (a doc).
+Off hand this seems like an almost worst case for PG. Since the updates to blocks could contain large data (causing them to be moved often) and there is one big table; it seems likely that the blocks for a single notion document will end up being non-continuous on disk and thus require a lot of IO/memory trashing to read them back out. PG doesn't have a way to tell it how to organize data on disk so there is no good way around this (CLUSTER doesn't count, it's unusable in most use cases).
+Arm chair engineering of course - but my first thought would be to find another storage system for blocks that better fits the use case and leave the rest in
+
+--- sgarrity | 2021-10-06
+The Notion blog has had some quality posts, but it seems to be missing an RSS feed.
+You can subscribe via email (no thanks), and I realize there are some good ways to turn an email subscription into a feed (Feedbin.com handles this nicely). Still, I thought some public shaming here might encourage the to build this basic blog feature (that would help people follow their company!).
+
+--- notJim | 2021-10-06
+Overall this sounds very similar to Etsy's sharding setup, which I think descends from Flickr's sharding setup. Interesting that this is still the way to do it.
+
+--- leetrout | 2021-10-07
+What size data do y'all start worrying about vertical scaling?
+Im surprised at the 500gb table / 10tb db sizes listed.
+I start to worry when my db hits 1tb and any single "hot" table is over 100gb.
+I know there isnt a one size fits all answer but I'm genuinely curious if I'm just too behind living in lessons learned ~5 years ago and and we are in a better place now.
+
+--- TruthWillHurt | 2021-10-07
+What is this, 2008? "Our team spent months architecting this migration". Maybe you should have gone with a cloud offering like Dynamo/RDS, or a serverless database like BigQuery/Aurora.
+
+--- jordanthoms | 2021-10-07
+At Kami (kamiapp.com) we had to make a similar transition last year - we'd seen usage grow over 20x in a 6-month period on our classroom product due to the pandemic, and we were storing all our content in a single-primary Postgres database. We had plenty of headroom before but we were suddenly running out of write capacity, even after scaling vertically up to ~150 vcpu. Our workload is super write heavy so scaling out replicas wouldn't have helped much at all, and I was spending a lot of time manually vacuuming in our daily off-peak as we were burning transaction ids at an astonishing rate, ~800 million per day.
+I looked at a bunch of options but ultimately managing a sharded database seemed like too much overhead for our small (but expanding!) dev team - so we decided to move our heavily loaded tables to CockroachDB instead, as since it's mostly Postgres compatible our transition would 
+
+--- sillysaurusx | 2021-10-07
+Slightly unrelated, but notion's unofficial python API is cool AF! https://github.com/jamalex/notion-py
+It's way more powerful than their official API. The official API can only interact with databases, which (as anyone who uses Notion knows) is a tiny subset of the overall things you want to use Notion for.
+The unofficial Python API lets you have complete programmatic access to all notion pages.
+The tradeoff is that certain things break. However, after reading the code, I found it quite easy to fix the problems I ran into (https://github.com/jamalex/notion-py/pull/345) and I suspect you'll be able to do the same. (I empathize with maintainers not prioritizing their open source work ahead of family life, business, etc.)
+Was surprised that it was even possible to have a nice Python class for every possible Notion object, let alone control them and update them on the fly. I wish their offi
+
+--- caffeinecrazy | 2021-10-07
+I'm curious about whether using Postgres native partitioning was considered? If so, I'd like to hear the rationale for not doing it.
+It seems like you made the database sharding decision as a result of vacuum taking too long. Partitioning the problematic table (assuming you're storing "blocks" in 1 giant table) would have enabled per-partition vacuuming, which will avoid long running vacuum processes.
+
+--- DarthNebo | 2021-10-07
+This was so insightful, gave me a clearer picture of what all needs to be done during migration!
+
+--- dikei | 2021-10-07
+I have 2 questions:
+* How do you setup hot stand-by for each database ?
+* Do you have coordinated backup for all the databases, or are they backed up individually ?
+
+
+==================== HN 44594790 | 2025-07-17 | 430 pts | Tell HN: Notion Desktop is monitoring your audio and network
+URL: https://news.ycombinator.com/item?id=44594790
+LINK: None
+OP TEXT:
+If you have the Notion Desktop App installed, you may have started to notice a "In a meeting? Start AI Meeting Notes" notification pop up exactly when you are joining a virtual meeting (e.g. joining a Google Meet on Firefox).
+At first, I assumed it must have been using my Google Workspace account to snoop on my calendar. But then I started to notice it would notify exactly when I joined even if I was late and the meeting had previously started.
+This was the response from Notion Support after they worked with the Notion Engineering team.
+> Meeting Detection Architecture:
+>    - The system uses a sophisticated dual-detection approach: microphone monitoring combined with network port analysis
+>    - Detection is implemented separately for macOS and Windows at the native operating system level
+I've uninstalled the Notion Desktop App...
+
+--- nihalbaig | 2025-07-17
+that's really corcerning for user privacy!!
+
+--- whalesalad | 2025-07-17
+This is an unintended benefit of being on a Linux workstation - the only client available is the browser.
+
+--- catapart | 2025-07-17
+yuck.
+
+--- _kush | 2025-07-17
+They only check if your mic is on, not what you're saying (they can't hear you unless you've granted mic permission). They also look at your network traffic to see if audio is being sent (otherwise you can get a lot of false positives). Using mic + network data is a common way to spot meetings -- my app LookAway[0] does something similar to pause reminders during calls.
+[0]: https://lookaway.app
+
+--- e9a8a0b3aded | 2025-07-17
+Are you saying that Notion desktop has access to microphone audio or it is only able to determine if the microphone is in use?
+The former is actually concerning to me. I can't imagine caring if it only knows my microphone is in use.
+
+--- Torwald | 2025-07-17
+Thank you for telling HN, much appreciated! I am concerned re privacy, so, thanks again.
+There is a rule in journalism to not burn one's sources, did you violate that rule in the OP? (I don't know, I am not a journalist.)
+We could invite Notion management to comment on this thread.
+
+--- rubyn00bie | 2025-07-17
+This is insane. The amount of absolutely sensitive audio they could be grabbing is unbelievable. And port analysis? Why anyone would think this sort of intrusion is acceptable is boggling my mind. It’s a writing app for god sakes. I hope the backlash from this is both severe and swift.
+
+--- untech | 2025-07-17
+I’ve come to hate Notion with passion because of its abysmal performance, but I still pay for it for my small business. My non-technical employees use it as a database for clients, tasks, payments etc. I tried to research replacements several times, and still haven’t found anything good. Sometimes I wonder if I should build my own.
+
+--- rob74 | 2025-07-17
+Well, to give them the benefit of doubt, this monitoring could be done in a (more or less) privacy sensitive way, e.g. by analyzing the frequency spectrum of the audio input without actually recording or transmitting it, or as others have suggested, maybe they're just checking if the microphone is in use. And for the network they're apparently only monitoring the ports, not the actual data. But still, it sounds like a feature for which they should provide an option to turn it off - or, even better, make it opt-in.
+
+--- Pi9h | 2025-07-17
+If anyone is looking for an alternative to Notion without the bloat,
+I’m building https://docmost.com.
+It has a nice UI, real-time collaboration, diagrams support and more.
+You can self-host it too.
+
+--- nashashmi | 2025-07-17
+What is notion?
+I have been pulling my hair trying to learn these new no code db tools. And I think I have come to a simple explainer.
+It is a list of documents built with (something called) block-editors. Each document can be given properties. The properties get listed into columns. The columns are fields. The documents are rows. And that makes a database table.
+In reverse, it is a database table of records. One record can be can be configured with various fields, plus a document "canvas" made by a block-editor.
+The block editors can import and display views (aka queries) of database tables. And that is what makes it a full circle spaghetti. A document (listed in a database) can display a database table.
+
+--- jherdman | 2025-07-17
+If you go to "Settings > Notifications > Desktop meeting detections notifications" you can turn this feature off. I haven't verified if the mic and traffic sniffing is correspondingly turned off though.
+
+--- like_any_other | 2025-07-17
+While both have privacy implications, I'd rather we distinguish 'monitoring' that exfiltrates your data to their servers, and offline-only 'monitoring', used only for legitimate, benign purposes of the program itself.
+
+--- wustep | 2025-07-17
+Hey!
+1. Notion records audio only during your use of the Meeting Notes feature. Here are the docs: https://www.notion.com/help/ai-meeting-notes
+2. Notion desktop app has notifications about meetings that ask you if you want to use Meeting Notes, it recognizes this by detecting that your microphone is on (i.e. it does not listen to audio coming from your microphone). This feature is a setting in preferences btw, under Notifications > Desktop meeting detection notification.
+source: I work for Notion
+
+--- chinathrow | 2025-07-17
+This is unethical and creepy behavior - Notion team reading this: How exactly did you come up with this?
+
+--- pat64 | 2025-07-17
+As someone who has built an app that detects calls and meetings, this isn’t as nefarious as you’re making it out to be.
+You can detect patterns of hardware use that suggest you’re in a meeting without actually eavesdropping on an actual audio stream of any kind.
+Basically is some app using the mic hardware for something?? Likely a meeting so.
+
+--- toddmorey | 2025-07-17
+I have a funny story: I went to go to a notion doc and just intuitively pressed command-O in the app to open the notion doc I wanted. Of course that command doesn’t open notion docs—what that does is turn on audio transcription.
+So two hours later, I realize I’ve transcribed at the bottom of our team overview page what read like the diary of a madman from fragments of conversation I was having with my wife and dog. I am glad I caught it and deleted it.
+
+--- scblzn | 2025-07-17
+A reminder that Notion still operates under the .so TLD [1]
+Why should you entrust them with your private notes and data?
+[1] https://news.ycombinator.com/item?id=26113444
+
+--- chinathrow | 2025-07-17
+361 points within 5 hours, 112 comments but off the frontpage. Why @dang?
+
+--- lion__93332 | 2025-07-18
+This is so frustrating.
+
+--- pseudocomposer | 2025-07-18
+macOS will always show the user yellow/green notifications in the menu bar when apps access the microphone/camera, as far as I understand.
+I keep Notion Desktop open pretty much all the time on my work laptop, and have not seen these.
+I’m happy to be wrong (well, in this case, I’d be upset at a big privacy violation)… but it seems pretty unlikely the audio monitoring is happening on macOS.
+
+--- pull_my_finger | 2025-07-18
+Is "network port analysis" the same thing Facebook was recently getting (justified) heat for? Basically snooping local ports to see what apps are running?

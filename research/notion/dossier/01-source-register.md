@@ -9,15 +9,23 @@
 | | |
 |---|---|
 | **Product** | Notion |
-| **Stage** | 1 — Source discovery and collection (pass 1) |
+| **Stage** | 1 — Source discovery and collection (passes 1 and 1b) |
 | **Research cutoff** | 2026-09-21 (inclusive) |
 | **Session date** | 2026-09-22 |
 | **Methodology** | `docs/research-methodology.md` v1.0 (LOCKED) |
 | **Planned angle** | "Does a public template gallery work as an acquisition engine?" (`content/upcoming.json`) |
-| **Status** | **PARTIAL — pass 1 in progress, not signed off** |
-| **Sources verified (opened and inspected)** | **9**, including **4 direct observations** |
-| **Sources attempted and blocked** | 2 |
-| **Categories swept** | B (official docs, pricing, API) good; **observation** started and productive; A (company statements) one; E (independent journalism) one; C (archive), D (statutory), F (practitioner) **not started** |
+| **Status** | **PARTIAL — passes 1 and 1b complete, not signed off** |
+| **Sources verified (opened and inspected)** | **16**, including **4 direct observations** |
+| **Sources attempted and blocked** | 3 |
+| **Categories swept** | B (official docs, pricing, API, AI) good; **observation** productive; A (company statements) three incl. the gallery relaunch; E (independent journalism) one; F (practitioner) three threads; C (archive) and D (statutory) **not started** |
+
+### Pass 1b — the gallery's own numbers, the duplication boundary, AI packaging, practitioners (2026-09-22)
+
+Sources **NOT-S007** to **NOT-S013**. Three findings:
+
+- **Open question 2 is closed, from Notion's own help guide.** "Once you identify the template(s) you'd like to use, click the `Start with this template` button. If you're already signed into Notion, the template will automatically be added to your workspace in the Private section of your sidebar." And, decisively: **"If you're logged out or don't have a Notion account, you'll be prompted to sign in or create an account first"** [S008]. The template *is* the signup prompt. That is the acquisition mechanism stated by the company, matching the boundary observed at OBS-004.
+- **The gallery has a disclosed throughput figure, and it is large.** Announcing the rebuilt gallery in June 2023, Notion stated: **"In the past year alone, there have been 51 million template duplications from nearly 11 million people"** [S007]. Since every duplication by a logged-out person requires creating an account [S008], this is the closest thing to an acquisition number in the register. It does not say how many of the 11 million were new.
+- **AI is a plan gate plus a credit meter, not an add-on.** "Notion AI is available on Business and Enterprise Plans"; Free and Plus "get a limited number of complimentary AI responses"; "Premium AI models spend Notion credits" and Business and Enterprise carry "a usage allowance" [S012]. Widely-repeated blog claims that a standalone add-on was withdrawn on a specific date in 2025 are **not** in this register: no primary source was located, only aggregators. Open question 15.
 
 ### 1.1 Material findings from pass 1
 
@@ -51,13 +59,26 @@ Column codes: FIN financial performance · CAP product capability · PRC list pr
 
 | ID | Source | Date | Serves | Notes |
 |---|---|---|---|---|
+| **NOT-S007** | notion.com/blog — "A place for creators and builders: the reimagined Notion Template Gallery" | 2023-06-21 | **USE (AUTH for the disclosure)**, INT | "In the past year alone, there have been 51 million template duplications from nearly 11 million people." Scale at relaunch: "We've expanded from 600 templates to more than 5,000"; "increasing the number of template categories from 21 to 250+"; "over 2,000 Creator profiles". Stated purpose: "giving global creators a place to showcase their work and single place for our community to see what is possible"; "we want to make it easier to find the study setups you might see on YouTube, or the personal dashboards you've scrolled through on TikTok". A new submission process lets "creators to submit their templates and claim their Notion handles". **No mention of SEO, and no mention of creators charging or revenue share.** |
+| **NOT-S011** | notion.com/blog — "Introducing Notion 3.0" | 2025-09-18 | INT, CAP (SUGG) | Notion AI Agents "at the center"; agents can "do up to 20 minutes of autonomous work at a time across hundreds of pages at once"; "Anything you can do in Notion, your Agent can do too"; database row permissions, new AI connectors, MCP integrations; "Custom Agents are coming soon". No pricing change stated in the post. |
 | **NOT-S005** | notion.com/blog — "GIC, Sequoia, Index purchase Notion shares" | 2026-01-26 | FIN (valuation), INT | "total tender of around $270M at an $11B valuation"; "These investors are purchasing shares directly from current and former Notion employees"; "We removed the one-year vesting cliff on options"; "more than 50% of our ARR came from AI-enabled customers, and that percentage more than doubled over the last year". Note the wording: *AI-enabled customers*, which is a customer segment, not AI revenue. |
+
+| **NOT-S008** | notion.com/help/guides/the-ultimate-guide-to-notion-templates | retrieved 2026-09-22 | **CAP (AUTH)** — closes open question 2 | "Once you identify the template(s) you'd like to use, click the `Start with this template` button. If you're already signed into Notion, the template will automatically be added to your workspace in the Private section of your sidebar." **"If you're logged out or don't have a Notion account, you'll be prompted to sign in or create an account first."** Submission: "go to notion.com/templates and click the `Submit a template` button… Fill out the form (including your public template link, template name, template descriptions, and template category)". **Contains no information about selling templates, fees or revenue share.** |
+| **NOT-S012** | notion.com/help/notion-ai-faqs | retrieved 2026-09-22 | **PRC (AUTH)**, CAP | "Notion AI is available on Business and Enterprise Plans." "Users on the Free and Plus Plans get a limited number of complimentary AI responses so they can try Notion AI features out." "Premium AI models spend Notion credits, and a workspace owner or admin has to turn them on first." "To keep Notion AI fast and reliable, Business and Enterprise plans include a usage allowance for certain Notion AI features." No add-on price, no dates, no grandfathering language on this page. |
 
 ### Category E — Independent journalism (Tier 4)
 
 | ID | Source | Date | Serves | Notes |
 |---|---|---|---|---|
 | **NOT-S006** | Forbes, "Notion Kicks Off Employee Share Sale At $11 Billion Valuation As AI Accelerates Its Growth" (Anna Tong) — opened in full | 2025-12-15 | **FIN (CORR)**, HIS | "Notion told its employees Monday that they can sell some of their shares at an $11 billion valuation ahead of a potential initial public offering, people familiar with the matter told Forbes"; "Sequoia Capital, Index Ventures and the Singaporean sovereign wealth fund GIC will purchase the shares, and the deal is expected to be for about $300 million worth of shares"; "recently passed $600 million in annual recurring revenue, half of which is coming from its artificial intelligence products, and is cash flow positive, the people said"; "The privately-held company's last tender offer in 2022 was at a $10 billion valuation, the same valuation as its series C round in 2021." **All figures attributed to unnamed people familiar.** Note the discrepancy with S005: Forbes says ~$300M, Notion's own post says ~$270M; Forbes is the announcement, Notion's is the completion. |
+
+### Category F — Practitioner accounts (Tier 5)
+
+| ID | Source | Date | Serves | Notes |
+|---|---|---|---|---|
+| **NOT-S009** | HN 27612894, "Ask HN: Notion is withholding my company data, what can I do?" (479 pts, 194 comments) | 2021-06-24 | USE (lived experience, SUGG), moat component D candidate | A paying customer since 2017: the export feature stopped delivering its download link for three months, with support replying "Our engineering team is currently working through a large backlog, and there is no immediate fix for this issue." The poster's framing is the analytically useful part: "It was a critical function that locks us with them and goes against their selling message of 'you own your data'." One account, 2021; whether it still holds is untested. |
+| **NOT-S010** | HN 28776786, "Lessons learned from sharding Postgres at Notion" (471 pts) | 2021-10-06 | CAP (CORR), HIS | Notion's own engineering write-up, discussed publicly: the block data model was sharded across 480 logical shards. Practitioner comment in-thread, contemporaneous: "Many companies I worked with stopped working with Notion in the past because of performance problems, the application was simply too slow." Evidence that block-level storage carried a real scaling cost. |
+| **NOT-S013** | HN 44594790, "Tell HN: Notion Desktop is monitoring your audio and network" (430 pts, 171 comments) | 2025-07-17 | CAP, INT | A user quotes Notion support describing AI Meeting Notes detection: "The system uses a sophisticated dual-detection approach: microphone monitoring combined with network port analysis"; "Detection is implemented separately for macOS and Windows at the native operating system level." A counter-voice in the thread notes this is a common technique and that Notion checks whether the mic is active rather than listening. Bears on how far the AI push reaches into the client. |
 
 ### Direct observations (2026-09-22, unauthenticated)
 
@@ -76,14 +97,15 @@ Column codes: FIN financial performance · CAP product capability · PRC list pr
 |---|---|---|---|
 | NOT-X001 | app.notion.com (duplication destination) | Requires an account; not approved for tool access | **Not attempted further.** No account will be created. The transition is described up to the boundary; see open question 2 |
 | NOT-X002 | notion.com/help/upgrade-or-change-your-plan | HTTP 404 | Block-limit content found instead at S002 |
+| NOT-X003 | A first-hand template creator's own revenue disclosure | **Not found.** Searches return only course-selling blogs (Kajabi, Medium, coachli, automateed) repeating third-hand figures about Thomas Frank and Easlo. Thomas Frank's own site carries product pages, no revenue post | Fails §2.4: not contemporaneous first-hand accounts but marketing for courses about selling templates. **Nothing admitted.** Open question 7 |
 
 ---
 
-## 4. What pass 1 has not done
+## 4. What passes 1 and 1b have not done
 
 - **No Category C (archive).** The Internet Archive was offline during the Stripe passes; retry for notion.com/pricing to date the block limit's introduction and the AI pricing changes.
-- **No Category F (practitioner).** Template creators are a distinct population with public earnings claims; Reddit r/Notion and Indie Hackers are the likely sources for what creating templates actually returns. This bears directly on the planned angle.
-- **No SEO evidence.** The angle claims the gallery is an acquisition engine. Observed so far: category pages exist per intent, template pages are indexed-shaped, and Notion cross-links its own help and marketing content from them (OBS-003). **Not** observed: any ranking, traffic or conversion data. A third-party traffic estimate would be T4 at best and is not yet opened.
+- **Creator economics remain unevidenced.** Three threads opened cover data export, scaling and the desktop client, not creators. No admissible source describes what a template creator earns, or what share of 22,116 creators earn anything (open question 7, X003).
+- **No SEO evidence, and the angle now has a partial answer without it.** Observed: category pages per intent, template pages that cross-link Notion's own marketing (OBS-002, OBS-003). Disclosed: 51 million duplications from ~11 million people in a year [S007], and a documented requirement that a logged-out duplicator create an account [S008]. **Still not evidenced:** how those people arrive at the gallery, what share were new to Notion, or any ranking or traffic figure. The mechanism is now evidenced end to end; its *source of traffic* is not.
 - **No competitor or market evidence.** Coda, Obsidian, Airtable, Confluence are the obvious set; nothing opened.
 - **No Users/JTBD first-hand accounts.**
 - **Nothing on Notion AI's pricing history**, which matters given that AI is now more than half of ARR by two accounts.
