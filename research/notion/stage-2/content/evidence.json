@@ -1,0 +1,567 @@
+{
+  "evidence": [
+    {
+      "id": "gallery.duplications.2023",
+      "claim": "Template duplications and the number of people doing them, in the year to June 2023, as Notion states it",
+      "value": "51 million duplications from nearly 11 million people",
+      "display": "51M duplications",
+      "asOf": "2023-06-21",
+      "confidence": "reported",
+      "source": {
+        "type": "company-communication",
+        "title": "A place for creators and builders: the reimagined Notion Template Gallery",
+        "publisher": "Notion Labs, Inc.",
+        "url": "https://www.notion.com/blog/new-notion-template-gallery",
+        "retrievedOn": "2026-09-22"
+      },
+      "note": "Self-reported and unaudited. It counts duplications and people, not new accounts, and Notion has published no equivalent figure since. The gallery held about 5,000 templates at this date and holds over 30,000 today."
+    },
+    {
+      "id": "gallery.scale.2023",
+      "claim": "The template gallery's scale at its June 2023 relaunch, as Notion states it",
+      "value": "from 600 to more than 5,000 templates; categories from 21 to 250+; over 2,000 creator profiles",
+      "asOf": "2023-06-21",
+      "confidence": "reported",
+      "source": {
+        "type": "company-communication",
+        "title": "A place for creators and builders: the reimagined Notion Template Gallery",
+        "publisher": "Notion Labs, Inc.",
+        "url": "https://www.notion.com/blog/new-notion-template-gallery",
+        "retrievedOn": "2026-09-22"
+      },
+      "note": "Stated purpose in the same post: giving creators a place to showcase work, and making it easier to find the setups people see on YouTube and TikTok. The post does not mention search, SEO or acquisition."
+    },
+    {
+      "id": "gallery.scale.2026",
+      "claim": "The template gallery's scale as displayed on its own index page",
+      "value": "30,000+ templates; 22,116 creators; 348 categories; 2,083 collections",
+      "display": "30,000+ templates",
+      "asOf": "2026-09-22",
+      "confidence": "verified",
+      "source": {
+        "type": "product-observation",
+        "title": "notion.com/templates, marketplace index, observed unauthenticated",
+        "publisher": "Notion Labs, Inc.",
+        "url": "https://www.notion.com/templates",
+        "retrievedOn": "2026-09-22"
+      },
+      "note": "Counts read directly from the page: the title states 30,000+ templates, and the browse links state the creator, category and collection counts. Also present: 238 consultants and 143 agents."
+    },
+    {
+      "id": "gallery.categories.observed",
+      "claim": "The largest template categories by count on the gallery index, which are personal rather than work",
+      "value": "Personal Planner 9,530; Student Life 7,472; Study Planner 5,463; Student Planner 3,130",
+      "asOf": "2026-09-22",
+      "confidence": "verified",
+      "source": {
+        "type": "product-observation",
+        "title": "notion.com/templates, category tiles, observed unauthenticated",
+        "publisher": "Notion Labs, Inc.",
+        "url": "https://www.notion.com/templates",
+        "retrievedOn": "2026-09-22"
+      },
+      "note": "Counts of templates per category, not of users. They describe what creators make, which is a signal about demand rather than a measure of it."
+    },
+    {
+      "id": "gallery.signup-gate",
+      "claim": "What Notion's own guide says happens when a logged-out visitor tries to take a template",
+      "value": "you'll be prompted to sign in or create an account first",
+      "asOf": "2026-09-22",
+      "confidence": "verified",
+      "source": {
+        "type": "company-communication",
+        "title": "The ultimate guide to Notion templates",
+        "publisher": "Notion Labs, Inc.",
+        "url": "https://www.notion.com/help/guides/the-ultimate-guide-to-notion-templates",
+        "retrievedOn": "2026-09-22"
+      },
+      "note": "The full sentence: if you are signed in, the template is added to your workspace in the Private section of your sidebar; if you are logged out or have no account, you are prompted to sign in or create one first."
+    },
+    {
+      "id": "gallery.template-page.observed",
+      "claim": "What an anonymous visitor can see on a template page before any account exists",
+      "value": "full description, categories, creator profile, ratings, and a link to the live artefact",
+      "asOf": "2026-09-22",
+      "confidence": "verified",
+      "source": {
+        "type": "product-observation",
+        "title": "notion.com/templates/basic-daily-planner, observed unauthenticated",
+        "publisher": "Notion Labs, Inc.",
+        "url": "https://www.notion.com/templates/basic-daily-planner",
+        "retrievedOn": "2026-09-22"
+      },
+      "note": "Observed: a 4.8 rating from 21 ratings, a creator profile with external links, category tags, and two buttons, View template and Get template. The page also cross-links Notion's own help articles and marketing posts."
+    },
+    {
+      "id": "gallery.artefact.observed",
+      "claim": "What the published template artefact itself shows to a visitor with no account, and where observation stops",
+      "value": "the whole working page renders; the duplicate button routes to an account wall",
+      "asOf": "2026-09-22",
+      "confidence": "verified",
+      "source": {
+        "type": "product-observation",
+        "title": "attuneanchor.notion.site published template page, observed unauthenticated",
+        "publisher": "Template creator, published on Notion Sites",
+        "url": "https://attuneanchor.notion.site/Basic-Daily-Planner-098649fa9f7e83df937601a8ed7a9bfd",
+        "retrievedOn": "2026-09-22"
+      },
+      "note": "Headings, an hourly schedule table and live databases with rows all rendered without signing in. Clicking Start with this template navigated to app.notion.com, which requires an account. No account was created, so nothing past that point was observed."
+    },
+    {
+      "id": "gallery.traffic.ahrefs.2023",
+      "claim": "Organic search performance of the templates section, per a third-party analysis using Ahrefs",
+      "value": "over 287K monthly visits; over 60K organic keywords in the US; 823K backlinks from almost 2K domains",
+      "display": "~287K visits/mo",
+      "asOf": "2024-03-26",
+      "confidence": "estimated",
+      "source": {
+        "type": "third-party-data",
+        "title": "Revolutionizing UGC Content for SaaS: A Deep Dive into Notion's Templates Section",
+        "publisher": "Minuttia (Zacharias Xiroudakis)",
+        "url": "https://minuttia.com/notions-templates-section/",
+        "retrievedOn": "2026-09-22"
+      },
+      "note": "Every figure is an Ahrefs estimate and is labelled as such in the source, so it is a modelled number rather than a measurement. Published September 2023, updated March 2024. Within the section, category pages carry about 24% of traffic and template pages about 75%."
+    },
+    {
+      "id": "gallery.keywords.ahrefs",
+      "claim": "Monthly search volumes for template-related queries, per the same Ahrefs-based analysis",
+      "value": "notion templates 100K global, 30K US; free notion templates 11K; notion templates for students 7K",
+      "asOf": "2024-03-26",
+      "confidence": "estimated",
+      "source": {
+        "type": "third-party-data",
+        "title": "Revolutionizing UGC Content for SaaS: A Deep Dive into Notion's Templates Section",
+        "publisher": "Minuttia (Zacharias Xiroudakis)",
+        "url": "https://minuttia.com/notions-templates-section/",
+        "retrievedOn": "2026-09-22"
+      },
+      "note": "Tool estimates of demand, not of Notion's capture of it. Useful only to show that the intents the category pages target are searched at scale."
+    },
+    {
+      "id": "block.limit.free",
+      "claim": "The block limit on a Free workspace with more than one member, and what happens at it",
+      "value": "1,000 blocks; deleting does not reduce the count; editing continues, creation stops",
+      "display": "1,000 blocks",
+      "asOf": "2026-09-22",
+      "confidence": "verified",
+      "source": {
+        "type": "company-communication",
+        "title": "Understanding block usage",
+        "publisher": "Notion Labs, Inc.",
+        "url": "https://www.notion.com/help/understanding-block-usage",
+        "retrievedOn": "2026-09-22"
+      },
+      "note": "Notion's own words: every piece of content added counts as a new block, and deleting blocks or emptying the trash will not reduce the count. A three-day grace period applies when a workspace hits the limit."
+    },
+    {
+      "id": "block.limit.history.2020",
+      "claim": "That the same deletion-proof 1,000-block cap applied to individuals until May 2020, when it was removed",
+      "value": "cap removed for individuals; the $4/month Personal plan folded into a free tier",
+      "asOf": "2020-05-19",
+      "confidence": "reported",
+      "source": {
+        "type": "practitioner-report",
+        "title": "Notion for everyone (1,044 points, 454 comments), including a contemporaneous quotation of Notion's FAQ",
+        "publisher": "Hacker News (user-generated)",
+        "url": "https://news.ycombinator.com/item?id=23236786",
+        "retrievedOn": "2026-09-22"
+      },
+      "note": "A commenter quotes Notion's FAQ of the day: the free plan's block count is no longer limited, and existing Personal subscribers moved to Personal Pro at no extra cost. Two users describe the prior cap, one saying they hit a 1000 block limit that nothing they deleted could clear. Admitted under methodology 2.4: contemporaneous, specific, and the only surviving record while the archive is offline."
+    },
+    {
+      "id": "block.api.primitive",
+      "claim": "That a block is the architectural primitive of Notion's data model, per its API reference",
+      "value": "30+ block types, nesting via has_children, and child_page as a block type",
+      "asOf": "2026-09-22",
+      "confidence": "verified",
+      "source": {
+        "type": "company-communication",
+        "title": "Block object, Notion API reference",
+        "publisher": "Notion Labs, Inc.",
+        "url": "https://developers.notion.com/reference/block",
+        "retrievedOn": "2026-09-22"
+      },
+      "note": "Notion's own words: a block object represents a piece of content within Notion, and the API translates headings, toggles, paragraphs, lists and media into block type objects. Because child_page is itself a block type, a page is addressable as a block."
+    },
+    {
+      "id": "block.sharding.2021",
+      "claim": "That Notion sharded the block data model across 480 logical Postgres shards, with a contemporaneous account of performance complaints",
+      "value": "480 logical shards; teams reported leaving over slowness",
+      "asOf": "2021-10-06",
+      "confidence": "reported",
+      "source": {
+        "type": "practitioner-report",
+        "title": "Lessons learned from sharding Postgres at Notion (471 points), Hacker News discussion",
+        "publisher": "Hacker News (user-generated), discussing Notion's engineering post",
+        "url": "https://news.ycombinator.com/item?id=28776786",
+        "retrievedOn": "2026-09-22"
+      },
+      "note": "The engineering write-up is Notion's own. The comment that teams stopped working with Notion because the application was too slow is one practitioner's account, contemporaneous with the sharding work, and is evidence of experience rather than of general truth."
+    },
+    {
+      "id": "pricing.plans.2026",
+      "claim": "Notion's list plans and per-member prices",
+      "value": "Free $0; Plus $10; Business $20 per member per month; Enterprise custom",
+      "display": "$0 / $10 / $20",
+      "asOf": "2026-09-22",
+      "confidence": "verified",
+      "source": {
+        "type": "company-communication",
+        "title": "Notion pricing (United States)",
+        "publisher": "Notion Labs, Inc.",
+        "url": "https://www.notion.com/pricing",
+        "retrievedOn": "2026-09-22"
+      },
+      "note": "Monthly prices, with up to 20% off yearly; the exact annual figures are not stated on the page. Business is marked Recommended."
+    },
+    {
+      "id": "pricing.gates.2026",
+      "claim": "What each plan gates, in Notion's own words",
+      "value": "Free 5 MB uploads, 10 guests, 7 days history; Plus unlimited, 30 days; Business SSO, 90 days",
+      "asOf": "2026-09-22",
+      "confidence": "verified",
+      "source": {
+        "type": "company-communication",
+        "title": "Notion pricing (United States)",
+        "publisher": "Notion Labs, Inc.",
+        "url": "https://www.notion.com/pricing",
+        "retrievedOn": "2026-09-22"
+      },
+      "note": "Enterprise adds zero data retention with LLM providers, SCIM provisioning, audit log, domain management and a customer success manager. Each plan carries an audience line, from individuals organising personal projects up to organisations operating with scalability, control and security."
+    },
+    {
+      "id": "ai.plan-gate.2026",
+      "claim": "How Notion AI is sold, per its own FAQ",
+      "value": "available on Business and Enterprise; Free and Plus get limited complimentary responses",
+      "asOf": "2026-09-22",
+      "confidence": "verified",
+      "source": {
+        "type": "company-communication",
+        "title": "Notion AI FAQs",
+        "publisher": "Notion Labs, Inc.",
+        "url": "https://www.notion.com/help/notion-ai-faqs",
+        "retrievedOn": "2026-09-22"
+      },
+      "note": "Premium models spend Notion credits and must be enabled by an admin, and Business and Enterprise carry a usage allowance for certain features. The page states no add-on price and no dates."
+    },
+    {
+      "id": "ai.arr-share.2026",
+      "claim": "Notion's own statement about how much of its ARR comes from customers who use AI",
+      "value": "more than 50% of ARR from AI-enabled customers, a share that more than doubled in a year",
+      "asOf": "2026-01-26",
+      "confidence": "reported",
+      "source": {
+        "type": "company-communication",
+        "title": "GIC, Sequoia, Index purchase Notion shares",
+        "publisher": "Notion Labs, Inc.",
+        "url": "https://www.notion.com/blog/gic-sequoia-index-purchase-notion-shares",
+        "retrievedOn": "2026-09-22"
+      },
+      "note": "Read the wording carefully: this counts revenue from customers who use AI, not revenue earned by AI. A workspace paying for Business and occasionally using meeting notes contributes all of its revenue to this figure."
+    },
+    {
+      "id": "ai.revenue-share.forbes",
+      "claim": "Forbes's differently worded account of the same split, attributed to people familiar",
+      "value": "half of ARR coming from its artificial intelligence products",
+      "asOf": "2025-12-15",
+      "confidence": "reported",
+      "source": {
+        "type": "press",
+        "title": "Notion Kicks Off Employee Share Sale At $11 Billion Valuation As AI Accelerates Its Growth",
+        "publisher": "Forbes (Anna Tong)",
+        "url": "https://www.forbes.com/sites/annatong/2025/12/15/notion-kicks-off-employee-share-sale-at-11-billion-valuation-as-ai-accelerates-its-growth/",
+        "retrievedOn": "2026-09-22"
+      },
+      "note": "This is not the same claim as Notion's. Revenue from AI products and revenue from customers who use AI are different measures, and no source reconciles them. Both are kept in the register precisely so they are not merged."
+    },
+    {
+      "id": "arr.2025.reported",
+      "claim": "Notion's annual recurring revenue and cash position, per Forbes citing people familiar with the matter",
+      "value": "recently passed $600 million ARR; cash flow positive",
+      "display": "$600M ARR",
+      "asOf": "2025-12-15",
+      "confidence": "reported",
+      "source": {
+        "type": "press",
+        "title": "Notion Kicks Off Employee Share Sale At $11 Billion Valuation As AI Accelerates Its Growth",
+        "publisher": "Forbes (Anna Tong)",
+        "url": "https://www.forbes.com/sites/annatong/2025/12/15/notion-kicks-off-employee-share-sale-at-11-billion-valuation-as-ai-accelerates-its-growth/",
+        "retrievedOn": "2026-09-22"
+      },
+      "note": "Attributed to unnamed people familiar with the matter, not to Notion. No audited figure exists, and Notion has never published a revenue number itself."
+    },
+    {
+      "id": "valuation.tender.2026",
+      "claim": "The completed employee tender offer, as Notion announced it",
+      "value": "around $270M at an $11B valuation",
+      "display": "$11B valuation",
+      "asOf": "2026-01-26",
+      "confidence": "verified",
+      "source": {
+        "type": "company-communication",
+        "title": "GIC, Sequoia, Index purchase Notion shares",
+        "publisher": "Notion Labs, Inc.",
+        "url": "https://www.notion.com/blog/gic-sequoia-index-purchase-notion-shares",
+        "retrievedOn": "2026-09-22"
+      },
+      "note": "Sequoia, Index and GIC bought shares directly from current and former employees, so this is secondary, not new capital. Notion removed the one-year vesting cliff on options so more employees could take part. Forbes reported the expected size as about $300M six weeks earlier."
+    },
+    {
+      "id": "valuation.history",
+      "claim": "Notion's prior valuation marks, per Forbes",
+      "value": "$10B at the 2022 tender and at the 2021 Series C",
+      "asOf": "2025-12-15",
+      "confidence": "reported",
+      "source": {
+        "type": "press",
+        "title": "Notion Kicks Off Employee Share Sale At $11 Billion Valuation As AI Accelerates Its Growth",
+        "publisher": "Forbes (Anna Tong)",
+        "url": "https://www.forbes.com/sites/annatong/2025/12/15/notion-kicks-off-employee-share-sale-at-11-billion-valuation-as-ai-accelerates-its-growth/",
+        "retrievedOn": "2026-09-22"
+      },
+      "note": "Four years and about 10% of valuation movement between the 2021 round and the 2026 tender, on figures that are all privately negotiated rather than market prices."
+    },
+    {
+      "id": "notion.no-numbers",
+      "claim": "That Notion publishes no user, customer, headcount or funding figure on its own About page",
+      "value": "no numbers; a mission statement and an Alan Kay quotation",
+      "asOf": "2026-09-22",
+      "confidence": "verified",
+      "source": {
+        "type": "company-communication",
+        "title": "About Notion",
+        "publisher": "Notion Labs, Inc.",
+        "url": "https://www.notion.com/about",
+        "retrievedOn": "2026-09-22"
+      },
+      "note": "An absence rather than a claim, and recorded as one. Notion describes an all-in-one workspace built from dozens of building blocks, and a mission to break away from today's tools. Every user count in circulation comes from aggregators, none of which is cited anywhere in this teardown."
+    },
+    {
+      "id": "jtbd.team-tasks.2019",
+      "claim": "First-hand accounts of teams adopting Notion in place of Asana and Jira, at launch",
+      "value": "switched after getting annoyed with Asana and not wanting Jira; used in lieu of JIRA",
+      "asOf": "2019-01-14",
+      "confidence": "reported",
+      "source": {
+        "type": "practitioner-report",
+        "title": "Notion, all-in-one workspace (970 points, 479 comments), Hacker News launch discussion",
+        "publisher": "Hacker News (user-generated)",
+        "url": "https://news.ycombinator.com/item?id=18904648",
+        "retrievedOn": "2026-09-22"
+      },
+      "note": "The fuller quotation names the pull as well as the push: the team loved how freeform it was and could build a workflow that fit them. One dated corpus of Hacker News readers in January 2019, so it is evidence of experience rather than a census."
+    },
+    {
+      "id": "jtbd.personal-wiki.2019",
+      "claim": "First-hand accounts of Notion replacing personal note tools at launch",
+      "value": "replaced Evernote; replaced an unorganized OneNote notebook; easier to structure than Google Docs",
+      "asOf": "2019-01-14",
+      "confidence": "reported",
+      "source": {
+        "type": "practitioner-report",
+        "title": "Notion, all-in-one workspace (970 points, 479 comments), Hacker News launch discussion",
+        "publisher": "Hacker News (user-generated)",
+        "url": "https://news.ycombinator.com/item?id=18904648",
+        "retrievedOn": "2026-09-22"
+      },
+      "note": "The stated reason in each case is retrieval rather than capture: finding an old note again without guessing the right keyword. Same limitation as the team-tasks entry."
+    },
+    {
+      "id": "positioning.between-tools.2019",
+      "claim": "How a user described Notion's position between rigid project tools and unstructured notes",
+      "value": "the perfect balance between strict JIRA/PM tools and completely unstructured wikis/text files",
+      "asOf": "2019-01-14",
+      "confidence": "reported",
+      "source": {
+        "type": "practitioner-report",
+        "title": "Notion, all-in-one workspace (970 points, 479 comments), Hacker News launch discussion",
+        "publisher": "Hacker News (user-generated)",
+        "url": "https://news.ycombinator.com/item?id=18904648",
+        "retrievedOn": "2026-09-22"
+      },
+      "note": "The same commenter described the block model in the terms the API uses, that everything is a block and blocks nest to make pages, tables, boards and calendars. A user's framing, not Notion's."
+    },
+    {
+      "id": "flexibility.cost.2020",
+      "claim": "A contemporaneous counter-account of the block model's flexibility as a cost",
+      "value": "flexibility of blocks is a cognitive overhead; a jack of all trades and master of none",
+      "asOf": "2020-05-19",
+      "confidence": "reported",
+      "source": {
+        "type": "practitioner-report",
+        "title": "Notion for everyone (1,044 points, 454 comments), Hacker News",
+        "publisher": "Hacker News (user-generated)",
+        "url": "https://news.ycombinator.com/item?id=23236786",
+        "retrievedOn": "2026-09-22"
+      },
+      "note": "The same commenter said their team would rather have the constrained, opinionated approach of Trello, having tried Notion as a wiki, project tracker and issue tracker. One team's experience, and the clearest statement of the trade the product makes."
+    },
+    {
+      "id": "export.friction.2019",
+      "claim": "A user reporting difficulty getting content out of Notion, at launch",
+      "value": "I feel it's hard to get stuff out of it",
+      "asOf": "2019-01-14",
+      "confidence": "reported",
+      "source": {
+        "type": "practitioner-report",
+        "title": "Notion, all-in-one workspace (970 points, 479 comments), Hacker News launch discussion",
+        "publisher": "Hacker News (user-generated)",
+        "url": "https://news.ycombinator.com/item?id=18904648",
+        "retrievedOn": "2026-09-22"
+      },
+      "note": "The first of two independent accounts of the same friction, two years apart. Others in the same thread describe the reverse problem, the cost of porting years of Evernote notes in."
+    },
+    {
+      "id": "export.failure.2021",
+      "claim": "A paying customer's account of Notion's export feature failing for three months",
+      "value": "export link never arrived; support cited a backlog with no immediate fix",
+      "asOf": "2021-06-24",
+      "confidence": "reported",
+      "source": {
+        "type": "practitioner-report",
+        "title": "Ask HN: Notion is withholding my company data, what can I do? (479 points)",
+        "publisher": "Hacker News (user-generated)",
+        "url": "https://news.ycombinator.com/item?id=27612894",
+        "retrievedOn": "2026-09-22"
+      },
+      "note": "A customer since 2017, whose framing is the analytically useful part: a critical function that locks us with them, against a selling message of you own your data. One account, from 2021, and whether it still holds is untested."
+    },
+    {
+      "id": "lockin.anxiety.2020",
+      "claim": "Lock-in anxiety given as a reason for not adopting Notion",
+      "value": "if they ever shut or are outshined, I don't fancy the idea of moving everything",
+      "asOf": "2020-05-19",
+      "confidence": "reported",
+      "source": {
+        "type": "practitioner-report",
+        "title": "Notion for everyone (1,044 points, 454 comments), Hacker News",
+        "publisher": "Hacker News (user-generated)",
+        "url": "https://news.ycombinator.com/item?id=23236786",
+        "retrievedOn": "2026-09-22"
+      },
+      "note": "The same commenter had moved from Evernote to plain markdown files for exactly this reason. Evidence that the friction is priced in by some prospects before they ever start."
+    },
+    {
+      "id": "sharing.predates-gallery.2019",
+      "claim": "That a user had built a site for sharing Notion pages years before Notion's own gallery relaunch",
+      "value": "a user-built site for people to share their Notion pages, January 2019",
+      "asOf": "2019-01-14",
+      "confidence": "reported",
+      "source": {
+        "type": "practitioner-report",
+        "title": "Notion, all-in-one workspace (970 points, 479 comments), Hacker News launch discussion",
+        "publisher": "Hacker News (user-generated)",
+        "url": "https://news.ycombinator.com/item?id=18904648",
+        "retrievedOn": "2026-09-22"
+      },
+      "note": "The commenter describes building it so others could get a sense of what Notion could do. Four years before the gallery relaunch, which suggests the sharing behaviour was organic and was later productised."
+    },
+    {
+      "id": "agents.2025",
+      "claim": "What Notion 3.0 launched and what its agents are stated to do",
+      "value": "agents able to do up to 20 minutes of autonomous work across hundreds of pages",
+      "asOf": "2025-09-18",
+      "confidence": "reported",
+      "source": {
+        "type": "company-communication",
+        "title": "Introducing Notion 3.0",
+        "publisher": "Notion Labs, Inc.",
+        "url": "https://www.notion.com/blog/introducing-notion-3-0",
+        "retrievedOn": "2026-09-22"
+      },
+      "note": "Notion's own framing: anything you can do in Notion, your agent can do too. The post announces no pricing change; AI's plan gating is documented separately."
+    },
+    {
+      "id": "acquisition.skiff.2024",
+      "claim": "Notion's acquisition of Skiff and what became of the product",
+      "value": "acquired Feb 2024, had raised $14.2M, shut down within 12 months, accounts not converted",
+      "asOf": "2024-02-09",
+      "confidence": "verified",
+      "source": {
+        "type": "press",
+        "title": "Notion acquires privacy-focused productivity platform Skiff",
+        "publisher": "TechCrunch (Ivan Mehta)",
+        "url": "https://techcrunch.com/2024/02/09/notion-acquires-privacy-focused-productivity-platform-skiff/",
+        "retrievedOn": "2026-09-22"
+      },
+      "note": "No price was disclosed. The same report lists the prior run of acquisitions: Flowdash in 2022, and before that Cron, which became Notion Calendar, and Automate.io."
+    },
+    {
+      "id": "desktop.meeting-detection.2025",
+      "claim": "How Notion's desktop client detects that a user is in a meeting, per support quoted by a user",
+      "value": "microphone monitoring combined with network port analysis, at the OS level",
+      "asOf": "2025-07-17",
+      "confidence": "reported",
+      "source": {
+        "type": "practitioner-report",
+        "title": "Tell HN: Notion Desktop is monitoring your audio and network (430 points)",
+        "publisher": "Hacker News (user-generated)",
+        "url": "https://news.ycombinator.com/item?id=44594790",
+        "retrievedOn": "2026-09-22"
+      },
+      "note": "A user quoting Notion support after an engineering escalation. A counter-voice in the same thread notes the technique is common and that checking whether a microphone is active is not the same as listening."
+    },
+    {
+      "id": "crdt.architecture.2026",
+      "claim": "How Notion's concurrent editing works, per its own engineering post, and the scale it runs at",
+      "value": "a Replicated Growable Array CRDT; millions of CRDT operations every minute",
+      "display": "millions of ops/min",
+      "asOf": "2026-09-18",
+      "confidence": "verified",
+      "source": {
+        "type": "company-communication",
+        "title": "How Notion handles concurrent editing with CRDTs",
+        "publisher": "Notion Labs, Inc.",
+        "url": "https://www.notion.com/blog/how-notion-handles-concurrent-editing-with-crdts",
+        "retrievedOn": "2026-09-22"
+      },
+      "note": "Notion's own words: pages consist of several blocks, each stored as a separate database record. The system replaced last-write-wins, under which one person's edits could be completely lost, was deployed to production in July 2025, and is described as one of the largest CRDT deployments in the world."
+    },
+    {
+      "id": "crdt.limitation.2026",
+      "claim": "A limitation Notion states about its own CRDT design",
+      "value": "you may need to potentially fetch many blocks to find a particular text slice",
+      "asOf": "2026-09-18",
+      "confidence": "verified",
+      "source": {
+        "type": "company-communication",
+        "title": "How Notion handles concurrent editing with CRDTs",
+        "publisher": "Notion Labs, Inc.",
+        "url": "https://www.notion.com/blog/how-notion-handles-concurrent-editing-with-crdts",
+        "retrievedOn": "2026-09-22"
+      },
+      "note": "Against-interest disclosure: the company naming a cost of its own architecture. Deletions are kept as tombstones rather than removed, which is a second cost of the same design."
+    },
+    {
+      "id": "acquisition.zeroentropy.2026",
+      "claim": "Notion's acquisition of ZeroEntropy and what it was bought for",
+      "value": "team joins Notion; reranker improved search 30% and cut reranking latency 85%",
+      "asOf": "2026-07-24",
+      "confidence": "reported",
+      "source": {
+        "type": "company-communication",
+        "title": "ZeroEntropy is joining Notion",
+        "publisher": "Notion Labs, Inc.",
+        "url": "https://www.notion.com/blog/zeroentropy-is-joining-notion",
+        "retrievedOn": "2026-09-22"
+      },
+      "note": "A team acquisition: the entire team joins and the founder leads a newly formed Model Research team. No price disclosed, and the fate of the standalone product is not stated. The performance figures are Notion's own."
+    },
+    {
+      "id": "funding.series-c.2021",
+      "claim": "Notion's Series C, its valuation step and the growth figures disclosed with it",
+      "value": "$275M at $10B, up from $2B in April 2020; user base up 500%; enterprise up 350% year over year",
+      "asOf": "2021-10-08",
+      "confidence": "reported",
+      "source": {
+        "type": "press",
+        "title": "Productivity startup Notion valued at $10B in latest $275M funding round",
+        "publisher": "SiliconANGLE (Maria Deutscher)",
+        "url": "https://siliconangle.com/2021/10/08/productivity-startup-notion-valued-10b-latest-275m-funding-round/",
+        "retrievedOn": "2026-09-22"
+      },
+      "note": "Led by Sequoia Capital and Coatue, with more than $300 million raised to date. The growth figures are the company's own, stated without a base, so a 500% expansion is unmeasurable without knowing what it grew from."
+    }
+  ]
+}

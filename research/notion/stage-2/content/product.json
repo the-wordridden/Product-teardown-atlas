@@ -1,0 +1,403 @@
+{
+  "slug": "notion",
+  "name": "Notion",
+  "legalName": "Notion Labs, Inc.",
+  "thesis": "Notion's template gallery is the best documented conversion surface in software and the least documented acquisition channel. The company published 51 million duplications and never once said how many were new.",
+  "accent": "#0F0F0F",
+  "status": "draft",
+  "publishedOn": "2026-09-22",
+  "lastUpdated": "2026-09-22",
+  "frameworkVersion": "1.0",
+  "vitals": {
+    "founded": 2013,
+    "category": "productivity",
+    "stage": "late-stage",
+    "ownership": "vc-backed-private",
+    "headquarters": "San Francisco, California",
+    "headcountBand": "unestablished",
+    "platforms": [
+      "web",
+      "desktop-mac",
+      "desktop-windows",
+      "ios",
+      "android",
+      "api"
+    ],
+    "keyMetricIds": [
+      "arr.2025.reported",
+      "valuation.tender.2026",
+      "gallery.duplications.2023",
+      "gallery.scale.2026"
+    ],
+    "evidenceIds": [
+      "notion.no-numbers",
+      "valuation.history",
+      "ai.arr-share.2026",
+      "funding.series-c.2021"
+    ]
+  },
+  "sections": [
+    {
+      "id": "vitals",
+      "title": "Vitals",
+      "summary": "A company that publishes a valuation and no user count, not even on its own About page."
+    },
+    {
+      "id": "problem",
+      "title": "The Problem",
+      "summary": "Described by its users, not by the company: too rigid for Jira, too loose for a wiki."
+    },
+    {
+      "id": "users",
+      "title": "Users & Segments",
+      "summary": "The pricing page names four audiences. The gallery says the biggest one is students."
+    },
+    {
+      "id": "jtbd",
+      "title": "Jobs To Be Done",
+      "summary": "Two jobs, both quoted from the January 2019 launch thread."
+    },
+    {
+      "id": "product",
+      "title": "The Product",
+      "summary": "One primitive, the block. It is also the thing you are billed against."
+    },
+    {
+      "id": "business-model",
+      "title": "Business Model",
+      "summary": "A cap that counts what you ever created, not what you still keep."
+    },
+    {
+      "id": "growth-loops",
+      "title": "Growth Loops",
+      "summary": "Four links evidenced, one missing, and the missing one is the whole question."
+    },
+    {
+      "id": "moats",
+      "title": "Moats",
+      "summary": "Getting in is a click. Getting out is the thing people have complained about since 2019."
+    },
+    {
+      "id": "bets",
+      "title": "Bets & Tensions",
+      "summary": "AI is now a plan gate and, by Notion's careful wording, more than half of something."
+    },
+    {
+      "id": "verdict",
+      "title": "Verdict",
+      "summary": "Our call, with the ceiling stated."
+    }
+  ],
+  "problem": {
+    "beforeState": "By the account of users at its January 2019 launch, teams were choosing between project tools too rigid for how they worked and documents too loose to track anything, running Asana or Jira for tasks and Evernote, OneNote or Google Docs for knowledge, with no way to keep the two in the same place. This is how users described the world before, not how Notion described it.",
+    "afterState": "One workspace where a note, a task, a table and a wiki page are the same kind of object, so a team can shape its own tool rather than adopt someone else's. Notion's own framing is a mission to break away from today's tools and bring back ideas from early computing pioneers, which is a statement of intent rather than a measured change.",
+    "wedge": "A single composable primitive, the block, that made a document and a database the same material, sold to the person who wanted to arrange their own workflow.",
+    "whyNow": {
+      "trigger": "behaviour",
+      "change": "By the late 2010s teams ran both a rigid tracker and a loose document tool, and increasingly resented maintaining the seam between them.",
+      "argument": "A user at launch put the position better than any marketing did, calling it the balance between strict project tools and completely unstructured wikis. That names a gap in the market, but the record does not establish whether the gap opened then or had always been there."
+    },
+    "evidenceIds": [
+      "positioning.between-tools.2019",
+      "jtbd.team-tasks.2019",
+      "notion.no-numbers"
+    ],
+    "patterns": []
+  },
+  "users": {
+    "segments": [
+      {
+        "id": "individuals-and-students",
+        "name": "Individuals and students",
+        "description": "People organising their own lives, and the largest group by any observable measure: the gallery's biggest categories are Personal Planner, Student Life and Study Planner, not anything to do with work. Free forever for one person, which is why this group is invisible in revenue and dominant in the funnel.",
+        "shareBand": "major",
+        "isPrimary": true,
+        "evidenceIds": [
+          "gallery.categories.observed",
+          "pricing.plans.2026",
+          "pricing.gates.2026"
+        ]
+      },
+      {
+        "id": "small-teams",
+        "name": "Small teams and startups",
+        "description": "The group the business model is actually aimed at. A second member turns an unlimited workspace into a 1,000-block one, and Notion's own audience line for Plus is small teams and professionals working together. The 2019 accounts of teams dropping Asana and Jira describe this segment forming.",
+        "shareBand": "significant",
+        "isPrimary": false,
+        "evidenceIds": [
+          "block.limit.free",
+          "pricing.plans.2026",
+          "jtbd.team-tasks.2019"
+        ]
+      },
+      {
+        "id": "enterprises",
+        "name": "Enterprises",
+        "description": "Organisations buying SSO, SCIM, audit logs, domain management and zero data retention with model providers. Priced on request, and the only tier where Notion names control and security rather than flexibility as the thing being sold.",
+        "shareBand": "niche",
+        "isPrimary": false,
+        "evidenceIds": [
+          "pricing.gates.2026",
+          "ai.plan-gate.2026"
+        ]
+      },
+      {
+        "id": "template-creators",
+        "name": "Template creators",
+        "description": "Over 22,000 people with public creator profiles who build the inventory the gallery ranks on. They are users, suppliers and a distribution channel at once. What any of them earns is not established by anything in the record.",
+        "shareBand": "niche",
+        "isPrimary": false,
+        "evidenceIds": [
+          "gallery.scale.2026",
+          "gallery.scale.2023",
+          "sharing.predates-gallery.2019"
+        ]
+      }
+    ],
+    "powerUser": {
+      "profile": "Someone who stopped using Notion as a notebook and started using it as a system: linked databases, templates they built themselves, and a workspace other people now depend on. At launch a user described documenting every important procedure simply because it had become enjoyable, and another had already built a site for sharing their pages with strangers.",
+      "behaviours": [
+        "Builds databases with relations rather than writing flat pages",
+        "Makes templates for their own repeated work, then publishes some",
+        "Replaces two or three separate tools with one workspace",
+        "Invites collaborators, which is what triggers the block limit"
+      ],
+      "evidenceIds": [
+        "sharing.predates-gallery.2019",
+        "jtbd.personal-wiki.2019",
+        "block.limit.free"
+      ]
+    },
+    "notFor": [
+      {
+        "who": "Teams who want the tool to decide",
+        "why": "One team lead described the flexibility of blocks as cognitive overhead and said his team would rather have something constrained like Trello, calling Notion a jack of all trades and master of none after trying it as a wiki, project tracker and issue tracker. One team's experience, and the clearest statement of what the product trades away."
+      },
+      {
+        "who": "Anyone who needs their content to leave easily",
+        "why": "Users have described difficulty getting content out since launch in 2019, and one paying customer reported the export feature silently failing for three months in 2021. Two accounts, not a measured rate."
+      }
+    ],
+    "patterns": []
+  },
+  "jtbd": {
+    "jobs": [
+      {
+        "id": "run-team-work-without-jira",
+        "statement": "When my team needs to track work, give us something we can shape ourselves so we don't have to adopt Jira's process.",
+        "dimension": "functional",
+        "segmentIds": [
+          "small-teams"
+        ],
+        "competingAlternatives": [
+          {
+            "name": "Asana",
+            "why": "The tool one team left, in their words, after getting annoyed with it and not wanting to move to something like Jira."
+          },
+          {
+            "name": "Jira",
+            "why": "Named twice in the launch thread: once as the thing being avoided, once as the thing Notion was used in lieu of."
+          },
+          {
+            "name": "Trello",
+            "why": "Named by a team lead who went the other way, preferring a constrained tool to Notion's flexibility."
+          }
+        ],
+        "forces": {
+          "push": "A tracker whose process did not match how the team worked, and the overhead of maintaining it alongside separate documents.",
+          "pull": "Freeform structure, in one team's words letting them create a workflow that fit them, with tasks and the docs about them in one place.",
+          "anxiety": "That the flexibility becomes its own cost. One team lead called it cognitive overhead and went back to something constrained.",
+          "habit": "An existing tracker with history in it, and colleagues who already know where things live."
+        },
+        "evidenceIds": [
+          "jtbd.team-tasks.2019",
+          "positioning.between-tools.2019",
+          "flexibility.cost.2020"
+        ],
+        "patterns": []
+      },
+      {
+        "id": "find-my-own-notes-again",
+        "statement": "When I keep notes for myself, let me structure them so I can find things again without guessing the right keyword.",
+        "dimension": "functional",
+        "segmentIds": [
+          "individuals-and-students"
+        ],
+        "competingAlternatives": [
+          {
+            "name": "Evernote",
+            "why": "The tool most often named as replaced, by users who said they had not looked back."
+          },
+          {
+            "name": "OneNote",
+            "why": "One user described drafting emails into an unorganised OneNote notebook and having to search and hope they remembered the keyword."
+          },
+          {
+            "name": "Google Docs",
+            "why": "Named by a user who found Notion easier to navigate and structure, because it removed the file and folder distinction."
+          }
+        ],
+        "forces": {
+          "push": "Notes that accumulate faster than they can be organised, and retrieval that depends on remembering the right words.",
+          "pull": "Nesting, linking and embedding pages inside pages, so structure emerges instead of being filed.",
+          "anxiety": "Porting years of existing notes in, which one user said they could not imagine doing, and the difficulty of getting content out later.",
+          "habit": "A decade of notes already living somewhere else."
+        },
+        "evidenceIds": [
+          "jtbd.personal-wiki.2019",
+          "export.friction.2019",
+          "block.api.primitive"
+        ],
+        "patterns": []
+      }
+    ]
+  },
+  "product": {
+    "coreObjects": [
+      "Block",
+      "Page",
+      "Database",
+      "Workspace",
+      "Template",
+      "Creator profile"
+    ],
+    "coreActions": [
+      "Add a block, which is any piece of content",
+      "Nest blocks inside blocks to build a page",
+      "Turn a set of pages into a database with views",
+      "Duplicate a template into a workspace",
+      "Publish a page to the web",
+      "Submit a template to the gallery",
+      "Edit the same page as someone else, merged rather than overwritten"
+    ],
+    "atomicUnitOfValue": "A block: the smallest thing you can create, the thing pages are made of, and the thing the free plan counts.",
+    "timeToValue": "unestablished",
+    "keySurfaces": [
+      {
+        "name": "The editor",
+        "purpose": "Where blocks are written and nested, with concurrent edits merged by a CRDT since July 2025. Not observed here; it requires an account."
+      },
+      {
+        "name": "Databases",
+        "purpose": "Collections of pages with properties and views: table, board, calendar, gallery."
+      },
+      {
+        "name": "Template gallery",
+        "purpose": "Public, unauthenticated catalogue of 30,000+ templates organised into 348 categories."
+      },
+      {
+        "name": "Notion Sites",
+        "purpose": "Publishes any page to the open web, which is how template artefacts are distributed and read by people with no account."
+      },
+      {
+        "name": "Notion AI",
+        "purpose": "Agents and assistance, gated to Business and Enterprise, with premium models metered by credits."
+      },
+      {
+        "name": "API",
+        "purpose": "Reads and writes blocks, with 30+ block types and nesting, arriving in 2021 after two years of requests."
+      }
+    ],
+    "patterns": []
+  },
+  "businessModel": {
+    "models": [
+      "freemium",
+      "subscription-seat",
+      "subscription-tier"
+    ],
+    "valueMetric": "The member. Price is per person per month, and the free plan's block cap is triggered not by volume but by adding a second one.",
+    "revenueLines": [
+      {
+        "id": "seat-subscriptions",
+        "type": "subscription",
+        "name": "Per-member subscriptions",
+        "description": "Plus at $10 and Business at $20 per member per month, with Enterprise on request. Independent reporting puts total ARR recently past $600 million and the company cash flow positive; Notion discloses no split, so this line carries everything.",
+        "shareBand": "dominant",
+        "evidenceIds": [
+          "pricing.plans.2026",
+          "arr.2025.reported",
+          "pricing.gates.2026"
+        ]
+      },
+      {
+        "id": "ai-tier-and-credits",
+        "type": "usage",
+        "name": "AI, sold as a tier and metered above it",
+        "description": "AI is not an add-on. It is the main reason to be on Business rather than Plus, with premium models spending credits on top. Notion says more than half of ARR now comes from customers who use AI, which is a statement about customers rather than about AI revenue.",
+        "shareBand": "significant",
+        "evidenceIds": [
+          "ai.plan-gate.2026",
+          "ai.arr-share.2026",
+          "ai.revenue-share.forbes"
+        ]
+      }
+    ],
+    "pricing": {
+      "axis": "per-seat",
+      "tiers": [
+        {
+          "name": "Free",
+          "gates": [
+            "Unlimited for one person; 1,000 blocks once a second member joins",
+            "5 MB file uploads, 10 guests, 7 days of page history",
+            "A limited number of complimentary AI responses"
+          ],
+          "priceNote": "$0 per member per month",
+          "evidenceIds": [
+            "pricing.plans.2026",
+            "block.limit.free",
+            "ai.plan-gate.2026"
+          ]
+        },
+        {
+          "name": "Plus",
+          "gates": [
+            "Unlimited blocks and file uploads",
+            "Unlimited guests, 30 days of page history"
+          ],
+          "priceNote": "$10 per member per month, as of 2026-09-22",
+          "evidenceIds": [
+            "pricing.plans.2026",
+            "pricing.gates.2026"
+          ]
+        },
+        {
+          "name": "Business",
+          "gates": [
+            "Notion AI, agents, meeting notes and enterprise search",
+            "SAML SSO and granular database permissions",
+            "90 days of page history"
+          ],
+          "priceNote": "$20 per member per month, marked Recommended",
+          "evidenceIds": [
+            "pricing.plans.2026",
+            "ai.plan-gate.2026"
+          ]
+        },
+        {
+          "name": "Enterprise",
+          "gates": [
+            "Zero data retention with model providers",
+            "SCIM provisioning, audit log, domain management",
+            "A customer success manager"
+          ],
+          "priceNote": "Custom pricing, not published",
+          "evidenceIds": [
+            "pricing.gates.2026"
+          ]
+        }
+      ]
+    },
+    "monetizationMoment": "Inviting the second person. A workspace with one member has no block limit; a workspace with two is capped at 1,000 blocks, counted from everything ever created and never reduced by deleting. Collaboration is the trigger, not volume.",
+    "unitEconomicsShape": "Free for individuals at unlimited scale, which is unusual and is what fills the gallery with 22,000 creators making inventory. The cap lands precisely where collaboration begins, so the cost of the free tier is borne against personal users while the conversion pressure sits on teams. Reported ARR passed $600 million with the company cash flow positive, on figures nobody has audited.",
+    "evidenceIds": [
+      "block.limit.free",
+      "block.limit.history.2020",
+      "arr.2025.reported",
+      "gallery.scale.2026",
+      "pricing.plans.2026"
+    ],
+    "patterns": []
+  }
+}

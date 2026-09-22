@@ -1,0 +1,55 @@
+{
+  "distributionMotion": {
+    "classification": "bottom-up-end-user",
+    "rationale": "The entry point is an individual on a free plan with no limit, usually arriving at a template page from search and being asked to create an account before they can take it. Enterprise gates exist but are priced on request and appear only at the top of the ladder. Nothing in the record describes a sales motion.",
+    "evidenceIds": [
+      "gallery.signup-gate",
+      "gallery.traffic.ahrefs.2023",
+      "pricing.plans.2026",
+      "pricing.gates.2026"
+    ]
+  },
+  "valueMetric": {
+    "classification": "seats",
+    "rationale": "Every paid plan is priced per member per month, and the free plan's constraint is triggered by adding a member rather than by usage. The block cap looks like a usage meter but functions as a seat trigger: one person is unlimited, two people get 1,000 blocks.",
+    "evidenceIds": [
+      "pricing.plans.2026",
+      "block.limit.free"
+    ]
+  },
+  "moatSource": {
+    "classification": "switching-costs",
+    "rationale": "A workspace is a nested block structure with databases and relations, and no format outside Notion holds that shape. Users have described difficulty getting content out since 2019, one paying customer reported the export failing for three months in 2021, and others cite moving everything as a reason not to start. Friction is corroborated; its cost is not measured.",
+    "evidenceIds": [
+      "export.friction.2019",
+      "export.failure.2021",
+      "lockin.anxiety.2020",
+      "block.api.primitive"
+    ]
+  },
+  "timeToValue": {
+    "classification": "unestablished",
+    "rationale": "No source measures how long it takes a new workspace to become useful. Duplicating a template is instant once an account exists, which suggests it is short for template-led entry, but that is an inference from the mechanism rather than a measurement, and the product behind the signup wall was not observed.",
+    "evidenceIds": [
+      "gallery.signup-gate"
+    ]
+  },
+  "buyerUserAlignment": {
+    "classification": "aligned",
+    "rationale": "The person who builds a workspace is the person who hits the block limit and the person who upgrades. Notion's own audience lines run from individuals organising personal projects to small teams working together, and the upgrade trigger is inviting a colleague rather than a procurement decision. Enterprise buying splits the roles, but that is the smallest tier.",
+    "evidenceIds": [
+      "pricing.plans.2026",
+      "block.limit.free",
+      "pricing.gates.2026"
+    ]
+  },
+  "expansionMechanism": {
+    "classification": "seats",
+    "rationale": "Growth within an account comes from adding members, which is both the pricing unit and the thing that ends the free tier. The AI tier is a second expansion path, moving a workspace from Plus to Business, and Notion states that more than half of ARR now comes from customers who use AI.",
+    "evidenceIds": [
+      "block.limit.free",
+      "pricing.plans.2026",
+      "ai.arr-share.2026"
+    ]
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "primaryLoopId": "template-gallery-loop",
+  "loops": [
+    {
+      "id": "template-gallery-loop",
+      "name": "Template Gallery Loop",
+      "type": "content",
+      "thesis": "Someone searches for a planner, finds a template page, reads the whole working artefact without an account, clicks to take it, and is asked to sign up. Later they build their own and publish it, which adds inventory for the next search. Four links are evidenced. The one that would prove it acquires anyone is not.",
+      "speed": {
+        "band": "unestablished",
+        "note": "No source measures how long any step takes: not the time from search to duplication, nor from duplication to a user publishing their own template. Notion has disclosed a yearly duplication total and no cadence.",
+        "evidenceIds": ["gallery.duplications.2023"]
+      },
+      "nodes": [
+        {
+          "role": "acquisition",
+          "label": "Someone searches for a template, not for Notion",
+          "detail": "The gallery holds 30,000+ templates in 348 categories, with a landing page per intent. A third-party analysis using Ahrefs estimates the section at over 287,000 monthly visits across more than 60,000 US keywords, against demand like 100,000 monthly global searches for notion templates and 7,000 for notion templates for students.",
+          "metricIds": ["gallery.scale.2026", "gallery.traffic.ahrefs.2023", "gallery.keywords.ahrefs"],
+          "patterns": []
+        },
+        {
+          "role": "activation",
+          "label": "The artefact sells itself before any account exists",
+          "detail": "A template page shows the full description, categories, creator profile and ratings, and links to the live page on the creator's published site, where headings, schedules and working databases all render to a visitor who has never signed in.",
+          "metricIds": ["gallery.template-page.observed", "gallery.artefact.observed"],
+          "patterns": []
+        },
+        {
+          "role": "core-action",
+          "label": "Taking the template requires an account",
+          "detail": "Notion's own guide is explicit: if you are signed in, the template lands in your sidebar; if you are logged out or have no account, you are prompted to sign in or create one first. The duplicate button was observed routing to the account wall.",
+          "metricIds": ["gallery.signup-gate", "gallery.artefact.observed"],
+          "patterns": []
+        },
+        {
+          "role": "output",
+          "label": "A workspace fills up, and some people start making their own",
+          "detail": "Over 22,000 creator profiles exist today, up from about 2,000 at the 2023 relaunch. The behaviour predates the product: at the January 2019 launch a user had already built a site for sharing Notion pages so others could see what was possible.",
+          "metricIds": ["gallery.scale.2026", "gallery.scale.2023", "sharing.predates-gallery.2019"],
+          "patterns": []
+        },
+        {
+          "role": "reinvestment",
+          "label": "New templates become new landing pages",
+          "detail": "Submission is a form: a public template link, a name, a description and a category. Each accepted template becomes another indexed page targeting another intent, which is how the gallery grew from 600 templates to over 30,000.",
+          "metricIds": ["gallery.signup-gate", "gallery.scale.2023", "gallery.scale.2026"],
+          "patterns": []
+        }
+      ],
+      "edges": [
+        {
+          "from": "acquisition",
+          "to": "activation",
+          "label": "Search lands on a page that renders the whole product",
+          "mechanism": "Category and template pages exist per intent and rank for them, and the destination is not a marketing page but the artefact itself, readable in full without an account. The traffic figures are third-party tool estimates rather than measurements.",
+          "strength": "moderate",
+          "evidenceStatus": "partially-evidenced",
+          "evidenceIds": ["gallery.traffic.ahrefs.2023", "gallery.keywords.ahrefs", "gallery.template-page.observed"],
+          "counterEvidenceIds": [],
+          "note": "The structure was observed directly and the traffic is estimated by a third party using Ahrefs. Notion has never published a traffic or ranking figure for the gallery, and its own relaunch post does not mention search at all.",
+          "patterns": []
+        },
+        {
+          "from": "activation",
+          "to": "core-action",
+          "label": "Wanting the template is what triggers the signup",
+          "mechanism": "The artefact is fully readable but not takeable. Notion's documentation states that a logged-out visitor is prompted to sign in or create an account before the template can be added, and the button was observed routing to that wall.",
+          "strength": "strong",
+          "evidenceStatus": "evidenced",
+          "evidenceIds": ["gallery.signup-gate", "gallery.artefact.observed", "gallery.template-page.observed"],
+          "counterEvidenceIds": [],
+          "note": "Documented by the company and corroborated by direct observation up to the boundary. This is the one link in the ring that is established rather than estimated.",
+          "patterns": []
+        },
+        {
+          "from": "core-action",
+          "to": "output",
+          "label": "A duplicated template becomes a used workspace",
+          "mechanism": "Proposed: someone who takes a template keeps using it, fills it with their own blocks, and eventually builds structures of their own. Nothing in the record measures retention after duplication, or what share of duplicators return.",
+          "evidenceStatus": "insufficient",
+          "evidenceIds": [],
+          "counterEvidenceIds": ["flexibility.cost.2020", "block.sharding.2021"],
+          "note": "The only independent evidence about what happens after adoption runs the other way: a team lead describing the flexibility as cognitive overhead and returning to a constrained tool, and a contemporaneous report of teams leaving over performance. Neither measures a rate.",
+          "patterns": []
+        },
+        {
+          "from": "output",
+          "to": "reinvestment",
+          "label": "Users become creators and publish back",
+          "mechanism": "Creator profiles grew from about 2,000 at the 2023 relaunch to over 22,000, and the submission path is a public link plus a form. The behaviour existed before Notion productised it, which is why the supply looks organic rather than recruited.",
+          "strength": "moderate",
+          "evidenceStatus": "partially-evidenced",
+          "evidenceIds": ["gallery.scale.2023", "gallery.scale.2026", "sharing.predates-gallery.2019"],
+          "counterEvidenceIds": [],
+          "note": "Creator counts are observable and the submission mechanism is documented. What share of users ever publish, and what any of them earn, is not established by anything admissible.",
+          "patterns": []
+        },
+        {
+          "from": "reinvestment",
+          "to": "acquisition",
+          "label": "More templates mean more landing pages for more intents",
+          "mechanism": "Each submitted template becomes another indexed page targeting another specific intent, and categories multiplied from 21 to 348 as inventory grew. Whether added inventory produced the traffic, or traffic attracted the inventory, is not established by either source.",
+          "strength": "moderate",
+          "evidenceStatus": "partially-evidenced",
+          "evidenceIds": ["gallery.scale.2023", "gallery.scale.2026", "gallery.traffic.ahrefs.2023"],
+          "counterEvidenceIds": [],
+          "note": "Two dated scale figures three years apart and one traffic estimate between them. The direction of causation is unestablished, and Notion's relaunch post frames the gallery as a showcase for creators rather than a growth channel.",
+          "patterns": []
+        }
+      ],
+      "boundaryConditions": "Notion disclosed 51 million duplications from nearly 11 million people in the year to June 2023, and has published nothing equivalent since and no split between new and existing users. Every duplication by a logged-out person requires an account, so the loop converts by construction; whether it acquires is the one thing the disclosure does not say.",
+      "patterns": []
+    }
+  ]
+}

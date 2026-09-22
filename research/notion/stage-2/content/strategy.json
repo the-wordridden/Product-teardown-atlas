@@ -1,0 +1,191 @@
+{
+  "bets": [
+    {
+      "id": "ai-as-the-tier",
+      "title": "Make AI the reason to be on Business, not an add-on",
+      "bet": "Notion put its full AI feature set behind the $20 Business plan rather than selling it separately, gave Free and Plus a limited taste, and metered premium models with credits on top. Notion 3.0 then made agents the headline, able to work autonomously for up to twenty minutes across hundreds of pages.",
+      "expectedAdvantage": "Bundling converts the upgrade decision from buying an AI product into buying a better plan, and every AI feature then argues for a higher per-seat price across the whole workspace rather than for one line item.",
+      "tradeoff": "Model inference is a variable cost attached to a fixed per-seat price, which is why premium models need a credit meter and an admin switch. The company also cannot show AI revenue separately, because by design there is no separate AI revenue.",
+      "result": "Notion states more than half of ARR now comes from AI-enabled customers, a share it says more than doubled in a year. Forbes described the same period as half of ARR coming from AI products, which is a different measure, and no source reconciles them.",
+      "currentTension": "The two sentences are the tension. If the strategy works, AI revenue is invisible by construction and every Business seat counts as an AI customer. That makes the bet unfalsifiable from outside, exactly when investors most want it proven.",
+      "status": "unresolved",
+      "affectsSections": [
+        "business-model",
+        "product",
+        "verdict"
+      ],
+      "patterns": [],
+      "evidenceIds": [
+        "ai.plan-gate.2026",
+        "ai.arr-share.2026",
+        "ai.revenue-share.forbes",
+        "agents.2025",
+        "arr.2025.reported"
+      ]
+    },
+    {
+      "id": "free-forever-for-one",
+      "title": "Give individuals unlimited use free, and charge the moment they collaborate",
+      "bet": "In May 2020 Notion removed the 1,000-block cap for individuals and folded the old $4 per month Personal plan into a free tier. The same deletion-proof cap now applies only once a workspace has a second member.",
+      "expectedAdvantage": "An unlimited free tier for one person removes every reason not to start, and produces a large population of people building things worth sharing, which is the supply side of the template gallery.",
+      "tradeoff": "Notion carries the storage and serving cost of an unbounded free population that may never pay, and it gave up a $4 per month revenue line to do it. The block model's scaling cost is real: it had to be sharded across 480 logical Postgres shards, with teams reporting they left over slowness.",
+      "result": "The gallery grew from 600 templates to over 30,000, and creator profiles from about 2,000 to over 22,000. Notion reported 51 million template duplications from nearly 11 million people in the year to June 2023.",
+      "currentTension": "The free tier is where the inventory comes from and the paid tier begins at collaboration, so the same decision that fills the gallery also caps how much of it ever converts. No public figure separates the two populations.",
+      "status": "paid-off",
+      "affectsSections": [
+        "business-model",
+        "growth-loops",
+        "users"
+      ],
+      "patterns": [],
+      "evidenceIds": [
+        "block.limit.history.2020",
+        "block.limit.free",
+        "gallery.scale.2026",
+        "gallery.duplications.2023",
+        "block.sharding.2021"
+      ]
+    },
+    {
+      "id": "buy-teams-shut-products",
+      "title": "Acquire teams, wind down their products",
+      "bet": "Notion bought Skiff, an end-to-end encrypted docs, mail and calendar suite that had raised $14.2 million, in February 2024, and shut the product down within twelve months without converting a single Skiff account into a Notion one. The same pattern had already run through Flowdash, Automate.io and Cron, which became Notion Calendar.",
+      "expectedAdvantage": "Buying the team rather than the product avoids inheriting a second codebase, a second support surface and a second set of promises, while adding people who have already built the thing you want.",
+      "tradeoff": "Every shutdown teaches the market that a Notion acquisition ends the product. That raises the price of the next deal and makes founders of tools Notion's users depend on warier of selling.",
+      "result": "Cron survived as Notion Calendar; Skiff did not survive at all. The pattern continued in July 2026 with ZeroEntropy, whose entire team joined and whose founder now leads a Model Research group. No price was disclosed for any of the five.",
+      "currentTension": "Notion's own users cite lock-in anxiety as a reason for hesitating, and the company's acquisition record is a demonstration that products it owns can be switched off. Those two facts sit uneasily together.",
+      "status": "mixed",
+      "affectsSections": [
+        "product",
+        "moats",
+        "verdict"
+      ],
+      "patterns": [],
+      "evidenceIds": [
+        "acquisition.skiff.2024",
+        "lockin.anxiety.2020",
+        "acquisition.zeroentropy.2026"
+      ]
+    }
+  ],
+  "moats": [
+    {
+      "id": "block-shaped-lock-in",
+      "type": "switching-costs",
+      "rank": 1,
+      "claim": "A Notion workspace is a nested structure of blocks, databases and relations, and no format outside Notion holds that shape, so leaving means rebuilding rather than exporting.",
+      "argument": "The API confirms the structure is genuinely block-native, with pages themselves addressable as blocks. Users have named the consequence since the 2019 launch, one saying plainly that it was hard to get content out, and in 2021 a paying customer since 2017 reported the export feature silently failing for three months while support cited a backlog, calling it a function that locks us with them.",
+      "durability": "copyable-with-sustained-effort",
+      "attackVector": "A competitor that imports Notion workspaces faithfully, including databases and relations, or a local-first tool that removes the question entirely. Several exist and are well regarded; none has been shown to move a real workspace cleanly.",
+      "patterns": [],
+      "evidenceIds": [
+        "block.api.primitive",
+        "export.friction.2019",
+        "export.failure.2021",
+        "lockin.anxiety.2020"
+      ]
+    }
+  ],
+  "inflections": [
+    {
+      "id": "free-for-everyone-2020",
+      "year": 2020,
+      "label": "The block cap lifts for individuals",
+      "what": "Notion removed the 1,000-block limit from its personal free tier and moved existing Personal subscribers, then paying about $4 a month, onto a Personal Pro plan at no extra cost.",
+      "whyItMattered": "It converted a metered personal product into an unlimited one, which is what made a large population of individual builders possible and, with them, the template supply the gallery now runs on.",
+      "shiftType": "business-model",
+      "affectsSections": [
+        "business-model",
+        "growth-loops"
+      ],
+      "evidenceIds": [
+        "block.limit.history.2020",
+        "block.limit.free"
+      ]
+    },
+    {
+      "id": "series-c-2021",
+      "year": 2021,
+      "label": "A $275 million Series C at $10 billion",
+      "what": "Sequoia and Coatue led a $275 million round that took Notion from a $2 billion valuation in April 2020 to $10 billion, with the company stating its user base had grown 500% and its enterprise edition 350% year over year.",
+      "whyItMattered": "It set the valuation that barely moved for the next five years: $10 billion in 2021, $10 billion at the 2022 tender, and $11 billion in 2026. Whatever happened after 2021, it is not visible in the price.",
+      "shiftType": "ownership",
+      "affectsSections": [
+        "vitals",
+        "business-model"
+      ],
+      "evidenceIds": [
+        "funding.series-c.2021",
+        "valuation.history"
+      ]
+    },
+    {
+      "id": "gallery-relaunch-2023",
+      "year": 2023,
+      "label": "The template gallery is rebuilt around creators",
+      "what": "Notion relaunched the gallery with creator profiles and a submission process, expanding from 600 templates to more than 5,000 and from 21 categories to over 250, and disclosed 51 million duplications from nearly 11 million people in the preceding year.",
+      "whyItMattered": "It productised a behaviour users had already invented, turning ad hoc page sharing into an indexed catalogue with a page per intent, and it remains the only time Notion has published a number about how much the gallery moves.",
+      "shiftType": "platform",
+      "affectsSections": [
+        "growth-loops",
+        "users"
+      ],
+      "evidenceIds": [
+        "gallery.scale.2023",
+        "gallery.duplications.2023",
+        "sharing.predates-gallery.2019"
+      ]
+    },
+    {
+      "id": "skiff-2024",
+      "year": 2024,
+      "label": "Skiff bought and switched off",
+      "what": "Notion acquired the encrypted productivity suite Skiff, which had raised $14.2 million, and shut it down within twelve months without converting user accounts.",
+      "whyItMattered": "It set the pattern for how Notion buys: the team arrives, the product ends. Following Flowdash, Automate.io and Cron, it is the clearest statement of the company's acquisition posture.",
+      "shiftType": "expansion",
+      "affectsSections": [
+        "bets",
+        "moats"
+      ],
+      "evidenceIds": [
+        "acquisition.skiff.2024"
+      ]
+    },
+    {
+      "id": "notion-3-agents-2025",
+      "year": 2025,
+      "label": "Agents move to the centre",
+      "what": "Notion 3.0 put AI agents at the centre of the product, able to work autonomously for up to twenty minutes at a time across hundreds of pages, with AI itself gated to the Business and Enterprise plans.",
+      "whyItMattered": "It changed what a per-seat subscription buys, from a place to put blocks to something that acts on them, and it made AI the argument for the higher tier rather than a separate purchase.",
+      "shiftType": "platform",
+      "affectsSections": [
+        "product",
+        "business-model",
+        "bets"
+      ],
+      "evidenceIds": [
+        "agents.2025",
+        "ai.plan-gate.2026"
+      ]
+    },
+    {
+      "id": "tender-2026",
+      "year": 2026,
+      "label": "An $11 billion tender, and the AI sentence",
+      "what": "Sequoia, Index and GIC bought about $270 million of shares from current and former employees at an $11 billion valuation, and Notion stated that more than half of its ARR came from AI-enabled customers.",
+      "whyItMattered": "It is the only recent financial disclosure Notion has made about itself, and the sentence attached to it is carefully worded: a share of customers who use AI, not a share of revenue earned by AI.",
+      "shiftType": "ownership",
+      "affectsSections": [
+        "vitals",
+        "business-model",
+        "verdict"
+      ],
+      "evidenceIds": [
+        "valuation.tender.2026",
+        "ai.arr-share.2026",
+        "valuation.history",
+        "arr.2025.reported"
+      ]
+    }
+  ]
+}
