@@ -2,7 +2,7 @@
 
 Structured files drafted 2026-09-22 from the Stage 1 dossier (22 sources, gate in `dossier/05-stage-1-gate.md`). Staged in `research/notion/stage-2/content/` until Stage 3 prose exists, because the site loader treats any folder under `content/products/` as publishable and fails the build on missing sections (XREF007). Validate with `npm run validate:staged -- research/notion/stage-2/content`.
 
-**Result:** 33 evidence entries · 4 segments · 2 jobs · 3 bets · 1 moat · 5 inflections · loop `evidence-bounded` (1 evidenced, 3 partially, 1 insufficient).
+**Result:** 37 evidence entries · 4 segments · 2 jobs · 3 bets · 1 moat · 6 inflections · loop `evidence-bounded` (1 evidenced, 3 partially, 1 insufficient).
 
 ---
 
@@ -11,7 +11,7 @@ Structured files drafted 2026-09-22 from the Stage 1 dossier (22 sources, gate i
 | # | Field | Decision | Why | Alternative rejected |
 |---|---|---|---|---|
 | 1 | `thesis` | "Notion's template gallery is the best documented conversion surface in software and the least documented acquisition channel. The company published 51 million duplications and never once said how many were new." | Both halves are sourced: the funnel is evidenced step by step, and the missing split is a real absence confirmed across four passes. The thesis is about what the evidence does and does not contain, which is the most defensible claim available | "Notion's template gallery is its acquisition engine": that is the brief's framing and the evidence does not support the word *acquisition* |
-| 2 | `vitals.founded` | 2013 | Notion Labs was founded in 2013; the product's public traction dates from the 2016 relaunch and the 2019 HN thread. No opened source states the founding year, so this is the weakest field in the file and should be corroborated before publication | Using 2019 (the launch thread) would be wrong; using 2016 would need a source |
+| 2 | `vitals.founded` | 2013, **flagged as the one unsourced field** | No opened source states it. Notion's About page carries no numbers, its blog index has no founding post, and the funding coverage that was opened does not mention it. 2013 is what secondary sources agree on, and the schema requires a year. **The Vitals prose must say this field is not sourced to the same standard as the rest** | Guessing from the 2019 launch thread, which would be wrong, or from the 2021 Series C, which does not state it |
 | 3 | `vitals.headcountBand` | `unestablished` | No primary source. Aggregators say ~1,000 and none is admissible (C3) | Inferring from aggregators |
 | 4 | `keyMetricIds` | ARR, valuation, duplications, gallery scale | The four numbers that frame the company, two `reported`, one `reported`, one `verified` by observation. Each tile shows its own confidence | Using an aggregator user count as a headline: none is admissible, and Notion publishes none itself |
 | 5 | `accent` | `#0F0F0F` | Notion's identity is black and white, deliberately unbranded. The brand entry will need a non-colour motif to carry it | A colour pulled from the marketing site would be invented |
@@ -43,10 +43,17 @@ Structured files drafted 2026-09-22 from the Stage 1 dossier (22 sources, gate i
 - Any creator earnings. No admissible source exists.
 - Any acquisition price. None disclosed for Skiff, Flowdash, Cron or Automate.io.
 
-## Field to fix before publication
+## Late additions from a final sweep of Notion's own blog
 
-`vitals.founded` is set to 2013 without an opened source. Either corroborate it in Stage 3 or change the approach, because every other number in these files traces to a retrieved document.
+Four entries were added after the first validation pass, found by reading Notion's blog index rather than by search:
 
-## One entry unreferenced by the structured files
+- **`crdt.architecture.2026`** (2026-09-18, three days before cutoff). Notion's engineering post on concurrent editing: pages "consist of several blocks, each stored as a separate database record"; the CRDT is "based on a classic sequence CRDT called Replicated Growable Array"; it replaced last-write-wins, under which "one person's edits would be completely lost"; deployed July 2025 and described as "one of the largest CRDT deployments in the world, as we process millions of CRDT operations every minute". **This is the only first-party scale figure Notion publishes anywhere.**
+- **`crdt.limitation.2026`**, against-interest: "A limitation of this design is that you may need to potentially fetch many blocks in order to find a particular text slice", plus tombstoned deletions.
+- **`acquisition.zeroentropy.2026`** (2026-07-24), a fifth acquisition, folded into the acquisitions bet.
+- **`funding.series-c.2021`**, which produced a sixth inflection and the observation that the valuation moved from $10B in 2021 to $11B in 2026.
 
-`desktop.meeting-detection.2025`, held for the Product or Bets prose: Notion support describing the desktop client detecting meetings via microphone monitoring and network port analysis.
+**Cross-teardown note for the patterns layer:** Notion uses a true CRDT; Figma explicitly rejected them, running a central server authority instead and calling operational transforms "unnecessarily complex for our problem space". Two collaborative editors, opposite architectural choices, both documented by their own engineers. That is a comparison the Atlas is built to make.
+
+## Three entries unreferenced by the structured files
+
+`desktop.meeting-detection.2025`, `crdt.architecture.2026` and `crdt.limitation.2026`, all held for the Product prose in Stage 3.
