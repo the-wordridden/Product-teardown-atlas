@@ -9,15 +9,24 @@
 | | |
 |---|---|
 | **Product** | Notion |
-| **Stage** | 1 — Source discovery and collection (passes 1 and 1b) |
+| **Stage** | 1 — Source discovery and collection (passes 1, 1b, 1c) |
 | **Research cutoff** | 2026-09-21 (inclusive) |
 | **Session date** | 2026-09-22 |
 | **Methodology** | `docs/research-methodology.md` v1.0 (LOCKED) |
 | **Planned angle** | "Does a public template gallery work as an acquisition engine?" (`content/upcoming.json`) |
-| **Status** | **PARTIAL — passes 1 and 1b complete, not signed off** |
-| **Sources verified (opened and inspected)** | **16**, including **4 direct observations** |
-| **Sources attempted and blocked** | 3 |
-| **Categories swept** | B (official docs, pricing, API, AI) good; **observation** productive; A (company statements) three incl. the gallery relaunch; E (independent journalism) one; F (practitioner) three threads; C (archive) and D (statutory) **not started** |
+| **Status** | **Passes 1, 1b, 1c complete. Gate assessment in `05-stage-1-gate.md`** |
+| **Sources verified (opened and inspected)** | **20**, including **4 direct observations** |
+| **Sources attempted and blocked** | 6 |
+| **Categories swept** | B (official docs, pricing, API, AI) good; **observation** productive; A (company statements) four; E (independent journalism) three; F (practitioner) three threads; third-party analytics one; C (archive) **blocked, three attempts**; D (statutory) none and none expected |
+
+### Pass 1c — where the traffic comes from, acquisitions, the competitive set (2026-09-22)
+
+Sources **NOT-S014** to **NOT-S017**. Findings:
+
+- **The gallery's traffic is organic search, on third-party tool estimates.** An agency analysis using Ahrefs puts the templates section at "over 287K monthly visits", "over 60K organic keywords in the US alone", and "823K backlinks from almost 2K referring domains", with category pages carrying 24.3% of section traffic and individual template pages about 75% [S014]. These are tool estimates, not measurements, and carry `estimated` confidence. Combined with S007 and S008 from pass 1b, the chain now reads: organic search → template page → duplication → forced signup. **Every link has a source; the last conversion split still does not.**
+- **Notion buys teams and shuts their products.** Skiff, end-to-end encrypted docs, mail and calendar, was acquired in February 2024 having raised $14.2M, and its product was wound down; "Skiff user account won't be converted to a Notion account" [S015]. The same report lists the prior run: Flowdash (2022), Cron, and Automate.io. Cron became Notion Calendar. No price was disclosed for any of them.
+- **Notion publishes no user or customer count anywhere I could find.** Its own About page carries a mission and an Alan Kay quotation and **no numbers at all** [S016]. Every user figure in circulation (100M users, 4M customers) traces to aggregators, not to Notion. Open question 4 stands.
+- **No first-hand adoption or migration account exists in the open record.** A targeted sweep for teams writing up a move to or from Notion, Coda or Confluence returned only comparison-farm content (X005). Users and JTBD will rest on packaging, the three practitioner threads, and honest gaps.
 
 ### Pass 1b — the gallery's own numbers, the duplication boundary, AI packaging, practitioners (2026-09-22)
 
@@ -60,6 +69,7 @@ Column codes: FIN financial performance · CAP product capability · PRC list pr
 | ID | Source | Date | Serves | Notes |
 |---|---|---|---|---|
 | **NOT-S007** | notion.com/blog — "A place for creators and builders: the reimagined Notion Template Gallery" | 2023-06-21 | **USE (AUTH for the disclosure)**, INT | "In the past year alone, there have been 51 million template duplications from nearly 11 million people." Scale at relaunch: "We've expanded from 600 templates to more than 5,000"; "increasing the number of template categories from 21 to 250+"; "over 2,000 Creator profiles". Stated purpose: "giving global creators a place to showcase their work and single place for our community to see what is possible"; "we want to make it easier to find the study setups you might see on YouTube, or the personal dashboards you've scrolled through on TikTok". A new submission process lets "creators to submit their templates and claim their Notion handles". **No mention of SEO, and no mention of creators charging or revenue share.** |
+| **NOT-S016** | notion.com/about | retrieved 2026-09-22 | INT | Self-description: "blending much of your workflow into an all-in-one workspace", customisable "from dozens of building blocks"; mission "break away from today's tools—and bring back some of the ideas of those early pioneers"; quotes Alan Kay, "The best way to predict the future is to invent it." **Contains no user, customer, headcount, funding or founding figure.** Notable as an absence: the company publishes no scale number on its own About page. |
 | **NOT-S011** | notion.com/blog — "Introducing Notion 3.0" | 2025-09-18 | INT, CAP (SUGG) | Notion AI Agents "at the center"; agents can "do up to 20 minutes of autonomous work at a time across hundreds of pages at once"; "Anything you can do in Notion, your Agent can do too"; database row permissions, new AI connectors, MCP integrations; "Custom Agents are coming soon". No pricing change stated in the post. |
 | **NOT-S005** | notion.com/blog — "GIC, Sequoia, Index purchase Notion shares" | 2026-01-26 | FIN (valuation), INT | "total tender of around $270M at an $11B valuation"; "These investors are purchasing shares directly from current and former Notion employees"; "We removed the one-year vesting cliff on options"; "more than 50% of our ARR came from AI-enabled customers, and that percentage more than doubled over the last year". Note the wording: *AI-enabled customers*, which is a customer segment, not AI revenue. |
 
@@ -71,6 +81,14 @@ Column codes: FIN financial performance · CAP product capability · PRC list pr
 | ID | Source | Date | Serves | Notes |
 |---|---|---|---|---|
 | **NOT-S006** | Forbes, "Notion Kicks Off Employee Share Sale At $11 Billion Valuation As AI Accelerates Its Growth" (Anna Tong) — opened in full | 2025-12-15 | **FIN (CORR)**, HIS | "Notion told its employees Monday that they can sell some of their shares at an $11 billion valuation ahead of a potential initial public offering, people familiar with the matter told Forbes"; "Sequoia Capital, Index Ventures and the Singaporean sovereign wealth fund GIC will purchase the shares, and the deal is expected to be for about $300 million worth of shares"; "recently passed $600 million in annual recurring revenue, half of which is coming from its artificial intelligence products, and is cash flow positive, the people said"; "The privately-held company's last tender offer in 2022 was at a $10 billion valuation, the same valuation as its series C round in 2021." **All figures attributed to unnamed people familiar.** Note the discrepancy with S005: Forbes says ~$300M, Notion's own post says ~$270M; Forbes is the announcement, Notion's is the completion. |
+
+| **NOT-S015** | TechCrunch, "Notion acquires privacy-focused productivity platform Skiff" (Ivan Mehta) | 2024-02-09 | **HIS (AUTH)**, INT | Skiff "had raised $14.2 million in funding over two rounds"; "the product would shut down after 12 months" (updated from six); "Skiff user account won't be converted to a Notion account. Plus, users can easily export or migrate their data". Notion's stated rationale, quoted: "I downloaded all the products y'all had built, and was really impressed by the attention to detail". Prior acquisitions listed: "Notion's last acquisition was the workflow management tool Flowdash in 2022. Prior to that, it acquired Cron and India-based Automate.io". No price for any. |
+
+### Category G — Third-party analytics (Tier 4/5, tool estimates)
+
+| ID | Source | Date | Serves | Notes |
+|---|---|---|---|---|
+| **NOT-S014** | Minuttia, "Revolutionizing UGC Content for SaaS: A Deep Dive into Notion's Templates Section" (Zacharias Xiroudakis) | published 2023-09-27, updated 2024-03-26 | USE (SUGG), CMP | **All figures are Ahrefs estimates and are labelled as such in the source.** Templates section "over 287K monthly visits"; "ranks for over 60K organic keywords in the US alone"; "823K backlinks from almost 2K referring domains". Split: categories "70K monthly organic visits, or 24.3% of the section's traffic"; collections "5.7K monthly visits, or 2%"; template pages about 75%. Individual pages: Free Notion Widgets & Tools 8.3K, Aesthetic Nature 5.7K, Email Generator 3.9K monthly organic visits. Keyword volumes: "notion templates" 100K global / 30K US; "free notion templates" 11K; "aesthetic notion templates" 8.5K; "notion templates for students" 7K. §2.4 admissibility met: only available evidence of the traffic mechanism, contemporaneous with the 2023 relaunch, specific and falsifiable, capped at `estimated` with the limitation disclosed. |
 
 ### Category F — Practitioner accounts (Tier 5)
 
@@ -97,6 +115,8 @@ Column codes: FIN financial performance · CAP product capability · PRC list pr
 |---|---|---|---|
 | NOT-X001 | app.notion.com (duplication destination) | Requires an account; not approved for tool access | **Not attempted further.** No account will be created. The transition is described up to the boundary; see open question 2 |
 | NOT-X002 | notion.com/help/upgrade-or-change-your-plan | HTTP 404 | Block-limit content found instead at S002 |
+| NOT-X004 | web.archive.org CDX for notion.so/pricing (2018–2024) | **"Internet Archive: Temporarily Offline"**, third attempt across two teardowns | Block-limit and AI pricing history stay unevidenced (open questions 5, 15) |
+| NOT-X005 | A first-hand account of a team adopting, migrating to, or leaving Notion | **Not found.** Searches for engineering write-ups on Notion, Coda and Confluence migrations return only comparison-farm content (ones.com, eesel, trytrackr, valueaddvc) | Users and JTBD proceed on packaging plus three practitioner threads, with the gap stated. Open question 3 |
 | NOT-X003 | A first-hand template creator's own revenue disclosure | **Not found.** Searches return only course-selling blogs (Kajabi, Medium, coachli, automateed) repeating third-hand figures about Thomas Frank and Easlo. Thomas Frank's own site carries product pages, no revenue post | Fails §2.4: not contemporaneous first-hand accounts but marketing for courses about selling templates. **Nothing admitted.** Open question 7 |
 
 ---
@@ -105,7 +125,9 @@ Column codes: FIN financial performance · CAP product capability · PRC list pr
 
 - **No Category C (archive).** The Internet Archive was offline during the Stripe passes; retry for notion.com/pricing to date the block limit's introduction and the AI pricing changes.
 - **Creator economics remain unevidenced.** Three threads opened cover data export, scaling and the desktop client, not creators. No admissible source describes what a template creator earns, or what share of 22,116 creators earn anything (open question 7, X003).
-- **No SEO evidence, and the angle now has a partial answer without it.** Observed: category pages per intent, template pages that cross-link Notion's own marketing (OBS-002, OBS-003). Disclosed: 51 million duplications from ~11 million people in a year [S007], and a documented requirement that a logged-out duplicator create an account [S008]. **Still not evidenced:** how those people arrive at the gallery, what share were new to Notion, or any ranking or traffic figure. The mechanism is now evidenced end to end; its *source of traffic* is not.
+- **The traffic source is now evidenced at `estimated`** [S014], so the remaining hole in the angle is narrow and specific: **what share of duplicators were new to Notion.** No source addresses it, and only Notion could.
+- **No competitive evidence.** Coda, Obsidian, Confluence and Airtable appear only in comparison-farm content (X005). No analyst, regulator or independent comparison has been opened.
+- **No archive.** Three failed attempts mean the block limit's history and the AI add-on's history stay unevidenced.
 - **No competitor or market evidence.** Coda, Obsidian, Airtable, Confluence are the obvious set; nothing opened.
 - **No Users/JTBD first-hand accounts.**
 - **Nothing on Notion AI's pricing history**, which matters given that AI is now more than half of ARR by two accounts.
