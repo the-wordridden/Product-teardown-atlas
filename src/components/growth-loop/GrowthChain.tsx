@@ -75,12 +75,15 @@ export function GrowthChain({ model, sources }: { model: LoopRenderModel; source
   const toggleEdge = (e: EdgeGeom) => setSelected(isSelEdge(e) ? null : { kind: 'edge', edge: e })
   const toggleNode = (n: NodeGeom) => setSelected(isSelNode(n) ? null : { kind: 'node', node: n })
 
+  const partial = model.edges.filter((e) => e.evidenceStatus === 'partially-evidenced')
   const headline =
     proven.length === model.edges.length
       ? 'Every link in the loop holds up.'
       : proven.length > 0
         ? `What's proven: ${lower(proven[0].label)}.`
-        : 'No link in this loop is established yet.'
+        : partial.length > 0
+          ? `Documented, not yet proven: ${lower(partial[0].label)}.`
+          : 'No link in this loop is established yet.'
 
   return (
     <figure className="gc" data-loop-status={status} aria-labelledby={headingId}>
@@ -89,6 +92,7 @@ export function GrowthChain({ model, sources }: { model: LoopRenderModel; source
         <h3 id={headingId} className="gc-headline">{headline}</h3>
         <p className="gc-sub">
           {model.summary.counts.evidenced} of {model.edges.length} links proven from sources
+          {partial.length > 0 ? <>, {partial.length} documented but unmeasured</> : null}
           {model.speedBand !== 'unestablished' ? <> · cycle time {model.speedBand}</> : null}. Click a step or an arrow.
         </p>
       </figcaption>

@@ -25,6 +25,11 @@ const BRANDS: Record<string, Brand> = {
     motif: 'canvas',
     refrain: 'design · collaborate · ship',
   },
+  stripe: {
+    palette: ['#635BFF', '#0A2540', '#00D4FF', '#7A73FF', '#FFB74A'],
+    motif: 'ledger',
+    refrain: 'charge · settle · attach',
+  },
 }
 
 const NEUTRAL: Brand = {

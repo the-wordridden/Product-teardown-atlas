@@ -161,3 +161,22 @@
 .brief-years { margin: 0; padding: 0; list-style: none; display: grid; gap: var(--sp-2); font-size: var(--fs-sm); }
 .brief-year { font-family: var(--font-mono); color: var(--accent); font-weight: 700; margin-right: var(--sp-1); }
 .home-howto { margin: var(--sp-6) 0 0; font-size: var(--fs-sm); color: var(--ink-faint); max-width: 60ch; }
+
+/* ---- v6: the queue. Ten planned teardowns as rows, not ten hero cards ---- */
+.queue { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--sp-2) var(--sp-5); }
+.qrow { border-top: 1px solid var(--rule); }
+.qrow summary { list-style: none; cursor: pointer; display: grid; grid-template-columns: 2.2rem 8.5rem minmax(0, 1fr); grid-template-areas: 'n name angle' 'n meta meta'; column-gap: var(--sp-3); row-gap: var(--sp-1); padding: var(--sp-4) 0; align-items: baseline; }
+.qrow summary::-webkit-details-marker { display: none; }
+.qrow-n { grid-area: n; font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--accent); }
+.qrow-name { grid-area: name; font-weight: 800; font-size: var(--fs-lg); letter-spacing: -0.02em; }
+.qrow-angle { grid-area: angle; color: var(--ink-soft); font-size: var(--fs-base); line-height: 1.35; }
+.qrow-meta { grid-area: meta; display: flex; gap: var(--sp-2); align-items: center; }
+.qrow-status { font-size: var(--fs-xs); color: var(--ink-faint); text-transform: uppercase; letter-spacing: 0.06em; }
+.qrow[data-status='in-research'] .qrow-status { color: var(--ev-partial); }
+.qrow[data-status='drafting'] .qrow-status { color: var(--ev-evidenced); }
+.qrow summary:hover .qrow-name, .qrow[open] .qrow-name { color: var(--accent); }
+.qrow-focus { margin: 0 0 var(--sp-4) calc(2.2rem + var(--sp-3)); padding: 0 0 0 1rem; color: var(--ink-soft); font-size: var(--fs-sm); display: grid; gap: 4px; }
+@media (max-width: 860px) {
+  .queue { grid-template-columns: 1fr; }
+  .qrow summary { grid-template-columns: 2.2rem minmax(0, 1fr); grid-template-areas: 'n name' 'n angle' 'n meta'; }
+}

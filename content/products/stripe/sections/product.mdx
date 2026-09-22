@@ -1,0 +1,25 @@
+I didn't create a Stripe account for this teardown, so the Dashboard is described from documentation, not observation. The public documentation is unusually complete, which is the only reason this section can be as specific as it is.
+
+## The objects
+
+Everything starts with a **payment**: one successful charge, priced at a percentage plus a fixed fee, settled to the business's bank account. A **customer** is the record a payment attaches to, with saved payment methods. A **subscription** is the object that charges a customer on a schedule or by usage <Evidence id="docs.billing.models" />. A **connected account** is another business inside your account, for platforms <Evidence id="docs.connect.standard-accounts" />. A **payout** moves the balance to a bank.
+
+And then there's **Link**, which is the object most people miss. Link is Stripe's consumer wallet. When a customer pays through Link at any business on Stripe, they're enrolled with Stripe, not with that business. Next time, at a different business, Link recognises them by email, phone number or browser cookie, sends a one-time code, and fills in their card and shipping details <Evidence id="docs.link.enrolment" />. Stripe says more than 200 million people are enrolled <Evidence id="link.users.feb-2026" />.
+
+## The actions
+
+Accept a payment, through Stripe's hosted Checkout, embeddable Elements, or the API. Recognise a returning consumer through Link. Route a payment to a connected account and take a platform fee. Bill a subscription. Screen the attempt with Radar, which charges per transaction screened and comes in four plans <Evidence id="docs.radar.plans" />. And one action that tells you a lot about the company: export your saved cards to another processor. Stripe documents that path and will use it, for any Level 1 processor, with two exceptions I'll come back to in the moats section <Evidence id="docs.pan-export.link-exclusion" />.
+
+## Connect, which is where the risk lives
+
+Connect is how a marketplace or a software platform onboards its own sellers and moves money between them. The documentation is precise about who carries what, by charge type. On a direct charge, the seller's balance takes the refund or dispute. On a destination charge or a separate charge and transfer, the platform's balance does. On the older Express and Custom account types, "your platform is responsible for disputes and fraud" <Evidence id="docs.connect.charge-types" />. Standard connected accounts are the ones to notice: each is "a conventional Stripe account" with its own Dashboard and its own direct relationship with Stripe <Evidence id="docs.connect.standard-accounts" />. A Shopify store owner is a Stripe customer.
+
+## Capital, which is a data product
+
+Stripe Capital looks like lending and isn't, quite. Eligibility is computed daily from the account's own processing history, three months minimum. The money comes from Celtic Bank, Lead Bank, YouLend or Fundbox depending on the country, and Stripe describes its own European entity as "an intermediary and technology provider." Repayment is a fixed slice of each future charge <Evidence id="docs.capital.underwriting" />. Stripe reported 81,000 businesses funded in 2025 <Evidence id="capital.2025" />, and in 2024 said, in its own words, that Capital "is not large today."
+
+## Under the hood, as far as I can see
+
+Time to value is the one thing I've left unestablished. Stripe says 20% of Atlas companies charged a first customer within 30 days <Evidence id="atlas.2025" />, which is a rate about one cohort, measured by Stripe. Nobody independent has timed a signup to a first live charge, and I couldn't observe it without an account.
+
+Three sentences that sound alike and aren't. "Link autofills a returning customer's details at any Stripe merchant" is a capability, and it's documented. "So Link raises conversion for merchants who adopt Stripe" is Stripe's claim about behaviour, and I found no independent measure. "So merchants choose Stripe to get Link" is causal, and nothing here establishes it.

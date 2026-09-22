@@ -3,7 +3,7 @@ import { RevealObserver } from '../components/chrome/Reveal'
 import { CountUp, RotatingWord, SplitWords, Spotlight, Tilt } from '../components/home/Kinetic'
 import { MetricTile } from '../components/teardown/SectionSummary'
 import { brandFor, brandVars } from '../lib/brand'
-import { listProductSlugs, loadProduct } from '../lib/content'
+import { listProductSlugs, loadProduct, loadUpcoming } from '../lib/content'
 import { SECTION_IDS } from '../schema'
 import type { EvidenceEntryT } from '../schema/evidence'
 import '../components/home/home.css'
@@ -29,7 +29,7 @@ export default function HomePage() {
   const products = listProductSlugs().map((slug) => {
     const data = loadProduct(slug)
     const loop = data.loops.loops.find((l) => l.id === data.loops.primaryLoopId)!
-    const proven = loop.edges.find((e) => e.evidenceStatus === 'evidenced')
+    const proven = loop.edges.find((e) => e.evidenceStatus === 'evidenced') ?? loop.edges.find((e) => e.evidenceStatus === 'partially-evidenced')
     const numbers = data.product.vitals.keyMetricIds.map((id) => data.evidence.get(id)).filter(Boolean) as EvidenceEntryT[]
     const motion = data.profile.distributionMotion.classification
     const metric = data.profile.valueMetric.classification
@@ -45,7 +45,10 @@ export default function HomePage() {
       evidenceCount: data.evidence.size,
     }
   })
+  const upcoming = loadUpcoming()
   const totalEvidence = products.reduce((n, p) => n + p.evidenceCount, 0)
+  let sectionNo = 0
+  const num = () => String(++sectionNo).padStart(2, '0')
   const totalInflections = products.reduce((n, p) => n + p.inflections.length, 0)
   const sectionTitles = products[0]?.product.sections ?? []
   const bandA = sectionTitles.filter((s) => s.id !== 'vitals').map((s) => s.title)
@@ -96,9 +99,9 @@ export default function HomePage() {
       {/* ------------------------------------------------ TEARDOWNS */}
       <section id="teardowns" className="home-sec" data-reveal>
         <div className="home-sec-head">
-          <span className="home-sec-num">01</span>
+          <span className="home-sec-num">{num()}</span>
           <h2 className="home-h2">Teardowns</h2>
-          <p className="home-sec-sub">One product at a time, done properly. Each opens on our take, then goes as deep as you want.</p>
+          <p className="home-sec-sub">One product at a time, done properly. Each opens on our take, then goes as deep as you want. Ten more are queued below.</p>
         </div>
         <div className="cards">
           {products.map(({ slug, product, brand, tags }) => (
@@ -134,21 +137,6 @@ export default function HomePage() {
               </a>
             </Tilt>
           ))}
-          <Tilt>
-            <div className="tcard tcard-soon">
-              <div>
-                <div className="tcard-band" aria-hidden="true" style={{ background: 'var(--rule-strong)' }} />
-                <div className="hero-top" style={{ marginTop: 'var(--sp-4)' }}>
-                  <span className="kicker">next up</span>
-                </div>
-                <h3 className="tcard-name">Stripe</h3>
-              </div>
-              <p className="tcard-thesis">Developer infrastructure, a very different engine. In research now.</p>
-              <div className="tcard-foot">
-                <span className="hero-updated" style={{ margin: 0 }}>In research</span>
-              </div>
-            </div>
-          </Tilt>
         </div>
       </section>
 
@@ -156,7 +144,7 @@ export default function HomePage() {
       {products.map(({ slug, product, numbers, proven, bet, inflections }) => (
         <section key={slug} className="home-sec" data-reveal>
           <div className="home-sec-head">
-            <span className="home-sec-num">02</span>
+            <span className="home-sec-num">{num()}</span>
             <h2 className="home-h2">{product.name}, in brief</h2>
             <p className="home-sec-sub">Straight out of the teardown. Every number links to where it came from.</p>
           </div>
@@ -194,10 +182,43 @@ export default function HomePage() {
         </section>
       ))}
 
+      {/* ------------------------------------------------ QUEUE */}
+      {upcoming.length > 0 ? (
+        <section id="queue" className="home-sec" data-reveal>
+          <div className="home-sec-head">
+            <span className="home-sec-num">{num()}</span>
+            <h2 className="home-h2">In the queue</h2>
+            <p className="home-sec-sub">The next {upcoming.length}, each with the question we plan to ask. A question stays a question until the teardown answers it.</p>
+          </div>
+          <ol className="queue">
+            {upcoming.map((u, i) => (
+              <li key={u.slug}>
+                <details className="qrow" data-status={u.status}>
+                  <summary>
+                    <span className="qrow-n">{String(i + 1).padStart(2, '0')}</span>
+                    <span className="qrow-name">{u.name}</span>
+                    <span className="qrow-angle">{u.angle}</span>
+                    <span className="qrow-meta">
+                      <span className="pill">{human(u.category)}</span>
+                      <span className="qrow-status">{human(u.status)}</span>
+                    </span>
+                  </summary>
+                  <ul className="qrow-focus">
+                    {u.focus.map((f) => (
+                      <li key={f}>{f}</li>
+                    ))}
+                  </ul>
+                </details>
+              </li>
+            ))}
+          </ol>
+        </section>
+      ) : null}
+
       {/* ------------------------------------------------ METHOD STRIP */}
       <section id="method" className="home-sec" data-reveal>
         <div className="home-sec-head">
-          <span className="home-sec-num">03</span>
+          <span className="home-sec-num">{num()}</span>
           <h2 className="home-h2">Ten questions, every time</h2>
           <p className="home-sec-sub">Every teardown walks the same ten sections in the same order, so two products can be laid side by side.</p>
         </div>
@@ -220,7 +241,7 @@ export default function HomePage() {
         <div className="stats">
           <div className="stat">
             <div className="v"><CountUp to={products.length} /></div>
-            <div className="k">Teardowns published. Slowly, on purpose.</div>
+            <div className="k">Teardowns published. Slowly, on purpose. {upcoming.length} in the queue.</div>
           </div>
           <div className="stat">
             <div className="v"><CountUp to={totalEvidence} /></div>

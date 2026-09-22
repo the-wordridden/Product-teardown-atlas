@@ -3,7 +3,9 @@
  * without ever depicting a real screen or making a claim.
  *
  * `canvas` evokes a design canvas: dotted grid, a few frames, live cursors with name
- * tags drifting across, a selection box. Pure SVG + CSS keyframes, reduced-motion safe.
+ * tags drifting across, a selection box. `ledger` evokes a payment flow: a checkout
+ * card, a rail with settlements travelling along it, a balance ticking over. Pure SVG +
+ * CSS keyframes, reduced-motion safe.
  */
 
 import type { ArtMotif } from '../../lib/brand'
@@ -16,6 +18,7 @@ const CURSORS = [
 ]
 
 export function CanvasArt({ motif, palette }: { motif: ArtMotif; palette: string[] }) {
+  if (motif === 'ledger') return <LedgerArt palette={palette} />
   if (motif !== 'canvas') return <NeutralArt palette={palette} />
   const [p1, p2, p3, p4, p5] = palette
   return (
@@ -64,6 +67,70 @@ export function CanvasArt({ motif, palette }: { motif: ArtMotif; palette: string
             </g>
           </g>
         ))}
+      </svg>
+    </div>
+  )
+}
+
+const SETTLEMENTS = [0, 2.6, 5.1, 7.9]
+
+function LedgerArt({ palette }: { palette: string[] }) {
+  const [p1, p2, p3, p4, p5] = palette
+  return (
+    <div className="art art-ledger" aria-hidden="true">
+      <svg viewBox="0 0 800 460" className="art-svg">
+        <defs>
+          <linearGradient id="ledger-sky" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stopColor={p1} stopOpacity="0.18" />
+            <stop offset="1" stopColor={p3} stopOpacity="0.18" />
+          </linearGradient>
+          <linearGradient id="ledger-card" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stopColor={p1} />
+            <stop offset="1" stopColor={p4} />
+          </linearGradient>
+        </defs>
+        <rect width="800" height="460" fill="url(#ledger-sky)" />
+
+        {/* the rail: a payment travels left to right and settles */}
+        <path id="ledger-rail" d="M 40 300 C 200 300, 260 140, 420 140 S 640 300, 760 300" className="art-rail" />
+        {SETTLEMENTS.map((delay, i) => (
+          <circle key={delay} r="7" fill={palette[(i + 2) % palette.length]} className="art-settle" style={{ animationDelay: `-${delay}s` }}>
+            <animateMotion dur="8s" repeatCount="indefinite" begin={`-${delay}s`}>
+              <mpath href="#ledger-rail" />
+            </animateMotion>
+          </circle>
+        ))}
+
+        {/* checkout card */}
+        <g className="art-frame art-float-1">
+          <rect x="80" y="90" width="270" height="170" rx="16" fill="url(#ledger-card)" />
+          <rect x="104" y="116" width="46" height="32" rx="6" fill="#fff" opacity="0.85" />
+          <rect x="104" y="172" width="150" height="12" rx="6" fill="#fff" opacity="0.7" />
+          <rect x="104" y="196" width="90" height="12" rx="6" fill="#fff" opacity="0.5" />
+          <rect x="250" y="220" width="76" height="26" rx="13" fill="#fff" opacity="0.95" />
+          <rect x="266" y="230" width="44" height="6" rx="3" fill={p1} opacity="0.9" />
+        </g>
+
+        {/* balance ledger */}
+        <g className="art-frame art-float-2">
+          <rect x="470" y="200" width="270" height="190" rx="14" fill="var(--bg-elev)" stroke="var(--rule)" />
+          <rect x="494" y="224" width="110" height="10" rx="5" fill={p2} opacity="0.9" />
+          <rect x="494" y="252" width="222" height="1.5" fill="var(--rule-strong)" />
+          {[0, 1, 2, 3].map((row) => (
+            <g key={row} transform={`translate(0 ${row * 30})`} className="art-row" style={{ animationDelay: `${row * 0.9}s` }}>
+              <rect x="494" y="268" width="120" height="9" rx="4.5" fill="var(--ink-faint)" opacity="0.55" />
+              <rect x="650" y="268" width="66" height="9" rx="4.5" fill={row === 1 ? p5 : p3} opacity="0.9" />
+            </g>
+          ))}
+        </g>
+
+        {/* wallet chip: the consumer that follows */}
+        <g className="art-frame art-float-3">
+          <rect x="560" y="70" width="170" height="64" rx="32" fill={p3} opacity="0.95" />
+          <circle cx="592" cy="102" r="16" fill="#fff" opacity="0.95" />
+          <rect x="618" y="90" width="80" height="10" rx="5" fill="#fff" opacity="0.85" />
+          <rect x="618" y="108" width="52" height="8" rx="4" fill="#fff" opacity="0.55" />
+        </g>
       </svg>
     </div>
   )

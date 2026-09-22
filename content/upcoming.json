@@ -1,0 +1,124 @@
+{
+  "products": [
+    {
+      "slug": "notion",
+      "name": "Notion",
+      "category": "productivity",
+      "angle": "Does a public template gallery work as an acquisition engine?",
+      "focus": [
+        "Templates as search-driven acquisition",
+        "Onboarding into multi-tenant workspaces",
+        "Free storage caps as the nudge to paid"
+      ],
+      "status": "queued"
+    },
+    {
+      "slug": "duolingo",
+      "name": "Duolingo",
+      "category": "learning",
+      "angle": "How far can streaks and leagues carry retention before they push people away?",
+      "focus": [
+        "Daily streak mechanics",
+        "Gems, leagues and leaderboards",
+        "Notification timing and uninstall fatigue"
+      ],
+      "status": "queued"
+    },
+    {
+      "slug": "linear",
+      "name": "Linear",
+      "category": "productivity",
+      "angle": "What does keyboard-first, opinionated software cost and buy?",
+      "focus": [
+        "Latency as a product decision",
+        "Command-bar navigation patterns",
+        "Opinionated workflow against Jira-style customisation"
+      ],
+      "status": "queued"
+    },
+    {
+      "slug": "airbnb",
+      "name": "Airbnb",
+      "category": "commerce",
+      "angle": "How does a marketplace make strangers trust each other?",
+      "focus": [
+        "Dual-persona onboarding for hosts and guests",
+        "Verified IDs, cancellation policies, photo curation",
+        "Search-to-booking conversion"
+      ],
+      "status": "queued"
+    },
+    {
+      "slug": "canva",
+      "name": "Canva",
+      "category": "design-collaboration",
+      "angle": "Can thousands of programmatic landing pages be a design tool's front door?",
+      "focus": [
+        "Intent-based landing pages at scale",
+        "Time to value without design skills",
+        "Pro upsell triggers inside the editor"
+      ],
+      "status": "queued"
+    },
+    {
+      "slug": "slack",
+      "name": "Slack",
+      "category": "communication",
+      "angle": "What turns one free team into an enterprise contract?",
+      "focus": [
+        "Team invitations and channel architecture",
+        "The message-history paywall",
+        "App directory and workspace switching"
+      ],
+      "status": "queued"
+    },
+    {
+      "slug": "loom",
+      "name": "Loom",
+      "category": "communication",
+      "angle": "Does every shared video link really recruit the next user?",
+      "focus": [
+        "Video links as an acquisition channel",
+        "Record-and-share in one motion",
+        "Storage and length limits as the paywall"
+      ],
+      "status": "queued"
+    },
+    {
+      "slug": "superhuman",
+      "name": "Superhuman",
+      "category": "productivity",
+      "angle": "How does concierge onboarding justify $30 a month for email?",
+      "focus": [
+        "One-to-one onboarding calls at scale",
+        "Split inbox and keyboard-only navigation",
+        "Product-market-fit framing as positioning"
+      ],
+      "status": "queued"
+    },
+    {
+      "slug": "spotify",
+      "name": "Spotify",
+      "category": "consumer-social",
+      "angle": "How do listening data and Wrapped feed each other?",
+      "focus": [
+        "Discover Weekly and the personalisation loop",
+        "Connect and cross-device continuity",
+        "Wrapped as an annual viral campaign"
+      ],
+      "status": "queued"
+    },
+    {
+      "slug": "wise",
+      "name": "Wise",
+      "category": "payments",
+      "angle": "How do you make identity checks feel like part of the product?",
+      "focus": [
+        "KYC flows without drop-off",
+        "Real-time fee comparison as trust",
+        "Transparent pricing as positioning"
+      ],
+      "status": "queued"
+    }
+  ]
+}

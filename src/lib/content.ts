@@ -30,6 +30,7 @@ import {
   type StrategyFileT,
   type SectionIdT,
 } from '../schema'
+import { UpcomingFile, type UpcomingProductT } from '../schema/upcoming'
 
 const CONTENT_ROOT = join(process.cwd(), 'content')
 const PRODUCTS_ROOT = join(CONTENT_ROOT, 'products')
@@ -110,4 +111,11 @@ export function loadProduct(slug: string): LoadedProduct {
   }
 
   return { product, profile, loops, strategy, evidence, sections }
+}
+
+/** The teardown queue. Absent file means an empty queue, never a build error. */
+export function loadUpcoming(): UpcomingProductT[] {
+  const path = join(CONTENT_ROOT, 'upcoming.json')
+  if (!existsSync(path)) return []
+  return UpcomingFile.parse(readJson(path)).products
 }

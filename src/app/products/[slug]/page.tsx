@@ -55,6 +55,7 @@ export default async function TeardownPage({ params }: { params: Promise<{ slug:
 
   const keyNumbers = product.vitals.keyMetricIds.map((id) => evidence.get(id)).filter(Boolean) as EvidenceEntryT[]
   const provenLink = loopModel.edges.find((e) => e.evidenceStatus === 'evidenced')
+  const documentedLinks = loopModel.edges.filter((e) => e.evidenceStatus === 'partially-evidenced').length
   const sources = loopSources(
     [...loopModel.edges.flatMap((e) => e.evidenceIds), ...loopModel.nodes.flatMap((n) => n.metricIds)],
     evidence,
@@ -107,7 +108,10 @@ export default async function TeardownPage({ params }: { params: Promise<{ slug:
             <span className="kicker">Growth engine</span>
             <span className="hero-loop-status">{provenLink ? provenLink.label : loopModel.name}</span>
             <span className="hero-loop-count">
-              {loopModel.summary.counts.evidenced} of {loopModel.edges.length} links proven · see the loop →
+              {loopModel.summary.counts.evidenced > 0
+                ? `${loopModel.summary.counts.evidenced} of ${loopModel.edges.length} links proven`
+                : `${documentedLinks} of ${loopModel.edges.length} links documented, none independently proven`}{' '}
+              · see the loop →
             </span>
           </a>
         </div>

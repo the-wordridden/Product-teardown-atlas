@@ -23,7 +23,14 @@
   100% { transform: translate(calc(var(--x) + 3%), calc(var(--y) + 2%)); }
 }
 
+/* ledger motif */
+.art-rail { fill: none; stroke: var(--accent); stroke-width: 2.5; stroke-dasharray: 8 8; opacity: 0.6; animation: art-rail 24s linear infinite; }
+.art-settle { filter: drop-shadow(0 0 6px color-mix(in srgb, var(--accent) 60%, transparent)); }
+.art-row { animation: art-row 3.6s ease-in-out infinite; }
+@keyframes art-rail { to { stroke-dashoffset: -320; } }
+@keyframes art-row { 0%, 70%, 100% { opacity: 1; } 78% { opacity: 0.35; } }
+
 @media (prefers-reduced-motion: reduce) {
-  .art-frame, .art-cursor, .art-stroke { animation: none; }
+  .art-frame, .art-cursor, .art-stroke, .art-rail, .art-row { animation: none; }
   .art-stroke { stroke-dashoffset: 0; }
 }
