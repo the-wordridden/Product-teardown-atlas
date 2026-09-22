@@ -1,0 +1,483 @@
+                                                                                                                          February 27, 2025
+
+Dear Stripe community,
+
+
+Businesses on Stripe generated $1.4 trillion in total payment volume in 2024, up 38% from the prior year,
+and reaching a scale equivalent to around 1.3% of global GDP. We attribute this year's rapid growth in part
+to our long-standing investments in building machine learning and artificial intelligence into our products.
+These bets continue to pay off, increasing revenue for existing customers, encouraging more businesses
+to switch to Stripe, and helping new companies reach significant scale unprecedentedly quickly--more on
+all of those points later. Future growth rates will fluctuate (2024 was an unusually good year), but we're as
+enthusiastic as ever about the long-term trends in the internet economy.
+
+
+Stripe was profitable in 2024, and we expect to be so in 2025 and beyond. Durable profitability allows us to
+plow back much of our operating earnings into research and development. In each of the last six years,
+Stripe has reinvested a much higher proportion of our earnings in R&D than any comparable company. We
+believe this ability will prove particularly important in the coming years, as stablecoins, AI, and other forces
+reshape the landscape. Stripe's growth to date is evidence of the intense market demand for
+programmable financial services. The associated transformation is still early.
+
+
+Stripe Billing is an example of such an investment bearing fruit. Over the last year, Billing was designated as
+a market leader in its own right by both Forrester and Gartner, recognizing its power and maturity. As we
+forecast in our 2023 letter, Stripe's Revenue and Finance Automation Suite, with Billing at its core, has now
+passed a $500 million revenue run rate. Billing is being used by more than 300,000 companies, manages
+nearly 200 million active subscriptions, and is emerging as the revenue engine of the AI era. 
+
+
+The businesses on Stripe span every chromosome of the economic genome, from top corporate leaders
+(half of the Fortune 100 uses Stripe) to hyper-growth companies (we count 80% of the Forbes Cloud 100
+and 78% of the Forbes AI 50 as customers1) to newly formed upstarts (one in six new Delaware
+corporations incorporates with Stripe Atlas). At any scale, Stripe customers share one important
+characteristic: outsized growth. In aggregate, the revenue that businesses process on Stripe is growing
+seven times faster than that of all companies in the S&P 500.
+
+
+1 Stripe is used by all of the businesses in the AI 50 that are selling a product online. 11 of them don't yet do so.
+Creative destruction and reconstruction
+
+The US corporate sector is both a cradle of invention and a densely populated graveyard of companies that
+had fabulous futures in their pasts. Of the 500 companies in the S&P 500 at its inception in 1957, only 53
+remain in the index today. (More than half of that remaining 53 use Stripe.)
+
+
+Back in 1957, companies could expect to remain in the index for 61 years. In 1980, the average tenure was
+36 years. Today, it's just under 20 years.2 Enduring businesses are increasingly rare.
+
+
+Established businesses are coming to Stripe as they seek to modernize and buck this trend. Here are some
+examples of organizations from across the centuries and how they're working with Stripe:
+
+    The University of Oxford (founded 1096)3 now accepts student payments online. Oxonians can pay for
+    their books or boat club memberships with Apple Pay or Link.
+
+    The Church of England (founded 1534) now collects donations online and can programmatically fund
+    more than 16,000 parish churches around the UK.
+
+    The Gaelic Athletic Association (founded 1884) has digitized 2,200 clubs with 600,000 members
+    across Ireland and the world.
+
+    The Hershey Company (founded 1894) is now letting candy connoisseurs buy everything from
+    Hershey's Kisses to Reese's Pieces in bulk directly online.
+
+    PepsiCo (founded 1898) is saving time for its business customers (e.g., restaurants, grocery stores),
+    allowing them to automatically restock supplies of Pepsi brands like Gatorade, SodaStream, Rockstar
+    Energy, Lay's, Doritos, and more.
+
+    Comcast (founded 1963) automated its entire TV advertising booking process. On i e s Un v r al Ads,
+    anyone can now buy a TV spot and run it on NBCUniversal or Fox like they would on Facebook.
+
+    A NVIDI (founded 1993) is allowing developers to buy GPUs on a self-serve basis, and is even selling
+    compute as a cloud service.
+
+    Perplexity (founded 2022), an AI search engine with 500 million monthly queries, is moving from
+    human commerce to machine commerce with Stripe.
+
+a d on h d lo d nno gh Cor ora ong or ca h ch ra ola 2 B se
+t e methodology eve pe by I            si  t, "2021       p     te L     evity F e  st," w i  ext p  tes
+
+annualized rates.
+
+3 D O ' m m m y ford r n nc n an r arch a r no od ha n a l o d f n l f gur ou h n ac l espite xe
+          s p ee i e   ei  y ese               tte s,  b     y  s bee    b et  e i itive y i         t w e ex  t
+
+h un r go ar Th arl d nc of ach ng da o 96 t e
+ive sity  t its st t.  ee  iest evi e  e   te  i          tes t 10    .
+In many cases, companies are using Stripe to reinvent their business models. In others, they're simply
+looking to increase their revenue from existing activities--with striking results. Some examples from last
+year that stood out to us include:
+
+           Hertz moved its payments to Stripe in 2024. The company has since seen a 4% increase in
+           authorization rates for its online payments.
+
+           Turo, the world's largest car-sharing marketplace, used our Optimized Checkout Suite and saw a 4.7%
+           increase in recaptured revenue--equivalent to an additional $114 million each year.
+
+           Intercom increased conversion by 2.1% and saved countless developer hours after moving to
+           Stripe Billing.
+
+           Forbes switched to Stripe to manage its subscription payments, and it has seen a 23% uplift in revenue
+           in the past 6 months alone.
+
+           News Corp Australia, the parent company of Sky News Australia, has seen a 5% increase in
+           authorization rates. It has also retained more than 10,000 readers that would have otherwise
+           inadvertently churned.
+
+These improvements are partly attributable to the scale of the Stripe data network: we're continually
+retraining dozens of machine learning models that optimize every part of the transaction flow over an
+economy-scale dataset. The resulting optimizations are big enough that businesses see them in their top-
+
+.
+ line revenue figures. Businesses simply start making more money when they switch to Stripe
+
+The other reason established companies come to Stripe is because the payments landscape continues to
+evolve so rapidly. Businesses need to adapt to the proliferation of new payment methods and business
+models, the growing sophistication of fraudulent actors, the ever more exacting expectations of
+consumers, and the transformation in the commerce experience instigated by AI. Our customers recognize
+that being on a legacy payments platform puts them at risk of being left behind.
+The AI economy
+
+We're seeing an AI boom on Stripe. We are partnered with a large number of companies with rapidly
+growing businesses including OpenAI, Anthropic, Suno, Perplexity, Midjourney, Cognition, ElevenLabs,
+LangChain, Pinecone, Mistral, Cohere, Sierra, Decagon, Invideo, and countless others that aren't yet
+household names (but may become so at any moment). Our 2024 data shows these startups are building
+businesses at record pace.
+
+Source: Stripe data
+
+Cursor, the AI-powered coding assistant, raced to over $100 million in recurring revenue in just 3 years.
+We're also seeing the likes of Lovable (which hit $17 million ARR in just 3 months), Bolt (achieving $20
+million ARR in 2 months), and Qodo radically lower the barrier for turning software ideas into working
+applications.
+
+Much as SaaS started horizontal and then went vertical (first Salesforce and then Toast), we're seeing a
+similar dynamic playing out in AI: we started with ChatGPT, but are now seeing a proliferation of industry-
+specific tools. Some people have called these startups "LLM wrappers"; those people are missing the point.
+The O-ring model in economics shows that in a process with interdependent tasks, the overall output or
+productivity is limited by the least effective component, not just in terms of cost but in the success of the
+entire system. In a similar vein, we see these new industry-specific AI tools as ensuring that individual
+industries can properly realize the economic impact of LLMs, and that the contextual, data, and workflow
+integration will prove enduringly valuable.
+
+Examples in this vein include Abridge, Nabla, and DeepScribe, which are rethinking medical and patient
+care, while Studeo is reshaping how real estate businesses market property. Architects are using
+SketchPro to instantly render designs with simple text prompts, restaurants are using Slang.ai to take
+phone reservations, and property managers are unifying customer support with HostAI. Harvey, whose AI
+legal assistant is used by many Fortune 500 companies, quadrupled revenue in 2024.
+
+
+
+AI will even change the basic modalities of online commerce. We've long optimized checkouts for humans,
+but we're now doing the same for AI agents, starting with our Agent SDK, launched last November. We're
+also making it easy for agents to spend money with virtual cards created through Stripe Issuing, which
+allows users to approve or decline authorizations programmatically, ensuring that agents only buy what
+you want them to. (And, yes, there are built-in spending controls: nobody wants a T-1000 going wild on the
+family credit card.) 
+
+
+
+Our agent toolkit is already being downloaded by developers thousands of times every week as startups
+build new kinds of autonomous critters. ElevenLabs used our toolkit to let a voice agent autonomously
+manage subscriptions and refunds, while Perplexity and Payman are using Stripe to enable new agentic
+ways to spend and move money.
+
+
+
+Overall, we are ensuring that Stripe is well-positioned to serve the next chapter of the economy. More than
+700 AI agent startups launched on Stripe last year, a figure that we expect will be substantially eclipsed by
+the total in 2025.
+
+Vertical SaaS: Main Street's growth lever
+
+From 2005 to 2017, independent pizzerias in the United States saw a decline in numbers as the industry
+franchised. Then that trend inverted in 2017. By 2023, more independent pizzerias launched in America
+than in any other year on record. 
+
+
+
+We think the rise of vertical SaaS is at least partly responsible. From a platform like Slice, dedicated
+specifically to the needs of pizzerias, new businesses can get a logo, website, payment system, ordering
+system, marketing toolkit, and branded boxes--basically everything else they need to operate their pizza
+business (except an oven and the perfect sauce). They can remain independent while still benefiting from a
+franchisee's economies of scale.
+Today, 60% of all small businesses in America use vertical SaaS platforms to help run their business.
+Arborists use SingleOps, towing companies use Traxero (which even has a state-of-towing podcast), and
+liquor stores use Transformity's AI-driven inventory management. If you want to open a med spa, Moxie
+can get you going in 30 days. Independent law firms use Clio; pool cleaners use Skimmer; churches use
+Planning Center, Tithe.ly, Subsplash, or Pushpay; synagogues use Shulware; truck dealerships use
+Procede; and funeral homes use Meadow Memorials or Tribute Technology.
+
+Source: Stripe data
+
+These platforms and more than 14,000 others use Stripe to offer payments services to their customers.
+And across nearly every sector of the economy, we see more and more independent businesses leveraging
+software platforms for impressive growth. In the US, 6.3% of SMBs powered by vertical SaaS platforms on
+Stripe earn $1 million in total revenue in their first year--nearly 60% more than in one benchmarked
+
+comparison set.
+
+
+
+77% The 43% of US GDP that is driven by small businesses contains untapped potential energy.  of these
+
+businesses say growth capital is hard to come by. Vertical SaaS, with Stripe Capital, can help. Last year,
+
+Jobber Housecall Pro hundreds of thousands of independent businesses using platforms like     logged in
+                              or
+
+to their software to find an offer for growth capital waiting for them. Funds arrive in under 48 hours and are
+
+repaid as a percentage of sales. No lengthy applications to fill out, no trips to the bank with reams of
+
+printed PDFs, no denial from an underwriter who can't wrap their head around the business. The majority of
+
+recipients report using the loans for growth investments, and 98% of companies that receive funding this
+
+way say they'd do it again.
+
+We see significant potential for vertical SaaS platforms beyond financial services. We wrote earlier in this
+letter about the rise of vertical AI, and it's unsurprising that vertical SaaS companies are leading
+protagonists. Jobber Copilot analyzes data, prepares marketing campaigns, and even automatically
+responds to customer calls on behalf of home services businesses; Practice Better is enabling health
+professionals to take better notes and focus on their patients; and Fundraise Up is giving charities AI to
+encourage their donors to be even more generous. It took many years for smaller companies to benefit
+from previous technological revolutions, but vertical SaaS is bringing AI to the small business economy
+right away.
+
+
+
+Vertical SaaS started and is most mature in the US, but is now becoming a global phenomenon. Over a
+quarter of Australian small businesses are using vertical SaaS, as are nearly a fifth of small businesses in
+the UK. Other markets like Singapore (14%), France (8%), and Germany (5%) are more nascent, but
+adoption is growing quickly. We're seeing platforms like ServiceM8 and Ignition in Australia (for
+tradespeople and professional services, respectively), allO in Germany (for restaurants), Playtomic in Spain
+and Anybuddy in France (for sports clubs), and Canterly in Singapore (for equestrian management) all
+taking off.
+
+
+
+All countries want their small businesses to succeed, yet economics research consistently finds that large
+firms are faster in adopting technology. Vertical SaaS is how we ensure that small and medium-sized
+businesses fully benefit from software, the internet, and AI. This in turn highlights why internet-native,
+programmable financial services are so important: they're the foundation that vertical SaaS platforms need
+to flourish.
+
+
+Fighting industrialized fraud
+
+Fraud is a bigger drag on the global economy than you might think: one report found that fraud cost 3% of
+a typical online business's revenue. Fraudulent actors today operate on an industrial scale, with teams of
+engineers, managers, and data analysts. (We are yet to verify whether they have HR departments. If you
+know, please tell us so we can give them some peer feedback.) Fraudulent actors generally target times
+when fraud teams are offline--we see more fraud on Saturdays, Sundays, and Mondays--but we see
+subtler patterns, too, like the fraudsters' own work schedules. Fraudsters are particular about their lunch
+breaks. 
+
+
+
+The most effective lever we have to keep businesses safe is Stripe's reputation network. Data from $1.4
+trillion in annual payments volume means that each payment makes the next payment safer, a flywheel
+spinning with now-considerable momentum. Stripe Radar develops a notion of trust for not only credit
+cards but email addresses, IP addresses, phone numbers, shipping addresses, devices, and many more
+details besides. This trust allows Stripe to precisely distinguish between expected and suspicious behavior.
+
+
+
+In doing so, scale matters. When a credit card is used for a payment, there is a greater than 92% chance
+that Stripe has encountered the same card before. We can then compare this transaction to prior behavior.
+For instance, if we see a card being used with a new email address, the very newness of the email address
+is a suspicious fact (with a 60% higher likelihood of fraud).
+There are less obvious patterns to watch for, too. Our models passively learn which shipping addresses are
+owned by freight forwarders--the improbable number of distinct buyers per address, billing addresses far
+from shipping addresses, etc.--and weigh that fact an appropriate amount. (We're happy to facilitate
+commerce for people on the move; we don't want anyone defrauding innocent businesses.) No single data
+point is dispositive, but, across thousands of them, we can piece together an accurate picture.
+
+Fraud is an adversarial business: fraudulent actors are always refining their methods. Last year, we saw
+card testers ("card testing" refers to illicit attempts to identify valid card credentials) move from guessing
+card details to online card skimming. Criminals use social media to share fake websites with too-good-to-
+be-true deals, with the sole aim of stealing your credit card number. Those payment details are often sold
+off in tranches that are then tested out in the wild. Detecting this activity isn't trivial. You might think the
+obvious approach is to monitor for sudden payment volume spikes on a single business, but this is easily
+confused with genuine flash sales or a new product launch--which would be the very worst time to wrongly
+intervene! Our counterintelligence teams also lurk in the internet's sketchier chat groups to proactively
+discover compromised credentials and ensure they're flagged by Stripe, but this too is only one approach
+among many.
+
+While LLMs mostly deal with knowledge that changes slowly (the laws of physics haven't changed since we
+started asking Claude for explanations), fraud distributions are not stationary: fraudulent actors adapt their
+behavior as soon as they're thwarted. As such, we also enable our models to adapt in real time, so that
+future decisions benefit from all prior data. When a Stripe Radar fraud model makes a decision on a
+payment, it knows about events that occurred 100 milliseconds ago across the Stripe network. (We've
+open-sourced some of the infrastructure we built for this.)
+
+With these and other techniques, we reduced card testing on Stripe by over 80% in the past two years,
+protecting our customers from billions of fraudulent transactions. Fraudsters: you're going to have to start
+working through your lunch breaks.
+
+Source: Stripe data
+Stablecoins: Room-temperature superconductors for
+financial services
+
+In October, we announced our acquisition of Bridge, the world's leading stablecoin orchestration platform.
+Bridge enables businesses to do almost anything involving stablecoins: they make stablecoin-based
+applications easy to deploy and scale. They're used by everyone from Scale AI to the world's largest hodler,
+the US government. 
+
+
+The top stablecoin use cases today involve tangible, real-world activity. CFOs use stablecoins to manage
+corporate treasury, immigrants use them for remittance, citizens of countries with unstable currencies use
+them for dependable savings, and payments teams use them to enable customers from countries with low
+card penetration. Some of our favorite examples: SpaceX uses Bridge to repatriate funds from Starlink
+sales in Argentina, Nigeria, and other markets. DolarApp, a neobank in Mexico, uses Bridge to help
+individuals receive USD payments from payroll providers like Deel. Airtm uses Bridge to disburse
+payments to workers all over Latin America.
+
+
+Why care about stablecoins? Improvements to the basic usability of money make economies more
+prosperous. Consider the transitions from coins to banknotes, from the gold standard to fiat currency, and
+from paper instruments to electronic payments. Stablecoins are a new branch of the money tree. Such
+transitions occur with some regularity over the centuries, and the effects tend to be large. 
+
+
+Stablecoins have four important properties relative to the status quo. They make money movement
+cheaper, they make money movement faster, they are decentralized and open-access (and thus globally
+available from day one), and they are programmable. Everything interesting follows from these
+characteristics.
+
+
+The speed and cost advantages that stablecoins now enjoy are recent advances in the cryptocurrency
+ecosystem. Beginning with the invention of modern cryptocurrency with the Bitcoin whitepaper of 2008, it
+has taken many years of research and patient systems engineering to make the decentralized technologies
+competitive with existing financial infrastructure. The fundamentals for stablecoin adoption have only
+recently fallen into place, enabling the explosive growth we now see. Stablecoin transaction volumes more
+than doubled between Q4 2023 and Q4 2024, and the number of monthly active stablecoin wallets has
+now reached 40 million.
+Source: Visa Onchain Analytics, adjusted transaction volume
+
+For too long the crypto economy was an isolated atoll, with vibrant native customs but few exports to the
+rest of the world. A token for increasing leverage in trading NFTs? An interesting practice, but probably not
+one that's going to reshape global commerce. Stablecoins, though, are an immensely important export to
+the rest of the world.
+
+
+
+In reasoning about stablecoins, two comparisons are relevant: the petrodollars and eurodollars. The
+petrodollar system refers to agreements between the US and Gulf states (originally just Saudi Arabia) to
+have international oil purchases priced in dollars and much of the proceeds reinvested in US Treasuries in
+exchange for military and security guarantees. These agreements created more demand for US dollars, in
+turn allowing America to maintain lower interest rates and strengthening the dollar's position as the world's
+preeminent reserve currency. Stablecoin issuers will, in a similar way, be large buyers of US debt and create
+more dollar strength.
+
+
+
+The eurodollar system in turn provides an interesting comparison around access to the dollar. Eurodollars
+refers to a system of US dollar storage at banks outside the United States--the confusing name stems
+from European banks being the first hub for this activity, though it now happens around the world.
+Eurodollars became very popular among non-US corporations despite being far unwieldier than
+stablecoins. We expect that stablecoins, as an easier-to-use and more accessible version of eurodollars,
+will bring similar benefits to a much broader group of actors. We further note with interest that, despite
+regulatory uncertainty in the United States, early stablecoin adoption has shown a notable US dollar
+preference, with an estimated 99% of stablecoin balances being USD-based.
+
+
+
+Macro effects aside, Stripe's platform will be the best way to build with stablecoins. We are already in
+discussions with some of the world's largest enterprises, helping them assemble stablecoin strategies,
+such as faster global expansion or easier custody of funds. If your business has needs or ideas in this
+space, please do get in touch.
+
+European prosperity
+
+In recent months, spurred significantly by Mario Draghi's report for the European Commission, Europe's
+economic challenges have come to the forefront of public discussion. While the economies of the US and
+Europe were similarly productive in 1990, there has since been a stark divergence, with US productivity per
+hour worked reaching $104, as compared with a plateau of something closer to $85 per hour in Europe.
+Contrary to popular belief, the European economy isn't weakened because people take longer lunch
+breaks or because the continent takes the month of August off.4 (European working hours have actually
+been increasing.) The European economy is challenged because it's getting less output from each hour
+worked. In his report, Draghi appropriately describes this as an "existential challenge" for the continent.
+
+
+Source: OECD, 2025 (PPP, constant prices). Adjusted from 2010 to 2024 dollars using GDP price deflator.
+
+One might wonder: how closely do these macroeconomic figures connect to the experiences of the kinds
+of entrepreneurs and high-growth companies that Stripe works with? We recently ran a survey of US and
+European founders, and the answer is: distressingly closely. 45% of European founders say that the
+European business climate is getting worse (compared with only 15% of US founders). Even more strikingly,
+founders in Europe are twice as likely to see North America as an opportunity for growth than Europe itself.
+Furthermore, 66% of European founders say that European technology-related policy changes over the
+past four years have been unhelpful. (13% say they've helped.)
+
+
+4 We are, however, eagerly waiting for the economic impact analysis of the plastic caps and lids directive.
+Some say that the European economy has lost its way and that the decline can't be arrested. We can't allow
+that to happen. We are proud Europeans, Stripe maintains a headquarters in Ireland (in addition to South
+San Francisco), and Stripe serves a very large number of businesses across the European continent. We
+thought we would take this opportunity to highlight a few points that we observe from our position at the
+intersection of technology and financial services.
+
+
+First, the evidence suggests that Europe needs a broader, deeper, and more diverse array of financing
+solutions. In the US, almost 80% of corporate lending is now from non-bank sources, compared to just 32%
+in the EU. This raises the cost of capital for European firms, which in turn lowers investment rates. (A 2019
+IMF report expands on this point.) The European VC landscape is similarly behind: while the US invests
+around 0.7% of GDP in high-growth firms, that figure is less than 0.3% in Europe. Some of this difference
+stems from more conservative sources of wealth: large US pension funds, for example, have spotted the
+attractive returns of the venture sector, thus helping finance its growth, but large pools of European capital
+have generally shied away. 
+
+
+Large-scale capital market reform is not sexy, but we think it would be tremendously beneficial for the
+European economy. In the meantime, we'll do what we can ourselves: Stripe Capital is not large today, but
+we hope to expand our offering in order to fuel the growth of Europe's firms.
+
+
+Second, Europe clearly needs major regulatory reform and simplification. EU Commission President Ursula
+von der Leyen recently said that there is "too much complexity" and that "administrative procedures are
+too cumbersome." To make this concrete, one German entrepreneur recently reported:
+
+
+"My previous (non-German) company was incorporated in Delaware and I opened a bank account within a
+few days. When fundraising, the only thing between investors committing capital and me receiving the
+money was an electronic signature via Docusign and the investors wiring the funds. Because of the notary
+system in Germany, the process for my new company will be incredibly painful. Setting up the corporate
+structure will take 2­3 months. Explaining the need for physical signatures to American angel investors
+makes fundraising difficult. I will need to burn through my savings for 4­5 months longer than I would need
+to if I was opening a business in the US." 
+
+
+We don't think that anyone in Europe deliberately made it a policy goal to discourage the creation or
+success of new firms, but this has been the inadvertent result. GDPR alone is estimated to have reduced
+profits for small tech firms in Europe by up to 12%. Those cookie banners hurt, whether you accept them
+or not.
+
+
+Third, Europe's labor rules and limits on corporate restructuring make adaptation harder. The IMF recently
+measured a 2.5 percentage point annual gap between US and European productivity stemming from
+differences in allocative efficiency: that is, how effectively individuals and firms across the economy deploy
+their efforts against that which is most productive. A 2.5 gap is huge: the difference between 1% and 3.5%
+GDP growth, for example, amounts to 22% versus 100% growth over just 20 years.
+Source: IMF, World Economic Outlook, April 2024
+
+This allocative gap is visible in "job dynamism" (measured by summing job creation and destruction rates),
+which has declined in Europe in the 21st century, and "business dynamism" (measured by summing
+business creation and destruction rates), which durably lags that of the US. Left unchecked, this gap is
+likely to grow further. We expect significantly greater technology dislocations over the next decade than
+over the one just gone by, and much of Europe's economic outcome will be determined by the readiness
+with which European firms and economies can reconfigure themselves in response.
+
+Source: European Centre for International Political Economy (ECIPE)
+Source: OECD
+
+Europe has a strong track record in overcoming existential crises. In all the ways we can, we will continue to
+support Europe's economic growth and innovation in our work with millions of European businesses. As
+Mario Draghi said to the European Parliament last week:
+
+"To cope with these challenges, it's increasingly clear that we need to act more and more as if we were one
+state.... The response must be fast, because time is not on our side.... [It] must be commensurate with the
+size of the challenges, and it must be laser focused on the sectors that will drive the growth. Speed, scale,
+and intensity will be essential." 
+
+We could not agree more.
+
+Looking ahead
+
+There are many valuable things that one can work on in the world, but hardly a day goes by without us
+reflecting on how fortunate we are to play a small role in supporting the collective work of Stripe's
+customers. The businesses we work with are advancing the prosperity of our societies in ways large and
+small, and their ingenuity is why we're excited to get to work every day. To customers reading this letter:
+thank you for your trust. 
+
+If this letter has piqued your interest in how technology is remaking the world around us, consider joining
+us at Stripe Sessions, our in-person annual conference, taking place May 6­8 at the Moscone Center in San
+Francisco. You'll hear from industry leaders, founders, and developers all building on Stripe, and we'll share
+our plans for the year ahead. You can register at sessions.stripe.com.
+
+Until next year,
+
+Patrick and John
+
