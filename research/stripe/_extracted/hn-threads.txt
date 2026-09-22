@@ -1,0 +1,376 @@
+
+
+==================== HN 34609182 | 2023-02-01 | 170 pts | Stripe increases fees for EU and UK-based businesses in April
+URL: https://news.ycombinator.com/item?id=34609182
+LINK: https://support.stripe.com/questions/april-2023-pricing-updates-for-businesses-based-in-europe
+
+--- 01acheru | 2023-02-01
+Something needs to change in the digital payments sector. 1.5% is ok-ish but 3.25% to accept foreign cards in the EU is a lot of money!
+I understand that costs are higher when using credit cards because of the credit part that introduces risk, but in my case for example I have a debit card that runs also over Mastercard, so either I have the money or I don't. Why should a merchant be charged the same fee of using a real credit card if the risk is highly reduced?
+I still don't understand why it is so hard to break the Visa/Mastercard duopoly on card payments. Why isn't there a standard for payments that banks can implement? Why are Visa/Mastercard/Amex required? SEPA in EU is already something but it is taking ages for it to become an actual payment platform in everyday's life.
+
+--- sleepyhead | 2023-02-01
+"Businesses in the EEA who are paying out in USD to a US-domiciled bank account will now incur a 1% fee, with a minimum fee of US$2.50 per payout."
+This is absurd. A 1% fee to transfer USD to a USD bank account?
+The alternative is to charge in another currency - which Stripe will put a 2% currency fee on.
+This is already on top of their expensive transaction costs.
+Will actively look for alternatives now.
+
+--- capableweb | 2023-02-01
+Some European alternatives you might be able to find/negotiate better fees with:
+- mollie (Netherlands)
+- adyen (Netherlands)
+- Klarna (Sweden)
+- Paylike (Denmark)
+- Mangopay (Luxembourg)
+- Quickpay (Denmark) (added in edit)
+The ones I've tried of those, have an OK development experience, maybe not as polished as Stripe, but much better than the alternatives that were around before Stripe (huge hassle back then). Ideally, you'll support at least two providers you can switch between, if you can afford the development of supporting two, as at one point or another, it'll save your ass or at least a bit of money as fee structures change between providers. It'll also be easier to integrate a third one in the future when you eventually find the perfect one (until they turn into the next Stripe).
+> Dispute fees (also known as chargebacks) will increase from €15 to €20. Due to costs for managing
+
+--- japanman425 | 2023-02-01
+Leaves the EU and have more financial independence and to negotiate own deals
+Gets grouped with EU decisions anyway.
+
+--- okokwhatever | 2023-02-01
+Here we go. Stripe going down the way ↘
+
+--- mytailorisrich | 2023-02-01
+This after the news that they were looking for funding to pay tax bills... This does not smell good.
+
+--- maest | 2023-02-01
+> payouts will be higher due to increases in network costs (in recent years, major card networks have introduced several new fees and increased existing fees), as well as increases in underlying service costs.
+Can someone from the industry offer more colour on what this actually means?
+It strikes me that pricing for companies like Stripe should go down, not up in the long run. They're fairly well insulated from inflation (as pricing is % of transaction value), so the only reason I can think of for price _increases_ would be increased regulatory burden or some sort of structural industry change.
+The vagueness with which Stripe justifies the price increase makes me think this is not supported by actual cost increases, but by a desire to increase profits. (which, hey, if you can put prices up and customers won't leave, then great - but it would be good to know the actual reason)
+
+--- 02thoeva | 2023-02-01
+"UK businesses who are paying out in USD to a US-domiciled bank account will now incur a 1% fee, with a minimum fee of US$2.50."
+So if we get paid out a USD payment, into a USD account. We get charged just because we're registered in the UK? That's a huge impact on our business.
+
+--- petercooper | 2023-02-01
+At first I thought, "well, inflation is affecting everyone." Then I realized if prices are going up due to inflation, Stripe's collected fees go up anyway. So now they're benefitting to the second degree with a higher percentage of already inflating revenues ;-) We'll put up our prices more to counteract it, and on it goes.
+It's not a terrible deal even at this level. We routinely see 4-5% creamed off the top of wire transfers we receive from the US through exchange rate variations, random bank fees, etc. It's the cost of doing global business for us.
+
+--- benevol | 2023-02-01
+It's the usual "bait-and-switch" strategy, isn't it.
+Make something good. Dominate the market. Increase economic pressure.
+Only 1 way for to counter: Leave and let others know what you're using instead, and why.
+
+--- GordonS | 2023-02-01
+Yikes, these are substantial prices hikes!
+And what's this new nonsense about increased costs for "premium" cards?
+From here[0], it describes these cards as "Commercial, corporate, or business cards issued by Visa and Mastercard" - but why would Stripe charge more for the use of such cards? Surely the chargeback rate for businesses must be orders of magnitude lower than that of consumer cards?
+https://support.stripe.com/questions/what-s-the-difference-b...
+
+--- marcopicentini | 2023-02-01
+I don’t understand why fees are in percentage and not fixed. 
+Transferring 100$ is not 10 times more expensive for them than moving 10$.
+
+--- gizmo | 2023-02-01
+3.25% for USD card for EU business + 0.5% for stripe tax + 0.4% for invoice + 0.5% for stripe checkout. It really adds up!
+MasterCard and Visa are mostly to blame here. They haven't innovated at all in the past 30 years and the fees they charge are wildly out of balance with the service they provide. They're awful, and I can't wait to see these credit card companies crash and burn when they get some real competition.
+
+--- tehwebguy | 2023-02-01
+Has anyone else heard of like a year worth of retroactive Argentina’s exchange rate corrections happening to Stripe users?
+I recently saw someone mention this on reddit asking for legal advice but didn’t find anyone here talking about it and the original post seems to be gone but they linked to this post https://support.stripe.com/questions/argentina-s-new-inbound...
+
+--- blackhaz | 2023-02-01
+This ain't as bad as international PayPal... We (EU company) have clients paying from abroad via PayPal. I can't figure out what to do with this. We're being hit with 4.7% PayPal international fee, then ~ 3.75% fee to convert USD to our local currency to withdraw to our bank account. (PayPal won't let us withdraw USD.) Then another 2-3% to convert it back to USD in our bank to pay our supplier in USD. Imagine the total.
+And the number of our PayPal-paying customers keeps growing. For some mysterious reasons it is convenient for people in very remote parts of the world to use PayPal. Direct credit card payment gateway and wire transfers are significantly more difficult for them.
+
+--- tiffanyh | 2023-02-01
+FYI - Adyen has a cost plus pricing model, which many people appreciate.
+Note: I have no affiliation with any PSP.
+
+--- thesimon | 2023-02-01
+>Link, Stripe’s one-click checkout experience, can be used to process all domestic cards for 1.2% + €0.25 per transaction (or your local equivalent).
+This is probably the most annoying change. Raising the fees to push their card-storing solution.
+
+--- oldstrangers | 2023-02-01
+Stripe takes like $200 from me on every payment for my little side project. Tiny one man business, seems really absurd to me.
+
+--- aspyct | 2023-02-01
+Oh, so I'm going to pay more for customers who have "premium cards"?
+> Standard EU cards: 1.5% + €0.25 per transaction
+> Premium EU card: 1.9% + €0.25 per transaction
+That sounds completely backwards. They chose to have premium cards, not me.
+
+--- 40acres | 2023-02-01
+Stripe has announced recent enterprise wins (Amazon, BMW) but these are negotiated deals with less margin. Seems like as they increase their share of enterprise they are simultaneously turning the screw on SMBs and start ups.
+
+--- agilob | 2023-02-01
+A week after Stripe and Amazon sign cooperation agreement.
+
+--- robertpohl | 2023-02-01
+For the nordics, I highly recommend  Mondido, https://mondido.com
+
+--- bodomalo | 2023-02-10
+Stripe has the worst DISPUTE Handling on the market.
+Compared to PAYPAL they simply offer "nothing". 
+They do not help in the communication with the buyer, so the buy has no other option than to start a dispute with the bank. In 15 years I never had one BANK-CHARGEBACK with Paypal - simply because Paypal has installed a communication system between BUYER and SELLER. Stripe not.
+On Paypal I can work it out with the customer every time, or Paypal will say: "We send back that money", or tells the custome "you got the goods, you loose"
+Stripe is comparable expensive (1.5% fee) compared to what big companies pay (0.1%) handling payments. Customers do believe that there is NO FEE at all for payments, they believe they just get back their money.
+I am handling payments of 0.99 Euros..that has become impossible with STRIPE now, if there is a risk of paying back 20 Euros dispute fee.
+
+--- bodomalo | 2023-02-10
+Simple.
+Add a 5 Cent Payment fee to every STRIPE Payment.
+That is still legal. Customers do not like it of course to see different prices.
+But hey, thats how you have to teach them.
+Paypal is better in disputes..but its also more expensive (for me).
+The good thing is: In the future I do not have to care about disputes on stripe, I can just upload a paper saying "fuck you all"..I loose my money anyway.
+
+
+==================== HN 35079262 | 2023-03-09 | 16 pts | Stripe – Pricing changes for US businesses starting June 1, 2023
+URL: https://news.ycombinator.com/item?id=35079262
+LINK: None
+OP TEXT:
+Hello,
+We’re letting you know about Stripe pricing changes for international card transactions, disputes, and sales tax, starting June 1, 2023. We also want to share ways we can help you reduce costs and grow revenue.
+International card transactions
+Over the past few years, card networks have increased the total fees that Stripe pays for card processing. Because of these costs, starting June 1, Stripe’s additional fee for international card transactions will change from 1.0% to 1.5%. There’s no change to our standard 2.9% + $0.30 pricing for US card transactions.
+How you can reduce costs and grow globally:
+In many countries, customers prefer to pay with their bank, digital wallet, or other non-card methods, which may be cheaper than cards. Stripe makes it easy for you to accept more than 25+ ways to pay using Checkout, the Payment Element, or with the API, and you can choose the most effective payment methods for your business.
+Our checkout experiences automatically show your customers the most relevant payment methods based on local preferences and are tailored to 30+ languages and 135+ currencies across web and mobile.
+Disputes
+Whether you win or lose a dispute, card networks charge Stripe a fee in either case. To cover these costs, starting June 1, Stripe will no longer return the $15 dispute fee for successfully contested disputes. The dispute fee itself is not changing.
+How you can prevent chargebacks and win more disputes:
+Stripe Radar uses machine learning to help prevent fraudulent charges. Radar is typically a paid product, but it’s free for users like you on our standard pricing.
+We now recommend what to submit by analyzing millions of disputes, so you can fight the right ones with the best evidence.
+Making payment optimization features free
+We’ve decided to make two payment optimization features free for you starting June 1. Adaptive Acceptance and network tokens have increased revenue for businesses on Stripe by an average of 1.2%. There’s nothing you need to do: we’ll turn them on for your account if they aren’t on already.
+Adaptive Acceptance prevents customer card declines using machine learning to dynamically optimize the details of card network requests. In 2022, Adaptive Acceptance generated over $5 billion of incremental revenue for Stripe businesses.
+Network tokens automatically update card details when old cards expire so your customers don’t need to re-enter anything.
+We’re here to help you navigate these price changes and grow your business. Visit our support page to learn more or connect with our team.
+— The Stripe team
+
+--- giorgioz | 2023-03-10
+I'm quite upset with the way that Stripe is constantly increasing and shifiting fees.
+A couple of years ago they stopped refunding the 2.9% fee when we would refund a payment to a customer too.
+Sometimes they justify theirselves by saying "It's the network increasing the fees" and yet they decide that someone else has to pay for the increase. They do not split the difference, they just burden us.
+So I believe startups using Stripe should start to be more vocally complaining about this. This way maybe Stripe won't just drop on us the fees but it will also start to push back against the Visa/Mastercard duo-poly.
+
+
+==================== HN 34035581 | 2022-12-18 | 350 pts | Don't Use Stripe
+URL: https://news.ycombinator.com/item?id=34035581
+LINK: None
+OP TEXT:
+I used Stripe for about 2 years to run a fashion brand in the uk. In the case of my business, I never had an issue processing my small payments for dresses, ranging from a couple hundred dollars up to $1000. All of a sudden, we start getting attention we get payments of  $3300 and more. We had around 50000$ dollars on stripe.  Stripe flagged the account and is now holding the money from me for "at least 120 days"
+It is one thing to say this is a red flag, fine... I hear you... no problem. a transaction multiple times the size... sure. I get it. However, A normal payment processor would then query you for documents authorizing the charge, bank statements, financial statements, some sort of procedure to remedy the issue. Stripe provides NO SUCH METHOD TO RESOLVE these issues.
+There are reports of Stripe continuing to add "30 days" to the reserve hold past the initial 120 days, indefinitely. Stripe is taking advantage of a lack of regulation in this space to steal small merchant's large transactions. They see a big, outlier transaction and lick their chops, hiding behind KYC and "Fraud prevention" To hold your money indefinitely.
+You cannot call Stripe. They do not have a phone number. Their support page on their website has Phone call and messaging grayed out. You can only email. If you email, you get robots. Even in the same email thread, a different "agent" (with a different name and everything) answers each time with not prior knowledge of your history. There are no ticket numbers to your support request; nothing tracking it. The robots respond with what is quite obviously a template response.
+If you do a little bit of research about this topic, you immediately see this is a prevailing issue. Reports of Stripe taking up to $31,000 are all over the internet! Again, Stripe gives no manner to remedy this. There is NO ONE you can call. NO ONE you can talk to. More disconcerting, it seems that anyone who posts about this issue on reddit gets downvoted and teamed up against by established Reddit accounts, that I have to imagine are owned by Stripe. These account have some established reddit history on them, mainly talking about coding in PERL. It's a little sus.
+In my case, I sent my EIN letter, Sales Tax Receipt, Articles of Org, Statement of Trade Name, Certificate of Good Standing, Bank Statements, Website links, Signed transaction receipts, and anything I could think of to Stripe to review. I just received robot-responses.
+I challenge anyone here to connect me to a human being at Stripe that can tell me how to resolve the issue. It can't be done. This is a big problem and should be brought to the attention of small business owners, and regulators!
+TL;DR: Stripe is a faceless enterprise with no humans you can talk to, no publicly listed phone number, and will allow your small account to operate just fine for a while. As soon as they see that you are growing (and thus your chances of leaving Stripe for a larger, more favorable processor) they will Freeze your account, disallow you to issue refunds, and hold your money indefinitely. You've been warned!!!
+
+--- simonebrunozzi | 2022-12-18
+Why StripE and not Stripe?
+Relevant, see my "Stripe’s opportunity: Reinventing Customer Service" from a while ago. [0]
+[0]: https://medium.com/@simon/stripes-opportunity-reinventing-cu...
+
+--- thriftwy | 2022-12-18
+I mean, come on, you've all been through this already, how could you fall for a reissue of PayPal?
+I assumed that support and transparency were selling points of Stripe. If not, why bother? Just go with a good old local bank.
+
+--- dannyw | 2022-12-18
+Try emailing Patrick: https://news.ycombinator.com/item?id=28524141
+There definitely needs to be more regulation of fraud holds.
+
+--- MenumyApp | 2022-12-18
+Report this at escammer.com
+
+--- rich_sasha | 2022-12-18
+Collect it all and go to court. I can't see how they have a chance. Document losses their incompetence caused you and request these too.
+IANAL ofc...
+
+--- qqtt | 2022-12-18
+You can find similar stories about literally all online payment processors, including Paypal, Stripe, & all the "legacy" ones too (like First Data). Is it possible this isn't some nefarious conspiracy to steal money, but rather a reality of dealing with payments online given the regulatory environment it operates in?
+Also this is the biggest season for sales and tech companies in general are dealing with navigating an extremely volatile macro economic environment - companies are planning for doing more with less staff and Q4 is likely pushing the limits for the customer support of many companies.
+It is frustrating having your money on hold and there is a meaningful business impact that can have, but if you have tens of thousands of dollars tied up in Stripe (or any other payment processor), may I suggest expanding your other credit facilities such as lines of credit and loans, to allow y
+
+--- theteapot | 2022-12-18
+What's the name of the fashion brand? I mean I'm no Stripe fan either, but how we supposed to know your not actually running a money laundering op? Or a Stripe negative advertising campaign ... or whatever. There is zero verifiable in your post.
+
+--- vxNsr | 2022-12-18
+Just curious, is there a real alternative that:
+1. Has customer service
+2. Doesn’t charge high fees
+I feel like those two things are mutually exclusive, the high fees can be thought of as an insurance policy to ensure good cs. The lower fee options are like those fly by night insurance companies.
+Everyone  wants a fantastic experience without paying for it, turns out cs is very expensive, and even if stripe offered a paid support option, then we’d have people here complaining about being forced to pay to get their money back… no you took a discount service and now are being charged for premium.
+
+--- elliotec | 2022-12-18
+Obviously not easy - but how quickly do you think you can get on another payment processing platform? If you're desperate, is it possible to jump to Braintree or Square or Shopify or something in the immediate future?
+
+--- throwaway0x7E6 | 2022-12-18
+yeah.
+the service that got traction because paypal fucking sucks is now rapidly becoming just as bad
+
+--- flamey | 2022-12-18
+why would you get Perl mixed into this rant? great programming lang
+
+--- neilv | 2022-12-18
+Have you consulted a lawyer?
+
+--- WesolyKubeczek | 2022-12-18
+> anyone who posts about this issue on reddit gets downvoted and teamed up against by established Reddit accounts, that I have to imagine are owned by Stripe.
+You seem to be underestimating the power of fanboyism. If someone is a fanboy for a company/technology/whatever, they will defend it vehemently without even being paid for it.
+> mainly talking about coding in PERL. It's a little sus.
+But this now makes me want to ask you if you think those accounts are in the room with you right now.
+
+--- KingOfCoders | 2022-12-18
+A large company I was working for transfered all money out from Paypal every night. I would never leave money with Paypal or Stripe.
+
+--- linuxhansl | 2022-12-18
+Whatever the backstory of this particular incident is... It's clear that Stripe, Paypal, et al need to be regulated like a bank. Period.
+If it looks like duck...
+
+--- ksec | 2022-12-18
+Considering you are posting this on HN, and you crated a new account to do this suggest you should have known about HN for quite some time.
+The quickest way to get Stripe support is by posting on HN. You should have done that first.
+
+--- dibt | 2022-12-18
+I don't know what you can do except make noise here. I hope it works out.
+>...we start getting attention we get payments of $3300 and more.
+Thinking of others that may encounter this issue, I wonder if it's possible to spread orders between separate payment processors based on order $ value.
+Processor #1: low average order value
+Processor #2: high average order value
+That way each processor handles orders within 1 standard deviation of the 30 day average (or however you might calculate it). I've never handled inventory for ecommerce. Just wondering.
+If that's not possible, should ecommerce sites only ever have a min - max per unit value that isn't too large? e.g. $10 - $100 unit values, with avg $50 orders. Not $10 - $1000 unit values, with avg $50 orders.
+
+--- ur-whale | 2022-12-18
+You're a business. Any reason why you didn't sue them?
+
+--- matrix_overload | 2022-12-18
+Not defending Stripe here, but DO NOT HAVE A SINGLE POINT OF FAILURE! Have 2-3 payment processors hooked to a common abstraction layer, split transactions between them. If one fails, switch to others while you try to sort it out. Unfortunately, "computer says no" has become the harsh reality when dealing with any kind of corporate entities, so you need to be ready. It sucks, but that's the world we live in.
+
+--- IndySun | 2022-12-18
+You're rightly miffed at faceless tech, though I sincerely believe the issue will get sorted out, and then you leave Stripe. Good luck.
+You're right about the phone number "...Note: We do not have an inbound support phone number at the moment. Request a phone call to connect with Stripe Support by phone..."
+In case you missed it, a callback can be requested.
+https://support.stripe.com/questions/contact-stripe-support
+https://stripe.com/docs/disputes/responding
+
+--- lizardactivist | 2022-12-18
+Don't use US American payment providers if you can avoid it.
+It's a national sport over there to figure out new ways of getting people's money, whether it's peculiar made-up fees, or like in your case plain robbery under the ironical guise of crime prevention.
+
+--- lullab | 2022-12-18
+This sounds like theft. Maybe you should consider taking legal action.
+
+--- nnurmanov | 2022-12-18
+The best option for you is to open case with EU competition commissionaire.
+
+--- john___matrix | 2022-12-18
+This is the problem with so many companies these days in terms of not being able to get hold of anyone and just getting thrown into a loop of bot replies and semi-relevant faq pages.
+I run a small business in UK and have had a few issues in the past where I've been unable to get any sort of resolution through regular channels and I've actually contacted my local MP and asked them to help intervene or at least reach a person in authority who could own the problem.
+I may not agree with his actual political party but as a local MP he is good with small businesses and uses the clout of his office and name. Obviously YMMV on this depending on your MP but desperate times etc.
+
+--- docflabby | 2022-12-18
+Most small business I've found don't accept credit/debit cards for large transactions and instead want direct (cash) bank transfers because they fear the money going missing or getting a chargeback.  This  has its only issues as its slow and not very customer friendly.
+If only there was some kind of virtual cash that could be sent from one party to another almost instantly without an intermediary
+
+
+==================== HN 36970678 | 2023-08-02 | 46 pts | Stripe Account CLOSED for no reason and with no explanation
+URL: https://news.ycombinator.com/item?id=36970678
+LINK: None
+OP TEXT:
+Hi to all.
+My name is Luca and I’m writing this thread on behalf of my business for a problem we are currently facing with our Stripe account.
+To sum up our story:
+- We created our business Stripe account months back…no complaints.
+- 2 weeks ago, we opened the payment gates and received the first 10 payments after 1 year of work…account disabled for no reason and with no explanation.
+- We went through multiple support tickets and emails with Stripe support and got the same answer every time from, what seems to be, a chatbot.
+- We contacted the "Specialist team" through LinkedIn and after thoroughly explaining how we do not fall under any Restricted Business written by Stripe, he still decided to close our account for no reason and with no explanation.
+- The Stripe team is ignoring the fact that we fall under the same category as our competitor, which literally offers our same exact service. In the end, they still decided to close our account...again, for no reason and with no explanation.
+Now after 1 year of work and weeks of integrating Stripe services to our platform, clients’ money involved, what are we supposed to do?
+Does Stripe at least have a support to pass clients recurring payments to another platform?
+Or do we just lose all of our clients?
+If there’s anything my team can do such as: changing the service, the platform or the landing page to become compliant to Stripe’s Policies please help us out.
+If anyone knows someone we can hop on a call with or discuss this situation please leave details or contact me at:
+lucadalla88@gmail.com
+
+--- chipgap98 | 2023-08-02
+It's awful that this is the only way to get the attention of companies these days
+I hope you are able to resolve this issue!
+
+--- wackget | 2023-08-02
+Worrying. I see too many of these complaints about Stripe on HN. It makes me really question my company's decision to integrate with Stripe. We may have to re-think our integration.
+
+--- danpalmer | 2023-08-02
+Hi Luca, I'd get in touch with your account manager. They'll be interested in solving this for you, they want your business, and assuming everything is above board, they'll be able to sort it.
+If you don't have an account manager, as it sounds like maybe you don't... why? Payments are a critical part of most businesses, so I would advise against just putting a few details into a web form, getting an API key, and then depending on it in production, as that behaviour looks dodgy – there's little trust in the relationship on either side, and understandably companies with a reputation to uphold will be eager to cut off potentially bad actors at the earliest sign.
+
+--- DANmode | 2023-08-02
+> The Stripe team is ignoring the fact that we fall under the same category as our competitor,
+...are you sure?
+
+--- lindig | 2023-08-02
+What does your business do? Stripe might not have listed your business model explicitly but could still prefer to not have you as a customer if it is an edge case.
+
+--- redeeman | 2023-08-02
+is this for dipsway? did you take something other than stripe before?
+anyway, I cant comment on your case, but I will say, as I have said before, using stripe is a gamble, DO NOT DO IT! when the problem hits, they are impressive in their ability to simply have totally nonexistant support. they will even go so far as to totally stop replying.
+Use a competitor, if you dont want this huge risk.
+Now you know, praise yourself lucky it was only 2 weeks worth.
+
+--- lopkeny12ko | 2023-08-02
+HN is not a customer support forum.
+
+--- mikece | 2023-08-02
+I switched to Stripe.com for a pair of non-profits for whom I do I/T work after the rate at which PayPal cancelled people without explanation or recourse went up.
+Is there any chance that these "We're firing you and that's final" cases are prompted by some sort of regulation or legislation that also prohibits the fintech provider from telling the former client why they were cancelled?
+
+--- CoastalCoder | 2023-08-02
+What jurisdiction are you in?
+That might affect the advice you get.
+
+--- sanswork | 2023-08-02
+>what are we supposed to do
+Eat the loss on the 10 payments, find another payment processor and move on.  Anything else is a waste of time, even if they reactivate you are you going to trust that they don't just drop you again?  Move on.
+
+--- leros | 2023-08-02
+The danger of being a small client. Companies like Stripe and many others are perfectly content with having a few false positives in their algorithms. So what if they accidentally ban 0.1% of their customers if they're stopping 99% of the fraud? They're happy with that. If they mess up with a large client, they'll have the account manager fix it. If they mess up with a small client, the lost revenue is small. They just don't have the incentive to do a better job. I've seen this mentality at a few companies and I don't see much hope for changing it.
+
+--- mfontani | 2023-08-02
+From https://stripe.com/legal/restricted-businesses
+Looks like there's a bunch of stuff that might opinably fit, depending on who those 10 clients were or what your company does.
+- Regulated industries such as: Financial products and services / Investment and brokerage services
+- Money transmitters, currency exchange services and other money services businesses 
+- Neobanks / challenger banks 
+- Other financial institutions
+- Credit card and identity theft protection services 
+- Other age restricted goods or services
+- Virtual and cryptocurrencies, non-fungible tokens (NFTs), and mining services
+- Sale of stored value or credits maintained, accepted and issued by anyone other than the seller 
+- Businesses where sellers get their revenue both from selling items and from signing up new sellers 
+- When you sign up for Stripe Issuing, you share with Stripe the location of your business, the p
+
+--- alberth | 2023-08-02
+Suggestion:
+- it might help to list what your business is, and
+- to provide your work email as contact (not your person gmail).
+
+--- 3np | 2023-08-02
+Now you learned the lesson that this can happen to anyone, at any time, for no apparent reason. Don't put all your eggs in a single external party if you can avoid it.
+> Or do we just lose all of our clients?
+I'm sorry but wha? How do all your clients depend on you utilizing Stripe?
+Looking at your website dipsway.com, yeah I can see how Stripe would drop you like a potato with gems like:
+> Position yourself before the rise, take advantage of the perfect chance to profit. The bot will automatically place buy/sell orders at the best time. It includes 16+ strategies optimized with a Walk Forward Optimization approach. Better than HODL: ^23 % (Promising much returns? I hope you're not under purview of the SEC)
+> Bitcoin grew 15% and you missed it. Never miss another opportunity
+> Your wallet is YOURS. DipSway cannot access your funds and cannot withdraw them. (If I understand the nature of 
+
+--- smca | 2023-08-02
+What's your business? Is it https://news.ycombinator.com/item?id=34278268?
+Crypto businesses can pose an elevated financial risk so we require you to obtain prior written approval per our restricted businesses agreement: https://stripe.com/legal/restricted-businesses#:~:text=Busin....
+
+--- smachiz | 2023-08-02
+If your business is https://dipsway.com, I could see why a merchant provider might terminate your account.
+You're broadly wading into dangerous waters and a lot of what's on your website would probably get you regulated by the SEC, but the language used on your website would be alarming to any risk analyst.  "Pump and dump" schemes are illegal in the US (and I presume literally everywhere else), and you're using similar verbiage right on the main page of your site.  It almost looks like you're advocating customers get in on the ground floor of the pump and dump scam, which is certainly illegal.
+Separately, from a risk perspective, they're also asking themselves "If this algorithm is so good, why would they sell it for $70/mo and instead just using the algorithm to make all the money for themselves, this is going to be chargeback central when the algorithm doesn't deliver".
+
+--- mytailorisrich | 2023-08-02
+Stripe's T&Cs state that you may not use them for financial services without their prior written approval.
+
+--- ChrisArchitect | 2023-08-02
+Tell HN:

@@ -9,14 +9,22 @@
 | | |
 |---|---|
 | **Product** | Stripe |
-| **Stage** | 1 — Source discovery and collection (pass 1) |
+| **Stage** | 1 — Source discovery and collection (passes 1 and 1b) |
 | **Research cutoff** | 2026-09-21 (inclusive) |
 | **Session date** | 2026-09-22 |
 | **Methodology** | `docs/research-methodology.md` v1.0 (LOCKED) |
-| **Status** | **PARTIAL — pass 1 complete, not signed off.** See §7 |
-| **Sources verified (opened and inspected)** | **21** |
-| **Sources attempted and blocked** | 5 (§6) |
-| **Categories swept** | A (company statements) largely; B (official docs/pricing) partial; D (statutory/regulatory) one entity; E (independent journalism) one event; C (archive) and F (practitioner) **not started** |
+| **Status** | **PARTIAL — passes 1 and 1b complete, not signed off.** See §7 |
+| **Sources verified (opened and inspected)** | **33** (21 in pass 1; 12 in pass 1b) |
+| **Sources attempted and blocked** | 7 (§6) |
+| **Categories swept** | A (company statements) largely; B (official docs/pricing) core products done; D (statutory/regulatory) one entity; E (independent journalism) valuation series and PayPal bid; F (practitioner) four threads; C (archive) **blocked — Internet Archive offline on 2026-09-22** |
+
+### Pass 1b — product docs, financial reporting chain, practitioner layer (2026-09-22)
+
+Sources **STR-S022** to **STR-S033**. Three findings amend pass 1:
+
+- **Finding 1.1-3 qualified.** The *headline* US rate is unchanged since 2011, but not the price list. Stripe's June 2023 notice, reproduced verbatim by a recipient [S032] and corroborated by today's page [S003], raised the international card surcharge from 1.0% to 1.5% and stopped refunding the $15 dispute fee on won disputes; an April 2023 change for EEA/UK businesses added a 1% fee (minimum $2.50) on USD payouts to US bank accounts and, per the thread, moved foreign-card fees to 3.25% [S031]. Stripe has since removed the support page that announced the European change (301 → /pricing). The correct claim is: **"2.9% + 30¢ for domestic US cards has not changed in fifteen years; the surcharges around it have."**
+- **Open question 1 partly answered.** The Information's 2025 article is paywalled but its headline is not: "Stripe Minted $3.2 Billion in Cash in 2025" [S027]. Axios (opened) reports the 2024 figures: revenue $5.1B up 28%, free cash flow $2.2B, citing The Information [S029]. 2025 revenue ($6.8B) remains body-text only; the arithmetic ($5.1B × 1.33) is consistent with it but does not establish it.
+- **Open question 10 closed** by Connect's charge-type documentation [S022]: liability for refunds, disputes and negative balances follows the charge type, and on legacy Express and Custom accounts "your platform is responsible for disputes and fraud".
 
 Every entry below was retrieved and read on 2026-09-22 unless stated. Raw PDFs are in `research/stripe/_raw/`; extracted text in `research/stripe/_extracted/`. Rule 12.3-1 applies: nothing is listed that was not opened.
 
@@ -66,6 +74,11 @@ Per §2.3, authority is a property of the source–claim pair. Column codes: FIN
 | **STR-S003** | stripe.com/pricing (United States, USD) | retrieved 2026-09-22 | **PRC (AUTH)**, CAP | "2.9% + 30¢ per successful transaction"; "+ 1.5% for international cards"; "+ 1% if currency conversion is required"; "+ 0.5%" manually entered; "Stripe does not charge setup fees, monthly fees, or any other hidden fees like closure fees"; Billing "0.7% of Billing volume" or "Starting at $620.00 per month, 1-year contract"; Invoicing "0.4% per paid invoice"; Terminal "2.7% + 5¢"; Radar "$0.05 per screened transaction" or from $10/month; Connect "Included with Payments"; Atlas "$500.00 one-time setup fee"; Issuing "$0.10 per virtual card", "$3.50 per standard, physical card"; Identity "$1.50 per verification"; Financial Connections "$1.50 per successful instant verification"; Sigma from $10/month annual; Tax Complete from $90/month; custom pricing "for businesses with large payments volume or unique business models". **Not on page:** Link pricing, Capital pricing. |
 | **STR-S021** | docs.stripe.com/connect/how-connect-works | retrieved 2026-09-22 | **CAP (AUTH)** | Connect definition: "Businesses such as marketplaces and software platforms use Connect to manage and route payments and payouts between sellers, customers, service providers, and other entities"; five components (platform app, platform Stripe account, connected accounts, payments, payouts); use cases SaaS platforms (Squarespace) and marketplaces (Airbnb); country list ~110 available + ~19 preview. **Charge types, liability and fee mechanics are on linked pages not yet opened** — pass 1b. |
 
+| **STR-S022** | docs.stripe.com/connect/charges | retrieved 2026-09-22 | **CAP (AUTH)** | Three charge types. Direct: "payments made directly to a connected account… Refunds and chargebacks reduce the connected account's balance"; "This charge type works best for platforms that provide software as a service. For example, Shopify… Thinkific". Destination: "Refunds and chargebacks reduce your platform's balance. Stripe debits fees from your platform's balance"; "best suited for marketplaces, such as a home rental marketplace or a ridesharing app". Separate charges and transfers: "Your account balance is debited for the cost of the Stripe fees, refunds, and chargebacks"; example DoorDash. `on_behalf_of` makes "the connected account the business of record". "If you're using Express or Custom legacy account types, your platform is responsible for disputes and fraud." Negative balances: "Stripe attempts to debit the external account on file for the connected account only if `debit_negative_balances` is set to `true`." |
+| **STR-S023** | docs.stripe.com/payments/link | retrieved 2026-09-22 | **CAP (AUTH)** | Link "is Stripe's digital wallet. It lets your customers securely save and reuse payment methods for fast checkout"; enrolment detection "by using their email address, phone number, or browser cookie"; "The customer receives a one-time passcode"; Instant Bank Payments "available exclusively through Link" as lower-cost alternative to cards; "Link isn't available in India". No conversion figure and no fee on this page. |
+| **STR-S024** | docs.stripe.com/billing | retrieved 2026-09-22 | **CAP (AUTH)** | "Use Stripe Billing to manage subscriptions and invoicing. It automates recurring payments, creates custom pricing plans, and handles billing periods, such as trials and renewals"; pricing models "flat-rate, per-seat, usage-based, tiered, variable, and multi-currency"; "Smart retries: Schedule payment retries to maximize recovery"; usage-based billing documented "with Stripe and Metronome" — Metronome already in the docs eight months after acquisition. |
+| **STR-S025** | docs.stripe.com/radar and /radar/how-radar-works | retrieved 2026-09-22 | **CAP (AUTH)**, PRC | Four plans (Lite, Standard, Plus, Pro); "On average, businesses block 42% more fraud on Standard compared to Lite" (Stripe claim, uncorroborated); Radar plans "charge a fee for each screened transaction… Fees are charged only when Radar screens a transaction"; for subscriptions Radar "always screens and charges for the first payment"; Pro adds free-trial, bot, multi-account abuse detection. The network-learning claim ("each payment makes the next payment safer", ">92% chance" a card was seen before) appears only in the 2024 letter [S002], not in the docs. |
+
 ### Category D — Statutory and regulatory (Tier 1, entity-scoped)
 
 | ID | Source | Date | Serves | Notes |
@@ -82,10 +95,19 @@ Per §2.3, authority is a property of the source–claim pair. Column codes: FIN
 | **STR-S019** | Axios, "Why the PayPal takeover fell apart" (D. Primack) | 2026-09-01 | **HIS (AUTH), CMP** | Dated timeline: Feb 24 Bloomberg report; Feb 26 Semafor denial; Mar 1 Lores CEO; early April approach, no response; Jul 14 Reuters reports $60.50 offer, "39% premium to the pre-Bloomberg report price"; Jul 29 PayPal Q2 beat; Aug 13 share price passes bid ($60.59); **Aug 27 "Stripe and Advent walk away"**, shares -12%. Sourced explanation: disagreement over why the share price rose. "This would have been the largest merger ever in the payments space". |
 | **STR-S020** | TechCrunch, "Sequoia-Backed Stripe Launches To Disrupt The Online Payments Space" (L. Rao) | 2011-09-30 | **HIS (AUTH, contemporaneous)**, PRC (historical) | "$2 million in backing … Peter Thiel and Elon Musk, as well as Sequoia Capital, Andreesen Horowitz and SV Angel"; "valued at around $20 million"; "2.9% plus $0.30 cents per successful charge"; "no setup fees, no monthly fees, no card storage fees"; "you don't need a merchant account or gateway"; "Earnings are transferred to bank accounts on a 7 day rolling basis"; founders' stated thesis: "enabling transactions on the web is a problem rooted in code, not finance". |
 
-### Category F — Industry blogs (Tier 5)
+| **STR-S026** | Bloomberg, "Stripe's Valuation Rises Above Its 2021 Peak to $106.7 Billion" (P. Smith) — opened; first two paragraphs outside paywall | 2025-09-23 | FIN (valuation, CORR) | "Stripe Inc.'s valuation has climbed to $106.7 billion, according to a person with direct knowledge of the matter, passing the digital-payments firm's previous peak of $95 billion in 2021"; "was pegged at $91.5 billion earlier this year". Establishes the 2021 peak and a Sept 2025 secondary mark between the Feb 2025 and Feb 2026 tenders. |
+| **STR-S027** | The Information, "Stripe Minted $3.2 Billion in Cash in 2025, Setting Up Acquisition Hunt" (Yueqi Yang) — **headline and byline only**; body paywalled | 2026-07-22 | FIN (CORR) | Headline supports free cash flow ≈ $3.2B for 2025 at `reported`. Revenue figure not visible. |
+| **STR-S028** | The Information, "Stripe Minted More Than $2 Billion in Cash Last Year. Why Go Public?" (Cory Weinberg) — headline only | 2025-03-26 | FIN (CORR) | Free cash flow > $2B for 2024. |
+| **STR-S029** | Axios Pro, "Stripe's 2024 revenue growth" (Lucinda Shen) — preview paragraph opened | 2025-03-27 | FIN (CORR) | "Payments giant Stripe grew revenue 28%, to $5.1 billion, last year, and it doubled free-cash flow to $2.2 billion, the Information reports." Second-hand; consistent with S028. |
+
+### Category F — Industry blogs and forums (Tier 5)
 
 | ID | Source | Date | Serves | Notes |
 |---|---|---|---|---|
+| **STR-S030** | Hacker News search (hn.algolia.com), queries on switching, leaving, account closure, fees, Adyen comparison | retrieved 2026-09-22 | discovery | Result lists retained in working notes; four threads opened (S031–S033). Full text in `_extracted/hn-threads.txt`. |
+| **STR-S031** | HN 34609182, "Stripe increases fees for EU and UK-based businesses in April" (170 pts, 237 comments) | 2023-02-01 | PRC (historical, SUGG), practitioner | Linked support page now redirects to /pricing (removed). Commenters quote the notice: "Businesses in the EEA who are paying out in USD to a US-domiciled bank account will now incur a 1% fee, with a minimum fee of US$2.50 per payout"; "3.25% to accept foreign cards in the EU". Named alternatives considered: Mollie, Adyen, Klarna, Mangopay. §2.4 test: contemporaneous, specific, only surviving record of the notice — admissible at `estimated`. |
+| **STR-S032** | HN 35079262, "Stripe – Pricing changes for US businesses starting June 1, 2023" — OP reproduces Stripe's customer email in full | 2023-03-09 | PRC (historical), INT | "starting June 1, Stripe's additional fee for international card transactions will change from 1.0% to 1.5%. There's no change to our standard 2.9% + $0.30 pricing for US card transactions"; "Stripe will no longer return the $15 dispute fee for successfully contested disputes. The dispute fee itself is not changing"; stated reason "card networks have increased the total fees that Stripe pays". **Corroborated** by S003 (1.5% today). Comment: "A couple of years ago they stopped refunding the 2.9% fee when we would refund a payment". |
+| **STR-S033** | HN 34035581, "Don't Use Stripe" (350 pts, 137 comments) and HN 36970678, "Stripe Account CLOSED for no reason" (46 pts) | 2022-12-18; 2023-08-02 | USE (lived experience, SUGG), CMP (INADM) | Account-hold and closure accounts: "$50000 dollars on stripe… holding the money from me for 'at least 120 days'"; "You cannot call Stripe. They do not have a phone number"; "account disabled for no reason and with no explanation" after first ten payments. Counter-voices in thread: "You can find similar stories about literally all online payment processors"; "get in touch with your account manager… if you don't have an account manager… why?". Evidence of *experience*, not of general truth (§2.3 n11). Bears on Users (who is not served well: small merchants with lumpy volume) and on the support model. |
 | **STR-S016** | SaaStr, "5 Interesting Learnings from Stripe at $6.8 Billion in Revenue…" | 2026-07-23 | FIN (**SUGG only**) | Attributes to Yueqi Yang, The Information, 2026-07-22: 2025 revenue $6.8B "up roughly a third"; free cash flow $3.2B "up 52%"; Q1 2026 revenue $2B. **Primary not opened (paywall).** Admissible as a lead and, at most, an INFERENCE with `estimated` confidence and disclosed limitation (§2.4). Blog's own derived "net take rate … about 0.36%" is the blog's arithmetic, not evidence. |
 
 ---
@@ -123,13 +145,15 @@ None yet. Stripe's Dashboard requires an account; no account was created. Public
 | STR-X003 | qz.com/stripe-advent-paypal-acquisition-offer-53-billion-071526 | HTTP 403 | Not needed |
 | STR-X004 | The Information, Yueqi Yang, 2026-07-22 (revenue $6.8B) | Paywall, not attempted | **Open Q1** — try browser pane; or find Bloomberg/FT corroboration |
 | STR-X005 | Bloomberg, 2026-08-28 "Advent, Stripe Group Abandons Acquisition Effort" | Paywall, not attempted | Event corroborated by S019 |
+| STR-X006 | web.archive.org CDX and snapshots of stripe.com/pricing (2012–2024) | **"Internet Archive: Temporarily Offline"** on 2026-09-22 | Retry in pass 1c |
+| STR-X007 | support.stripe.com/questions/april-2023-pricing-updates-for-businesses-based-in-europe | 301 → stripe.com/pricing (page removed) | Contemporaneous quotes preserved in S031 |
 
 ---
 
-## 7. What pass 1 did not do
+## 7. What passes 1 and 1b did not do
 
-- **Category B is thin.** Only Connect's overview page was opened. Payments (PaymentIntents, Checkout, Link), Billing, Radar, Treasury, Issuing, Capital and Atlas docs are unopened. These carry the Product and Business Model sections and are the strongest evidence class available for a private company.
-- **Category C (archive) not started.** Wayback snapshots of stripe.com/pricing (2012, 2016, 2020) would turn finding 1.1-3 from two points into a series, and could date when Billing, Connect and Radar pricing appeared.
+- **Category B is partial.** Connect (overview, charge types), Link, Billing, Radar opened. Still unopened: Checkout/Payment Element, Treasury, Issuing, Capital, Atlas, Terminal, Tax, and the Connect pricing page. Product section can be drafted; Business Model needs Connect pricing and Capital terms.
+- **Category C (archive) blocked**, not skipped. Retry the Wayback CDX for stripe.com/pricing when the archive is back; S020 (2011) and S032 (2023) already bracket the series.
 - **Category D is one entity.** Irish CRO consolidated accounts for Stripe Payments International Holdings Ltd (fee required) and Stripe Payments Europe Ltd; FCA register entry; any US state money-transmitter disclosures.
 - **Category E is one event.** No independent reporting yet on take rates, enterprise pricing, competitive losses (Adyen, Braintree, Checkout.com), outages, or account terminations.
 - **Category F not started.** Hacker News and Stripe community threads on integration experience, payouts, account holds and fee changes are the practitioner layer (§2.3 n11).
