@@ -22,3 +22,6 @@ Thumbs.db
 *.log
 
 .vercel
+
+# raw research downloads (extracted text/pages are committed instead)
+research/*/_raw/
