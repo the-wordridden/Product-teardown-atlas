@@ -37,7 +37,32 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         </header>
         <main>{children}</main>
         <footer className="site-footer">
-          <p>Teardowns of products you already use. Every number traces to a source; hover any ● to see it.</p>
+          <div className="foot-top">
+            <div className="foot-lead">
+              <p className="foot-big">Teardowns of products you already use.</p>
+              <p className="foot-sub">
+                Every number traces to a source. Every opinion is marked as one. The gaps are published too.
+              </p>
+            </div>
+            <nav className="foot-nav" aria-label="Footer">
+              <a href="/">Teardowns</a>
+              <a href="/#queue">Queue</a>
+              <a href="/#method">Method</a>
+            </nav>
+          </div>
+          <div className="foot-bottom">
+            <p className="foot-by">
+              Researched, written and built by{' '}
+              <a href="https://www.linkedin.com/in/rushabh-jha/" target="_blank" rel="noopener noreferrer">
+                Rushabh Jha
+              </a>
+            </p>
+            <p className="foot-legal">
+              Product names and logos are trademarks of their respective owners, shown to identify the products analysed.
+              This site is independent, is not affiliated with or endorsed by them, and is published for research and
+              educational purposes.
+            </p>
+          </div>
         </footer>
         <Script id="ms-clarity" strategy="afterInteractive">{clarityInit}</Script>
       </body>

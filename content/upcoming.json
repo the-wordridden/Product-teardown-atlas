@@ -1,18 +1,6 @@
 {
   "products": [
     {
-      "slug": "notion",
-      "name": "Notion",
-      "category": "productivity",
-      "angle": "Does a public template gallery work as an acquisition engine?",
-      "focus": [
-        "Templates as search-driven acquisition",
-        "Onboarding into multi-tenant workspaces",
-        "Free storage caps as the nudge to paid"
-      ],
-      "status": "in-research"
-    },
-    {
       "slug": "duolingo",
       "name": "Duolingo",
       "category": "learning",

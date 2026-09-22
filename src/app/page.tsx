@@ -4,6 +4,7 @@ import { CountUp, RotatingWord, SplitWords, Spotlight, Tilt } from '../component
 import { MetricTile } from '../components/teardown/SectionSummary'
 import { brandFor, brandVars } from '../lib/brand'
 import { listProductSlugs, loadProduct, loadUpcoming } from '../lib/content'
+import { logoFor } from '../lib/screens'
 import { SECTION_IDS } from '../schema'
 import type { EvidenceEntryT } from '../schema/evidence'
 import '../components/home/home.css'
@@ -37,6 +38,7 @@ export default function HomePage() {
       slug,
       product: data.product,
       brand: brandFor(slug),
+      logo: logoFor(slug),
       proven,
       numbers,
       bet: data.strategy.bets[0],
@@ -104,7 +106,7 @@ export default function HomePage() {
           <p className="home-sec-sub">One product at a time, done properly. Each opens on our take, then goes as deep as you want. Ten more are queued below.</p>
         </div>
         <div className="cards">
-          {products.map(({ slug, product, brand, tags }) => (
+          {products.map(({ slug, product, brand, tags, logo }) => (
             <Tilt key={slug}>
               <a href={`/products/${slug}`} className="tcard" style={brandVars(brand) as React.CSSProperties}>
                 <div>
@@ -117,7 +119,13 @@ export default function HomePage() {
                       ))}
                     </span>
                   </div>
-                  <h3 className="tcard-name">{product.name}</h3>
+                  <h3 className="tcard-name">
+                    {logo ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img className="tcard-logo" src={logo} alt="" aria-hidden="true" />
+                    ) : null}
+                    {product.name}
+                  </h3>
                 </div>
                 <div className="tcard-art">
                   <CanvasArt motif={brand.motif} palette={brand.palette} />
@@ -184,31 +192,31 @@ export default function HomePage() {
 
       {/* ------------------------------------------------ QUEUE */}
       {upcoming.length > 0 ? (
-        <section id="queue" className="home-sec" data-reveal>
+        <section id="queue" className="home-sec queue-sec" data-reveal>
           <div className="home-sec-head">
             <span className="home-sec-num">{num()}</span>
-            <h2 className="home-h2">In the queue</h2>
-            <p className="home-sec-sub">The next {upcoming.length}, each with the question we plan to ask. A question stays a question until the teardown answers it.</p>
+            <h2 className="home-h2">Next out of the workshop</h2>
+            <p className="home-sec-sub">
+              {upcoming.length} products queued, each with the question we intend to ask. A question stays a question until the teardown answers it.
+            </p>
           </div>
           <ol className="queue">
             {upcoming.map((u, i) => (
-              <li key={u.slug}>
-                <details className="qrow" data-status={u.status}>
-                  <summary>
-                    <span className="qrow-n">{String(i + 1).padStart(2, '0')}</span>
-                    <span className="qrow-name">{u.name}</span>
-                    <span className="qrow-angle">{u.angle}</span>
-                    <span className="qrow-meta">
-                      <span className="pill">{human(u.category)}</span>
-                      <span className="qrow-status">{human(u.status)}</span>
-                    </span>
-                  </summary>
-                  <ul className="qrow-focus">
+              <li key={u.slug} className="qitem" style={{ ['--i' as string]: i }}>
+                <button type="button" className="qcard" data-status={u.status} aria-expanded="false">
+                  <span className="qcard-top">
+                    <span className="qcard-n">{String(i + 1).padStart(2, '0')}</span>
+                    <span className="qcard-status">{u.status === 'queued' ? 'queued' : human(u.status)}</span>
+                  </span>
+                  <span className="qcard-name">{u.name}</span>
+                  <span className="qcard-angle">{u.angle}</span>
+                  <span className="qcard-focus">
                     {u.focus.map((f) => (
-                      <li key={f}>{f}</li>
+                      <span key={f}>{f}</span>
                     ))}
-                  </ul>
-                </details>
+                  </span>
+                  <span className="qcard-cat">{human(u.category)}</span>
+                </button>
               </li>
             ))}
           </ol>
@@ -270,17 +278,21 @@ export default function HomePage() {
         </div>
       </div>
       <section className="home-close" data-reveal>
+        <span className="kicker">Keep reading</span>
         <h2 className="home-h2">
-          <SplitWords text="Start with the one that's ready." />
+          <SplitWords text="Pick a product. Argue with it." />
         </h2>
-        <div className="home-ctas" style={{ justifyContent: 'center' }}>
-          {products[0] ? (
-            <a className="btn btn-primary" href={`/products/${products[0].slug}`}>
-              {products[0].product.name} teardown <span className="arrow">→</span>
+        <div className="close-links">
+          {products.map((p) => (
+            <a key={p.slug} href={`/products/${p.slug}`} className="close-link">
+              <span className="close-link-name">{p.product.name}</span>
+              <span className="close-link-take">{p.product.thesis}</span>
+              <span className="arrow">→</span>
             </a>
-          ) : null}
+          ))}
         </div>
       </section>
+
     </div>
   )
 }

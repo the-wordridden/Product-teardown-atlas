@@ -10,7 +10,7 @@ import { MetricTile, SectionSummary } from '../../../components/teardown/Section
 import { buildLoopRenderModel } from '../../../derive/loop-geometry'
 import { brandFor, brandVars } from '../../../lib/brand'
 import { listProductSlugs, loadProduct } from '../../../lib/content'
-import { screensFor } from '../../../lib/screens'
+import { logoFor, screensFor } from '../../../lib/screens'
 import { deriveSectionStatuses, SECTION_EVIDENCE_LABEL } from '../../../lib/section-status'
 import { SECTION_IDS } from '../../../schema'
 import type { EvidenceEntryT } from '../../../schema/evidence'
@@ -46,6 +46,7 @@ export default async function TeardownPage({ params }: { params: Promise<{ slug:
   const { product, profile, loops, strategy, evidence, sections } = data
   const brand = brandFor(slug)
   const screens = screensFor(slug)
+  const logo = logoFor(slug)
   const components = mdxComponentsFor(evidence)
   const primaryLoop = loops.loops.find((loop) => loop.id === loops.primaryLoopId)!
   const loopModel = buildLoopRenderModel(primaryLoop)
@@ -82,7 +83,13 @@ export default async function TeardownPage({ params }: { params: Promise<{ slug:
           <div className="hero-top">
             <span className="kicker">{human(product.vitals.category)}</span>
           </div>
-          <h1 className="hero-name">{product.name}</h1>
+          <h1 className="hero-name">
+            {logo ? (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img className="hero-logo" src={logo} alt="" aria-hidden="true" />
+            ) : null}
+            {product.name}
+          </h1>
           <p className="hero-thesis">
             <span className="hero-thesis-label">Our take</span>
             {product.thesis}

@@ -7,7 +7,7 @@
  * teardown never requires touching this file.
  */
 
-export type ArtMotif = 'canvas' | 'ledger' | 'neutral'
+export type ArtMotif = 'canvas' | 'ledger' | 'blocks' | 'neutral'
 
 export interface Brand {
   /** Ordered palette; index 0 is the primary accent. */
@@ -29,6 +29,11 @@ const BRANDS: Record<string, Brand> = {
     palette: ['#635BFF', '#0A2540', '#00D4FF', '#7A73FF', '#FFB74A'],
     motif: 'ledger',
     refrain: 'charge · settle · attach',
+  },
+  notion: {
+    palette: ['#0F0F0F', '#E16259', '#D9730D', '#337EA9', '#448361'],
+    motif: 'blocks',
+    refrain: 'block · page · template',
   },
 }
 

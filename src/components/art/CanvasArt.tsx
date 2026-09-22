@@ -19,6 +19,7 @@ const CURSORS = [
 
 export function CanvasArt({ motif, palette }: { motif: ArtMotif; palette: string[] }) {
   if (motif === 'ledger') return <LedgerArt palette={palette} />
+  if (motif === 'blocks') return <BlocksArt palette={palette} />
   if (motif !== 'canvas') return <NeutralArt palette={palette} />
   const [p1, p2, p3, p4, p5] = palette
   return (
@@ -130,6 +131,78 @@ function LedgerArt({ palette }: { palette: string[] }) {
           <circle cx="592" cy="102" r="16" fill="#fff" opacity="0.95" />
           <rect x="618" y="90" width="80" height="10" rx="5" fill="#fff" opacity="0.85" />
           <rect x="618" y="108" width="52" height="8" rx="4" fill="#fff" opacity="0.55" />
+        </g>
+      </svg>
+    </div>
+  )
+}
+
+/* `blocks`: a page assembling itself out of stacked blocks, some nesting inside others,
+   with a cursor dropping the next one in. The primitive, drawn. */
+const ROWS = [
+  { x: 120, w: 300, kind: 'h' },
+  { x: 120, w: 420, kind: 'p' },
+  { x: 120, w: 360, kind: 'p' },
+  { x: 160, w: 300, kind: 'todo' },
+  { x: 160, w: 260, kind: 'todo' },
+  { x: 120, w: 400, kind: 'db' },
+]
+
+function BlocksArt({ palette }: { palette: string[] }) {
+  const [, p2, p3, p4, p5] = palette
+  const accents = [p2, p3, p4, p5]
+  return (
+    <div className="art art-blocks" aria-hidden="true">
+      <svg viewBox="0 0 800 460" className="art-svg">
+        <defs>
+          <linearGradient id="blocks-wash" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stopColor={p4} stopOpacity="0.10" />
+            <stop offset="1" stopColor={p2} stopOpacity="0.10" />
+          </linearGradient>
+        </defs>
+        <rect width="800" height="460" fill="url(#blocks-wash)" />
+
+        {/* the page */}
+        <rect x="80" y="50" width="520" height="360" rx="14" fill="var(--bg-elev)" stroke="var(--rule)" />
+
+        {ROWS.map((r, i) => (
+          <g key={i} className="art-block" style={{ ['--i' as string]: i }} transform={`translate(0 ${90 + i * 48})`}>
+            {r.kind === 'todo' ? (
+              <rect x={r.x - 26} y="-9" width="16" height="16" rx="4" fill="none" stroke={accents[i % accents.length]} strokeWidth="2.5" />
+            ) : null}
+            {r.kind === 'db' ? (
+              <g>
+                <rect x={r.x} y="-12" width={r.w} height="46" rx="8" fill="none" stroke={accents[i % accents.length]} strokeWidth="2" strokeDasharray="5 4" />
+                <rect x={r.x + 14} y="-2" width="90" height="10" rx="5" fill={accents[i % accents.length]} opacity="0.75" />
+                <rect x={r.x + 120} y="-2" width="60" height="10" rx="5" fill="var(--ink-faint)" opacity="0.5" />
+                <rect x={r.x + 14} y="16" width="120" height="8" rx="4" fill="var(--ink-faint)" opacity="0.35" />
+              </g>
+            ) : (
+              <rect
+                x={r.x}
+                y={r.kind === 'h' ? -14 : -7}
+                width={r.w}
+                height={r.kind === 'h' ? 22 : 12}
+                rx={r.kind === 'h' ? 6 : 6}
+                fill={r.kind === 'h' ? 'var(--ink)' : 'var(--ink-faint)'}
+                opacity={r.kind === 'h' ? 0.9 : 0.42}
+              />
+            )}
+            {/* the handle that says this is a block you can grab */}
+            <circle cx={r.x - 44} cy="0" r="3" fill="var(--ink-faint)" opacity="0.5" />
+            <circle cx={r.x - 36} cy="0" r="3" fill="var(--ink-faint)" opacity="0.5" />
+          </g>
+        ))}
+
+        {/* a loose block waiting to be dropped in */}
+        <g className="art-drop">
+          <rect x="620" y="120" width="150" height="54" rx="10" fill={p3} opacity="0.92" />
+          <rect x="638" y="138" width="80" height="9" rx="4.5" fill="#fff" opacity="0.9" />
+          <rect x="638" y="153" width="50" height="7" rx="3.5" fill="#fff" opacity="0.6" />
+        </g>
+        <g className="art-drop-2">
+          <rect x="640" y="250" width="120" height="44" rx="10" fill={p5} opacity="0.9" />
+          <rect x="656" y="266" width="64" height="8" rx="4" fill="#fff" opacity="0.85" />
         </g>
       </svg>
     </div>
