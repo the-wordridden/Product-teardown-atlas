@@ -1,0 +1,116 @@
+{
+  "primaryLoopId": "payments-to-platform-attach",
+  "loops": [
+    {
+      "id": "payments-to-platform-attach",
+      "name": "Payments-to-Platform Attach Loop",
+      "type": "ecosystem",
+      "thesis": "A business starts processing, and each payment leaves something behind: an enrolled consumer in Link, a signal in Radar, a data trail that underwrites Capital and pulls Billing and Tax onto the account. Every link is documented by Stripe. No link has a rate from anyone else.",
+      "speed": {
+        "band": "unestablished",
+        "note": "No source gives a cycle time. Stripe reports that 20% of Atlas companies charged a first customer within 30 days, which measures one cohort's time to first charge and nothing about how long the rest of the loop takes.",
+        "evidenceIds": ["atlas.2025"]
+      },
+      "nodes": [
+        {
+          "role": "acquisition",
+          "label": "A business signs up, self-serve or sold",
+          "detail": "Self-serve signup with no fixed fees has been the entry since 2011. Stripe now also seeds accounts from AI coding tools through claimable sandboxes, incorporates companies through Atlas, and sells to large enterprises through a sales function. 57% of the 2025 cohort was outside the US.",
+          "metricIds": ["pricing.launch.2011", "sandboxes.2025", "atlas.2025", "cohort.international.2025"],
+          "patterns": []
+        },
+        {
+          "role": "activation",
+          "label": "First live charge, no merchant account needed",
+          "detail": "The launch proposition and today's pricing page agree: no setup fee, no monthly fee, a charge priced at 2.9% plus 30 cents. Stripe reports that 20% of Atlas companies charge a first customer within 30 days. No general activation rate is disclosed.",
+          "metricIds": ["pricing.us.2026", "atlas.2025"],
+          "patterns": []
+        },
+        {
+          "role": "core-action",
+          "label": "Processing payments through Checkout, Elements or the API",
+          "detail": "The business accepts payments, and Stripe's revenue rises and falls with them. Stripe states $1.9 trillion of total volume in 2025 across more than 5 million businesses. Both figures are Stripe's own.",
+          "metricIds": ["tpv.2025", "businesses.2025"],
+          "patterns": []
+        },
+        {
+          "role": "output",
+          "label": "Each payment leaves a consumer in Link and a signal in Radar",
+          "detail": "Link enrols the consumer with Stripe, not the merchant, so they are recognised at the next business on Stripe by email, phone or cookie. Stripe says Link has more than 200 million users and that businesses on Stripe pay each other 4.8 million times a day. Radar's data advantage is Stripe's claim only.",
+          "metricIds": ["docs.link.enrolment", "link.users.feb-2026", "b2b-payments.daily.2026", "radar.network.claim.2024"],
+          "patterns": []
+        },
+        {
+          "role": "reinvestment",
+          "label": "Data underwrites Capital; Billing, Tax and Radar attach; cash funds acquisitions",
+          "detail": "Capital is prequalified daily on the account's own processing history and funded by partner lenders. The Revenue suite is stated at a $500 million run rate heading to $1 billion. Reported free cash flow of about $3.2 billion in 2025 paid for Bridge, Privy, Metronome and the OpenRouter agreement.",
+          "metricIds": ["docs.capital.underwriting", "revenue-suite.run-rate.2026", "fcf.2025.reported", "metronome.acquired.2026"],
+          "patterns": []
+        }
+      ],
+      "edges": [
+        {
+          "from": "acquisition",
+          "to": "activation",
+          "label": "Self-serve signup to a first live charge",
+          "mechanism": "There is no contract and no fixed fee, so the path from signup to a first charge is the integration itself. Stripe reports more than 100,000 sandboxes created from AI coding tools that convert into live accounts, and that 20% of Atlas companies charged a customer within 30 days.",
+          "strength": "moderate",
+          "evidenceStatus": "partially-evidenced",
+          "evidenceIds": ["sandboxes.2025", "atlas.2025", "pricing.us.2026"],
+          "counterEvidenceIds": [],
+          "note": "The mechanism is documented and free of friction by design. Every rate along it is Stripe's own, measured on subsets Stripe chose; sandboxes created is not accounts activated.",
+          "patterns": []
+        },
+        {
+          "from": "activation",
+          "to": "core-action",
+          "label": "A first charge becomes ongoing processing",
+          "mechanism": "Proposed: a business that has taken one payment keeps taking them, and its volume grows with its sales. Nothing in the register measures retention of activated accounts, the share that reach meaningful volume, or how long it takes.",
+          "evidenceStatus": "insufficient",
+          "evidenceIds": [],
+          "counterEvidenceIds": ["hn.account-holds"],
+          "note": "The only evidence about what happens after early charges is practitioner accounts of holds and closures, which describe the failure mode rather than the rate. Stripe's cohort growth claims describe revenue of businesses already at scale, not conversion from first charge.",
+          "patterns": []
+        },
+        {
+          "from": "core-action",
+          "to": "output",
+          "label": "Each payment enrols a consumer in Link and trains Radar",
+          "mechanism": "A consumer who checks out with Link at any business on Stripe is enrolled with Stripe and recognised at the next one. Stripe reports 200 million or more Link users and one merchant, Lovable, with 58% of its volume through Link. Radar screens every attempt and, in Stripe's words, each payment makes the next safer.",
+          "strength": "moderate",
+          "evidenceStatus": "partially-evidenced",
+          "evidenceIds": ["docs.link.enrolment", "link.users.feb-2026", "lovable.link-share.2026"],
+          "counterEvidenceIds": [],
+          "note": "The Link mechanism is documented in Stripe's own docs and the user count is Stripe's. The Radar half rests on a company claim with no independent measurement and is not counted toward this status.",
+          "patterns": []
+        },
+        {
+          "from": "output",
+          "to": "reinvestment",
+          "label": "Processing data pulls Capital, Billing and Tax onto the account",
+          "mechanism": "Capital eligibility is computed daily from the account's Stripe processing history and requires three months of it; the loan is funded by a partner bank and repaid from future charges. Billing, Invoicing, Tax and Radar are priced as additional percentages or fees on volume already flowing, and Stripe states the Revenue suite at a $500 million to $1 billion run rate.",
+          "strength": "moderate",
+          "evidenceStatus": "partially-evidenced",
+          "evidenceIds": ["docs.capital.underwriting", "revenue-suite.run-rate.2024", "revenue-suite.run-rate.2026", "pricing.products.2026"],
+          "counterEvidenceIds": [],
+          "note": "The attach mechanism and its pricing are verified from Stripe's documentation and pricing page. Attach rates are not disclosed; the run-rate figures are Stripe's and the 2026 one is a forecast.",
+          "patterns": []
+        },
+        {
+          "from": "reinvestment",
+          "to": "acquisition",
+          "label": "Platforms and Link bring the next business in",
+          "mechanism": "A Standard connected account on a platform such as Shopify is a full Stripe account with its own Dashboard, so a platform's seller becomes a direct Stripe customer. A Link-enrolled consumer arrives at a new merchant already recognised, which Stripe positions as a conversion advantage for adopting Stripe. Acquisition cash also buys products that widen the surface.",
+          "strength": "weak",
+          "evidenceStatus": "partially-evidenced",
+          "evidenceIds": ["docs.connect.standard-accounts", "docs.link.enrolment", "b2b-payments.daily.2026"],
+          "counterEvidenceIds": [],
+          "note": "Both mechanisms are documented as product structure. No source states how many Stripe accounts originated through a platform, or that Link recognition causes a merchant to choose Stripe. Weak because the causal step from structure to acquisition is unmeasured.",
+          "patterns": []
+        }
+      ],
+      "boundaryConditions": "The loop runs inside Stripe's own accounting: every rate in it is Stripe's, and the one independent view of the post-activation stage is practitioners describing holds and closures. The reinvestment link depends on reported, not audited, cash flow.",
+      "patterns": []
+    }
+  ]
+}

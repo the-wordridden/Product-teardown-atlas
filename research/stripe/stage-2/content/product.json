@@ -1,0 +1,407 @@
+{
+  "slug": "stripe",
+  "name": "Stripe",
+  "legalName": "Stripe, Inc.",
+  "thesis": "Stripe still sells the 2.9% + 30¢ it launched with in 2011. What changed is everything sold on top of it, and a consumer wallet that quietly makes leaving harder than arriving.",
+  "accent": "#635BFF",
+  "status": "draft",
+  "publishedOn": "2026-09-22",
+  "lastUpdated": "2026-09-22",
+  "frameworkVersion": "1.0",
+  "vitals": {
+    "founded": 2010,
+    "category": "payments",
+    "stage": "late-stage",
+    "ownership": "vc-backed-private",
+    "headquarters": "San Francisco and Dublin",
+    "headcountBand": "unestablished",
+    "platforms": [
+      "web",
+      "api",
+      "ios",
+      "android",
+      "embedded-sdk"
+    ],
+    "keyMetricIds": [
+      "tpv.2025",
+      "revenue.2024.reported",
+      "fcf.2025.reported",
+      "valuation.feb-2026"
+    ],
+    "evidenceIds": [
+      "hq.dublin-sf",
+      "valuation.feb-2024",
+      "spuk.structure.fy2024",
+      "headcount.feb-2022"
+    ]
+  },
+  "sections": [
+    {
+      "id": "vitals",
+      "title": "Vitals",
+      "summary": "A private company with one audited window: its UK subsidiary."
+    },
+    {
+      "id": "problem",
+      "title": "The Problem",
+      "summary": "In 2011, taking money online meant a merchant account, a gateway and a bank. Stripe made it seven lines of code."
+    },
+    {
+      "id": "users",
+      "title": "Users & Segments",
+      "summary": "Who Stripe says it serves, who says they left, and one team that wrote down why they came."
+    },
+    {
+      "id": "jtbd",
+      "title": "Jobs To Be Done",
+      "summary": "Two jobs from the record: sell everywhere without a bank negotiation, and bill usage without building billing."
+    },
+    {
+      "id": "product",
+      "title": "The Product",
+      "summary": "One charge object, a wallet that follows the consumer, and a routing layer for platforms."
+    },
+    {
+      "id": "business-model",
+      "title": "Business Model",
+      "summary": "An unchanged headline rate, a growing stack priced on top, and reported cash flow that funds acquisitions."
+    },
+    {
+      "id": "growth-loops",
+      "title": "Growth Loops",
+      "summary": "Every link is documented. No link has an independent rate. Drawn open at one transition."
+    },
+    {
+      "id": "moats",
+      "title": "Moats",
+      "summary": "One mechanism Stripe documents itself: credentials saved through Link do not leave."
+    },
+    {
+      "id": "bets",
+      "title": "Bets & Tensions",
+      "summary": "A $53 billion bid that was withdrawn, and three bets still running: stablecoins, usage billing, agents."
+    },
+    {
+      "id": "verdict",
+      "title": "Verdict",
+      "summary": "Our call, with the ceiling stated."
+    }
+  ],
+  "problem": {
+    "beforeState": "As reported at launch in September 2011, a website that wanted to accept cards needed a merchant account and a payment gateway, negotiated with a bank, before it could take a single payment, and the card details passed through the developer's own servers. Stripe's founders described the prior arrangement as a finance problem that developers were being made to solve with finance tools.",
+    "afterState": "Stripe's stated proposition was that a developer could add card acceptance without a merchant account or gateway, at a published price of 2.9% plus 30 cents with no setup or monthly fees, with card data going straight to Stripe and payouts on a rolling seven-day basis. This is the launch proposition as contemporaneously reported, not a measurement of what changed for businesses.",
+    "wedge": "A payments API sold to the developer writing the checkout, priced per successful charge with no fixed fees, that removed the merchant-account prerequisite.",
+    "whyNow": {
+      "trigger": "behaviour",
+      "change": "By 2011 the person deciding how a web business took money was increasingly the developer building it, while incumbent processors still sold to finance departments through banks.",
+      "argument": "Stripe's founders framed the launch as enabling transactions being a problem rooted in code, not finance. Selling to the coder rather than the CFO is the wedge the 2011 coverage describes; whether the timing was demand-led or supply-led is not established by the record."
+    },
+    "evidenceIds": [
+      "pricing.launch.2011"
+    ],
+    "patterns": []
+  },
+  "users": {
+    "segments": [
+      {
+        "id": "developer-led-software-businesses",
+        "name": "Developer-led software businesses",
+        "description": "Startups and software companies whose engineers integrate Stripe directly, from the 2011 launch audience to the 2025 cohort Stripe describes as its fastest ever, 57% of it outside the US. The largest group by count on Stripe's own figures; its share of volume is not disclosed.",
+        "shareBand": "major",
+        "isPrimary": true,
+        "evidenceIds": [
+          "pricing.launch.2011",
+          "cohort.international.2025",
+          "sandboxes.2025",
+          "atlas.2025"
+        ]
+      },
+      {
+        "id": "platforms-and-marketplaces",
+        "name": "Platforms and marketplaces",
+        "description": "Software platforms and marketplaces that use Connect to onboard their own sellers and route funds between parties. Stripe names Shopify, Airbnb, Lyft and DoorDash as examples in its documentation, and prices the segment separately per active account and per payout.",
+        "shareBand": "significant",
+        "isPrimary": false,
+        "evidenceIds": [
+          "docs.connect.standard-accounts",
+          "docs.connect.charge-types",
+          "pricing.connect.2026"
+        ]
+      },
+      {
+        "id": "enterprises",
+        "name": "Enterprises on negotiated terms",
+        "description": "Large companies Stripe says it serves across most of the Dow and Nasdaq 100, on custom pricing rather than the list rate. In the UK subsidiary, sales is the largest function by headcount, which points to a sold motion at the top of the market.",
+        "shareBand": "significant",
+        "isPrimary": false,
+        "evidenceIds": [
+          "enterprise-penetration.2025",
+          "spuk.employees.fy2024",
+          "pricing.products.2026"
+        ]
+      }
+    ],
+    "powerUser": {
+      "profile": "A global-by-default software business that runs Payments, Billing, Link and Atlas together and sells in more than a hundred countries from day one. Stripe's own account of Lovable fits this shape, and Apify's migration write-up describes a team that added Stripe for coverage and redundancy.",
+      "behaviours": [
+        "Accepts payments from customers in 150 or more countries through one integration",
+        "Bills subscriptions and metered usage through Stripe Billing rather than in-house code",
+        "Sees a majority of checkouts arrive through Link-enrolled consumers",
+        "Incorporates through Atlas and takes a first payment within weeks"
+      ],
+      "evidenceIds": [
+        "lovable.link-share.2026",
+        "apify.migration.2025",
+        "atlas.2025"
+      ]
+    },
+    "notFor": [
+      {
+        "who": "Businesses in categories Stripe restricts, or restricts later",
+        "why": "One merchant describes its dating app being added to the Restricted Businesses list after two years on Stripe and losing its recurring subscriptions on closure. Stripe's export policy exists on paper; the account is about what happened in practice. One case, not a rate."
+      },
+      {
+        "who": "Small merchants whose volume suddenly jumps",
+        "why": "Practitioner accounts describe reserves of 120 days or more triggered by transactions several times the usual size, with no phone support to resolve them. An inference from lived accounts; the same threads note that every online processor generates similar stories."
+      }
+    ],
+    "patterns": []
+  },
+  "jtbd": {
+    "jobs": [
+      {
+        "id": "sell-everywhere-without-a-bank",
+        "statement": "When we sell software to customers in many countries, let us accept payment without negotiating a merchant account in each one.",
+        "dimension": "functional",
+        "segmentIds": [
+          "developer-led-software-businesses"
+        ],
+        "competingAlternatives": [
+          {
+            "name": "A merchant account and gateway",
+            "why": "The 2011 default: a bank relationship and a separate gateway before the first charge, with card data passing through the developer's servers."
+          },
+          {
+            "name": "Braintree",
+            "why": "Apify chose Braintree first because it was the only major global provider supporting European companies at the time, and kept it running alongside Stripe after migrating."
+          }
+        ],
+        "forces": {
+          "push": "Coverage gaps and setup friction: a provider that did not support the company's country, or a bank process before the first sale.",
+          "pull": "One integration that accepts local payment methods in more than a hundred countries, priced per successful charge with no fixed fees.",
+          "anxiety": "Holds and closures without a person to call, documented by practitioners; and relying on one provider as a single point of failure, which Apify names as a reason to run two.",
+          "habit": "An existing processor integration and stored cards. Moving 10,000 users and 9,000 cards took Apify 18 working days."
+        },
+        "evidenceIds": [
+          "pricing.launch.2011",
+          "apify.migration.2025",
+          "lovable.link-share.2026",
+          "hn.account-holds"
+        ],
+        "patterns": []
+      },
+      {
+        "id": "bill-usage-without-building-billing",
+        "statement": "When our product charges by usage or seat, let us meter and invoice it without building a billing system ourselves.",
+        "dimension": "functional",
+        "segmentIds": [
+          "developer-led-software-businesses"
+        ],
+        "competingAlternatives": [
+          {
+            "name": "In-house billing on top of raw payments",
+            "why": "The default for a software team that already has Stripe payments: write the subscription, proration and retry logic itself."
+          },
+          {
+            "name": "Dedicated billing vendors",
+            "why": "Practitioners list Chargebee, Chargify and open-source Lago among the alternatives; the trade is a second vendor against keeping billing next to the payment rail."
+          }
+        ],
+        "forces": {
+          "push": "Usage-based and hybrid pricing that in-house code handles badly: metering, proration, retries and invoices across currencies.",
+          "pull": "Billing models Stripe documents out of the box, plus Metronome for complex metering, on the same account as payments.",
+          "anxiety": "A further 0.7% of billing volume on top of processing, and subscriptions that Stripe does not export if the business ever leaves.",
+          "habit": "Existing subscription logic and customer records that would need remapping to move."
+        },
+        "evidenceIds": [
+          "docs.billing.models",
+          "pricing.products.2026",
+          "docs.pan-export.link-exclusion",
+          "hn.alternatives.2023",
+          "lovable.link-share.2026"
+        ],
+        "patterns": []
+      }
+    ]
+  },
+  "product": {
+    "coreObjects": [
+      "Payment",
+      "Customer",
+      "Subscription",
+      "Connected account",
+      "Payout",
+      "Link wallet"
+    ],
+    "coreActions": [
+      "Accept a payment through Checkout, Elements or the API",
+      "Recognise a returning consumer through Link and autofill their details",
+      "Route a payment to a connected account and take a platform fee",
+      "Bill a subscription or metered usage",
+      "Screen a transaction with Radar",
+      "Export saved cards to another processor"
+    ],
+    "atomicUnitOfValue": "A successful charge settled to the business's bank account, with no merchant account or gateway of its own.",
+    "timeToValue": "unestablished",
+    "keySurfaces": [
+      {
+        "name": "Dashboard",
+        "purpose": "The account, its balance, payouts, disputes and settings. Not observed; requires an account."
+      },
+      {
+        "name": "Checkout",
+        "purpose": "Stripe-hosted payment page with Link, local payment methods and currency handling built in."
+      },
+      {
+        "name": "Elements",
+        "purpose": "Embeddable payment components for a custom checkout, including the Payment Element and Express Checkout Element."
+      },
+      {
+        "name": "Link",
+        "purpose": "Stripe's consumer wallet: saves and autofills payment and shipping details across businesses on Stripe."
+      },
+      {
+        "name": "Connect",
+        "purpose": "Onboarding, payments and payouts for platforms and marketplaces with their own sellers."
+      },
+      {
+        "name": "Billing",
+        "purpose": "Subscriptions, invoicing, quotes and usage-based billing, with Metronome for complex metering."
+      },
+      {
+        "name": "Radar",
+        "purpose": "Fraud and abuse screening on every payment attempt, in four plans priced per screened transaction."
+      },
+      {
+        "name": "Atlas",
+        "purpose": "Company incorporation in Delaware with a Stripe account attached."
+      }
+    ],
+    "patterns": []
+  },
+  "businessModel": {
+    "models": [
+      "transaction-fee",
+      "usage-based",
+      "subscription-tier"
+    ],
+    "valueMetric": "A percentage plus a fixed fee per successful charge, with each product sold on top priced as a further percentage of volume or a per-event fee.",
+    "revenueLines": [
+      {
+        "id": "payment-processing",
+        "type": "transaction",
+        "name": "Payment processing",
+        "description": "The list rate of 2.9% + 30¢ on domestic US cards, unchanged since 2011, plus surcharges for international cards and currency conversion, plus Connect's per-account and per-payout fees. Independent reporting puts total 2024 revenue at $5.1 billion; Stripe discloses no split, so this line carries what the others do not.",
+        "shareBand": "dominant",
+        "evidenceIds": [
+          "pricing.us.2026",
+          "pricing.surcharges.2026",
+          "pricing.connect.2026",
+          "revenue.2024.reported"
+        ]
+      },
+      {
+        "id": "revenue-suite",
+        "type": "subscription",
+        "name": "Revenue suite: Billing, Invoicing, Tax, Metronome",
+        "description": "Priced as a percentage of billed volume or a monthly plan. Stripe says the suite passed a $500 million run rate in 2024 and is on track for $1 billion during 2026, which against reported revenue makes it a significant but minority line.",
+        "shareBand": "significant",
+        "evidenceIds": [
+          "revenue-suite.run-rate.2024",
+          "revenue-suite.run-rate.2026",
+          "pricing.products.2026"
+        ]
+      },
+      {
+        "id": "financial-services",
+        "type": "other",
+        "name": "Capital, Treasury, Issuing and interest",
+        "description": "Capital is underwritten on Stripe data and funded by partner lenders; Issuing is in 22 countries; interest on customer balances is material at the UK entity level. Stripe's own 2024 words: Capital is not large today.",
+        "shareBand": "niche",
+        "evidenceIds": [
+          "docs.capital.underwriting",
+          "capital.2025",
+          "issuing.countries.2025",
+          "spuk.operating-profit.fy2024"
+        ]
+      }
+    ],
+    "pricing": {
+      "axis": "per-transaction",
+      "tiers": [
+        {
+          "name": "Pay as you go",
+          "gates": [
+            "Self-serve signup, no setup or monthly fee",
+            "2.9% + 30¢ per successful domestic card charge",
+            "+1.5% international cards, +1% currency conversion"
+          ],
+          "priceNote": "2.9% + 30¢, as of 2026-09-22",
+          "evidenceIds": [
+            "pricing.us.2026",
+            "pricing.surcharges.2026"
+          ]
+        },
+        {
+          "name": "Products on top",
+          "gates": [
+            "Billing 0.7% of billed volume or from $620 per month",
+            "Invoicing 0.4% per paid invoice",
+            "Radar from $0.05 per screened transaction"
+          ],
+          "priceNote": "Each product a further percentage or per-event fee",
+          "evidenceIds": [
+            "pricing.products.2026",
+            "docs.radar.plans"
+          ]
+        },
+        {
+          "name": "Connect platforms",
+          "gates": [
+            "$2 per monthly active connected account",
+            "0.25% + 25¢ per payout; instant payouts 1%",
+            "Card processing from the same 2.9% + 30¢"
+          ],
+          "priceNote": "Platform fees in addition to processing",
+          "evidenceIds": [
+            "pricing.connect.2026"
+          ]
+        },
+        {
+          "name": "Custom",
+          "gates": [
+            "Negotiated rates for large payments volume or unusual business models",
+            "Interchange-plus and volume discounts not published"
+          ],
+          "priceNote": "Not published",
+          "evidenceIds": [
+            "pricing.products.2026",
+            "enterprise-penetration.2025"
+          ]
+        }
+      ]
+    },
+    "monetizationMoment": "The first successful charge in live mode. There is nothing to subscribe to, so Stripe's revenue starts with the business's own first sale and rises and falls with it; each product attached afterwards adds its own percentage to the same flow.",
+    "unitEconomicsShape": "Reported 2024 revenue of $5.1 billion against Stripe's stated $1.4 trillion of volume is a yield near 0.4%, well below the headline rate once interchange, enterprise discounts and platform pricing are netted, if both share a basis. Reported free cash flow of $2.2 billion, then about $3.2 billion, funds acquisitions from operations. Group margin is undisclosed.",
+    "evidenceIds": [
+      "revenue.2024.reported",
+      "tpv.2024",
+      "fcf.2024.reported",
+      "fcf.2025.reported",
+      "profitable.2025",
+      "pricing.change.june-2023",
+      "spuk.operating-profit.fy2024"
+    ],
+    "patterns": []
+  }
+}

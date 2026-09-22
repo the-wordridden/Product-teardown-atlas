@@ -1,0 +1,57 @@
+{
+  "distributionMotion": {
+    "classification": "product-led-hybrid",
+    "rationale": "Self-serve signup with no fixed fees has been the front door since 2011, and Stripe now seeds accounts from AI coding tools through claimable sandboxes. At the top of the market it sells: sales is the largest function in its UK subsidiary and most of the Dow is on negotiated terms. Neither motion is disclosed as dominant by volume.",
+    "evidenceIds": [
+      "pricing.launch.2011",
+      "sandboxes.2025",
+      "spuk.employees.fy2024",
+      "enterprise-penetration.2025"
+    ]
+  },
+  "valueMetric": {
+    "classification": "transactions",
+    "rationale": "The billable unit is the successful charge, priced as a percentage plus a fixed fee, and every product sold on top is priced as a further percentage of volume or a per-event fee. Billing's monthly plan is the exception, and it is optional.",
+    "evidenceIds": [
+      "pricing.us.2026",
+      "pricing.products.2026",
+      "pricing.connect.2026"
+    ]
+  },
+  "moatSource": {
+    "classification": "switching-costs",
+    "rationale": "Stripe documents the mechanism itself: saved card data can be exported to any Level 1 processor, but credentials saved through Link cannot, nor can payment history or subscriptions. One merchant ran 58% of volume through Link. The consequence is stated by Stripe and illustrated by one closure account, not yet observed in a Link-specific migration.",
+    "evidenceIds": [
+      "docs.pan-export.link-exclusion",
+      "lovable.link-share.2026",
+      "hn.data-refusal.2024",
+      "apify.migration.2025"
+    ]
+  },
+  "timeToValue": {
+    "classification": "unestablished",
+    "rationale": "No source measures time from signup to first live charge. Stripe reports that 20% of Atlas companies charged a first customer within 30 days, which is a company figure about a subset and does not bound the general case. The product was not observed because it requires an account.",
+    "evidenceIds": [
+      "atlas.2025"
+    ]
+  },
+  "buyerUserAlignment": {
+    "classification": "aligned",
+    "rationale": "The developer who integrates Stripe and the business that pays for it are the same party, and fees scale with that business's own sales rather than with seats or a contract. On Connect the platform pays for its sellers, which splits the roles for that segment, but the core product is bought by the people who use it.",
+    "evidenceIds": [
+      "pricing.launch.2011",
+      "pricing.us.2026",
+      "docs.connect.charge-types"
+    ]
+  },
+  "expansionMechanism": {
+    "classification": "cross-sell",
+    "rationale": "Stripe grows an account by attaching products to the payment flow: Billing, Radar, Tax, Capital and Treasury each add a percentage or fee to volume already processed. The Revenue suite alone is stated at a $500 million run rate rising toward $1 billion, and Capital is underwritten on the account's own processing history.",
+    "evidenceIds": [
+      "revenue-suite.run-rate.2024",
+      "revenue-suite.run-rate.2026",
+      "docs.capital.underwriting",
+      "lovable.link-share.2026"
+    ]
+  }
+}

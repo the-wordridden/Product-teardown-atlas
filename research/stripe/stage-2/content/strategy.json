@@ -1,0 +1,121 @@
+{
+  "bets": [
+    {
+      "id": "paypal-bid",
+      "title": "Bid $53 billion for PayPal with Advent, then walk away",
+      "bet": "In July 2026 Stripe and Advent International offered $60.50 a share, about $53 billion, for PayPal, to be owned in equal stakes. It would have been the largest merger in payments and Stripe's first acquisition of a company anywhere near its own size.",
+      "expectedAdvantage": "None was stated by Stripe; the offer was reported, not announced. The Information's July headline framed Stripe's $3.2 billion of 2025 cash as setting up an acquisition hunt, which is the nearest thing to a rationale on the record.",
+      "tradeoff": "Cash and attention on a scale Stripe had never committed, against a target whose shares rose on the news. PayPal's price passed the bid on 13 August, so any higher offer would have paid for the excitement the bid itself created.",
+      "result": "PayPal rejected $60.50 as insufficient, talks continued through August, and the consortium withdrew on 27 August 2026. PayPal's shares fell 12% the next morning. Axios's sourced explanation: the two sides never agreed on why the price had risen.",
+      "currentTension": "Stripe revealed both an appetite for transformative M&A and a price discipline that ended it, in public. Any future large bid will be read against this one, and PayPal remains independent, larger by revenue, and now on notice.",
+      "status": "mixed",
+      "affectsSections": ["vitals", "business-model", "verdict"],
+      "patterns": [],
+      "evidenceIds": ["paypal.bid.timeline.2026", "paypal.bid.rejected.2026", "fcf.2025.reported"]
+    },
+    {
+      "id": "stablecoins-bridge-tempo",
+      "title": "Buy the stablecoin stack and build a payments blockchain",
+      "bet": "Stripe acquired Bridge, a stablecoin orchestration platform, in February 2025, then Privy for wallets, launched Financial Accounts in more than 100 countries, and unveiled Tempo, a payments blockchain incubated with Paradigm, in September 2025.",
+      "expectedAdvantage": "Stripe's stated view is that stablecoins make global-by-default financial services possible for the first time and that agents will soon be responsible for most internet transactions, needing rails that handle far more than today's chains. Bridge volume more than quadrupled in 2025, by Stripe's account.",
+      "tradeoff": "Undisclosed acquisition prices, a blockchain to run, and exposure to a category Stripe itself describes as a crypto winter. Stripe's own example of a memecoin frenzy delaying a Bridge user's payout by 12 hours is the operational risk it is paying to escape.",
+      "result": "Unresolved. Stripe cites industry stablecoin payment volume around $400 billion, Visa and Klarna as Tempo testers, and Shopify merchants accepting stablecoins. No absolute volume for Bridge or Tempo is disclosed, and Tempo's mainnet had not launched by February 2026.",
+      "currentTension": "Stripe is building a chain while selling neutrality to every other one. If Tempo matters, Stripe owns the rail it settles on; if it does not, Stripe has bought a category on the assumption that agentic payments arrive at the scale it forecasts.",
+      "status": "unresolved",
+      "affectsSections": ["product", "business-model", "verdict"],
+      "patterns": [],
+      "evidenceIds": ["bridge.acquired.2025", "stablecoin.volume.2025", "tempo.2025"]
+    },
+    {
+      "id": "usage-billing-for-ai",
+      "title": "Own usage-based billing for the AI economy",
+      "bet": "Stripe acquired Metronome, whose metering powers OpenAI, Anthropic and NVIDIA, in January 2026, folded it into Billing, launched machine payments for agents to pay per API call, and agreed to buy OpenRouter, which routes token usage across 400 or more models, in August 2026.",
+      "expectedAdvantage": "Patrick Collison's stated expectation is that the shift towards usage-based models will be a defining feature of the next decade. Owning metering on the revenue side and routing on the cost side would put Stripe on both sides of an AI company's profit and loss, in Stripe's own words.",
+      "tradeoff": "Two acquisitions at undisclosed prices in eight months, and a move from payments infrastructure into the operating logic of its customers' businesses, where the customers are also the most capable engineering teams on earth.",
+      "result": "Metronome was in Stripe's billing documentation within eight months of closing. The Revenue suite, now including Metronome, is stated to be on track for a $1 billion run rate in 2026. OpenRouter had not completed by the cutoff.",
+      "currentTension": "Stripe's most-cited customers are AI labs whose spend on models is their largest cost; owning the router that chooses which model they call puts Stripe close to their margin. Whether OpenAI, Anthropic and NVIDIA want their payments provider there is not something any of them has said.",
+      "status": "unresolved",
+      "affectsSections": ["product", "business-model", "moats"],
+      "patterns": [],
+      "evidenceIds": ["metronome.acquired.2026", "openrouter.agreed.2026", "docs.billing.models", "revenue-suite.run-rate.2026"]
+    },
+    {
+      "id": "agentic-commerce",
+      "title": "Make Stripe the checkout for AI agents",
+      "bet": "Stripe co-developed the Agentic Commerce Protocol with OpenAI, powered Instant Checkout in ChatGPT, launched Shared Payment Tokens and an Agentic Commerce Suite, and by 2026 was the wallet behind shopping in Microsoft Copilot and Meta's Muse agent.",
+      "expectedAdvantage": "Stripe's stated read is that agentic commerce is at levels one to two of five and that its success depends on universal interoperability, so an open protocol Stripe helped write positions it as the default rail whichever AI platform wins.",
+      "tradeoff": "Building open protocols that competitors can implement, and depending on AI platforms Stripe does not control for the surface where the purchase happens. Shared Payment Tokens explicitly work for businesses that do not process with Stripe.",
+      "result": "Unresolved. Brands including Etsy, Urban Outfitters and Coach are onboarding to the suite, by Stripe's account. No transaction volume through any agentic surface has been disclosed.",
+      "currentTension": "Link's 250 million enrolled consumers are the asset that makes Stripe useful to an agent, and the same asset that Stripe's export policy will not let a merchant take elsewhere. The more commerce moves into agents, the more that wallet decides who wins.",
+      "status": "unresolved",
+      "affectsSections": ["product", "growth-loops", "moats"],
+      "patterns": [],
+      "evidenceIds": ["agentic.launches.2025", "link.users.apr-2026", "docs.pan-export.link-exclusion"]
+    }
+  ],
+  "moats": [
+    {
+      "id": "link-credential-lock",
+      "type": "switching-costs",
+      "rank": 1,
+      "claim": "Payment credentials saved through Link cannot be moved to another processor, so the larger the share of a merchant's customers who pay through Link, the smaller the share of its vault it can take when it leaves.",
+      "argument": "Stripe documents both halves: it will export card data to any Level 1 processor, and it excludes anything saved through Link, along with payment history and subscriptions. Stripe reports one merchant at 58% of volume through Link and more than 200 million Link users. A merchant leaving would have to re-collect a majority of its saved customers.",
+      "durability": "copyable-with-sustained-effort",
+      "attackVector": "A rival wallet with comparable enrolment placed inside the same checkout, which PayPal, Shop Pay and the device wallets already are, or a rule requiring credential portability between processors. The moat is only as wide as Link's share of a merchant's checkouts.",
+      "patterns": [],
+      "evidenceIds": ["docs.pan-export.link-exclusion", "lovable.link-share.2026", "link.users.feb-2026", "apify.migration.2025"]
+    }
+  ],
+  "inflections": [
+    {
+      "id": "launch-2011",
+      "year": 2011,
+      "label": "Public launch at 2.9% + 30¢",
+      "what": "Stripe launched publicly in September 2011 with $2 million of seed backing, priced at 2.9% plus 30 cents per successful charge with no setup or monthly fees, and without requiring a merchant account or gateway.",
+      "whyItMattered": "The price and the pitch have not changed in fifteen years, which makes 2011 the reference point for everything Stripe later added on top rather than a stage it moved past.",
+      "shiftType": "wedge",
+      "affectsSections": ["problem", "business-model"],
+      "evidenceIds": ["pricing.launch.2011", "pricing.us.2026"]
+    },
+    {
+      "id": "reset-2022",
+      "year": 2022,
+      "label": "14% of staff cut after over-optimism, in the CEO's words",
+      "what": "In November 2022 Patrick Collison told employees Stripe was reducing its team by around 14%, back to its February headcount of almost 7,000, because the company had been much too optimistic about growth in 2022 and 2023 and had grown operating costs too quickly.",
+      "whyItMattered": "It is the only group headcount figure Stripe has published and the clearest against-interest statement in the record. It also marks the start of a valuation reset from $95 billion to $50 billion.",
+      "shiftType": "business-model",
+      "affectsSections": ["vitals", "bets"],
+      "evidenceIds": ["headcount.feb-2022", "valuation.peak.2021", "series-i.2023"]
+    },
+    {
+      "id": "repricing-2023",
+      "year": 2023,
+      "label": "Surcharges rise while the headline holds",
+      "what": "From June 2023 Stripe raised its international card surcharge from 1.0% to 1.5% and stopped refunding the $15 dispute fee on won disputes, while stating explicitly that 2.9% plus 30 cents was unchanged; EEA and UK businesses saw separate increases in April.",
+      "whyItMattered": "It shows where Stripe's pricing power lives: in the components around the headline, which are hard to compare across providers, while the number everyone quotes stays fixed. Stripe has since removed the page announcing the European change.",
+      "shiftType": "business-model",
+      "affectsSections": ["business-model", "moats"],
+      "evidenceIds": ["pricing.change.june-2023", "pricing.change.eu.april-2023", "pricing.surcharges.2026"]
+    },
+    {
+      "id": "bridge-2025",
+      "year": 2025,
+      "label": "Bridge closes; the stablecoin stack begins",
+      "what": "Stripe completed its acquisition of Bridge in February 2025, followed within the year by Privy, Financial Accounts in more than 100 countries, and the unveiling of Tempo, a payments blockchain built with Paradigm.",
+      "whyItMattered": "The first time Stripe bought a rail rather than a product on top of one. Its valuation passed the 2021 peak seven months later, though no source ties the two.",
+      "shiftType": "platform",
+      "affectsSections": ["product", "bets"],
+      "evidenceIds": ["bridge.acquired.2025", "tempo.2025", "valuation.sep-2025"]
+    },
+    {
+      "id": "paypal-2026",
+      "year": 2026,
+      "label": "The PayPal bid, made and withdrawn",
+      "what": "Between July and August 2026 Stripe and Advent bid about $53 billion for PayPal, saw PayPal's share price rise past their offer, and withdrew.",
+      "whyItMattered": "It put a number on Stripe's ambition and on its discipline in the same month, and left PayPal, the company Stripe's founders were once backed by, independent.",
+      "shiftType": "expansion",
+      "affectsSections": ["bets", "verdict"],
+      "evidenceIds": ["paypal.bid.timeline.2026", "paypal.bid.rejected.2026"]
+    }
+  ]
+}
