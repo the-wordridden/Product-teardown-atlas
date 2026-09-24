@@ -256,8 +256,18 @@ export function SectionSummary({
       const { profile } = data
       return (
         <div className="verdict-card">
-          <span className="kicker kicker-accent">Our call</span>
-          <p className="verdict-thesis">{product.thesis}</p>
+          {/* The page already leads with the thesis; the card closes on what would overturn it. */}
+          {product.verdict?.changeMyMind ? (
+            <>
+              <span className="kicker kicker-accent">What would change my mind</span>
+              <p className="verdict-thesis">{product.verdict.changeMyMind}</p>
+            </>
+          ) : (
+            <>
+              <span className="kicker kicker-accent">Our call</span>
+              <p className="verdict-thesis">{product.thesis}</p>
+            </>
+          )}
           <div className="verdict-grid">
             <div>
               <span className="kicker">How it grows</span>

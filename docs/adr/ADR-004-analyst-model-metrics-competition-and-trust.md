@@ -26,7 +26,8 @@ After ADR-003, a second review from the intended reader's point of view (product
 7. **Diagrams replace text boxes** where the content is structural: segment bars (relative size, labelled "our estimate"), a four-forces quadrant per job, a pricing ladder plus revenue-mix bars, and an inflection timeline. Bar widths come from the schema's coarse `shareBand`, never from invented numbers.
 8. **Screenshots** are public, logged-out captures of the product's own pages, stored as WebP with a `screens.json` caption file per product, and credited in place with the source URL and capture date. A page that refuses automated capture (Figma Community returned a CDN 403) is not captured by other means; it is simply omitted.
 9. **Homepage** replaces the per-product "in brief" blocks, which grew linearly with the catalogue, with one side-by-side comparison table built from `brief` and the key metrics.
-10. **Mobile** gets a sticky section menu showing the current section, replacing the ten-item rail that pushed content two screens down.
+10. **`verdict.changeMyMind`** (optional, two sentences): the single finding that would most change the call. The verdict card shows it in place of the thesis, which the page already leads with as "Our take", so the thesis appears once at the top and nowhere else. The full verdict prose also no longer restates the thesis.
+11. **Mobile** gets a sticky section menu showing the current section, replacing the ten-item rail that pushed content two screens down.
 
 ## Consequences
 

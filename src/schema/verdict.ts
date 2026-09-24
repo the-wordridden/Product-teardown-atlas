@@ -48,6 +48,12 @@ export const VerdictSection = z
     /** What you could not determine, and what would change your reading. */
     openQuestions: z.array(Line).min(1).max(5),
 
+    /**
+     * The single finding that would most change the call (ADR-004). Shown on the verdict
+     * card in place of the thesis, which the page already leads with.
+     */
+    changeMyMind: TwoSentences.optional(),
+
     patterns: PatternRefList,
   })
   .strict()
