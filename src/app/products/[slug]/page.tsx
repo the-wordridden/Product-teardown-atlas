@@ -2,12 +2,14 @@ import { MDXRemote } from 'next-mdx-remote/rsc'
 import { CanvasArt } from '../../../components/art/CanvasArt'
 import { Marquee } from '../../../components/chrome/Marquee'
 import { RevealObserver } from '../../../components/chrome/Reveal'
+import { SectionMenu } from '../../../components/chrome/SectionMenu'
 import { GrowthChain, type LoopSource } from '../../../components/growth-loop/GrowthChain'
 import { mdxComponentsFor } from '../../../components/mdx'
 import { MoatStack } from '../../../components/moats/MoatStack'
 import { ProfileStrip } from '../../../components/strategic-profile/ProfileStrip'
 import { MetricTile, SectionSummary } from '../../../components/teardown/SectionSummary'
 import { ForPMs } from '../../../components/teardown/ForPMs'
+import { CompetitionCard, MetricsCard, TrustBox } from '../../../components/teardown/Insights'
 import { QuickTake } from '../../../components/teardown/QuickTake'
 import { buildLoopRenderModel } from '../../../derive/loop-geometry'
 import { brandFor, brandVars } from '../../../lib/brand'
@@ -134,20 +136,19 @@ export default async function TeardownPage({ params }: { params: Promise<{ slug:
       {product.brief ? (
         <QuickTake brief={product.brief} patterns={product.patterns} patternNames={patternNames} hasInterview={hasPms} />
       ) : null}
+      {product.ceiling ? (
+        <TrustBox ceiling={product.ceiling} unverified={product.brief?.unverified} openQuestions={product.verdict?.openQuestions ?? []} />
+      ) : null}
 
       <Marquee items={ribbon} />
 
-      {screens.length > 0 ? (
-        <section className="screens" aria-label="Product in view" data-reveal>
-          <span className="kicker">Product in view</span>
-          <div className="screens-row">
-            {screens.map((src) => (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img key={src} src={src} alt="" loading="lazy" />
-            ))}
-          </div>
-        </section>
-      ) : null}
+
+      <SectionMenu
+        items={[
+          ...SECTION_IDS.map((id, i) => ({ id, num: String(i + 1).padStart(2, '0'), title: title.get(id) ?? id })),
+          ...(hasPms ? [{ id: 'for-pms', num: 'PM', title: 'For PMs' }] : []),
+        ]}
+      />
 
       {/* ---------------- RAIL + BODY ---------------- */}
       <div className="td-grid">
@@ -192,9 +193,37 @@ export default async function TeardownPage({ params }: { params: Promise<{ slug:
 
               <div className="sec-card">
                 {id === 'vitals' ? <ProfileStrip profile={profile} /> : null}
-                {id === 'growth-loops' ? <GrowthChain model={loopModel} sources={sources} /> : null}
+                {id === 'growth-loops' && product.metrics ? <MetricsCard metrics={product.metrics} /> : null}
+                {id === 'growth-loops' ? (
+                  <GrowthChain model={loopModel} sources={sources} productName={product.name} summary={product.brief?.grows} />
+                ) : null}
+                {id === 'moats' && product.competition ? (
+                  <CompetitionCard productName={product.name} competition={product.competition} evidence={evidence} />
+                ) : null}
                 {id === 'moats' ? <MoatStack moats={strategy.moats} /> : null}
                 <SectionSummary id={id} data={data} statuses={statuses} />
+                {screens
+                  .filter((shot) => shot.section === id)
+                  .map((shot) => (
+                    <figure key={shot.src} className="shot">
+                      <div className="shot-frame">
+                        <div className="shot-bar" aria-hidden="true">
+                          <i />
+                          <i />
+                          <i />
+                          <span>{shot.source}</span>
+                        </div>
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src={shot.src} alt={shot.caption} loading="lazy" width={1440} height={900} />
+                      </div>
+                      <figcaption>
+                        {shot.caption}
+                        <small>
+                          Screenshot of the public page {shot.source}, captured {shot.capturedOn} while logged out.
+                        </small>
+                      </figcaption>
+                    </figure>
+                  ))}
               </div>
 
               <details className="prose-fold" open={id === 'verdict'}>

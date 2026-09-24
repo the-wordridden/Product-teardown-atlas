@@ -28,6 +28,7 @@ import {
   SECTION_IDS,
   SectionId,
   Slug,
+  TwoSentences,
   Unestablished,
   Year,
 } from './enums'
@@ -120,6 +121,39 @@ export const Brief = z
   })
   .strict()
 
+/**
+ * The metrics the analyst would own if running the product (ADR-004). Proposals, labelled
+ * as ours on the page, never presented as the company's own metric.
+ */
+const ProposedMetric = z
+  .object({
+    name: Label,
+    /** Exactly what is counted, over what period. */
+    definition: Line,
+    /** Why this and not the obvious alternative. */
+    why: Line,
+  })
+  .strict()
+
+export const Metrics = z
+  .object({
+    northStar: ProposedMetric,
+    activation: ProposedMetric,
+  })
+  .strict()
+
+/** Who a customer would pick instead, and why. The analyst's read of the market (ADR-004). */
+export const Competitor = z
+  .object({
+    name: Label,
+    /** Why a customer would choose it over this product. */
+    theyWin: Line,
+    /** Why a customer would choose this product over it. */
+    weWin: Line,
+    evidenceIds: EvidenceIdList,
+  })
+  .strict()
+
 export const InterviewQuestion = z
   .object({
     id: Slug,
@@ -184,6 +218,10 @@ export const ProductFile = z
 
     /* --- Reader-facing synthesis (ADR-003) --------------------------------- */
     brief: Brief.optional(),
+    /** How far to trust this page, stated once instead of in every section (ADR-004). */
+    ceiling: TwoSentences.optional(),
+    metrics: Metrics.optional(),
+    competition: z.array(Competitor).min(2).max(6).optional(),
     interview: z.array(InterviewQuestion).max(6).optional(),
 
     /* --- Product-level pattern tags ---------------------------------------- */

@@ -1,35 +1,21 @@
-## What the evidence establishes
-
-A public catalogue of 30,000 templates in 348 categories, each one a landing page for a specific intent <Evidence id="gallery.scale.2026" />. Search traffic to that catalogue estimated at 287,000 visits a month across 60,000 US keywords <Evidence id="gallery.traffic.ahrefs.2023" />. Pages that render the entire working artefact to a stranger with no account <Evidence id="gallery.artefact.observed" />, and a documented wall at the moment they want to keep it: "you'll be prompted to sign in or create an account first" <Evidence id="gallery.signup-gate" />. Fifty-one million duplications from nearly eleven million people in one year <Evidence id="gallery.duplications.2023" />.
-
-And a business model that starts free and unlimited for one person, then caps the workspace at 1,000 lifetime blocks the moment a second person joins <Evidence id="block.limit.free" />.
-
-## What the evidence suggests
-
-<Inference>
-These are one design, not two. Free-forever-for-one manufactures the people who make the templates; the templates rank; the rankings bring strangers; the wall converts them; some of them become creators. Notion removed the individual block cap in 2020 <Evidence id="block.limit.history.2020" /> and the gallery grew fiftyfold. That sequence is consistent across every source I opened, though no one has demonstrated the causal link, and Notion's own relaunch post frames the gallery as a showcase for creators rather than a growth channel <Evidence id="gallery.scale.2023" />.
-</Inference>
-
-## What stays open
-
-How many of those eleven million people were new. Whether anyone who duplicates a template comes back. What a template creator earns. What any of the five acquisitions cost. How many people use Notion at all, a number the company declines to publish even on its own About page <Evidence id="notion.no-numbers" />. And whether the AI claim means what it sounds like.
-
-## My judgment
-
 <Judgment>
-The central call, mine and not a fact: **Notion gives one person everything free and charges when a second person joins, and its template gallery manufactures those first people at search scale.** Free-forever-for-one supplies the creators, the creators supply the gallery, the gallery supplies the individuals, and the second member is where the money is. One design, not four.
-
-What the evidence won't let me say is the part everyone else says. The gallery is the best documented conversion surface I've examined and the least documented acquisition channel: 51 million duplications published, and never once how many were new.
-
-Three sentences that need to stay apart. "A logged-out visitor must create an account to take a template" is verified, from Notion's own documentation and my own observation. "The gallery converts at scale" is a sound inference from that mechanism plus Notion's duplication figure. "The gallery acquires users" is the claim everyone makes about this company, including the brief I started from, and it is the one thing the evidence does not establish.
-
-That gap isn't an accident of my research. I looked for four passes. Notion will tell you its editor processes millions of CRDT operations a minute <Evidence id="crdt.architecture.2026" />. It will tell you duplications and unique duplicators. The new-versus-existing split lives in the same database as the number it did publish.
-
-What would change my mind fastest: any statement from Notion separating new signups from existing users at the duplication step. Second, a creator describing where their template traffic comes from. Third, an audited figure of any kind, which would also settle whether "more than half of ARR from AI-enabled customers" <Evidence id="ai.arr-share.2026" /> means what a reader would assume it means.
-
-One note on method. This is the first teardown in the Atlas where I could watch the mechanism myself rather than read about it, and it shows: the strongest evidence here is a button I clicked. It's also the teardown where the company's own account of its problem is thinner than its users'. Both of those are unusual, and both made the work better.
+**Notion gives one person everything free and charges when a second person joins, and its template gallery manufactures those first people at search scale.** Free-forever-for-one supplies the creators, the creators supply the gallery, the gallery supplies the individuals, and the second member is where the money is. One design, not four.
 </Judgment>
 
-## Open questions
+## What holds it up
 
-The five that shape this verdict most: the new-versus-existing split at duplication, retention after a template lands, what creators earn, what the acquisitions cost, and what "AI-enabled customers" actually measures.
+A public catalogue of 30,000 templates, each a landing page for an intent <Evidence id="gallery.scale.2026" />, drawing an estimated 287,000 visits a month <Evidence id="gallery.traffic.ahrefs.2023" />. Pages that show the whole working artefact to a stranger <Evidence id="gallery.artefact.observed" />, then a documented wall when they want to keep it <Evidence id="gallery.signup-gate" />. 51 million duplications from nearly 11 million people in a year <Evidence id="gallery.duplications.2023" />. And a cap that starts at the second member <Evidence id="block.limit.free" />.
+
+<Inference>
+Notion removed the individual cap in 2020 <Evidence id="block.limit.history.2020" /> and the gallery grew fiftyfold. The sequence is consistent across every source, though nobody has shown the causal link, and Notion frames the gallery as a creator showcase, not a growth channel <Evidence id="gallery.scale.2023" />.
+</Inference>
+
+## Three sentences to keep apart
+
+1. "A logged-out visitor must create an account to take a template." **Verified**, by Notion's docs and my own click.
+2. "The gallery converts at scale." **A sound inference** from that mechanism plus the duplication figure.
+3. "The gallery acquires users." **The claim everyone makes**, and the one thing the evidence doesn't establish.
+
+<Judgment>
+Notion publishes its CRDT operations per minute <Evidence id="crdt.architecture.2026" /> and its duplications, but never the new-versus-existing split that lives in the same database. What would change my mind fastest: that split. Then a creator describing where their traffic comes from. Then any audited figure, which would also settle what "more than half of ARR from AI-enabled customers" <Evidence id="ai.arr-share.2026" /> really means.
+</Judgment>

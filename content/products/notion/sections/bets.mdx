@@ -1,31 +1,21 @@
-Three bets. One has already paid off, one is unfalsifiable by design, and one keeps costing Notion something it doesn't account for.
+Three bets. One paid off, one is unfalsifiable by design, and one keeps costing something Notion doesn't account for.
 
-## Give it away to one person
+## Give it away to one person: paid off
 
-In May 2020 Notion removed the 1,000-block cap for individuals and folded the $4 a month Personal plan into free <Evidence id="block.limit.history.2020" />. The cap now only appears when a second member joins <Evidence id="block.limit.free" />.
+In May 2020 Notion removed the block cap for individuals <Evidence id="block.limit.history.2020" />; it now appears only at the second member <Evidence id="block.limit.free" />. The free individuals made the templates. The gallery went from 600 to 30,000, creators from about 2,000 to 22,000 <Evidence id="gallery.scale.2023" /> <Evidence id="gallery.scale.2026" />, with 51 million duplications in a year <Evidence id="gallery.duplications.2023" />.
 
-What it bought: an unbounded population of people building whatever they liked, for nothing. Those people made the templates. The gallery went from 600 to over 30,000, creator profiles from about 2,000 to over 22,000 <Evidence id="gallery.scale.2023" /> <Evidence id="gallery.scale.2026" />, and Notion reported 51 million duplications from nearly 11 million people in a single year <Evidence id="gallery.duplications.2023" />.
+The cost: a revenue line, and serving free users at block granularity, which took 480 Postgres shards <Evidence id="block.sharding.2021" />. It's the first time in this Atlas I've marked a bet **paid off**; the results are Notion's own and unambiguous.
 
-What it cost: a revenue line, and the engineering bill for serving free users at block granularity. That bill was real enough to require sharding across 480 Postgres shards, with teams reportedly leaving over speed <Evidence id="block.sharding.2021" />.
+## Make AI the tier: unresolved
 
-I've marked this one **paid off**, which is the first time in this Atlas I've used that status. The stated results are unambiguous and they're Notion's own.
-
-## Make AI the tier
-
-Notion didn't sell AI as an add-on. It put the full feature set behind the $20 Business plan, gave Free and Plus a taste, and metered premium models with credits <Evidence id="ai.plan-gate.2026" />. Then Notion 3.0 put agents at the centre, able to "do up to 20 minutes of autonomous work at a time across hundreds of pages at once" <Evidence id="agents.2025" />.
-
-It's a clean piece of packaging: the upgrade decision stops being "do I want an AI product" and becomes "do I want the better plan."
-
-And here's the tension. Notion now says more than half its ARR comes from AI-enabled customers <Evidence id="ai.arr-share.2026" />. That sentence is doing a lot of work. If AI is bundled into a tier, then AI revenue cannot be separated from tier revenue, and every Business seat counts as an AI customer whatever it was bought for.
+Full AI sits behind the $20 plan, with credits for premium models <Evidence id="ai.plan-gate.2026" />, and Notion 3.0 agents do "up to 20 minutes of autonomous work at a time" <Evidence id="agents.2025" />. The upgrade question stops being "do I want AI" and becomes "do I want the better plan."
 
 <Judgment>
-The packaging that makes the bet good business makes it impossible to evaluate from outside. There is no measurement that could disconfirm "more than half of ARR comes from AI-enabled customers", because the category expands to fit. Forbes reported the same period as half of revenue coming from AI products, which is a different claim entirely, and nobody has reconciled them. I'd want one number, separating AI-attributable revenue from tier revenue, before treating this as evidence that the AI bet is working. Status: unresolved, and structurally hard to resolve.
+The packaging that makes this good business makes it impossible to evaluate. If AI is bundled into a tier, every Business seat is an "AI-enabled customer" <Evidence id="ai.arr-share.2026" />, and the category expands to fit. I'd want AI-attributable revenue separated from tier revenue before calling this bet working.
 </Judgment>
 
-## Buy the team, switch off the product
+## Buy the team, switch off the product: costing trust
 
-Skiff had raised $14.2 million building end-to-end encrypted docs, mail and calendar. Notion acquired it in February 2024 and shut the product down within twelve months, and Skiff accounts were never converted into Notion accounts <Evidence id="acquisition.skiff.2024" />. Before that: Flowdash, Automate.io, and Cron, which survived as Notion Calendar. In July 2026, ZeroEntropy, whose whole team joined and whose founder now leads a new Model Research group <Evidence id="acquisition.zeroentropy.2026" />.
+Skiff raised $14.2 million for encrypted docs and mail. Notion bought it in 2024 and shut it down within a year, converting no accounts <Evidence id="acquisition.skiff.2024" />. Before that came Flowdash, Automate.io and Cron (now Notion Calendar); in July 2026, ZeroEntropy, whose founder now leads a Model Research group <Evidence id="acquisition.zeroentropy.2026" />. Five acquisitions, no disclosed prices.
 
-Five acquisitions, no disclosed price for any of them.
-
-The logic is sound: buy the people, skip the second codebase. The cost is reputational and it compounds. Every shutdown teaches founders what a Notion acquisition means, and teaches users something too, at a company whose main defensibility is that leaving is hard <Evidence id="lockin.anxiety.2020" />. A business asking for that much trust, while demonstrating that products it owns can be turned off, is holding two positions at once.
+Buying people and skipping the second codebase is sound. But a company whose main moat is that leaving is hard <Evidence id="lockin.anxiety.2020" /> keeps demonstrating that products it owns can be turned off.

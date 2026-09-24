@@ -1,0 +1,16 @@
+[
+  {
+    "file": "pricing.webp",
+    "section": "business-model",
+    "caption": "Stripe's pricing page leads with 2.9% + 30¢ for domestic cards and no setup or monthly fees, the same headline as at launch in 2011. Custom pricing sits beside it for large volume.",
+    "source": "stripe.com/pricing",
+    "capturedOn": "2026-09-24"
+  },
+  {
+    "file": "checkout-link.webp",
+    "section": "moats",
+    "caption": "Stripe's public Checkout demo puts \"Pay with Link\" first, above Apple Pay and the card form. Credentials saved there are the ones Stripe will not export.",
+    "source": "checkout.stripe.dev",
+    "capturedOn": "2026-09-24"
+  }
+]

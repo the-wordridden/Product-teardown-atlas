@@ -564,5 +564,54 @@
       "manifestsAt": "moats",
       "note": "Card data exports to any Level 1 processor; credentials saved through Link do not."
     }
+  ],
+  "ceiling": "Stripe publishes no audited group accounts. Volume, customer counts and profitability are Stripe's own statements, revenue and cash flow are journalists relaying unnamed sources, and the one audited figure belongs to a UK subsidiary. Pricing and product mechanics are documented and verified.",
+  "metrics": {
+    "northStar": {
+      "name": "Net revenue per active account",
+      "definition": "Net revenue divided by the number of accounts processing live payments in the period.",
+      "why": "Stripe grows by attaching products to volume it already processes. This rises with attach and falls if the headline rate is discounted away."
+    },
+    "activation": {
+      "name": "First live charge within 14 days",
+      "definition": "A new account processes a successful live payment within 14 days of signing up.",
+      "why": "There is no contract and no fixed fee, so Stripe earns nothing until the business makes its own first sale."
+    }
+  },
+  "competition": [
+    {
+      "name": "Adyen",
+      "theyWin": "Built for large enterprises: one global platform and negotiated pricing that big merchants can push down.",
+      "weWin": "Self-serve signup and developer experience at the bottom of the market, where the first account is opened.",
+      "evidenceIds": [
+        "hn.alternatives.2023"
+      ]
+    },
+    {
+      "name": "PayPal and Braintree",
+      "theyWin": "A consumer wallet at enormous scale, and Braintree for merchants who want PayPal checkout built in.",
+      "weWin": "Documentation, product breadth and Link. Apify added Stripe once it caught up on coverage.",
+      "evidenceIds": [
+        "apify.migration.2025",
+        "paypal.bid.timeline.2026"
+      ]
+    },
+    {
+      "name": "Merchants of record, such as Paddle",
+      "theyWin": "They become the legal seller and take on sales tax and compliance, which small software companies may prefer.",
+      "weWin": "A lower rate and full control of the customer relationship, with Stripe Tax covering part of the same job.",
+      "evidenceIds": [
+        "hn.alternatives.2023",
+        "pricing.products.2026"
+      ]
+    },
+    {
+      "name": "Checkout.com",
+      "theyWin": "Enterprise processing with negotiated pricing and a focus on cross-border performance.",
+      "weWin": "The breadth of the stack: Billing, Connect, Capital and Link on one account.",
+      "evidenceIds": [
+        "hn.alternatives.2023"
+      ]
+    }
   ]
 }

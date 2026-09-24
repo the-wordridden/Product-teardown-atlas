@@ -1,31 +1,23 @@
+**A link opens a live file, and anyone with the link is in it.** The moment it clicks, by Intercom's account, is opening a colleague's file and realising there's nothing to download, version or send: "the absence of files" <Evidence id="migration.intercom.2019" />.
+
 ## The objects
 
-Everything in Figma lives in a **file**, and inside a file the basic unit is a **frame**: a container for shapes, text and images, nested as deep as you like. Frames aren't just boxes. Auto layout, constraints and prototyping all work on frames, so a frame is the thing you actually design with <Evidence id="docs.frames" />.
-
-A **component** is a frame you've promised to reuse. The main component defines it; every **instance** is a linked copy that picks up changes to the main <Evidence id="docs.components" />. Publish components to a **team library** and every file in the team can use them. That's the whole design system story in one sentence, and it's why the migration accounts keep coming back to libraries.
-
-## The actions
-
-Edit a file with other people in it. Comment on a frame. Publish a library. Inspect a design in Dev Mode. Share a link. The first and last are the ones that matter most, and they're the same action seen from two sides: a link opens a live file, and anyone with the link is in it.
-
-The moment it clicks, going by Intercom's account, is opening a colleague's file by link and realising there's nothing to download, version or send. They called it "the absence of files" <Evidence id="migration.intercom.2019" />.
+Everything lives in a **file**; inside it, the unit is a **frame**, a nestable container that auto layout, constraints and prototyping all work on <Evidence id="docs.frames" />. A **component** is a frame you've promised to reuse: every **instance** is a linked copy that picks up changes to the main <Evidence id="docs.components" />. Publish components to a **team library** and every file in the team can use them. That's the whole design system story.
 
 ## Under the hood, as of 2019
 
-In October 2019, co-founder Evan Wallace explained how the sync engine works <Evidence id="architecture.multiplayer.2019" />. It's precise where most coverage is vague. Figma turned down operational transforms as "unnecessarily complex for our problem space." And it does **not** use true CRDTs, whatever you've read. Because the server is the single authority, Figma runs a simpler custom system that borrows CRDT ideas: one server process per document, WebSocket sync, client generated object IDs, fractional indexing for tree order, offline edits replayed on reconnect.
+Evan Wallace's 2019 write-up is precise where most coverage is vague <Evidence id="architecture.multiplayer.2019" />. Figma rejected operational transforms as "unnecessarily complex for our problem space", and it does **not** use true CRDTs. The server is the single authority, so a simpler custom system borrows CRDT ideas: one process per document, WebSocket sync, client-generated IDs, offline edits replayed on reconnect.
 
-He also listed what it can't do, which is why this post is worth more than a marketing page:
+He also listed what it can't do:
 
 - two people can't edit the same text value at once
-- conflicting property changes resolve last write wins, no merging
-- moving objects between parents at the same moment can make them vanish briefly ("not great," in his words)
+- conflicting property changes resolve last write wins
+- simultaneous moves between parents can make objects vanish briefly ("not great," in his words)
 
-Seven years on, nothing I found describes the current architecture. Whether those limits still hold is an open question with competitive weight.
+Nothing I found describes the current architecture, so whether those limits still hold is open, and it has competitive weight.
 
 ## The surface today
 
-By fiscal 2025 the platform covered Figma Design, Draw, Make, Dev Mode, Buzz, Sites, FigJam and Slides, with Buzz and Sites in beta <Evidence id="product-surface.10k" />. What you can touch depends on your seat, from free View up through Collab, Dev and Full <Evidence id="seat.view.free" />. And there's a public Community catalogue of files, plugins and templates that anyone can browse without an account. I checked <Evidence id="community.public-surface" />.
+Design, Draw, Make, Dev Mode, Buzz, Sites, FigJam and Slides <Evidence id="product-surface.10k" />. What you can touch depends on your seat: View, Collab, Dev, Full <Evidence id="seat.view.free" />. And a public Community of files, plugins and templates browsable without an account <Evidence id="community.public-surface" />.
 
-Three sentences that sound alike and aren't: "Figma can sync several editors in one file" is a capability, and it's shown. "So users find live collaboration valuable" is about behaviour, and two teams say so. "Multiplayer is why Figma grew" is causal, and nothing here establishes it.
-
-Time to value is the one thing in this section I've left unestablished. Intercom talks about one to two months to settle in, but that's adjustment, not first value, and nobody I read timed the first moment it paid off.
+"Figma syncs several editors in one file" is shown. "Users value live collaboration" is two teams' word. "Multiplayer is why Figma grew" is causal, and nothing here establishes it.

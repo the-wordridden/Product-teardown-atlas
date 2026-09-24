@@ -1,23 +1,24 @@
-Two jobs, each with a source that isn't Stripe. That's thinner than I'd like for a company this size, and the reason is simple: people write about leaving a payments provider far more often than about choosing one.
+Two jobs, each with a source that isn't Stripe. People write about leaving a payments provider far more than about choosing one, so this is thinner than the company's size deserves.
 
 ## Job one: sell everywhere without a bank negotiation
 
-*When we sell software to customers in many countries, let us accept payment without negotiating a merchant account in each one.*
+*When we sell software to customers in many countries, let us take payment without a merchant account in each one.*
 
-This is the 2011 job, stated at launch: no merchant account, no gateway, a published price, card numbers that never touch your server <Evidence id="pricing.launch.2011" />. Apify's write-up shows the same job fifteen years later, with the geography added. They picked Braintree first because it was the only global provider that would take a European company, then added Stripe once Stripe "caught up and expanded its capabilities" <Evidence id="apify.migration.2025" />. Lovable, by Stripe's account, takes payments from more than 150 countries through the one integration <Evidence id="lovable.link-share.2026" />.
+The 2011 job, with geography added. Apify chose Braintree first because it was "the only major global provider supporting European companies at the time," added Stripe when it "caught up and expanded its capabilities," and kept both for redundancy <Evidence id="apify.migration.2025" />.
 
-The forces are all in the record. The push is a provider that won't cover your country, or a bank process before your first sale. The pull is one API with local payment methods everywhere and no fixed fees. The anxiety is specific and loud: reserves and closures with nobody to call <Evidence id="hn.account-holds" />, and the fear of one provider being a single point of failure, which is Apify's own stated reason for running two. The habit is the integration you already have. Moving 10,000 users and 9,000 cards took Apify 18 working days <Evidence id="apify.migration.2025" />.
+- **Push:** a provider that won't cover your country, or a bank process before your first sale.
+- **Pull:** one integration, local payment methods everywhere, no fixed fees.
+- **Anxiety:** holds with nobody to call <Evidence id="hn.account-holds" />, and one provider being a single point of failure.
+- **Habit:** the integration you already have. Apify's move of 10,000 users and 9,000 cards took 18 working days.
 
 ## Job two: bill usage without building billing
 
-*When our product charges by usage or seat, let us meter and invoice it without building a billing system ourselves.*
+*When our product charges by usage or seat, let us meter and invoice it without writing a billing system.*
 
-Stripe Billing documents flat-rate, per-seat, usage-based, tiered and multi-currency models, with Metronome now handling the complex metering <Evidence id="docs.billing.models" />. It costs 0.7% of billed volume on top of processing, or a monthly plan from $620 <Evidence id="pricing.products.2026" />. The alternative most teams start with is writing it themselves; the alternatives practitioners name when they want a separate vendor are Chargebee, Chargify and open-source Lago <Evidence id="hn.alternatives.2023" />.
+Billing handles flat, per-seat, usage-based and tiered models, with Metronome for complex metering <Evidence id="docs.billing.models" />, at 0.7% of billed volume <Evidence id="pricing.products.2026" />. The alternatives are writing it yourself, or Chargebee, Chargify and Lago <Evidence id="hn.alternatives.2023" />.
 
-The anxiety on this job is the interesting one, and Stripe states it in its own documentation: if you ever leave, Stripe will export your cards but "doesn't export your account's payment history, subscriptions, or other objects" <Evidence id="docs.pan-export.link-exclusion" />. Billing next to the payment rail is convenient going in. It's the part that doesn't come out.
+The anxiety is in Stripe's own docs: if you leave, it "doesn't export your account's payment history, subscriptions, or other objects" <Evidence id="docs.pan-export.link-exclusion" />. Billing next to the payment rail is easy to adopt. It's the part that doesn't come out.
 
 <Inference>
-Notice what both jobs have in common. Neither is "process my payments cheaply." Both are about not building something: not a bank relationship, not a billing system. Two sources is a small sample, but it fits what Stripe sells on top of the headline rate, and it fits why the headline rate can stay where it is.
+Neither job is "process my payments cheaply". Both are about not building something: a bank relationship, a billing system. That's why the headline rate can stay where it is.
 </Inference>
-
-What enterprises hire Stripe for, in their own words, isn't covered by anything I found first hand. Stripe's letters quote Microsoft and Gatwick on authorisation rates, but those are Stripe's case studies, and I've left them out of the jobs.

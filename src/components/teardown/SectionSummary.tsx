@@ -16,6 +16,9 @@ import { axisPhrase, durabilityLabel, moatTypeLabel } from '../../lib/labels'
 
 const GLYPH: Record<EvidenceEntryT['confidence'], string> = { verified: '●', reported: '◐', estimated: '○' }
 
+/** Bar widths for the schema's share bands. Deliberately coarse: bands are estimates. */
+const SHARE_WIDTH: Record<string, number> = { dominant: 100, major: 72, significant: 44, niche: 18 }
+
 export function MetricTile({ entry }: { entry: EvidenceEntryT }) {
   return (
     <div className="tile" data-confidence={entry.confidence}>
@@ -81,25 +84,30 @@ export function SectionSummary({
     }
 
     case 'users': {
-      const total = evidence.get('paid-customers.total.q1-2026')
-      const tenK = evidence.get('paid-customers.10k.q2-2026')
       if (product.users.segments.length === 0) {
-        return (
-          <div className="stack">
-            <div className="tiles">{total ? <MetricTile entry={total} /> : null}{tenK ? <MetricTile entry={tenK} /> : null}</div>
-            <GapCard title="Who uses it is not established yet." body="Role types are visible through seat packaging. Composition is not disclosed." />
-          </div>
-        )
+        return <GapCard title="Who uses it is not established yet." body="No source describes the user base." />
       }
       return (
         <div className="stack">
+          <div className="segbars" aria-label="Relative size of each segment, our estimate">
+            <span className="kicker">Relative size · our estimate from the evidence, not a measured share</span>
+            {product.users.segments.map((seg) => (
+              <div key={seg.id} className="segbar" data-primary={seg.isPrimary}>
+                <span className="segbar-name">
+                  {seg.name}
+                  {seg.isPrimary ? <span className="segbar-primary">primary</span> : null}
+                </span>
+                <span className="segbar-track" aria-hidden="true">
+                  <span className="segbar-fill" style={{ width: `${SHARE_WIDTH[seg.shareBand]}%` }} />
+                </span>
+                <span className="segbar-band">{seg.shareBand}</span>
+              </div>
+            ))}
+          </div>
           <div className="segs">
             {product.users.segments.map((seg) => (
               <div key={seg.id} className="seg" data-primary={seg.isPrimary}>
-                <div className="seg-head">
-                  <span className="seg-name">{seg.name}</span>
-                  <span className="pill">{seg.shareBand}{seg.isPrimary ? ' · primary' : ''}</span>
-                </div>
+                <span className="seg-name">{seg.name}</span>
                 <p className="seg-desc">{seg.description}</p>
               </div>
             ))}
@@ -111,7 +119,6 @@ export function SectionSummary({
               <ul className="power-list">{product.users.powerUser.behaviours.map((b) => <li key={b}>{b}</li>)}</ul>
             </div>
           ) : null}
-          <div className="tiles">{total ? <MetricTile entry={total} /> : null}{tenK ? <MetricTile entry={tenK} /> : null}</div>
         </div>
       )
     }
@@ -125,13 +132,30 @@ export function SectionSummary({
           {product.jtbd.jobs.map((job) => (
             <div key={job.id} className="job">
               <p className="job-statement">{job.statement}</p>
-              <dl className="forces">
-                <div><dt>Push</dt><dd>{job.forces.push}</dd></div>
-                <div><dt>Pull</dt><dd>{job.forces.pull}</dd></div>
-                <div><dt>Anxiety</dt><dd>{job.forces.anxiety}</dd></div>
-                <div><dt>Habit</dt><dd>{job.forces.habit}</dd></div>
-              </dl>
-              <p className="job-alt"><span className="kicker">Instead of</span> {job.competingAlternatives.map((a) => a.name).join(', ')}</p>
+              <div className="forces4" aria-label="The four forces on this switch">
+                <div className="f4 f4-push">
+                  <span className="f4-k">Push · away from the old way</span>
+                  <p>{job.forces.push}</p>
+                </div>
+                <div className="f4 f4-pull">
+                  <span className="f4-k">Pull · toward this product</span>
+                  <p>{job.forces.pull}</p>
+                </div>
+                <div className="f4-core" aria-hidden="true">
+                  <span>switch</span>
+                </div>
+                <div className="f4 f4-anxiety">
+                  <span className="f4-k">Anxiety · about the new way</span>
+                  <p>{job.forces.anxiety}</p>
+                </div>
+                <div className="f4 f4-habit">
+                  <span className="f4-k">Habit · of the old way</span>
+                  <p>{job.forces.habit}</p>
+                </div>
+              </div>
+              <p className="job-alt">
+                <span className="kicker">Instead of</span> {job.competingAlternatives.map((a) => a.name).join(' · ')}
+              </p>
             </div>
           ))}
         </div>
@@ -165,27 +189,39 @@ export function SectionSummary({
 
     case 'business-model': {
       const bm = product.businessModel
-      const gm25 = evidence.get('gross-margin.fy2025')
-      const gm24 = evidence.get('gross-margin.fy2024')
-      const cor = evidence.get('cost-of-revenue.fy2025')
+      const tiles = bm.evidenceIds
+        .map((eid) => evidence.get(eid))
+        .filter((e): e is EvidenceEntryT => Boolean(e && (e.display || e.value.length <= 28)))
+        .slice(0, 3)
       return (
         <div className="stack">
-          <div className="tiers">
-            {bm.pricing.tiers.map((t) => (
-              <div key={t.name} className="tier">
-                <div className="tier-name">{t.name}</div>
-                <div className="tier-price">{t.priceNote}</div>
-                <ul className="tier-gates">{t.gates.map((g) => <li key={g}>{g}</li>)}</ul>
+          <div className="ladder" aria-label="The pricing ladder, lowest to highest">
+            {bm.pricing.tiers.map((t, i) => (
+              <div key={t.name} className="rung" style={{ ['--h' as string]: String(Math.round(24 + (i * 72) / Math.max(1, bm.pricing.tiers.length - 1))) }}>
+                <div className="rung-bar" aria-hidden="true" />
+                <div className="rung-body">
+                  <div className="rung-name">{t.name}</div>
+                  <div className="rung-price">{t.priceNote}</div>
+                  <ul className="rung-gates">{t.gates.map((g) => <li key={g}>{g}</li>)}</ul>
+                </div>
               </div>
             ))}
           </div>
-          <div className="tiles">
-            {gm24 ? <MetricTile entry={gm24} /> : null}
-            {gm25 ? <MetricTile entry={gm25} /> : null}
-            {cor ? <MetricTile entry={cor} /> : null}
+          <div className="revmix" aria-label="Where the money comes from, our estimate">
+            <span className="kicker">Where the money comes from · relative weight, our estimate</span>
+            {bm.revenueLines.map((r) => (
+              <div key={r.id} className="segbar">
+                <span className="segbar-name">{r.name}</span>
+                <span className="segbar-track" aria-hidden="true">
+                  <span className="segbar-fill" style={{ width: `${SHARE_WIDTH[r.shareBand]}%` }} />
+                </span>
+                <span className="segbar-band">{r.shareBand}</span>
+              </div>
+            ))}
           </div>
+          {tiles.length > 0 ? <div className="tiles">{tiles.map((e) => <MetricTile key={e.id} entry={e} />)}</div> : null}
           <p className="moment">
-            <span className="kicker">Monetisation moment</span>
+            <span className="kicker">The moment it starts charging</span>
             {bm.monetizationMoment}
           </p>
         </div>
@@ -196,7 +232,21 @@ export function SectionSummary({
       return null // MoatStack renders the structured state
 
     case 'bets':
-      return <BetsChain bets={strategy.bets} evidence={evidence} />
+      return (
+        <div className="stack">
+          <ol className="timeline" aria-label="Turning points">
+            {strategy.inflections.map((f) => (
+              <li key={f.id} className="tl-item">
+                <span className="tl-year">{f.year}</span>
+                <span className="tl-dot" aria-hidden="true" />
+                <span className="tl-label">{f.label}</span>
+                <span className="tl-why">{f.whyItMattered}</span>
+              </li>
+            ))}
+          </ol>
+          <BetsChain bets={strategy.bets} evidence={evidence} />
+        </div>
+      )
 
     case 'verdict': {
       const loop = data.loops.loops.find((l) => l.id === data.loops.primaryLoopId)

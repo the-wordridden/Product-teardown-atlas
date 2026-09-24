@@ -1,31 +1,21 @@
-Start with the number that hasn't moved. In September 2011 Stripe charged 2.9% plus 30 cents per successful charge <Evidence id="pricing.launch.2011" />. In September 2026 the US pricing page says 2.9% + 30¢ per successful transaction <Evidence id="pricing.us.2026" />. Fifteen years, two independent sources, same price.
-
-Now look at everything around it.
+The number that hasn't moved: 2.9% plus 30 cents in September 2011 <Evidence id="pricing.launch.2011" />, and 2.9% + 30¢ today <Evidence id="pricing.us.2026" />. Everything around it has.
 
 ## The surcharges moved
 
-International cards cost 1.5% extra, currency conversion 1% extra, manually entered cards 0.5% extra <Evidence id="pricing.surcharges.2026" />. The international surcharge was 1.0% until June 2023. Stripe's notice to US customers, which one of them posted in full, said card networks had raised Stripe's costs, so the surcharge would rise to 1.5%, and Stripe would stop refunding the $15 dispute fee when a business won the dispute. The same notice underlined that "there's no change to our standard 2.9% + $0.30 pricing" <Evidence id="pricing.change.june-2023" />. European and UK businesses got their own increases two months earlier, including a 1% fee on USD payouts to US bank accounts <Evidence id="pricing.change.eu.april-2023" />. Stripe has since removed the page that announced the European change; it redirects to the pricing page now.
+International cards cost 1.5% extra, currency conversion 1%, manually entered cards 0.5% <Evidence id="pricing.surcharges.2026" />. The international surcharge was 1.0% until June 2023, when Stripe also stopped refunding the $15 dispute fee on disputes the merchant wins, while stressing that "there's no change to our standard 2.9% + $0.30 pricing" <Evidence id="pricing.change.june-2023" />. European and UK businesses got their own increases that April <Evidence id="pricing.change.eu.april-2023" />. The page announcing the European change now redirects to the pricing page.
 
 <Inference>
-That's where Stripe's pricing power lives. The headline is the number everyone compares, so it stays fixed. The components around it are hard to compare across providers, and they're where the increases go. I can't tell you how much revenue that shift moved. I can tell you Stripe passed the network's cost increase through rather than absorbing it, and said so.
+That's where Stripe's pricing power lives. The headline is the number everyone compares, so it stays fixed. The components around it are hard to compare across providers, so that's where increases go.
 </Inference>
 
 ## The stack priced on top
 
-Each product Stripe sells is another slice of the same flow. Billing is 0.7% of billed volume, or a monthly plan from $620. Invoicing is 0.4% per paid invoice. Radar is from 5 cents per screened transaction. Atlas is $500 once. Terminal is 2.7% + 5¢ in person <Evidence id="pricing.products.2026" />. Connect adds $2 per active connected account per month and 0.25% + 25¢ per payout, with card processing "from the same 2.9% + 30¢" <Evidence id="pricing.connect.2026" />.
-
-Stripe puts a number on what that stack is worth. The Revenue and Finance Automation suite, Billing at its core, passed a $500 million run rate in 2024 <Evidence id="revenue-suite.run-rate.2024" /> and, with Metronome added, is "on track to hit an annual run rate of $1 billion this year" <Evidence id="revenue-suite.run-rate.2026" />. Billing alone handled nearly 200 million active subscriptions for more than 300,000 companies <Evidence id="billing.scale.2024" />. Set that against reported total revenue of $5.1 billion for 2024 <Evidence id="revenue.2024.reported" /> and the suite is a significant line, but payments still carries most of the business.
+Every product is another slice of the same flow: Billing 0.7% of billed volume, Invoicing 0.4%, Radar from 5 cents a screen, Atlas $500 once <Evidence id="pricing.products.2026" />; Connect $2 per active account and 0.25% + 25¢ per payout <Evidence id="pricing.connect.2026" />. The Revenue suite passed a $500 million run rate in 2024 <Evidence id="revenue-suite.run-rate.2024" /> and is "on track" for $1 billion in 2026 <Evidence id="revenue-suite.run-rate.2026" />, with Billing running nearly 200 million subscriptions <Evidence id="billing.scale.2024" />.
 
 ## What the reported numbers imply
 
-$5.1 billion of 2024 revenue against $1.4 trillion of 2024 payment volume <Evidence id="tpv.2024" /> is a yield of about 0.4% of volume. That's a long way below 2.9%, which is what you'd expect once interchange passes through, enterprises negotiate, and platforms bring volume at lower rates. Both inputs are reported, not audited, and I can't confirm they're on the same basis, so treat the 0.4% as arithmetic rather than a fact.
-
-Cash flow is the number I'd anchor on. Free cash flow of $2.2 billion in 2024, then about $3.2 billion in 2025 <Evidence id="fcf.2024.reported" /> <Evidence id="fcf.2025.reported" />. That's what paid for Bridge, Privy, Metronome and the OpenRouter agreement without a funding round. Stripe's own letters say it reinvests an unusually high share of earnings in R&D <Evidence id="profitable.2024" />, which they don't quantify.
-
-## The audited window, and why I don't use it for margin
-
-The UK subsidiary's accounts show turnover of £896.5 million and administrative expenses of £937.3 million, with the entity profitable only through £58 million of interest income <Evidence id="spuk.operating-profit.fy2024" />. That's intra-group pricing, not Stripe's economics. What it does show, and I think it's real, is that interest on balances is a material line for a payments company holding merchants' money.
+$5.1 billion of 2024 revenue <Evidence id="revenue.2024.reported" /> on $1.4 trillion of volume <Evidence id="tpv.2024" /> is a yield of about 0.4%, far below 2.9%, as you'd expect once interchange passes through and enterprises negotiate. Treat it as arithmetic on two reported figures, not a fact. The cash is the part I'd anchor on: about $3.2 billion of free cash flow in 2025 <Evidence id="fcf.2025.reported" />, which paid for four acquisitions without a funding round.
 
 <Judgment>
-My read of the model: Stripe is a transaction business with a software business bolted to the side of it, and the bolt-on is where the growth story lives. The Revenue suite going from $500 million to $1 billion is Stripe's claim, but the pricing that gets it there is public. Every product attached adds a percentage to money already flowing, and each one is priced separately, so nothing in the headline moves. That's a good model. It's also one where the customer's total rate is much harder to see than the number on the pricing page.
+Stripe is a transaction business with a software business attached, and the attachment is where the growth is. Every product adds a percentage to money already flowing, each priced separately, so nothing in the headline moves. It's a good model. It also means a customer's real rate is much harder to see than the number on the pricing page.
 </Judgment>

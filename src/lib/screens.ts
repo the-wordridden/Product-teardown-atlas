@@ -1,17 +1,34 @@
 /** Lists real screengrabs placed under public/products/<slug>/screens/. Build-time only. */
 
-import { existsSync, readdirSync } from 'node:fs'
+import { existsSync, readFileSync } from 'node:fs'
 import { join } from 'node:path'
 
 const EXT = /\.(png|jpe?g|webp|avif)$/i
 
-export function screensFor(slug: string): string[] {
+export interface Shot {
+  src: string
+  /** The section this capture evidences; it renders inside that section. */
+  section: string
+  caption: string
+  /** The public page captured, shown as the frame's address bar and in the credit. */
+  source: string
+  capturedOn: string
+}
+
+/**
+ * Screenshots of public, logged-out product pages, placed under
+ * public/products/<slug>/screens/ with a screens.json sidecar giving each one's section,
+ * caption and source. Captures are used for commentary and credited to their source;
+ * pages that refused automated capture are simply absent rather than worked around.
+ */
+export function screensFor(slug: string): Shot[] {
   const dir = join(process.cwd(), 'public', 'products', slug, 'screens')
-  if (!existsSync(dir)) return []
-  return readdirSync(dir)
-    .filter((f) => EXT.test(f))
-    .sort()
-    .map((f) => `/products/${slug}/screens/${f}`)
+  const meta = join(dir, 'screens.json')
+  if (!existsSync(meta)) return []
+  const entries = JSON.parse(readFileSync(meta, 'utf-8')) as (Omit<Shot, 'src'> & { file: string })[]
+  return entries
+    .filter((e) => EXT.test(e.file) && existsSync(join(dir, e.file)))
+    .map(({ file, ...rest }) => ({ src: `/products/${slug}/screens/${file}`, ...rest }))
 }
 
 /**

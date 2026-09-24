@@ -22,6 +22,14 @@ const STEP_BLURB: Record<string, string> = {
   verdict: 'Our call, in one sentence you can argue with.',
 }
 
+const CMP_ROWS = [
+  { key: 'numbers', label: 'The numbers' },
+  { key: 'grows', label: 'How it grows' },
+  { key: 'earns', label: 'How it makes money' },
+  { key: 'tradeoff', label: 'The trade-off' },
+  { key: 'unverified', label: 'What nobody can verify' },
+]
+
 const MOTION_TAG: Record<string, string> = {
   'bottom-up-end-user': 'bottom-up',
   'bottom-up-developer': 'developer-led',
@@ -164,47 +172,45 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ------------------------------------------------ HIGHLIGHTS */}
-      {products.map(({ slug, product, numbers, proven, bet, inflections }) => (
-        <section key={slug} className="home-sec" data-reveal>
-          <div className="home-sec-head">
-            <span className="home-sec-num">{num()}</span>
-            <h2 className="home-h2">{product.name}, in brief</h2>
-            <p className="home-sec-sub">Straight out of the teardown. Every number links to where it came from.</p>
+      {/* ------------------------------------------------ SIDE BY SIDE */}
+      <section id="compare" className="home-sec" data-reveal>
+        <div className="home-sec-head">
+          <span className="home-sec-num">{num()}</span>
+          <h2 className="home-h2">Side by side</h2>
+          <p className="home-sec-sub">The 60-second version of every teardown, lined up so the differences do the teaching.</p>
+        </div>
+        <div className="cmp" role="table" style={{ ['--cols' as string]: products.length }}>
+          <div className="cmp-row cmp-head" role="row">
+            <span role="columnheader" className="cmp-k" />
+            {products.map((p) => (
+              <a key={p.slug} role="columnheader" href={`/products/${p.slug}`} className="cmp-prod" style={brandVars(p.brand) as React.CSSProperties}>
+                {p.logo ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img className="tcard-logo" src={p.logo} alt="" aria-hidden="true" />
+                ) : null}
+                {p.product.name}
+              </a>
+            ))}
           </div>
-          <div className="brief">
-            <div className="tiles brief-numbers">
-              {numbers.map((e) => (
-                <MetricTile key={e.id} entry={e} />
+          {CMP_ROWS.map((r) => (
+            <div key={r.key} className="cmp-row" role="row" data-kind={r.key}>
+              <span role="rowheader" className="cmp-k">{r.label}</span>
+              {products.map((p) => (
+                <span key={p.slug} role="cell" className="cmp-cell">
+                  {r.key === 'numbers'
+                    ? p.numbers.slice(0, 2).map((e) => (
+                        <span key={e.id} className="cmp-num">
+                          <strong>{e.display ?? e.value}</strong>
+                          <small>{e.confidence}</small>
+                        </span>
+                      ))
+                    : p.product.brief?.[r.key as 'grows' | 'earns' | 'tradeoff' | 'unverified'] ?? '—'}
+                </span>
               ))}
             </div>
-            <div className="brief-grid">
-              <a href={`/products/${slug}#growth-loops`} className="brief-item">
-                <span className="kicker">The growth engine</span>
-                <p>{proven ? proven.label : 'Not established yet'}</p>
-                <span className="brief-more">See the loop →</span>
-              </a>
-              {bet ? (
-                <a href={`/products/${slug}#bets`} className="brief-item">
-                  <span className="kicker">The bet in play</span>
-                  <p>{bet.title}</p>
-                  <span className="brief-more">What it costs →</span>
-                </a>
-              ) : null}
-              <a href={`/products/${slug}#bets`} className="brief-item">
-                <span className="kicker">Turning points</span>
-                <ul className="brief-years">
-                  {inflections.map((f) => (
-                    <li key={f.id}>
-                      <span className="brief-year">{f.year}</span> {f.label}
-                    </li>
-                  ))}
-                </ul>
-              </a>
-            </div>
-          </div>
-        </section>
-      ))}
+          ))}
+        </div>
+      </section>
 
       {/* ------------------------------------------------ QUEUE */}
       {upcoming.length > 0 ? (

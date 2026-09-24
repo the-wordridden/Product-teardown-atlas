@@ -18,6 +18,12 @@
  *
  * What changed from the ring: the best-evidenced link opens by default, so the reader
  * meets the finding first and the caveats second.
+ *
+ * v1.2 (ADR-004): the default view is the analyst's MODEL of how the product grows, drawn
+ * with confident solid links. The loop's openness stays visible before any interaction
+ * through each link's evidence glyph and a "not yet shown" tag on insufficient links; the
+ * EVIDENCE view, one click away, restores the pattern-encoded drawing. Every link also
+ * names the metric the analyst would watch to move it.
  */
 
 import { useId, useState } from 'react'
@@ -59,8 +65,20 @@ function edgeKey(e: EdgeGeom) {
   return `${e.from}-${e.to}`
 }
 
-export function GrowthChain({ model, sources }: { model: LoopRenderModel; sources: Record<string, LoopSource> }) {
+export function GrowthChain({
+  model,
+  sources,
+  productName,
+  summary,
+}: {
+  model: LoopRenderModel
+  sources: Record<string, LoopSource>
+  productName: string
+  /** One-line account of how the product grows, from the teardown's 60-second version. */
+  summary?: string
+}) {
   const headingId = useId()
+  const [view, setView] = useState<'model' | 'evidence'>('model')
   const status = model.summary.status
   const proven = model.edges.filter((e) => e.evidenceStatus === 'evidenced')
   // Open on the best-supported link so the finding is visible before any click.
@@ -76,24 +94,34 @@ export function GrowthChain({ model, sources }: { model: LoopRenderModel; source
   const toggleNode = (n: NodeGeom) => setSelected(isSelNode(n) ? null : { kind: 'node', node: n })
 
   const partial = model.edges.filter((e) => e.evidenceStatus === 'partially-evidenced')
-  const headline =
-    proven.length === model.edges.length
-      ? 'Every link in the loop holds up.'
-      : proven.length > 0
-        ? `What's proven: ${lower(proven[0].label)}.`
-        : partial.length > 0
-          ? `Documented, not yet proven: ${lower(partial[0].label)}.`
-          : 'No link in this loop is established yet.'
+  const unshown = model.edges.filter((e) => e.evidenceStatus === 'insufficient')
 
   return (
-    <figure className="gc" data-loop-status={status} aria-labelledby={headingId}>
+    <figure className="gc" data-loop-status={status} data-view={view} aria-labelledby={headingId}>
       <figcaption className="gc-head">
         <span className="kicker">{model.name}</span>
-        <h3 id={headingId} className="gc-headline">{headline}</h3>
-        <p className="gc-sub">
-          {model.summary.counts.evidenced} of {model.edges.length} links proven from sources
-          {partial.length > 0 ? <>, {partial.length} documented but unmeasured</> : null}
-          {model.speedBand !== 'unestablished' ? <> · cycle time {model.speedBand}</> : null}. Click a step or an arrow.
+        <h3 id={headingId} className="gc-headline">How {productName} grows</h3>
+        {summary ? <p className="gc-summary">{summary}</p> : null}
+        <div className="gc-bar">
+          <p className="gc-sub">
+            <span className="gc-count" data-status="evidenced">● {proven.length} proven</span>
+            <span className="gc-count" data-status="partially-evidenced">◐ {partial.length} documented</span>
+            <span className="gc-count" data-status="insufficient">○ {unshown.length} not yet shown</span>
+            {model.speedBand !== 'unestablished' ? <span>cycle time {model.speedBand}</span> : null}
+          </p>
+          <div className="gc-toggle" role="group" aria-label="How to draw the loop">
+            <button type="button" aria-pressed={view === 'model'} onClick={() => setView('model')}>
+              The model
+            </button>
+            <button type="button" aria-pressed={view === 'evidence'} onClick={() => setView('evidence')}>
+              The evidence
+            </button>
+          </div>
+        </div>
+        <p className="gc-hint">
+          {view === 'model'
+            ? 'How the loop is meant to work, in our reading. Each link carries its evidence mark; switch to the evidence view to see where it breaks.'
+            : 'Drawn by what the sources establish: solid is proven, dashed is documented, dotted is not yet shown.'}
         </p>
       </figcaption>
 
@@ -163,7 +191,7 @@ export function GrowthChain({ model, sources }: { model: LoopRenderModel; source
       {selected ? <Detail selection={selected} sources={sources} onClose={() => setSelected(null)} /> : null}
 
       <p className="gc-legend" aria-hidden="true">
-        ● proven&ensp;◐ partly proven&ensp;◆ contested&ensp;○ not established (drawn broken)
+        ● proven by sources&ensp;◐ documented, not measured&ensp;◆ contested&ensp;○ not yet shown
       </p>
     </figure>
   )
@@ -181,7 +209,7 @@ function Link({ edge, selected, onToggle }: { edge: EdgeGeom; selected: boolean;
     >
       <span className="gc-link-line" aria-hidden="true">
         <span className="gc-link-seg" />
-        <span className="gc-link-mid" data-gap={edge.gap}>{edge.gap ? '?' : GLYPH[edge.evidenceStatus]}</span>
+        <span className="gc-link-mid" data-gap={edge.gap}>{GLYPH[edge.evidenceStatus]}</span>
         <span className="gc-link-seg" />
         <span className="gc-link-head" />
       </span>
@@ -189,6 +217,7 @@ function Link({ edge, selected, onToggle }: { edge: EdgeGeom; selected: boolean;
         <span className="gc-link-glyph" aria-hidden="true">{GLYPH[edge.evidenceStatus]}</span> {edge.label}
       </span>
       <span className="gc-link-status">{STATUS_LABEL[edge.evidenceStatus]}</span>
+      {edge.evidenceStatus === 'insufficient' ? <span className="gc-unshown">not yet shown</span> : null}
       <span className="sr-only">
         , {roleTitle(edge.from)} to {roleTitle(edge.to)}
       </span>
@@ -227,6 +256,12 @@ function Detail({ selection, sources, onClose }: { selection: Selection; sources
         {edge.mechanism}
       </p>
       {edge.note ? <p className="gc-detail-note">{edge.note}</p> : null}
+      {edge.watch ? (
+        <p className="gc-watch">
+          <span className="kicker">The metric I would watch</span>
+          {edge.watch}
+        </p>
+      ) : null}
       {ids.length > 0 ? <Sources ids={ids} sources={sources} /> : null}
     </div>
   )
@@ -254,8 +289,4 @@ function Sources({ ids, sources }: { ids: string[]; sources: Record<string, Loop
       </ul>
     </div>
   )
-}
-
-function lower(s: string) {
-  return s.charAt(0).toLowerCase() + s.slice(1)
 }

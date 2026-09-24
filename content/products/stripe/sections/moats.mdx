@@ -1,29 +1,23 @@
-The moat stack has one entry, and Stripe wrote the evidence for it.
+One mechanism clears the bar, and Stripe wrote the evidence for it.
 
-## The one that clears the bar
+## Easy in, hard out
 
-Stripe's data export page is a remarkable document. It opens: "We believe our customers own the sensitive data they entrust to Stripe. We make sure that you have access to this data, even if you're moving elsewhere." And it means it: Stripe will hand your saved card numbers, encrypted, to any PCI Level 1 processor you name. Then, further down the same page, two exceptions. "You can't transfer the payment credentials saved with Link between payment processors. We exclude any credentials saved through Link from our exports." And: "Stripe doesn't export your account's payment history, subscriptions, or other objects" <Evidence id="docs.pan-export.link-exclusion" />.
+Stripe's export page opens with a promise: "We believe our customers own the sensitive data they entrust to Stripe." It will hand your saved cards to any Level 1 processor. Then, on the same page: "You can't transfer the payment credentials saved with Link between payment processors," and Stripe "doesn't export your account's payment history, subscriptions, or other objects" <Evidence id="docs.pan-export.link-exclusion" />.
 
-Put that next to how Link works. A consumer who pays through Link is enrolled with Stripe, not with the merchant <Evidence id="docs.link.enrolment" />. Stripe says more than 200 million people are enrolled <Evidence id="link.users.feb-2026" />. And Stripe says one customer, Lovable, takes 58% of its volume through Link <Evidence id="lovable.link-share.2026" />.
+Put that next to how Link works. Consumers enrol with Stripe, not the merchant <Evidence id="docs.link.enrolment" />, and one customer takes 58% of its volume through Link <Evidence id="lovable.link-share.2026" />. A merchant like that could leave with 42% of its saved customers and would have to ask the rest to type their card in again. **The better Link does at a merchant's checkout, the less of that merchant's vault is portable.**
 
-So a merchant like that, leaving Stripe, could take 42% of its saved customers and would have to ask the other 58% to type their card in again. The more successful Link is at a merchant's checkout, the less of that merchant's vault is portable. That's a switching cost with a named mechanism, documented by the company that operates it, and a stated consequence.
+It's copyable with sustained effort: PayPal, Shop Pay, Apple Pay and Google Pay already sit in the same checkouts. The moat is exactly as wide as Link's share of a given merchant's checkouts.
 
-**Durability:** copyable with sustained effort. PayPal, Shop Pay, Apple Pay and Google Pay already sit inside the same checkouts, and any of them can play the same role. The moat is exactly as wide as Link's share of a given merchant's checkouts, and no wider. **How to attack it:** a rival wallet with comparable enrolment offered in the same Payment Element, or a portability rule for saved credentials.
+The consequence is stated by Stripe, not yet observed. Apify's migration doesn't mention Link <Evidence id="apify.migration.2025" />, and the one closure account is about subscriptions, not Link <Evidence id="hn.data-refusal.2024" />.
 
-## What I still can't say
+## What I won't count
 
-The economic consequence is stated by Stripe and illustrated once. The one migration write-up in the record, Apify's, moved 9,000 cards in 18 working days and doesn't mention Link at all <Evidence id="apify.migration.2025" />. The one closure account describes losing "half our revenue in recurring subscriptions," which is the subscriptions exclusion biting, not the Link one <Evidence id="hn.data-refusal.2024" />. Nobody I found has written "we left Stripe and lost our Link customers." Until someone does, the consequence is a documented policy, not an observed cost.
+**Radar's data advantage.** "Each payment makes the next payment safer" is Stripe's claim about its own product <Evidence id="radar.network.claim.2024" />, and no one has measured it.
 
-## Four things I won't blur together
+**Scale.** $1.9 trillion of volume <Evidence id="tpv.2025" /> says where Stripe stands, not why it can't be moved.
 
-**Radar's data isn't an evidenced moat.** Stripe's claim that "each payment makes the next payment safer" is a data network effect described by the company that would benefit from it <Evidence id="radar.network.claim.2024" />. Radar's documentation itself doesn't repeat the claim; it describes plans and a per-screen fee <Evidence id="docs.radar.plans" />. No independent measurement exists. It stays in the hypotheses file.
+**Ubiquity.** 90% of the Dow using some Stripe product <Evidence id="enterprise-penetration.2025" /> says nothing about depth, and practitioners list 24 alternatives without difficulty <Evidence id="hn.alternatives.2023" />.
 
-**Scale isn't a mechanism.** $1.9 trillion of volume <Evidence id="tpv.2025" /> and 5 million businesses <Evidence id="businesses.2025" /> are Stripe's figures for how big it is. Size tells you where a company stands, not why it can't be moved.
-
-**Being everywhere isn't lock-in.** 90% of the Dow using some Stripe product <Evidence id="enterprise-penetration.2025" /> says nothing about depth. Practitioners list 24 alternatives without difficulty <Evidence id="hn.alternatives.2023" />, and the sharpest comment in that thread is that replacing Stripe means replacing particular services, which is a statement about integration effort, not about Stripe being unreplaceable.
-
-**Price stability isn't a moat either.** The unchanged 2.9% + 30¢ <Evidence id="pricing.us.2026" /> is a strategy, and the 2023 surcharge increases <Evidence id="pricing.change.june-2023" /> show that the money moved elsewhere. It doesn't stop a rival.
-
-## The counter-evidence
-
-Stripe itself named the limit of its own reach in the 2025 letter: Issuing is "available in only 22 countries some 7 years after launch, faster than most, but not as fast as we would like" <Evidence id="issuing.countries.2025" />. And the loudest independent voices in the record are people who left: holds, closures, no phone number <Evidence id="hn.account-holds" />. A company with a wide moat doesn't usually produce a 350-point thread titled "Don't Use Stripe."
+<Inference>
+The counter-evidence is Stripe's own: Issuing is in "only 22 countries some 7 years after launch" <Evidence id="issuing.countries.2025" />, and a company with a wide moat doesn't usually produce a 350-point thread titled "Don't Use Stripe" <Evidence id="hn.account-holds" />.
+</Inference>

@@ -567,5 +567,54 @@
       "manifestsAt": "moats",
       "note": "Duplicating a template in is one click; getting structure out has drawn complaints since 2019."
     }
+  ],
+  "ceiling": "Notion publishes no audited accounts and no user count, not even on its About page. Revenue and valuation come from its tender announcement and from Forbes citing unnamed sources, and traffic figures are tool estimates. Pricing, product mechanics and the gallery's own disclosures are verified.",
+  "metrics": {
+    "northStar": {
+      "name": "Weekly active collaborative workspaces",
+      "definition": "Workspaces where two or more members made an edit in the past week.",
+      "why": "Collaboration is where Notion charges. A count of individual users would reward the population it has chosen never to bill."
+    },
+    "activation": {
+      "name": "A second member within 14 days",
+      "definition": "A new workspace adds a second member within 14 days of being created.",
+      "why": "The paid boundary is the second member, so activation belongs at the step that leads to revenue, not at signup."
+    }
+  },
+  "competition": [
+    {
+      "name": "Confluence",
+      "theyWin": "It sits inside Atlassian next to Jira, so engineering organisations get the wiki and the tracker from one vendor.",
+      "weWin": "Flexibility. Users at launch left rigid tools because Notion let them shape their own workflow.",
+      "evidenceIds": [
+        "positioning.between-tools.2019",
+        "jtbd.team-tasks.2019"
+      ]
+    },
+    {
+      "name": "Google Docs",
+      "theyWin": "Everyone's default: free, familiar, and already open on every collaborator's screen.",
+      "weWin": "Structure. Nested pages and databases make old notes findable, which is why users said it beat Docs.",
+      "evidenceIds": [
+        "jtbd.personal-wiki.2019"
+      ]
+    },
+    {
+      "name": "Obsidian and local-first tools",
+      "theyWin": "Files stay on your own disk in open formats, so leaving costs nothing.",
+      "weWin": "Real-time collaboration for teams. Notion merges millions of concurrent edits a minute; local-first tools make that harder.",
+      "evidenceIds": [
+        "lockin.anxiety.2020",
+        "crdt.architecture.2026"
+      ]
+    },
+    {
+      "name": "Trello and other opinionated tools",
+      "theyWin": "Simple and constrained, which some teams prefer to a blank canvas.",
+      "weWin": "Tasks and the documents about them in one place, without a second tool to maintain.",
+      "evidenceIds": [
+        "flexibility.cost.2020"
+      ]
+    }
   ]
 }

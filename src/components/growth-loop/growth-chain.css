@@ -1,7 +1,7 @@
 /* Growth Chain: five steps, four forward links, one return link. Link status is
    encoded three ways (line pattern, glyph, word) so colour never carries it alone. */
 
-.gc { margin: 0; display: grid; gap: var(--sp-5); }
+.gc { margin: 0; display: grid; gap: var(--sp-5); container: gc / inline-size; }
 .gc-head { display: grid; gap: var(--sp-2); }
 .gc-headline { font-size: var(--fs-xl); line-height: var(--lh-tight); margin: 0; letter-spacing: -0.01em; max-width: 30ch; }
 .gc-sub { margin: 0; font-size: var(--fs-sm); color: var(--ink-soft); }
@@ -24,7 +24,7 @@
 .gc-step:hover { border-color: var(--rule-strong); transform: translateY(-1px); }
 .gc-step[data-selected='true'] { border-color: var(--accent); background: var(--bg-raised); }
 .gc-step:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-.gc-step-role { font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-faint); font-weight: 700; display: flex; align-items: center; gap: var(--sp-2); }
+.gc-step-role { font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink-faint); font-weight: 700; display: flex; align-items: center; gap: var(--sp-2); flex-wrap: wrap; min-width: 0; overflow-wrap: anywhere; }
 .gc-step-n { display: inline-grid; place-items: center; width: 1.25rem; height: 1.25rem; border-radius: 50%; background: var(--ink); color: var(--bg); font-size: 0.65rem; }
 .gc-step-label { font-size: var(--fs-sm); font-weight: 600; line-height: 1.3; }
 
@@ -108,7 +108,7 @@
 .gc-legend { margin: 0; font-size: var(--fs-xs); color: var(--ink-faint); }
 
 /* ---- narrow: stack vertically, links become short vertical connectors ---- */
-@media (max-width: 860px) {
+@container gc (max-width: 720px) {
   .gc-track { grid-template-columns: 1fr; }
   .gc-cell, .gc-cell:last-child { grid-template-columns: 1fr; }
   .gc-step { min-height: 0; }
@@ -131,3 +131,39 @@
 }
 
 .sr-only { position: absolute; width: 1px; height: 1px; clip-path: inset(50%); overflow: hidden; white-space: nowrap; }
+
+
+/* ---- v1.2: model view first, evidence view one click away (ADR-004) ---- */
+.gc-summary { margin: 0; font-size: var(--fs-lg); line-height: 1.45; max-width: 60ch; color: var(--ink); }
+.gc-bar { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--sp-3); }
+.gc-sub { display: flex; flex-wrap: wrap; gap: var(--sp-4); }
+.gc-count { font-weight: 700; font-size: var(--fs-sm); }
+.gc-count[data-status='evidenced'] { color: var(--ev-evidenced); }
+.gc-count[data-status='partially-evidenced'] { color: var(--ev-partial); }
+.gc-count[data-status='insufficient'] { color: var(--ink-faint); }
+.gc-toggle { display: inline-flex; padding: 3px; border-radius: 999px; background: var(--bg-sunken); border: 1px solid var(--rule); }
+.gc-toggle button { font: inherit; font-size: var(--fs-xs); font-weight: 700; border: none; background: none; color: var(--ink-soft); padding: 6px 14px; border-radius: 999px; cursor: pointer; }
+.gc-toggle button[aria-pressed='true'] { background: var(--ink); color: var(--bg); }
+.gc-toggle button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.gc-hint { margin: 0; font-size: var(--fs-xs); color: var(--ink-faint); }
+
+/* model view: every link is a confident arrow; the glyph carries the evidence */
+.gc[data-view='model'] .gc-link .gc-link-seg { border-top: 3px solid var(--accent) !important; opacity: 0.85; }
+.gc[data-view='model'] .gc-link .gc-link-head { border-left-color: var(--accent) !important; }
+.gc[data-view='model'] .gc-return .gc-return-line { border-style: solid !important; border-color: var(--accent) !important; opacity: 0.6; }
+.gc[data-view='model'] .gc-link-mid { background: var(--bg-raised); border-radius: 999px; padding: 1px 3px; }
+.gc-link[data-status='evidenced'] .gc-link-mid { color: var(--ev-evidenced); }
+.gc-link[data-status='partially-evidenced'] .gc-link-mid { color: var(--ev-partial); }
+.gc-link[data-status='insufficient'] .gc-link-mid { color: var(--ink-faint); }
+/* contract §4.2: an unshown link must not read like a proven one, even in the model view */
+.gc[data-view='model'] .gc-link[data-status='insufficient'] .gc-link-seg,
+.gc[data-view='model'] .gc-link[data-status='insufficient'] .gc-link-head { opacity: 0.32; }
+.gc[data-view='model'] .gc-return[data-status='insufficient'] .gc-return-line { opacity: 0.25; }
+.gc-unshown { display: none; }
+.gc[data-view='model'] .gc-unshown { display: inline-block; font-size: 0.5rem; line-height: 1.15; text-transform: uppercase; letter-spacing: 0.04em; text-align: center; color: var(--ink-faint); border: 1px dashed var(--rule-strong); border-radius: 6px; padding: 2px 3px; margin-top: 4px; max-width: 2.5rem; }
+.gc-watch { margin: var(--sp-2) 0 0; padding: var(--sp-3) var(--sp-4); border-radius: var(--radius); background: var(--accent-soft); font-size: var(--fs-sm); display: grid; gap: 2px; }
+@container gc (max-width: 720px) {
+  .gc[data-view='model'] .gc-link .gc-link-seg { border-top: none !important; border-left: 3px solid var(--accent) !important; }
+  .gc[data-view='model'] .gc-link .gc-link-head { border-top-color: var(--accent) !important; border-left-color: transparent !important; }
+  .gc[data-view='model'] .gc-unshown { grid-column: 2; justify-self: start; font-size: 0.62rem; letter-spacing: 0.08em; padding: 1px 8px; border-radius: 999px; max-width: none; white-space: nowrap; }
+}

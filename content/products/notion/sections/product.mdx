@@ -1,27 +1,21 @@
-I didn't create an account, so everything past the signup wall is described from documentation rather than observed. Notion's documentation is unusually good, which is the only reason this section can be specific.
-
-## One primitive
-
-"A block object represents a piece of content within Notion" <Evidence id="block.api.primitive" />. The API lists more than thirty types, a `has_children` flag for nesting, and `child_page` as a block type of its own, which means a page is itself a block. Paragraphs, headings, to-dos, tables, columns, embeds, synced blocks: all the same kind of object.
-
-That's the whole design. A document and a database aren't different products; they're different arrangements of the same material.
+**One primitive.** "A block object represents a piece of content within Notion" <Evidence id="block.api.primitive" />. The API lists more than thirty types, a `has_children` flag for nesting, and `child_page` as a type of its own: a page is itself a block. A document and a database aren't different products; they're different arrangements of the same material.
 
 ## How two people edit at once
 
-Notion published this three days before my research cutoff, and it's worth reading. Pages "consist of several blocks, each stored as a separate database record", and concurrent edits are merged by a CRDT "based on a classic sequence CRDT called Replicated Growable Array" <Evidence id="crdt.architecture.2026" />. Before that, the system used last write wins, under which, in Notion's own words, "one person's edits would be completely lost." It went to production in July 2025 and now handles "millions of CRDT operations every minute."
+Each block is "stored as a separate database record", and concurrent edits merge through a CRDT based on the Replicated Growable Array <Evidence id="crdt.architecture.2026" />. Before July 2025 it was last write wins, under which "one person's edits would be completely lost." Notion names the cost too: you "may need to potentially fetch many blocks in order to find a particular text slice" <Evidence id="crdt.limitation.2026" />.
 
-They also name what it costs, which companies rarely do: "A limitation of this design is that you may need to potentially fetch many blocks in order to find a particular text slice" <Evidence id="crdt.limitation.2026" />. Deleted content isn't removed either; it stays as a tombstone.
-
-Worth pausing on the contrast with Figma, elsewhere in this Atlas. Figma's engineers explicitly rejected true CRDTs, called operational transforms "unnecessarily complex for our problem space", and built a central server authority instead. Notion went the other way. Two collaborative editors, opposite answers, both written up by the people who built them.
+Figma, elsewhere in this Atlas, rejected CRDTs and built a central server authority. Two collaborative editors, opposite answers.
 
 ## The cost of blocks
 
-Storing every paragraph as a database record is expensive at scale. Notion sharded its Postgres across 480 logical shards, and a practitioner in that discussion noted that companies he'd worked with had stopped using Notion because it was simply too slow <Evidence id="block.sharding.2021" />. The primitive that makes the product flexible is also the primitive that makes it hard to serve.
+A database record per paragraph is expensive. Notion sharded Postgres across 480 logical shards, and a practitioner reported companies leaving because it was too slow <Evidence id="block.sharding.2021" />. The primitive that makes it flexible makes it hard to serve.
 
 ## The surfaces
 
-The editor, where blocks are written. Databases, which are collections of pages with views. **Notion Sites**, which publishes any page to the open web and is how template artefacts reach people with no account <Evidence id="gallery.artefact.observed" />. The template gallery, 30,000 templates across 348 categories, all public <Evidence id="gallery.scale.2026" />. Notion AI, gated to Business and Enterprise <Evidence id="ai.plan-gate.2026" />. And an API, which arrived in 2021 after users spent the 2019 launch thread asking for one.
+- **Editor and databases**, both built from blocks.
+- **Notion Sites**, which publishes any page to the open web. It's how template artefacts reach people with no account <Evidence id="gallery.artefact.observed" />.
+- **The template gallery**: 30,000 templates in 348 categories, all public <Evidence id="gallery.scale.2026" />.
+- **Notion AI**, gated to Business and Enterprise <Evidence id="ai.plan-gate.2026" />.
+- **The API**, which arrived in 2021 after users asked for it at launch.
 
-One more surface, which users found rather than were shown: the desktop app detects when you join a meeting. A user asked how, and quoted the answer from support: "a sophisticated dual-detection approach: microphone monitoring combined with network port analysis", implemented natively per operating system <Evidence id="desktop.meeting-detection.2025" />. A counter-voice in the same thread pointed out this is a common technique and that checking whether a microphone is active is not the same as listening to it. Both things are true.
-
-Time to value is unestablished. Duplicating a template is instant once an account exists, but nobody has measured signup to useful workspace, and I couldn't observe it.
+The desktop app also detects meetings, which support described as "microphone monitoring combined with network port analysis" <Evidence id="desktop.meeting-detection.2025" />. A counter-voice noted that checking whether a mic is active is not listening to it. Both are true.

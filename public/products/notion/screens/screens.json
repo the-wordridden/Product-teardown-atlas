@@ -1,0 +1,16 @@
+[
+  {
+    "file": "template-page.webp",
+    "section": "growth-loops",
+    "caption": "A template page, logged out. The whole working template is visible on the left; keeping it means pressing Get template, which asks a logged-out visitor to sign up.",
+    "source": "notion.com/templates/basic-daily-planner",
+    "capturedOn": "2026-09-24"
+  },
+  {
+    "file": "pricing.webp",
+    "section": "business-model",
+    "caption": "Notion's pricing page: Free at $0, Plus at $10 and Business at $20 per member per month, with Notion AI features listed under Business.",
+    "source": "notion.com/pricing",
+    "capturedOn": "2026-09-24"
+  }
+]

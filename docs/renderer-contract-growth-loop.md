@@ -13,6 +13,14 @@ The component answers two questions, in this order: **"How does this product gro
 
 > **Amendment v1.1 (2026-09-21).** The first implementation led with the second question: an abstract pentagon with role names, drawn open. Readers learned nothing about the product from it. The layout is now a linear chain (`GrowthChain`): five steps carrying the product's own labels, forward links drawn as arrows, the reinvestment→acquisition link drawn as a return path underneath. The best-evidenced link opens by default so the finding is met before the caveat. Every obligation in §3–§6 still holds: link status is triple-encoded (line pattern, glyph, word), an insufficient link is drawn broken before any interaction, insufficient mechanisms are introduced as proposed, no circulating animation unless fully evidenced, and the renderer performs no geometry and no status derivation. Ring geometry in `derive/loop-geometry.ts` is retained for the data model and tests; its x/y coordinates are unused by the chain layout.
 
+> **Amendment v1.2 (2026-09-24, ADR-004).** The component now answers the first question first in its drawing as well as its headline. The default **model view** draws the analyst's reading of how the product grows: links as arrows in the accent colour, a one-line summary (`brief.grows`), and for each link "the metric I would watch" (`edges[].watch`). The **evidence view**, one click away, is the v1.1 pattern-encoded drawing, unchanged. The model view keeps every obligation in §3 and §4:
+> - The header always states the count of proven, documented and not-yet-shown links, in words, before any interaction (§3 loop label; §4.1).
+> - An `insufficient` link in the model view is drawn with a faded line and carries a visible "not yet shown" tag and the ○ glyph at every width, and the link row beneath the chain states every link's status in words. It is never drawn identically to an evidenced link (§4.2).
+> - The hint line says the drawing is "in our reading" and points to the evidence view "to see where it breaks" (§4.4).
+> - No pulse or circulating animation is drawn in either view (§4.6). Status is still derived at build time (§4.5).
+>
+> The trade is deliberate: a reader meets the model before the caveat, and the break is still identifiable without interaction.
+
 This is an intentional analytical feature, not a degraded fallback. Every competing product teardown draws a closed loop, because a closed loop looks authoritative. An interactive that shows a loop failing to close under evidentiary scrutiny — while the company's own filings assert virality — demonstrates more analytical judgment than any complete diagram, and it is the only representation the evidence honestly supports.
 
 ---

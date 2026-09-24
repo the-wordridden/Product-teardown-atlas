@@ -84,6 +84,7 @@ export function loadProduct(slug: string): LoadedProduct {
   for (const bet of strategy.bets) check(bet.evidenceIds, `bet ${bet.id}`)
   for (const moat of strategy.moats) check(moat.evidenceIds, `moat ${moat.id}`)
   for (const inflection of strategy.inflections) check(inflection.evidenceIds, `inflection ${inflection.id}`)
+  for (const c of product.competition ?? []) check(c.evidenceIds, `competition ${c.name}`)
   if (product.verdict) {
     for (const point of product.verdict.getRight) check(point.evidenceIds, `verdict.getRight ${point.id}`)
     for (const point of product.verdict.getWrong) check(point.evidenceIds, `verdict.getWrong ${point.id}`)

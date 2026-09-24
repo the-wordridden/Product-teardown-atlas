@@ -45,6 +45,8 @@ export interface EdgeGeom {
   note?: string
   evidenceStatus: TransitionEvidenceStatusT
   strength?: string
+  /** The metric the analyst would watch on this link (ADR-004). */
+  watch?: string
   evidenceIds: string[]
   counterEvidenceIds: string[]
   /** Full path when established; truncated path when gap = true. */
@@ -139,6 +141,7 @@ export function buildLoopRenderModel(loop: LoopT): LoopRenderModel {
       note: edge.note,
       evidenceStatus: edge.evidenceStatus,
       strength: edge.strength,
+      watch: edge.watch,
       evidenceIds: edge.evidenceIds,
       counterEvidenceIds: edge.counterEvidenceIds,
       d,

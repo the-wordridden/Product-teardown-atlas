@@ -134,6 +134,13 @@ export const LoopEdge = z
     strength: EdgeStrength.optional(),
 
     /**
+     * The metric the analyst would watch to know whether this link is working (ADR-004).
+     * A proposal, not a finding: it names the measurement that would move this edge's
+     * evidenceStatus, which is the most useful thing a reader can take from an open link.
+     */
+    watch: Line.optional(),
+
+    /**
      * Whether the evidence establishes this transition. The structural presence of an
      * edge is never itself evidence — that conflation is what this field exists to
      * prevent.

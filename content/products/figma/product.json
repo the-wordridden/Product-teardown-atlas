@@ -491,5 +491,53 @@
       "manifestsAt": "growth-loops",
       "note": "The Community catalogue is public with a Remix button; whether it brings in new customers is unestablished."
     }
+  ],
+  "ceiling": "Figma is public, so revenue, margins and customer counts here are audited 10-K figures. What its filings do not disclose, how new customers arrive and how many free viewers ever pay, is marked as unestablished rather than guessed.",
+  "metrics": {
+    "northStar": {
+      "name": "Weekly collaborative files per account",
+      "definition": "Files edited or commented on by two or more people in a week, per paying account.",
+      "why": "It measures the behaviour that creates seats. Seat count lags it, and a raw file count ignores collaboration."
+    },
+    "activation": {
+      "name": "A second collaborator within 7 days",
+      "definition": "A new team's first file gets an edit or comment from a second person within seven days.",
+      "why": "Figma's evidenced revenue starts when a second person touches a file, so activation belongs there, not at signup."
+    }
+  },
+  "competition": [
+    {
+      "name": "Sketch",
+      "theyWin": "Native Mac performance, local files, and a mature plugin ecosystem that teams had already built around.",
+      "weWin": "One live file in the browser with nothing to version or send. Both published migration accounts left Sketch for exactly that.",
+      "evidenceIds": [
+        "migration.intercom.2019",
+        "migration.helpscout.2019"
+      ]
+    },
+    {
+      "name": "Adobe",
+      "theyWin": "Already inside most creative teams' Creative Cloud contract, so there is no new vendor to approve.",
+      "weWin": "The UK regulator found in 2023 that Figma was the clear leader in all-in-one screen design, several times larger than anyone else.",
+      "evidenceIds": [
+        "cma.market-position.2023"
+      ]
+    },
+    {
+      "name": "AI design-to-code tools",
+      "theyWin": "They skip the design file and go from a prompt to a working interface, which is where Figma's own 10-K says pressure is coming from.",
+      "weWin": "Teams still need one place to review, align and hand off, and Figma is where the whole team already works.",
+      "evidenceIds": [
+        "ai-margin-warning.fy2025"
+      ]
+    },
+    {
+      "name": "Penpot and open-source tools",
+      "theyWin": "Open source and self-hostable, so there is no seat bill and no vendor to depend on.",
+      "weWin": "Libraries, components and the people who already know Figma. Moving means rebuilding components by hand, as Help Scout found going the other way.",
+      "evidenceIds": [
+        "migration.helpscout.2019"
+      ]
+    }
   ]
 }

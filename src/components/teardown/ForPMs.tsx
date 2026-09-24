@@ -53,7 +53,7 @@ export function ForPMs({
       </header>
       <p className="sec-standfirst">
         {productName}, turned into things you can use: what they got right, what they got wrong, what I would do next, and
-        questions to practise on.
+        questions to practise on. What nothing public can settle is in "How far to trust this page", at the top.
       </p>
 
       {verdict ? (
@@ -135,16 +135,6 @@ export function ForPMs({
         </div>
       ) : null}
 
-      {verdict && verdict.openQuestions.length > 0 ? (
-        <div className="pms-open">
-          <span className="kicker">Still open, and worth asking in any conversation about {productName}</span>
-          <ul>
-            {verdict.openQuestions.map((q) => (
-              <li key={q}>{q}</li>
-            ))}
-          </ul>
-        </div>
-      ) : null}
     </section>
   )
 }

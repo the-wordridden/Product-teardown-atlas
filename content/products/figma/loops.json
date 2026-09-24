@@ -9,28 +9,37 @@
       "speed": {
         "band": "unestablished",
         "note": "No source establishes a cycle time. Net dollar retention is measured annually and says nothing about cadence, and no evidence describes how long a free viewer takes to become a billed editor.",
-        "evidenceIds": ["ndr.q2-2026"]
+        "evidenceIds": [
+          "ndr.q2-2026"
+        ]
       },
       "nodes": [
         {
           "role": "acquisition",
           "label": "A non-user encounters Figma",
           "detail": "Figma discloses two go-to-market motions: an automated self-service option through Figma.com supported by organic and paid channels, and a direct sales process. A public unauthenticated Community surface also exists.",
-          "metricIds": ["gtm.two-motions", "community.public-surface"],
+          "metricIds": [
+            "gtm.two-motions",
+            "community.public-surface"
+          ],
           "patterns": []
         },
         {
           "role": "activation",
           "label": "First participation without a paid seat",
           "detail": "The View seat is the only free seat type and grants view and comment access to Figma Design, Slides and FigJam. No source establishes what constitutes activation, or that any threshold is crossed.",
-          "metricIds": ["seat.view.free"],
+          "metricIds": [
+            "seat.view.free"
+          ],
           "patterns": []
         },
         {
           "role": "core-action",
           "label": "Design and collaboration work in shared files",
           "detail": "Real-time multi-user editing has been architecturally documented since 2019. No source establishes which action constitutes the atomic unit of value, and the product itself has not been directly observed.",
-          "metricIds": ["architecture.multiplayer.2019"],
+          "metricIds": [
+            "architecture.multiplayer.2019"
+          ],
           "patterns": []
         },
         {
@@ -44,7 +53,11 @@
           "role": "reinvestment",
           "label": "Free participants convert to billed seats; revenue funds the platform",
           "detail": "Free viewers inside a paying account convert into billed seats through a documented, configurably auto-approved path. Reported revenue funds research and development and AI infrastructure.",
-          "metricIds": ["seat.approval-settings", "ndr.q2-2026", "rnd.fy2025"],
+          "metricIds": [
+            "seat.approval-settings",
+            "ndr.q2-2026",
+            "rnd.fy2025"
+          ],
           "patterns": []
         }
       ],
@@ -58,7 +71,8 @@
           "evidenceIds": [],
           "counterEvidenceIds": [],
           "note": "No defined activation event exists in any source, and no evidence shows any threshold being crossed. Product observation was blocked by authentication.",
-          "patterns": []
+          "patterns": [],
+          "watch": "Share of new paying accounts whose first user arrived through a shared file link"
         },
         {
           "from": "activation",
@@ -67,10 +81,13 @@
           "mechanism": "A free tier of participation demonstrably exists: the View seat carries view and comment access at no cost, so a participant can act inside a file before any payment is made.",
           "strength": "moderate",
           "evidenceStatus": "partially-evidenced",
-          "evidenceIds": ["seat.view.free"],
+          "evidenceIds": [
+            "seat.view.free"
+          ],
           "counterEvidenceIds": [],
           "note": "That a free participation tier exists is documented. That participants progress from it to the core action is not evidenced.",
-          "patterns": []
+          "patterns": [],
+          "watch": "Share of free View users who comment within 14 days of their first invite"
         },
         {
           "from": "core-action",
@@ -81,7 +98,8 @@
           "evidenceIds": [],
           "counterEvidenceIds": [],
           "note": "No source evidences that work product reaches non-users or at what rate. Teams adding components is not evidence that components create circulation.",
-          "patterns": []
+          "patterns": [],
+          "watch": "Files per account shared with at least one person outside the original editors"
         },
         {
           "from": "output",
@@ -98,7 +116,8 @@
           ],
           "counterEvidenceIds": [],
           "note": "The only established transition. It operates inside an existing paying account and is therefore expansion, not acquisition. Practitioners describe conversions occurring without the payer noticing, which complicates reading them as value-driven expansion.",
-          "patterns": []
+          "patterns": [],
+          "watch": "Viewer-to-billed-seat conversions per paying account per quarter, and the share auto-approved"
         },
         {
           "from": "reinvestment",
@@ -109,7 +128,8 @@
           "evidenceIds": [],
           "counterEvidenceIds": [],
           "note": "Spending is observed but the return path is not. That a company spends on research and development is not evidence that research and development acquires customers.",
-          "patterns": []
+          "patterns": [],
+          "watch": "New paying accounts per quarter whose first user came from Community or a shared file"
         }
       ],
       "boundaryConditions": "The evidenced expansion link depends on an account already existing and on an administrator approving seat upgrades. It says nothing about how the first paying account is created.",
