@@ -7,9 +7,11 @@ import { mdxComponentsFor } from '../../../components/mdx'
 import { MoatStack } from '../../../components/moats/MoatStack'
 import { ProfileStrip } from '../../../components/strategic-profile/ProfileStrip'
 import { MetricTile, SectionSummary } from '../../../components/teardown/SectionSummary'
+import { ForPMs } from '../../../components/teardown/ForPMs'
+import { QuickTake } from '../../../components/teardown/QuickTake'
 import { buildLoopRenderModel } from '../../../derive/loop-geometry'
 import { brandFor, brandVars } from '../../../lib/brand'
-import { listProductSlugs, loadProduct } from '../../../lib/content'
+import { listProductSlugs, loadPatterns, loadProduct } from '../../../lib/content'
 import { logoFor, screensFor } from '../../../lib/screens'
 import { deriveSectionStatuses, SECTION_EVIDENCE_LABEL } from '../../../lib/section-status'
 import { SECTION_IDS } from '../../../schema'
@@ -53,6 +55,8 @@ export default async function TeardownPage({ params }: { params: Promise<{ slug:
   const statuses = deriveSectionStatuses(product, profile, strategy, loopModel.summary.status, evidence)
   const title = new Map(product.sections.map((s) => [s.id, s.title]))
   const standfirst = new Map(product.sections.map((s) => [s.id, s.summary]))
+  const patternNames = new Map(loadPatterns().map((p) => [p.slug, p.name]))
+  const hasPms = Boolean(product.verdict || product.interview?.length)
 
   const keyNumbers = product.vitals.keyMetricIds.map((id) => evidence.get(id)).filter(Boolean) as EvidenceEntryT[]
   const provenLink = loopModel.edges.find((e) => e.evidenceStatus === 'evidenced')
@@ -127,6 +131,10 @@ export default async function TeardownPage({ params }: { params: Promise<{ slug:
         </p>
       </header>
 
+      {product.brief ? (
+        <QuickTake brief={product.brief} patterns={product.patterns} patternNames={patternNames} hasInterview={hasPms} />
+      ) : null}
+
       <Marquee items={ribbon} />
 
       {screens.length > 0 ? (
@@ -155,6 +163,13 @@ export default async function TeardownPage({ params }: { params: Promise<{ slug:
               </li>
             ))}
           </ol>
+          {hasPms ? (
+            <a className="rail-pms" href="#for-pms">
+              <span className="rail-dot" aria-hidden="true" />
+              <span className="rail-num">PM</span>
+              <span className="rail-title">For PMs</span>
+            </a>
+          ) : null}
           <div className="rail-legend" aria-hidden="true">
             <span data-status="rich">well sourced</span>
             <span data-status="bounded">partly</span>
@@ -185,7 +200,7 @@ export default async function TeardownPage({ params }: { params: Promise<{ slug:
               <details className="prose-fold" open={id === 'verdict'}>
                 <summary>
                   <span>{id === 'verdict' ? 'The verdict in full' : 'Read the full analysis'}</span>
-                  <span className="prose-fold-hint">sources inline, hover any ● to open one</span>
+                  <span className="prose-fold-hint">hover any ● for its source</span>
                 </summary>
                 <div className="prose">
                   <MDXRemote source={sections[id]} components={components} />
@@ -193,6 +208,13 @@ export default async function TeardownPage({ params }: { params: Promise<{ slug:
               </details>
             </section>
           ))}
+          <ForPMs
+            productName={product.name}
+            verdict={product.verdict}
+            interview={product.interview}
+            evidence={evidence}
+            sectionTitle={title}
+          />
         </div>
       </div>
     </article>

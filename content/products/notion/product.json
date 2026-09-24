@@ -2,7 +2,7 @@
   "slug": "notion",
   "name": "Notion",
   "legalName": "Notion Labs, Inc.",
-  "thesis": "Notion's template gallery is the best documented conversion surface in software and the least documented acquisition channel. The company published 51 million duplications and never once said how many were new.",
+  "thesis": "Notion gives one person everything free and charges when a second person joins, and its template gallery manufactures those first people at search scale. Whether it wins new users or re-engages old ones, Notion has never said.",
   "accent": "#0F0F0F",
   "status": "draft",
   "publishedOn": "2026-09-22",
@@ -40,47 +40,56 @@
     {
       "id": "vitals",
       "title": "Vitals",
-      "summary": "A company that publishes a valuation and no user count, not even on its own About page."
+      "summary": "A company that publishes a valuation and no user count, not even on its own About page.",
+      "evidence": "bounded"
     },
     {
       "id": "problem",
       "title": "The Problem",
-      "summary": "Described by its users, not by the company: too rigid for Jira, too loose for a wiki."
+      "summary": "Described by its users, not by the company: too rigid for Jira, too loose for a wiki.",
+      "evidence": "bounded"
     },
     {
       "id": "users",
       "title": "Users & Segments",
-      "summary": "The pricing page names four audiences. The gallery says the biggest one is students."
+      "summary": "The pricing page names four audiences. The gallery says the biggest one is students.",
+      "evidence": "bounded"
     },
     {
       "id": "jtbd",
       "title": "Jobs To Be Done",
-      "summary": "Two jobs, both quoted from the January 2019 launch thread."
+      "summary": "Two jobs, both quoted from the January 2019 launch thread.",
+      "evidence": "bounded"
     },
     {
       "id": "product",
       "title": "The Product",
-      "summary": "One primitive, the block. It is also the thing you are billed against."
+      "summary": "One primitive, the block. It is also the thing you are billed against.",
+      "evidence": "rich"
     },
     {
       "id": "business-model",
       "title": "Business Model",
-      "summary": "A cap that counts what you ever created, not what you still keep."
+      "summary": "A cap that counts what you ever created, not what you still keep.",
+      "evidence": "rich"
     },
     {
       "id": "growth-loops",
       "title": "Growth Loops",
-      "summary": "Four links evidenced, one missing, and the missing one is the whole question."
+      "summary": "Four links evidenced, one missing, and the missing one is the whole question.",
+      "evidence": "bounded"
     },
     {
       "id": "moats",
       "title": "Moats",
-      "summary": "Getting in is a click. Getting out is the thing people have complained about since 2019."
+      "summary": "Getting in is a click. Getting out is the thing people have complained about since 2019.",
+      "evidence": "bounded"
     },
     {
       "id": "bets",
       "title": "Bets & Tensions",
-      "summary": "AI is now a plan gate and, by Notion's careful wording, more than half of something."
+      "summary": "AI is now a plan gate and, by Notion's careful wording, more than half of something.",
+      "evidence": "bounded"
     },
     {
       "id": "verdict",
@@ -399,5 +408,164 @@
       "pricing.plans.2026"
     ],
     "patterns": []
-  }
+  },
+  "brief": {
+    "grows": "Someone searches for a planner, lands on a template page, sees the whole working thing without an account, and has to sign up to keep it. Some later publish templates of their own.",
+    "earns": "Per member: free and unlimited for one person, a 1,000-block lifetime cap once a second member joins, then $10 or $20 a seat, with AI reserved for the $20 plan.",
+    "tradeoff": "In 2020 it dropped its $4 personal plan to make individuals free forever, trading revenue for the population that now fills the template gallery.",
+    "unverified": "How many of the 11 million people who duplicated templates in a year were new to Notion."
+  },
+  "verdict": {
+    "thesis": "Notion gives one person everything free and charges when a second person joins, and its template gallery manufactures those first people at search scale. Whether it wins new users or re-engages old ones, Notion has never said.",
+    "getRight": [
+      {
+        "id": "charge-where-value-concentrates",
+        "claim": "It charges where value concentrates",
+        "argument": "One person has no limit; a second member caps the workspace at 1,000 blocks. The paywall lands at collaboration, where the product is worth most and a team budget usually exists.",
+        "evidenceIds": [
+          "block.limit.free",
+          "pricing.plans.2026"
+        ]
+      },
+      {
+        "id": "product-is-the-landing-page",
+        "claim": "The product is its own landing page",
+        "argument": "A template page renders the whole working artefact to someone with no account, and the signup arrives only when they want to keep it. The value is shown before the ask.",
+        "evidenceIds": [
+          "gallery.artefact.observed",
+          "gallery.signup-gate"
+        ]
+      },
+      {
+        "id": "productised-user-behaviour",
+        "claim": "It productised something users already did",
+        "argument": "Users were building sites to share Notion pages in 2019, four years before the gallery relaunch. The gallery then grew from 600 templates to over 30,000 by following that behaviour rather than inventing it.",
+        "evidenceIds": [
+          "sharing.predates-gallery.2019",
+          "gallery.scale.2026"
+        ]
+      }
+    ],
+    "getWrong": [
+      {
+        "id": "hard-to-leave",
+        "claim": "Getting content out has been hard since launch",
+        "argument": "A user said so at the 2019 launch, and in 2021 a paying customer's export failed for three months while support cited a backlog. The oldest complaint about the product is still its only evidenced moat.",
+        "evidenceIds": [
+          "export.friction.2019",
+          "export.failure.2021"
+        ]
+      },
+      {
+        "id": "unfalsifiable-ai-metric",
+        "claim": "An AI metric nobody can falsify",
+        "argument": "More than half of ARR from AI-enabled customers counts every dollar from any customer who touches AI. Bundling AI into the $20 plan means AI revenue cannot be separated, so the headline cannot be tested.",
+        "evidenceIds": [
+          "ai.arr-share.2026",
+          "ai.revenue-share.forbes"
+        ]
+      },
+      {
+        "id": "cap-punishes-tidying",
+        "claim": "A cap that punishes tidying up",
+        "argument": "Deleting blocks never restores capacity, because the cap counts everything ever created. Users have described it as arbitrary since at least 2020.",
+        "evidenceIds": [
+          "block.limit.free",
+          "block.limit.history.2020"
+        ]
+      }
+    ],
+    "whatIdDoNext": [
+      {
+        "id": "measure-new-user-share",
+        "move": "Measure the gallery's new-user share",
+        "rationale": "Tag each duplication by whether the account was created in that session, and report it. It is one field in a query Notion already runs, and it would settle whether the gallery acquires or re-engages.",
+        "risk": "If most duplicators already had accounts, the gallery looks like a retention feature and loses its place in the growth story."
+      },
+      {
+        "id": "count-stored-blocks",
+        "move": "Count stored blocks, not created ones",
+        "rationale": "Let deletion free capacity on the free team cap. The trigger for paying should be collaboration, which it already is, not a penalty for tidying.",
+        "risk": "Some teams will manage their way under the cap indefinitely and convert later, or never."
+      },
+      {
+        "id": "export-as-feature",
+        "move": "Make export a feature, not a support ticket",
+        "rationale": "A reliable export that keeps databases and structure would turn the oldest complaint into a trust signal for enterprise buyers, who check exit costs before they sign.",
+        "risk": "It lowers the switching cost that is currently Notion's only evidenced moat."
+      }
+    ],
+    "openQuestions": [
+      "What share of template duplicators were new to Notion?",
+      "Do people who duplicate a template come back a week later?",
+      "What does a template creator earn, and what share earn anything?",
+      "What did Skiff, Flowdash, Cron, Automate.io and ZeroEntropy cost?",
+      "How much of Notion's ARR is earned by AI, as opposed to paid by customers who use it?"
+    ],
+    "patterns": []
+  },
+  "interview": [
+    {
+      "id": "why-free-for-one",
+      "question": "Notion's free plan is unlimited for one person. Why is that a good business decision?",
+      "outline": [
+        "Dropping the $4 personal plan in 2020 traded revenue for population",
+        "Those individuals build and publish templates, which is the supply side of the gallery",
+        "The cap lands at the second member, where value concentrates and a budget usually exists",
+        "The cost is serving an unbounded free population, which forced a large sharding effort"
+      ],
+      "seeSection": "business-model"
+    },
+    {
+      "id": "prove-the-gallery",
+      "question": "Is Notion's template gallery an acquisition channel? How would you prove it?",
+      "outline": [
+        "Map the chain: search, template page, the artefact itself, the signup wall, duplication",
+        "Say what is evidenced: traffic estimates, 51 million duplications, and the documented wall",
+        "Name the missing metric: the share of duplications made by accounts created in that session",
+        "Design the test: flag new accounts at duplication and compare their retention to existing users"
+      ],
+      "seeSection": "growth-loops"
+    },
+    {
+      "id": "is-ai-working",
+      "question": "More than half of Notion's ARR comes from AI-enabled customers. What would you ask before believing AI is working?",
+      "outline": [
+        "Separate a customer share from a revenue share",
+        "Bundling AI into the $20 plan makes AI revenue impossible to separate by construction",
+        "Ask for AI-attributable effects: upgrades driven by AI, usage per seat, retention with and without it",
+        "Check the margin: inference cost against a flat per-seat price"
+      ],
+      "seeSection": "bets"
+    },
+    {
+      "id": "fix-the-cap",
+      "question": "What would you change about the 1,000-block cap?",
+      "outline": [
+        "State what it counts: blocks ever created, not blocks stored",
+        "State what triggers it: a second member joining",
+        "Note the user reaction: described as arbitrary since at least 2020",
+        "Offer options: count stored blocks, a soft cap, or block credits for publishing templates",
+        "Name the trade-off: every option weakens the conversion pressure on teams"
+      ],
+      "seeSection": "business-model"
+    }
+  ],
+  "patterns": [
+    {
+      "slug": "charge-at-the-second-person",
+      "manifestsAt": "business-model",
+      "note": "One member is unlimited; a second member caps the workspace at 1,000 lifetime blocks."
+    },
+    {
+      "slug": "artefact-as-front-door",
+      "manifestsAt": "growth-loops",
+      "note": "Template pages render the full working artefact to anonymous visitors, and keeping it requires an account."
+    },
+    {
+      "slug": "easy-in-hard-out",
+      "manifestsAt": "moats",
+      "note": "Duplicating a template in is one click; getting structure out has drawn complaints since 2019."
+    }
+  ]
 }

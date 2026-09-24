@@ -2,7 +2,7 @@
   "slug": "figma",
   "name": "Figma",
   "legalName": "Figma, Inc.",
-  "thesis": "A design platform whose one evidenced growth engine is seat expansion inside existing accounts, not the product virality its own filings claim.",
+  "thesis": "Figma gives everyone free eyes on the file and charges the moment someone wants to change it. The growth its evidence shows is that seat expansion inside paying accounts, not the virality its filings credit.",
   "accent": "#A259FF",
   "status": "draft",
   "publishedOn": "2026-08-30",
@@ -32,44 +32,53 @@
   "sections": [
     {
       "id": "vitals",
-      "title": "Vitals"
+      "title": "Vitals",
+      "evidence": "rich"
     },
     {
       "id": "problem",
-      "title": "The Problem"
+      "title": "The Problem",
+      "evidence": "bounded"
     },
     {
       "id": "users",
       "title": "Users & Segments",
-      "summary": "Who shows up, from packaging and two migration accounts."
+      "summary": "Who shows up, from packaging and two migration accounts.",
+      "evidence": "bounded"
     },
     {
       "id": "jtbd",
       "title": "Jobs To Be Done",
-      "summary": "Two jobs, both from teams that switched and wrote about it."
+      "summary": "Two jobs, both from teams that switched and wrote about it.",
+      "evidence": "bounded"
     },
     {
       "id": "product",
       "title": "The Product",
-      "summary": "The objects, the actions, and a 2019 look under the hood."
+      "summary": "The objects, the actions, and a 2019 look under the hood.",
+      "evidence": "bounded"
     },
     {
       "id": "business-model",
-      "title": "Business Model"
+      "title": "Business Model",
+      "evidence": "rich"
     },
     {
       "id": "growth-loops",
       "title": "Growth Loops",
-      "summary": "Evidence-bounded: one of five transitions is established."
+      "summary": "Evidence-bounded: one of five transitions is established.",
+      "evidence": "bounded"
     },
     {
       "id": "moats",
       "title": "Moats",
-      "summary": "No defensibility mechanism established from available evidence."
+      "summary": "No defensibility mechanism established from available evidence.",
+      "evidence": "gap"
     },
     {
       "id": "bets",
-      "title": "Bets & Tensions"
+      "title": "Bets & Tensions",
+      "evidence": "bounded"
     },
     {
       "id": "verdict",
@@ -330,5 +339,157 @@
       "seat.upgrade-billing.practitioner"
     ],
     "patterns": []
-  }
+  },
+  "brief": {
+    "grows": "Free viewers inside a paying account get edit access and become billed seats, often auto-approved. That expansion, not new-customer virality, is the engine the evidence shows.",
+    "earns": "Per-seat subscriptions across four seat types, from a free View seat up to $90 a month for a Full seat on Enterprise, with AI credits metered on top since March 2026.",
+    "tradeoff": "It is funding AI heavily and said so in its 10-K: gross margin fell from 88.3% to 82.4% in a year, and Figma expects AI to push it lower still.",
+    "unverified": "Whether people who view Figma files for free ever become new paying customers, rather than new seats in accounts that already pay."
+  },
+  "verdict": {
+    "thesis": "Figma gives everyone free eyes on the file and charges the moment someone wants to change it. The growth its evidence shows is that seat expansion inside paying accounts, not the virality its filings credit.",
+    "getRight": [
+      {
+        "id": "viewer-is-a-seat-in-waiting",
+        "claim": "Every free viewer is a paid seat in waiting",
+        "argument": "The View seat is free and carries view and comment access, and granting edit access adds a billed seat under approval rules that can be automatic. Reviewers cost nothing to invite and convert without a sales conversation.",
+        "evidenceIds": [
+          "seat.view.free",
+          "seat.approval-settings"
+        ]
+      },
+      {
+        "id": "disclosed-the-ai-bill",
+        "claim": "It told investors what the AI bet would cost",
+        "argument": "The 10-K states that inference costs will weigh on gross and operating margins, and gross margin moved from 88.3% to 82.4% in the same year. A company naming the price of its own bet in advance is rarer than it should be.",
+        "evidenceIds": [
+          "ai-margin-warning.fy2025",
+          "gross-margin.fy2024",
+          "gross-margin.fy2025"
+        ]
+      },
+      {
+        "id": "expansion-works",
+        "claim": "Expansion inside large accounts is working",
+        "argument": "Net dollar retention of 136% on customers above $10,000 a year, and 34% growth in that group, say existing accounts keep buying more. That is the most solid growth evidence in the teardown.",
+        "evidenceIds": [
+          "ndr.q2-2026",
+          "paid-customers.10k.q2-2026"
+        ]
+      }
+    ],
+    "getWrong": [
+      {
+        "id": "surprise-upgrades",
+        "claim": "Seat upgrades that surprise the person paying",
+        "argument": "Practitioners across 2021 to 2025 describe edit access turning into charges an admin did not notice. Expansion that works because nobody notices is expansion that erodes trust with the person who renews.",
+        "evidenceIds": [
+          "seat.upgrade-billing.practitioner"
+        ]
+      },
+      {
+        "id": "retention-on-two-percent",
+        "claim": "Its retention metric covers about 2% of customers",
+        "argument": "Net dollar retention is measured only on the 15,964 customers above $10,000, out of roughly 690,000 paying. The headline number says nothing about the 98% below that line.",
+        "evidenceIds": [
+          "ndr.q2-2026",
+          "paid-customers.total.q1-2026",
+          "paid-customers.10k.q2-2026"
+        ]
+      },
+      {
+        "id": "story-vs-evidence",
+        "claim": "The growth story it tells is not the one it can show",
+        "argument": "The filings credit product virality inherent to the platform. A dedicated search found no mechanism behind that claim, and one well-evidenced mechanism that works inside accounts that already pay.",
+        "evidenceIds": [
+          "gtm.two-motions"
+        ]
+      }
+    ],
+    "whatIdDoNext": [
+      {
+        "id": "visible-upgrades",
+        "move": "Make seat upgrades visible to whoever pays",
+        "rationale": "Show the cost at the moment edit access is granted, and send billing admins a monthly digest of seat changes. It turns the most repeated practitioner complaint into a reason to trust the bill.",
+        "risk": "Fewer silent upgrades means slower expansion revenue at first, and the retention headline may dip before the trust pays back."
+      },
+      {
+        "id": "retention-below-10k",
+        "move": "Publish retention below the $10K line",
+        "rationale": "Report net dollar retention for the whole base, or at least for the tier below $10,000, so the expansion story covers the customers it currently leaves out.",
+        "risk": "If small accounts churn heavily the number will be well below 136%. That is the point of publishing it, and also the danger."
+      },
+      {
+        "id": "price-ai-where-cost-sits",
+        "move": "Price AI where the cost actually sits",
+        "rationale": "Credits already meter AI. Tie the allowance to the seats and features that generate inference cost, so margin tracks usage instead of being spread across every seat.",
+        "risk": "Heavy AI users will see a price rise, and Figma's own filings name AI-native design tools as the place those users could go."
+      }
+    ],
+    "openQuestions": [
+      "Do people who view a Figma file for free ever become new paying customers, rather than new seats in existing ones?",
+      "Has any organisation tried to leave Figma, and what did it cost them?",
+      "Do the documented limits of the 2019 multiplayer architecture still hold?",
+      "What is retention like for the 98% of paying customers below the $10K line?"
+    ],
+    "patterns": []
+  },
+  "interview": [
+    {
+      "id": "money-from-non-payers",
+      "question": "How does Figma make money from people who never pay?",
+      "outline": [
+        "The View seat is free and includes commenting, so reviewers cost nothing to invite",
+        "Granting edit access adds a billed seat, and approval can be automatic",
+        "So every reviewer is a latent seat inside an account that already pays",
+        "The risk is surprise billing, which practitioners have reported for years"
+      ],
+      "seeSection": "business-model"
+    },
+    {
+      "id": "test-virality",
+      "question": "Figma's 10-K credits product virality for its growth. How would you test that claim?",
+      "outline": [
+        "Define the chain: a file is shared, a non-user opens it, creates an account, and later pays",
+        "Name the missing measurement: viewer to new paying account, as distinct from viewer to new seat",
+        "Propose the metric: share of new paying accounts whose first user arrived through a shared link",
+        "Contrast with what is evidenced: expansion inside existing accounts, at 136% net dollar retention"
+      ],
+      "seeSection": "growth-loops"
+    },
+    {
+      "id": "ai-margin",
+      "question": "Gross margin fell from 88% to 82% in a year. As the PM for AI, what do you do?",
+      "outline": [
+        "Separate inference cost from the rest of cost of revenue",
+        "Price credits against usage rather than spreading AI across every seat",
+        "Keep only the AI features that move retention or expansion enough to pay for themselves",
+        "Weigh the competitive risk: the 10-K names AI-native design tools as threats"
+      ],
+      "seeSection": "bets"
+    },
+    {
+      "id": "what-is-the-moat",
+      "question": "What makes Figma hard to replace?",
+      "outline": [
+        "Be honest: the evidence establishes no moat mechanism yet",
+        "Candidates are collaboration, shared libraries and the plugin ecosystem",
+        "For each, say what would prove it: a switching cost with a measured consequence",
+        "Market position, such as the CMA's 2023 finding, is where it stands, not why it can't be moved"
+      ],
+      "seeSection": "moats"
+    }
+  ],
+  "patterns": [
+    {
+      "slug": "charge-at-the-second-person",
+      "manifestsAt": "business-model",
+      "note": "Viewing is free. The moment a viewer is given edit access, a billed seat is added to the account."
+    },
+    {
+      "slug": "artefact-as-front-door",
+      "manifestsAt": "growth-loops",
+      "note": "The Community catalogue is public with a Remix button; whether it brings in new customers is unestablished."
+    }
+  ]
 }

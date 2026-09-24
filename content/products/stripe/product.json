@@ -39,47 +39,56 @@
     {
       "id": "vitals",
       "title": "Vitals",
-      "summary": "A private company with one audited window: its UK subsidiary."
+      "summary": "A private company with one audited window: its UK subsidiary.",
+      "evidence": "bounded"
     },
     {
       "id": "problem",
       "title": "The Problem",
-      "summary": "In 2011, taking money online meant a merchant account, a gateway and a bank. Stripe made it seven lines of code."
+      "summary": "In 2011, taking money online meant a merchant account, a gateway and a bank. Stripe made it seven lines of code.",
+      "evidence": "rich"
     },
     {
       "id": "users",
       "title": "Users & Segments",
-      "summary": "Who Stripe says it serves, who says they left, and one team that wrote down why they came."
+      "summary": "Who Stripe says it serves, who says they left, and one team that wrote down why they came.",
+      "evidence": "bounded"
     },
     {
       "id": "jtbd",
       "title": "Jobs To Be Done",
-      "summary": "Two jobs from the record: sell everywhere without a bank negotiation, and bill usage without building billing."
+      "summary": "Two jobs from the record: sell everywhere without a bank negotiation, and bill usage without building billing.",
+      "evidence": "bounded"
     },
     {
       "id": "product",
       "title": "The Product",
-      "summary": "One charge object, a wallet that follows the consumer, and a routing layer for platforms."
+      "summary": "One charge object, a wallet that follows the consumer, and a routing layer for platforms.",
+      "evidence": "rich"
     },
     {
       "id": "business-model",
       "title": "Business Model",
-      "summary": "An unchanged headline rate, a growing stack priced on top, and reported cash flow that funds acquisitions."
+      "summary": "An unchanged headline rate, a growing stack priced on top, and reported cash flow that funds acquisitions.",
+      "evidence": "rich"
     },
     {
       "id": "growth-loops",
       "title": "Growth Loops",
-      "summary": "Every link is documented. No link has an independent rate. Drawn open at one transition."
+      "summary": "Every link is documented. No link has an independent rate. Drawn open at one transition.",
+      "evidence": "bounded"
     },
     {
       "id": "moats",
       "title": "Moats",
-      "summary": "One mechanism Stripe documents itself: credentials saved through Link do not leave."
+      "summary": "One mechanism Stripe documents itself: credentials saved through Link do not leave.",
+      "evidence": "bounded"
     },
     {
       "id": "bets",
       "title": "Bets & Tensions",
-      "summary": "A $53 billion bid that was withdrawn, and three bets still running: stablecoins, usage billing, agents."
+      "summary": "A $53 billion bid that was withdrawn, and three bets still running: stablecoins, usage billing, agents.",
+      "evidence": "rich"
     },
     {
       "id": "verdict",
@@ -403,5 +412,157 @@
       "spuk.operating-profit.fy2024"
     ],
     "patterns": []
-  }
+  },
+  "brief": {
+    "grows": "A business signs up with no contract, and every payment leaves something behind: a consumer enrolled in Link, a data trail that underwrites Capital, volume that Billing and Radar attach to.",
+    "earns": "2.9% + 30¢ per successful card charge, unchanged since 2011, plus surcharges and a stack of products each priced as a further slice of the same flow.",
+    "tradeoff": "It kept the headline price fixed and moved its pricing power into surcharges and add-ons, which are much harder for customers to compare.",
+    "unverified": "Stripe's group margin, and whether Link's non-portable credentials have ever cost a departing merchant anything real."
+  },
+  "verdict": {
+    "thesis": "Stripe still sells the 2.9% + 30¢ it launched with in 2011. What changed is everything sold on top of it, and a consumer wallet that quietly makes leaving harder than arriving.",
+    "getRight": [
+      {
+        "id": "memorable-price",
+        "claim": "A price anyone can remember",
+        "argument": "2.9% plus 30 cents at launch in 2011 and on the pricing page in 2026. The number merchants compare has stayed simple for fifteen years, which is a positioning asset in a category known for opaque pricing.",
+        "evidenceIds": [
+          "pricing.launch.2011",
+          "pricing.us.2026"
+        ]
+      },
+      {
+        "id": "sell-to-the-flow",
+        "claim": "Every new product sells to money already flowing",
+        "argument": "Billing is priced on billed volume, Radar per screened transaction, and Capital is underwritten on the account's own processing history. Each is an upsell that needs no new customer.",
+        "evidenceIds": [
+          "pricing.products.2026",
+          "docs.capital.underwriting"
+        ]
+      },
+      {
+        "id": "documents-its-lock-in",
+        "claim": "It documents its own lock-in",
+        "argument": "The export page says card data is portable to any Level 1 processor and, on the same page, that Link credentials are not. Stating the asymmetry plainly is a trust asset most companies would not risk.",
+        "evidenceIds": [
+          "docs.pan-export.link-exclusion"
+        ]
+      }
+    ],
+    "getWrong": [
+      {
+        "id": "support-doesnt-scale",
+        "claim": "Support scales worse than the product",
+        "argument": "Practitioner accounts describe reserves of 120 days, closures without explanation, and no phone number to call. The self-serve funnel's failure mode lands on the smallest merchants, who have the least recourse.",
+        "evidenceIds": [
+          "hn.account-holds",
+          "hn.data-refusal.2024"
+        ]
+      },
+      {
+        "id": "hard-to-see-price-changes",
+        "claim": "Price changes that are hard to see",
+        "argument": "The international surcharge rose from 1.0% to 1.5%, the dispute fee stopped being refunded on won disputes, and the page announcing the European changes was later removed. A stable headline masks real movement.",
+        "evidenceIds": [
+          "pricing.change.june-2023",
+          "pricing.change.eu.april-2023"
+        ]
+      },
+      {
+        "id": "public-bid-abandoned",
+        "claim": "A $53 billion bid, made in public and abandoned",
+        "argument": "Stripe and Advent walked away once PayPal's share price passed their offer. It revealed both an appetite for transformative deals and a price Stripe won't cross, and every future deal starts from that.",
+        "evidenceIds": [
+          "paypal.bid.timeline.2026"
+        ]
+      }
+    ],
+    "whatIdDoNext": [
+      {
+        "id": "effective-rate",
+        "move": "Show every merchant their effective rate",
+        "rationale": "One dashboard figure for total fees as a share of volume, including surcharges and attached products, turns the least comparable part of the pricing into a signal of confidence.",
+        "risk": "Some merchants will see a number well above 2.9% and shop around, which is exactly what the current opacity prevents."
+      },
+      {
+        "id": "holds-with-a-human",
+        "move": "Give every large hold a person and a date",
+        "rationale": "Any reserve above a threshold gets a named reviewer, a stated reason and a review date. The loudest criticism is about the absence of a person, not the existence of the hold.",
+        "risk": "It costs staff, and fraudsters will learn from the stated reasons."
+      },
+      {
+        "id": "prove-link",
+        "move": "Measure Link's lift independently, then publish it",
+        "rationale": "If Link raises conversion for merchants who adopt Stripe, one independent study would turn Stripe's strongest asset from a claim into a selling point.",
+        "risk": "A small lift weakens the claim, and publishing it invites regulators to look at the credential-portability asymmetry."
+      }
+    ],
+    "openQuestions": [
+      "What is Stripe's group margin, and on what revenue basis?",
+      "Has Link's non-portability ever cost a departing merchant a measurable share of its customers?",
+      "What happens to a business between its first charge and meaningful volume?",
+      "What did Bridge, Privy, Metronome and OpenRouter cost?",
+      "Does any agentic or stablecoin surface carry material volume yet?"
+    ],
+    "patterns": []
+  },
+  "interview": [
+    {
+      "id": "grow-without-raising",
+      "question": "Stripe has charged 2.9% + 30¢ since 2011. How has it grown revenue per merchant without raising that price?",
+      "outline": [
+        "Surcharges moved: international cards went from 1.0% to 1.5%, and won disputes stopped being refunded",
+        "New products are priced as slices of the same flow: Billing on volume, Radar per screen, Connect per account",
+        "Capital is underwritten on processing data the account already generates",
+        "The headline stays the comparison point, and the growth sits in everything around it"
+      ],
+      "seeSection": "business-model"
+    },
+    {
+      "id": "is-link-a-moat",
+      "question": "Design a way to tell whether Link is really a moat.",
+      "outline": [
+        "Define exposure: the share of a merchant's checkouts that use Link-saved credentials",
+        "Define the consequence to measure: the share of saved customers lost after migrating away",
+        "Say what data you need: merchants who left, with conversion before and after",
+        "Name the confound: Link also raises conversion, which is a reason to stay that has nothing to do with lock-in"
+      ],
+      "seeSection": "moats"
+    },
+    {
+      "id": "trust-and-safety",
+      "question": "You own trust and safety for small merchants at Stripe. What do you change first?",
+      "outline": [
+        "Name the failure mode: holds and closures with no person to talk to",
+        "Name who it hits: merchants with lumpy volume, and categories that get restricted later",
+        "Propose the fix: a named reviewer, a stated reason and a review date for large holds",
+        "Pick the metrics: time to resolution, churn after a hold, false-positive rate",
+        "State the trade-off: stated reasons teach fraudsters what gets flagged"
+      ],
+      "seeSection": "users"
+    },
+    {
+      "id": "why-paypal",
+      "question": "Why would Stripe bid $53 billion for PayPal, and what went wrong?",
+      "outline": [
+        "Stripe stated no rationale; the reported enabler was about $3.2 billion of annual free cash flow",
+        "Strategic reads: PayPal's consumer wallet at scale against Link, branded checkout, Venmo",
+        "It failed because PayPal's share price rose past the bid once the interest leaked",
+        "The lesson: announcing interest moves the price you end up paying"
+      ],
+      "seeSection": "bets"
+    }
+  ],
+  "patterns": [
+    {
+      "slug": "charge-at-the-second-product",
+      "manifestsAt": "business-model",
+      "note": "Billing, Radar, Tax and Capital each add a percentage or a fee to payment volume that is already flowing."
+    },
+    {
+      "slug": "easy-in-hard-out",
+      "manifestsAt": "moats",
+      "note": "Card data exports to any Level 1 processor; credentials saved through Link do not."
+    }
+  ]
 }

@@ -1,0 +1,35 @@
+{
+  "slug": "charge-at-the-second-person",
+  "name": "Charge at the second person",
+  "family": "monetization",
+  "definition": "Keep the product free for one person, and charge the moment a second person needs to take part.",
+  "mechanism": {
+    "shape": "threshold",
+    "summary": "Solo use is free, which removes every reason not to start. The paid boundary sits where collaboration begins, which is where the product becomes more valuable and where the buyer is usually a team with a budget."
+  },
+  "preconditions": [
+    "The product is meaningfully more useful with two people than with one",
+    "One person can reach real value alone, so the free tier recruits rather than frustrates",
+    "Someone in the group can pay, usually from a team budget rather than their own pocket"
+  ],
+  "failureModes": [
+    "The second person is added quietly and the payer feels ambushed at renewal",
+    "Teams dodge the boundary by sharing one login",
+    "The free population grows faster than it converts, and serving it becomes the company's cost"
+  ],
+  "antiPattern": {
+    "name": "Charge the individual first",
+    "description": "Putting the paywall on solo use, before anyone has invited a colleague, taxes exactly the people who would have recruited the team."
+  },
+  "relationships": [
+    {
+      "relation": "variant-of",
+      "target": "charge-at-the-second-product",
+      "rationale": "Both price the moment value compounds. One counts people joining an account; the other counts products joining a flow."
+    }
+  ],
+  "aliases": [
+    "collaboration paywall",
+    "seat trigger"
+  ]
+}

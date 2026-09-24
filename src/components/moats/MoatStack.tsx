@@ -8,6 +8,7 @@
  */
 
 import type { MoatT } from '../../schema/strategy'
+import { moatTypeLabel } from '../../lib/labels'
 
 const DURABILITY_LABEL: Record<MoatT['durability'], string> = {
   'copyable-in-6-months': 'Copyable in ~6 months',
@@ -39,6 +40,7 @@ export function MoatStack({ moats }: { moats: MoatT[] }) {
         <ol className="moat-list">
           {moats.map((moat) => (
             <li key={moat.id} className="moat-item">
+              <span className="kicker">{moatTypeLabel(moat.type)}</span>
               <h4>{moat.claim}</h4>
               <p>{moat.argument}</p>
               <p className="moat-meta">

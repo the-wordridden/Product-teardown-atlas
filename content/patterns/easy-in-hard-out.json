@@ -1,0 +1,36 @@
+{
+  "slug": "easy-in-hard-out",
+  "name": "Easy in, hard out",
+  "family": "defensibility",
+  "definition": "Make arriving effortless, and let the structure customers build up be hard to take anywhere else.",
+  "mechanism": {
+    "shape": "linear",
+    "summary": "Adoption costs almost nothing, so customers accumulate structure inside the product: saved credentials, nested pages, linked records. Exports carry the raw data but not the structure, so leaving means rebuilding the thing that made the product useful."
+  },
+  "preconditions": [
+    "Value accumulates in structure specific to the product",
+    "No common format holds that structure anywhere else",
+    "Customers build it up over months rather than days"
+  ],
+  "failureModes": [
+    "A rival ships a faithful importer and the advantage disappears",
+    "Buyers who check exit costs before signing walk away, which hits enterprise deals hardest",
+    "A regulator requires portability"
+  ],
+  "antiPattern": {
+    "name": "Hold the data hostage",
+    "description": "Refusing export, or letting it quietly fail, turns a structural advantage into a grievance. Grievances are what competitors market against."
+  },
+  "relationships": [
+    {
+      "relation": "tensions-with",
+      "target": "artefact-as-front-door",
+      "rationale": "A product that publishes everything openly on the way in has a harder time justifying structure that is hard to take out."
+    }
+  ],
+  "aliases": [
+    "switching costs",
+    "lock-in",
+    "exit cost"
+  ]
+}

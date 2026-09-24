@@ -1,10 +1,18 @@
 /**
- * Derives a presentation-level evidence status per section from the structured data.
- * Pure function, no new claims. A section is:
- *   rich      - populated and backed by at least one verified source
- *   bounded   - populated, but resting on reported/estimated sources only
+ * Presentation-level evidence status per section.
+ *
+ *   rich      - the section's central claims rest on verified sources
+ *   bounded   - populated, but the central claims rest partly on reported or estimated
+ *               sources, or on sources that are authoritative for something else
  *   gap       - structurally empty
  *   judgment  - the verdict, by definition
+ *
+ * The authored call from the Stage 1 gate wins (ADR-003). The fallback below is
+ * deliberately conservative: it can say "bounded" on thin grounds but needs a strong
+ * majority of verified citations to say "rich", and some sections can never derive
+ * "rich" at all, because counting ids cannot tell whether a source fits a claim.
+ * The previous derivation labelled a section "well evidenced" whenever a moat existed,
+ * or whenever two bets existed, which contradicted the prose on the same page.
  */
 
 import type { EvidenceEntryT } from '../schema/evidence'
@@ -22,34 +30,45 @@ export const SECTION_EVIDENCE_LABEL: Record<SectionEvidence, string> = {
   judgment: 'Analyst judgment',
 }
 
-function anyVerified(ids: readonly string[], evidence: Map<string, EvidenceEntryT>): boolean {
-  return ids.some((id) => evidence.get(id)?.confidence === 'verified')
+/** Share of the cited ids that are verified. Unknown ids count against. */
+function verifiedShare(ids: readonly string[], evidence: Map<string, EvidenceEntryT>): number {
+  const unique = [...new Set(ids)]
+  if (unique.length === 0) return 0
+  return unique.filter((id) => evidence.get(id)?.confidence === 'verified').length / unique.length
 }
 
-/** Every item in a collection must itself carry a verified source to count as rich. */
-function allItemsVerified(items: ReadonlyArray<{ evidenceIds: readonly string[] }>, evidence: Map<string, EvidenceEntryT>): boolean {
-  return items.length > 0 && items.every((item) => anyVerified(item.evidenceIds, evidence))
+/** Rich only on a clear majority of verified citations, and at least two of them. */
+function byShare(ids: readonly string[], evidence: Map<string, EvidenceEntryT>): SectionEvidence {
+  const unique = new Set(ids)
+  if (unique.size === 0) return 'gap'
+  return unique.size >= 2 && verifiedShare(ids, evidence) >= 0.75 ? 'rich' : 'bounded'
 }
 
 export function deriveSectionStatuses(
   product: ProductFileT,
-  profile: ProfileFileT,
+  _profile: ProfileFileT,
   strategy: StrategyFileT,
   loopStatus: LoopEvidenceStatusT,
   evidence: Map<string, EvidenceEntryT>,
 ): Record<SectionIdT, SectionEvidence> {
-  const productIds = [...(product.product.ahaMoment?.evidenceIds ?? [])]
-
-  return {
-    vitals: 'rich',
-    problem: anyVerified(product.problem.evidenceIds, evidence) ? 'bounded' : 'bounded',
-    users: product.users.segments.length === 0 ? 'gap' : allItemsVerified(product.users.segments, evidence) ? 'rich' : 'bounded',
-    jtbd: product.jtbd.jobs.length === 0 ? 'gap' : allItemsVerified(product.jtbd.jobs, evidence) ? 'rich' : 'bounded',
-    product: product.product.coreObjects.length === 0 ? 'gap' : product.product.timeToValue === 'unestablished' || !anyVerified(productIds, evidence) ? 'bounded' : 'rich',
-    'business-model': 'rich',
+  const derived: Record<SectionIdT, SectionEvidence> = {
+    vitals: byShare(product.vitals.keyMetricIds, evidence),
+    problem: byShare(product.problem.evidenceIds, evidence),
+    // Who the users are is never settled by counting citations: pricing pages and
+    // product observation are authoritative for packaging, not for population.
+    users: product.users.segments.length === 0 ? 'gap' : 'bounded',
+    jtbd: product.jtbd.jobs.length === 0 ? 'gap' : 'bounded',
+    product: product.product.coreObjects.length === 0 ? 'gap' : 'bounded',
+    'business-model': byShare(product.businessModel.evidenceIds, evidence),
     'growth-loops': loopStatus === 'fully-evidenced' ? 'rich' : 'bounded',
-    moats: strategy.moats.length === 0 ? 'gap' : 'rich',
-    bets: strategy.bets.length >= 2 ? 'rich' : 'bounded',
+    // A moat's existence is not evidence of its strength.
+    moats: strategy.moats.length === 0 ? 'gap' : 'bounded',
+    bets: strategy.bets.length === 0 ? 'gap' : byShare(strategy.bets.flatMap((b) => b.evidenceIds), evidence),
     verdict: 'judgment',
   }
+
+  for (const entry of product.sections) {
+    if (entry.evidence && entry.id !== 'verdict') derived[entry.id] = entry.evidence
+  }
+  return derived
 }

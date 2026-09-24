@@ -1,0 +1,29 @@
+{
+  "slug": "charge-at-the-second-product",
+  "name": "Charge at the second product",
+  "family": "monetization",
+  "definition": "Hold the price everyone compares fixed, and grow revenue per customer by attaching products priced against the same flow.",
+  "mechanism": {
+    "shape": "stock-and-flow",
+    "summary": "The core product creates a flow the customer already pays for, such as payments or seats. Each extra product is priced as a slice of that flow, so it can be bought without a new sale and without touching the headline price."
+  },
+  "preconditions": [
+    "The core product generates a measurable flow that add-ons can be priced against",
+    "The add-ons use data the core product already holds",
+    "Customers shop on the headline price, so keeping it fixed keeps them"
+  ],
+  "failureModes": [
+    "The effective rate drifts far above the headline and customers find out at renewal",
+    "Add-ons start to feel mandatory, and the stack reads as a tax",
+    "A rival bundles the add-ons into its base price and wins the comparison"
+  ],
+  "antiPattern": {
+    "name": "Raise the headline",
+    "description": "Raising the one number every customer compares invites the comparison. Moving price into less visible components avoids it, which is also why customers learn to distrust it."
+  },
+  "relationships": [],
+  "aliases": [
+    "attach",
+    "land and expand by product"
+  ]
+}

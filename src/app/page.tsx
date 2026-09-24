@@ -3,7 +3,7 @@ import { RevealObserver } from '../components/chrome/Reveal'
 import { CountUp, RotatingWord, SplitWords, Spotlight, Tilt } from '../components/home/Kinetic'
 import { MetricTile } from '../components/teardown/SectionSummary'
 import { brandFor, brandVars } from '../lib/brand'
-import { listProductSlugs, loadProduct, loadUpcoming } from '../lib/content'
+import { listProductSlugs, loadPatterns, loadProduct, loadUpcoming } from '../lib/content'
 import { logoFor } from '../lib/screens'
 import { SECTION_IDS } from '../schema'
 import type { EvidenceEntryT } from '../schema/evidence'
@@ -20,6 +20,21 @@ const STEP_BLURB: Record<string, string> = {
   moats: 'What would stop a rival.',
   bets: 'The choices, what they cost, and the tension left behind.',
   verdict: 'Our call, in one sentence you can argue with.',
+}
+
+const MOTION_TAG: Record<string, string> = {
+  'bottom-up-end-user': 'bottom-up',
+  'bottom-up-developer': 'developer-led',
+  'product-led-hybrid': 'self-serve + sales',
+  'sales-led': 'sales-led',
+  'top-down-enterprise': 'enterprise-led',
+}
+const METRIC_TAG: Record<string, string> = {
+  seats: 'per seat',
+  usage: 'per use',
+  transactions: 'per transaction',
+  outcomes: 'per outcome',
+  flat: 'flat fee',
 }
 
 function human(v: string) {
@@ -43,11 +58,12 @@ export default function HomePage() {
       numbers,
       bet: data.strategy.bets[0],
       inflections: data.strategy.inflections,
-      tags: [motion !== 'unestablished' ? human(motion) : null, metric !== 'unestablished' ? `priced by ${human(metric)}` : null].filter(Boolean) as string[],
+      tags: [MOTION_TAG[motion] ?? null, METRIC_TAG[metric] ?? null].filter(Boolean) as string[],
       evidenceCount: data.evidence.size,
     }
   })
   const upcoming = loadUpcoming()
+  const patterns = loadPatterns().filter((p) => p.products.length > 0)
   const totalEvidence = products.reduce((n, p) => n + p.evidenceCount, 0)
   let sectionNo = 0
   const num = () => String(++sectionNo).padStart(2, '0')
@@ -103,7 +119,7 @@ export default function HomePage() {
         <div className="home-sec-head">
           <span className="home-sec-num">{num()}</span>
           <h2 className="home-h2">Teardowns</h2>
-          <p className="home-sec-sub">One product at a time, done properly. Each opens on our take, then goes as deep as you want. Ten more are queued below.</p>
+          <p className="home-sec-sub">One product at a time, done properly. Each opens with a 60-second version, then goes as deep as you want, and ends with questions to practise on.</p>
         </div>
         <div className="cards">
           {products.map(({ slug, product, brand, tags, logo }) => (
@@ -220,6 +236,46 @@ export default function HomePage() {
               </li>
             ))}
           </ol>
+        </section>
+      ) : null}
+
+      {/* ------------------------------------------------ PATTERNS */}
+      {patterns.length > 0 ? (
+        <section id="patterns" className="home-sec" data-reveal>
+          <div className="home-sec-head">
+            <span className="home-sec-num">{num()}</span>
+            <h2 className="home-h2">The same moves, in different products</h2>
+            <p className="home-sec-sub">
+              The lessons worth carrying into an interview are the ones that repeat. Each pattern is traced to exactly where a
+              teardown shows it.
+            </p>
+          </div>
+          <div className="hpat-grid">
+            {patterns.map((p) => (
+              <a key={p.slug} href={`/patterns#${p.slug}`} className="hpat">
+                <span className="hpat-fam">{p.family === 'monetization' ? 'Monetisation' : p.family[0].toUpperCase() + p.family.slice(1)}</span>
+                <span className="hpat-name">{p.name}</span>
+                <span className="hpat-def">{p.definition}</span>
+                <span className="hpat-prods">
+                  {p.products.map((m) => {
+                    const logo = logoFor(m.slug)
+                    return (
+                      <span key={m.slug} className="hpat-prod">
+                        {logo ? (
+                          // eslint-disable-next-line @next/next/no-img-element
+                          <img className="tcard-logo" src={logo} alt="" aria-hidden="true" />
+                        ) : null}
+                        {m.name}
+                      </span>
+                    )
+                  })}
+                </span>
+              </a>
+            ))}
+          </div>
+          <a className="btn btn-ghost hpat-all" href="/patterns">
+            All patterns, with when they work and when they break <span className="arrow">→</span>
+          </a>
         </section>
       ) : null}
 

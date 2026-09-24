@@ -5,6 +5,10 @@
  * The detail popover opens on hover and on focus/click of the button; CSS handles
  * both, so it works before hydration and for keyboard users.
  *
+ * In running prose the chip is a citation mark only: a superscript glyph. The value
+ * lives in the popover. Printing values inline turned sentences into run-ons as soon as
+ * evidence values grew beyond a single figure.
+ *
  * Confidence is SHAPE-encoded (● verified / ◐ reported / ○ estimated) so it survives
  * colour-blindness and greyscale; colour is reinforcement only.
  *
@@ -32,9 +36,9 @@ export function EvidenceChip({ entry }: { entry: EvidenceEntryT }) {
         <span aria-hidden="true" className="ev-glyph">
           {GLYPH[entry.confidence]}
         </span>
-        <span className="ev-value">{entry.value}</span>
       </button>
       <span className="ev-pop" role="note">
+        <span className="ev-pop-value">{entry.display ?? entry.value}</span>
         <strong className="ev-pop-claim">{entry.claim}</strong>
         <span className="ev-pop-row">
           <span className="ev-pop-k">Confidence</span> {CONF_LABEL[entry.confidence]}

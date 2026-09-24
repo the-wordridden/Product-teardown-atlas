@@ -32,6 +32,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           </a>
           <nav aria-label="Primary">
             <a href="/">Teardowns</a>
+            <a href="/patterns">Patterns</a>
             <ThemeToggle />
           </nav>
         </header>
@@ -46,6 +47,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             </div>
             <nav className="foot-nav" aria-label="Footer">
               <a href="/">Teardowns</a>
+              <a href="/patterns">Patterns</a>
               <a href="/#queue">Queue</a>
               <a href="/#method">Method</a>
             </nav>

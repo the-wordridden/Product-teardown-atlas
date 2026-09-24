@@ -88,6 +88,46 @@ export const SectionManifestEntry = z
     title: Label,
     /** Optional one-line standfirst rendered under the heading. */
     summary: Line.optional(),
+    /**
+     * The Stage 1 gate's call on how well this section's central claims are evidenced
+     * (ADR-003). Authored, because "is this section well evidenced?" is a judgment about
+     * source-claim fit, and counting verified ids cannot make it: a verified pricing page
+     * says nothing about who the users are. Absent, a conservative derivation applies.
+     */
+    evidence: z.enum(['rich', 'bounded', 'gap']).optional(),
+  })
+  .strict()
+
+/* -------------------------------------------------------------------------- */
+/* The 60-second version and interview practice (ADR-003)                      */
+/* -------------------------------------------------------------------------- */
+
+/**
+ * The teardown compressed to what a reader should be able to say out loud afterwards.
+ * Every line is the analyst's synthesis of sections below it, so none cites evidence of
+ * its own; each points the reader to where the argument is made.
+ */
+export const Brief = z
+  .object({
+    /** How one user or customer turns into the next. */
+    grows: Line,
+    /** Where the money enters, in one line. */
+    earns: Line,
+    /** The trade-off the company chose, and what it gave up. */
+    tradeoff: Line,
+    /** The most important thing nobody outside the company can verify. */
+    unverified: Line,
+  })
+  .strict()
+
+export const InterviewQuestion = z
+  .object({
+    id: Slug,
+    question: Line,
+    /** What a strong answer covers, in order. Points, not a script. */
+    outline: z.array(Line).min(3, 'An outline needs at least three points to be worth practising.').max(5),
+    /** The section of this teardown where the material for an answer lives. */
+    seeSection: SectionId,
   })
   .strict()
 
@@ -141,6 +181,10 @@ export const ProductFile = z
      * not the validator.
      */
     verdict: VerdictSection.optional(),
+
+    /* --- Reader-facing synthesis (ADR-003) --------------------------------- */
+    brief: Brief.optional(),
+    interview: z.array(InterviewQuestion).max(6).optional(),
 
     /* --- Product-level pattern tags ---------------------------------------- */
     patterns: PatternRefList,

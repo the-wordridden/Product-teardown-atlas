@@ -12,6 +12,7 @@ import type { SectionIdT } from '../../schema/enums'
 import type { EvidenceEntryT } from '../../schema/evidence'
 import { EvidenceChip } from '../evidence/EvidenceChip'
 import { BetsChain } from './BetsChain'
+import { axisPhrase, durabilityLabel, moatTypeLabel } from '../../lib/labels'
 
 const GLYPH: Record<EvidenceEntryT['confidence'], string> = { verified: '●', reported: '◐', estimated: '○' }
 
@@ -200,33 +201,53 @@ export function SectionSummary({
     case 'verdict': {
       const loop = data.loops.loops.find((l) => l.id === data.loops.primaryLoopId)
       const proven = loop?.edges.find((e) => e.evidenceStatus === 'evidenced')
+      const documented = loop?.edges.find((e) => e.evidenceStatus === 'partially-evidenced')
       const bet = strategy.bets[0]
-      const axes = [data.profile.distributionMotion, data.profile.valueMetric, data.profile.buyerUserAlignment]
-        .map((a) => a.classification)
-        .filter((c) => c !== 'unestablished')
-        .map(titleCase)
+      const { profile } = data
       return (
         <div className="verdict-card">
           <span className="kicker kicker-accent">Our call</span>
           <p className="verdict-thesis">{product.thesis}</p>
           <div className="verdict-grid">
             <div>
-              <span className="kicker">Growth engine that's proven</span>
-              <p>{proven ? proven.label : 'None established from the evidence yet'}</p>
+              <span className="kicker">How it grows</span>
+              <p>
+                {proven
+                  ? proven.label
+                  : documented
+                    ? `${documented.label} (documented, not yet measured)`
+                    : 'Not established from the evidence yet'}
+              </p>
+            </div>
+            <div>
+              <span className="kicker">How it sells</span>
+              <p>{axisPhrase('distributionMotion', profile.distributionMotion.classification)}.</p>
+            </div>
+            <div>
+              <span className="kicker">How it charges</span>
+              <p>
+                {axisPhrase('valueMetric', profile.valueMetric.classification)}.{' '}
+                {axisPhrase('buyerUserAlignment', profile.buyerUserAlignment.classification)}.
+              </p>
+            </div>
+            <div>
+              <span className="kicker">What would stop a rival</span>
+              <p>
+                {strategy.moats.length > 0
+                  ? `${moatTypeLabel(strategy.moats[0].type)}: ${durabilityLabel(strategy.moats[0].durability).toLowerCase()}.`
+                  : 'Nothing the evidence supports yet.'}
+              </p>
             </div>
             <div>
               <span className="kicker">The bet in play</span>
               <p>{bet ? bet.title : 'No strategic bet documented'}</p>
             </div>
-            <div>
-              <span className="kicker">What would stop a rival</span>
-              <p>{strategy.moats.length > 0 ? strategy.moats.map((m) => titleCase(m.type)).join(' · ') : 'Nothing the evidence supports yet'}</p>
-            </div>
-            <div>
-              <span className="kicker">How it sells</span>
-              <p>{axes.length > 0 ? axes.join(' · ') : 'Not established'}</p>
-            </div>
           </div>
+          {product.verdict ? (
+            <a className="verdict-jump" href="#for-pms">
+              What they got right, what they got wrong, and what I'd do next <span className="arrow">→</span>
+            </a>
+          ) : null}
         </div>
       )
     }

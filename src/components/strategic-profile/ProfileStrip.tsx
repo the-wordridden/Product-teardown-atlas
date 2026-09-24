@@ -9,6 +9,7 @@
 
 import type { ProfileFileT } from '../../schema/profile'
 import { PROFILE_AXIS_IDS, type ProfileAxisIdT } from '../../schema/enums'
+import { axisPhrase } from '../../lib/labels'
 import './profile-strip.css'
 
 const AXIS_LABEL: Record<ProfileAxisIdT, string> = {
@@ -18,13 +19,6 @@ const AXIS_LABEL: Record<ProfileAxisIdT, string> = {
   timeToValue: 'Time to value',
   buyerUserAlignment: 'Buyer / user alignment',
   expansionMechanism: 'Expansion mechanism',
-}
-
-function stopTitle(value: string): string {
-  return value
-    .split('-')
-    .map((w) => w[0].toUpperCase() + w.slice(1))
-    .join(' ')
 }
 
 export function ProfileStrip({ profile }: { profile: ProfileFileT }) {
@@ -41,9 +35,9 @@ export function ProfileStrip({ profile }: { profile: ProfileFileT }) {
                 {unestablished ? '○' : '●'}
               </span>
               <span className="ps-stop">
-                {unestablished ? 'Unestablished' : stopTitle(axis.classification)}
+                {axisPhrase(axisId, axis.classification)}
               </span>
-              {unestablished ? <span className="ps-badge">evidence ceiling</span> : null}
+
               <details className="ps-why">
                 <summary>Why</summary>
                 <p>{axis.rationale}</p>

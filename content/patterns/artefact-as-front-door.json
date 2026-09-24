@@ -1,0 +1,36 @@
+{
+  "slug": "artefact-as-front-door",
+  "name": "The artefact is the front door",
+  "family": "acquisition",
+  "definition": "Let strangers see the finished work before they sign up, and put the signup at the moment they want to keep it.",
+  "mechanism": {
+    "shape": "loop",
+    "summary": "Users make things that are useful to other people, and those things are published where strangers find them, usually through search. They render fully without an account; keeping a copy requires one, so the artefact does the selling and the wall does the converting."
+  },
+  "preconditions": [
+    "The artefact is useful to someone who did not make it",
+    "It can be shown publicly, in full, without an account",
+    "Enough users make artefacts to cover many different search intents"
+  ],
+  "failureModes": [
+    "The artefact is fully useful without copying it, so nobody reaches the wall",
+    "The people who convert already had accounts, so the loop re-engages rather than acquires",
+    "Low-quality inventory floods the catalogue and erodes its search value"
+  ],
+  "antiPattern": {
+    "name": "Gate the preview",
+    "description": "Hiding the artefact behind a signup before the visitor has seen it asks for commitment before showing value. A front door reverses that order."
+  },
+  "relationships": [
+    {
+      "relation": "enables",
+      "target": "charge-at-the-second-person",
+      "rationale": "The artefact recruits individuals for free, and the paid boundary is waiting for them when they invite a colleague."
+    }
+  ],
+  "aliases": [
+    "template gallery",
+    "content loop",
+    "UGC SEO"
+  ]
+}

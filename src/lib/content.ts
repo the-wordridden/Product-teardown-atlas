@@ -31,6 +31,7 @@ import {
   type SectionIdT,
 } from '../schema'
 import { UpcomingFile, type UpcomingProductT } from '../schema/upcoming'
+import { PatternFrontmatter, type PatternFrontmatterT } from '../schema/pattern'
 
 const CONTENT_ROOT = join(process.cwd(), 'content')
 const PRODUCTS_ROOT = join(CONTENT_ROOT, 'products')
@@ -83,6 +84,10 @@ export function loadProduct(slug: string): LoadedProduct {
   for (const bet of strategy.bets) check(bet.evidenceIds, `bet ${bet.id}`)
   for (const moat of strategy.moats) check(moat.evidenceIds, `moat ${moat.id}`)
   for (const inflection of strategy.inflections) check(inflection.evidenceIds, `inflection ${inflection.id}`)
+  if (product.verdict) {
+    for (const point of product.verdict.getRight) check(point.evidenceIds, `verdict.getRight ${point.id}`)
+    for (const point of product.verdict.getWrong) check(point.evidenceIds, `verdict.getWrong ${point.id}`)
+  }
   for (const loop of loops.loops) {
     check(loop.speed.evidenceIds, `loop ${loop.id} speed`)
     for (const node of loop.nodes) check(node.metricIds, `loop node ${node.role}`)
@@ -118,4 +123,65 @@ export function loadUpcoming(): UpcomingProductT[] {
   const path = join(CONTENT_ROOT, 'upcoming.json')
   if (!existsSync(path)) return []
   return UpcomingFile.parse(readJson(path)).products
+}
+
+
+/* -------------------------------------------------------------------------- */
+/* Patterns                                                                    */
+/* -------------------------------------------------------------------------- */
+
+export interface PatternManifestation {
+  slug: string
+  name: string
+  section: SectionIdT
+  note?: string
+}
+
+export interface LoadedPattern extends PatternFrontmatterT {
+  /** Derived from PatternRefs in product files. Never authored in the pattern itself. */
+  products: PatternManifestation[]
+  /** Relationships authored on other patterns that point here, inverted for display. */
+  inbound: { relation: string; from: string; rationale: string }[]
+}
+
+/**
+ * Loads every pattern and derives, from product content, which products exhibit it.
+ * Stored as JSON at content/patterns/<slug>.json (the schema comment's MDX frontmatter
+ * form would need a parser for no benefit while patterns carry no prose body).
+ * XREF: a product may not reference a pattern that does not exist, and a pattern may not
+ * relate to one that does not exist. Both throw at build time.
+ */
+export function loadPatterns(): LoadedPattern[] {
+  const dir = join(CONTENT_ROOT, 'patterns')
+  if (!existsSync(dir)) return []
+  const patterns = readdirSync(dir)
+    .filter((f) => f.endsWith('.json'))
+    .sort()
+    .map((f) => PatternFrontmatter.parse(readJson(join(dir, f))) as PatternFrontmatterT)
+
+  const bySlug = new Map(patterns.map((p) => [p.slug, { ...p, products: [], inbound: [] } as LoadedPattern]))
+  const problems: string[] = []
+
+  for (const p of patterns) {
+    for (const r of p.relationships) {
+      const target = bySlug.get(r.target)
+      if (!target) problems.push(`pattern ${p.slug} relates to unknown pattern "${r.target}"`)
+      else target.inbound.push({ relation: r.relation, from: p.slug, rationale: r.rationale })
+    }
+  }
+
+  for (const slug of listProductSlugs()) {
+    const { product } = loadProduct(slug)
+    for (const ref of product.patterns) {
+      const target = bySlug.get(ref.slug)
+      if (!target) {
+        problems.push(`product ${slug} references unknown pattern "${ref.slug}"`)
+        continue
+      }
+      target.products.push({ slug, name: product.name, section: ref.manifestsAt, note: ref.note })
+    }
+  }
+
+  if (problems.length > 0) throw new Error(`XREF — pattern references:\n  ${problems.join('\n  ')}`)
+  return [...bySlug.values()]
 }
